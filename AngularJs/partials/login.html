@@ -1,14 +1,21 @@
-<section>
-<h1>Carina RestApi</h1>
+<form action="action_page.php">
+  <div class="imgcontainer">
+    <img src="img/logotypecarina.svg" alt="Avatar" class="avatar">
+  </div>
 
-<p>Welcome in our app"</p>
+  <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
 
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
 
+    <button type="submit">Login</button>
+    <input type="checkbox" checked="checked"> Remember me
+  </div>
 
-	<h1>Login</h1>
-	<p>Login :</p>
-	<input type="text"/>
-	<p>password :</p>
-	<input type="text"/><br/>
-	<a href="#/subscribe">Subscribe</a>
-</section>
+  <div class="container" style="background-color:#f1f1f1">
+    <a href="#/subscribe"><button type="button" class="subscribe_btn">subscribe</button></a>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>

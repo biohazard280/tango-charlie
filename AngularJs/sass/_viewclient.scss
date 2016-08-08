@@ -1,0 +1,144 @@
+// --------DASHBOARD_entreprise-------//
+// ---liste des clients--- //
+
+.header_title {
+	@include container(1140px);
+	padding-top:25px;
+
+	> div{
+		height: 85px;
+		box-sizing: border-box;
+		vertical-align: middle;
+		border-radius: 15px 0 15px 0;
+		padding:10px 10px 10px 15px;
+		text-align: right;
+		color: white;
+	} 
+
+}
+.clients_nbr{
+	@include span(2 of 6);
+	
+	background-image: url(../img/BtnClients.jpg);
+	
+}
+
+.addClient{
+	@include span(2 of 6);
+	background: url(../img/BtnAdd.jpg);
+
+
+	
+
+}
+
+.devis_view{
+	@include span(1 of 6);
+	background-image: url(../img/BtnDevis.jpg);
+	
+
+}
+.factures_view{
+	@include span(1 of 6 last);
+	background-image: url(../img/BtnFactures.jpg);
+	
+}
+
+
+// Sous-menu search //
+
+.searchMenu{
+	@include container(1140px);
+
+	>div{
+		box-sizing: border-box;
+		padding: 10px;
+		margin-top: 15px;
+		text-align: center;
+		vertical-align: middle;
+		font-size: 0.8em;
+		display: inline-block;
+
+	}
+}
+.searchMenu >.search{
+	padding: 0;
+}
+
+.selectParticuliers{
+	@include span (1 of 6);
+	
+	background-color: #0297cc;
+	
+		color: white;
+}
+.selectEntreprise{
+	@include span (1 of 6);
+	
+	background-color: #939598;
+	
+		color: white;
+
+}
+.search{
+	@include span (2 of 6);
+	position: relative;
+
+		input{
+			width: 320px;
+			padding:9px;
+			vertical-align: middle;
+		}
+		
+}
+
+
+// Gallery //
+.gallery_profile{
+	@include container(1140px);
+
+
+}
+
+.profile{
+	@include gallery(1 of 6);
+	// background-color: red;
+	border: 1px solid #818181;
+	height: 220px;
+	box-sizing: border-box;
+	margin-bottom: 30px;
+	text-align: center;
+
+	.name_profile{
+		font-family: $MyrRegular;
+		font-size: 1em;
+		color: #4d4d4f;
+	}
+
+	.infos_devis, .infos_facture {
+		@include container;
+		font-family: $MyrRegular;
+		font-size: 0.9em;
+		color: $primary;
+		padding: 15px 8px 5px 8px;
+		p:first-child{
+			@include span(3 of 4);
+			text-align: left;
+		}
+		p:last-child{
+			@include span(1 of 4 last);
+			text-align: right;
+			font-weight: bold;
+		}
+
+		
+	}
+
+	.fa{
+			padding: 5px 15px 0 0;
+			color: $primary;
+		}
+
+
+}
+

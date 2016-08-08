@@ -1,0 +1,95 @@
+// background #e8e8e8
+
+// --------DASHBOARD_entreprise-------//
+// ---Home--- //
+section {
+	@include container(1140px);
+	margin: auto;
+	padding-top:25px;
+
+}
+.clients{
+	@include span(4 of 12);
+	box-sizing: border-box;
+	background-image: url(../img/BtnClients.jpg);
+	height: 85px;
+	border-radius: 15px 0 15px 0;
+	padding:10px 10px 10px 15px;
+	text-align: right;
+	color: white;
+
+
+
+}
+.devis{
+	@include span(4 of 12);
+	box-sizing: border-box;
+	background-image: url(../img/BtnDevis.jpg);
+	height: 85px;
+	border-radius: 15px 0 15px 0;
+	padding:10px 10px 10px 15px;
+	text-align: right;
+	color: white;
+
+}
+.factures{
+	@include span(4 of 12 last);
+	box-sizing: border-box;
+	background-image: url(../img/BtnFactures.jpg);
+	height: 85px;
+	border-radius: 15px 0 15px 0;
+	padding:10px 10px 10px 15px;
+	text-align: right;
+	color: white;
+}
+
+
+
+.icons{
+	float: left;
+	color: white;
+
+}
+// listes
+
+.listClients{
+	@include span(4 of 12);
+	margin-top: 30px;
+}
+.listDevis{
+	@include span(4 of 12);
+	margin-top: 30px;
+}
+.listFactures{
+	@include span(4 of 12 last);
+	margin-top: 30px;
+}
+.material-icons{
+	float: right;
+	padding-right: 15px;
+	
+
+}
+// tableaux
+
+table{
+	width: 100%;
+}
+.tdGreen{
+	height: 18px;
+	vertical-align: middle;
+	font-size: 0.5em;
+	background-color: #84c900;
+	padding: 3px 5px 3px 10px;
+}
+
+td{
+	padding-top: 5px;
+	vertical-align: middle;
+	p{
+		font-size: 0.5em;
+	}
+
+}
+
+

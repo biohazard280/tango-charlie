@@ -1,0 +1,82 @@
+// Screen
+// ======
+@import "compass";
+@import "grids";
+@import "reset";
+@import "typography";
+@import "dash_entreprise";
+@import "viewclient";
+@import "viewprofile";
+
+
+html {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// --------DASHBOARD nav-------//
+
+
+header{
+	@include container;
+	height: 80px;
+	border-bottom: solid 1px $primary;
+
+
+}
+.innercontainer{
+	@include container(75em);
+
+
+
+}
+.logo{
+	@include span(6 of 12);
+	margin-left: 75px;
+	margin-top: 20px;
+	
+}
+.welcome{
+	@include span(3 of 12 );
+	// background-color: blue;
+	margin-top: 30px;
+	text-align: right;
+
+}
+.id_account{
+	@include span(1 of 12);
+
+		margin-top: 10px;
+}
+.settings{
+	@include span(1 of 12 last);
+	margin-top: 30px;
+}
+
+// Navigation
+.subnav{
+	height: 30px;
+}
+
+.nav{
+	display: inline-block;
+	padding-right: 80px;
+	padding-top: 10px;
+	text-align: center;
+
+}
+a{
+	text-decoration: none;
+	list-style: none;
+}
+
+
+
+
+

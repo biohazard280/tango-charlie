@@ -15,6 +15,12 @@ app.config(['$routeProvider', function($routeProvider){
 		templateUrl : 'partials/subscribe.html',
 		controller : 'mainCtrl'
 	}).
+
+	// Typography
+	when('/typography' , {
+		templateUrl : 'partials/typography.html',
+		controller : 'mainCtrl'
+	}).
 // ------Dashboard Entreprise---------//
 	when('/dashboard_Entreprise/entreprise' , {
 		templateUrl : 'partials/dashboard_Entreprise/entreprise.html',
@@ -23,6 +29,10 @@ app.config(['$routeProvider', function($routeProvider){
 // Clients
 	when('/dashboard_Entreprise/clients/viewclient' , {
 		templateUrl : 'partials/dashboard_Entreprise/clients/viewclient.html',
+		controller : 'mainCtrl'
+	}).
+	when('/dashboard_Entreprise/clients/viewprofile' , {
+		templateUrl : 'partials/dashboard_Entreprise/clients/viewprofile.html',
 		controller : 'mainCtrl'
 	}).
 	when('/dashboard_Entreprise/clients/createnewclient' , {

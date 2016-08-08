@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'weblysleek_uisemibold';
+    src: url('../fonts/weblySleekUI/weblysleekuisb-webfont.woff2') format('woff2'),
+         url('../fonts/weblySleekUI/weblysleekuisb-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'weblysleek_uisemilight';
+    src: url('../fonts/weblySleekUI/weblysleekuisl-webfont.woff2') format('woff2'),
+         url('../fonts/weblySleekUI/weblysleekuisl-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+//Weblysleek fonts = Ws:
+$WsLight : 'weblysleek_uisemilight', sans-serif;
+$WsSemiBold : 'weblysleek_uisemibold',sans-serif;
+
+
+// Myriad Pro = myr:
+
+$MyrRegular : "Myriad pro",myriad,sans-serif;
+
+
+// colors :
+$primary: #6e1555 ; //mauve
+$secondary: #84c900; //vert
+$grey: #595959;
+
+
+// --------TYPOGRAPHY-------//
+html{
+    font-size: 100%;
+}
+body{
+    font-size: 14px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: $WsSemiBold;
+    color: $primary;
+}
+h1{
+    font-size: 1.7em;
+}
+h2{
+    font-size: 1.5em;
+}
+.subnav{
+    font-family: $WsSemiBold;
+    font-size: 1em;
+    text-align: center;
+}
+.infos{
+    font-family: $MyrRegular;
+    font-size: 2.5em;
+}
+.subInfos{
+    font-family: $MyrRegular;
+    font-size: 1.5em
+}
+.list{
+    font-family: $MyrRegular;
+    font-size: 2em;
+    color: $grey;
+}
+.name {
+    font-family: $MyrRegular;
+    font-weight: bold;
+    font-size: 1.125em;
+}
+.listCategory{
+    font-family: $MyrRegular;
+    font-size: 1em;
+}
+
+
