@@ -145,7 +145,7 @@ section {
   margin: auto;
   padding-top: 25px;
 }
-/* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 section:after {
   content: " ";
   display: block;
@@ -261,7 +261,7 @@ td p {
   margin-right: auto;
   padding-top: 25px;
 }
-/* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .header_title:after {
   content: " ";
   display: block;
@@ -316,7 +316,7 @@ td p {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .searchMenu:after {
   content: " ";
   display: block;
@@ -365,25 +365,26 @@ td p {
 }
 /* line 87, ../sass/_viewclient.scss */
 .search input {
-  width: 320px;
+  width: 100%;
   padding: 9px;
   vertical-align: middle;
+  box-sizing: border-box;
 }
 
-/* line 97, ../sass/_viewclient.scss */
+/* line 98, ../sass/_viewclient.scss */
 .gallery_profile {
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .gallery_profile:after {
   content: " ";
   display: block;
   clear: both;
 }
 
-/* line 103, ../sass/_viewclient.scss */
+/* line 104, ../sass/_viewclient.scss */
 .profile {
   width: 13.7931%;
   float: left;
@@ -393,50 +394,50 @@ td p {
   margin-bottom: 30px;
   text-align: center;
 }
-/* line 66, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
 .profile:nth-child(6n + 1) {
   margin-left: 0;
   margin-right: -100%;
   clear: both;
   margin-left: 0;
 }
-/* line 66, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
 .profile:nth-child(6n + 2) {
   margin-left: 17.24138%;
   margin-right: -100%;
   clear: none;
 }
-/* line 66, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
 .profile:nth-child(6n + 3) {
   margin-left: 34.48276%;
   margin-right: -100%;
   clear: none;
 }
-/* line 66, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
 .profile:nth-child(6n + 4) {
   margin-left: 51.72414%;
   margin-right: -100%;
   clear: none;
 }
-/* line 66, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
 .profile:nth-child(6n + 5) {
   margin-left: 68.96552%;
   margin-right: -100%;
   clear: none;
 }
-/* line 66, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
 .profile:nth-child(6n + 6) {
   margin-left: 86.2069%;
   margin-right: -100%;
   clear: none;
 }
-/* line 112, ../sass/_viewclient.scss */
+/* line 113, ../sass/_viewclient.scss */
 .profile .name_profile {
   font-family: "Myriad pro", myriad, sans-serif;
   font-size: 1em;
   color: #4d4d4f;
 }
-/* line 118, ../sass/_viewclient.scss */
+/* line 119, ../sass/_viewclient.scss */
 .profile .infos_devis, .profile .infos_facture {
   max-width: 100%;
   margin-left: auto;
@@ -446,20 +447,20 @@ td p {
   color: #6e1555;
   padding: 15px 8px 5px 8px;
 }
-/* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .profile .infos_devis:after, .profile .infos_facture:after {
   content: " ";
   display: block;
   clear: both;
 }
-/* line 124, ../sass/_viewclient.scss */
+/* line 125, ../sass/_viewclient.scss */
 .profile .infos_devis p:first-child, .profile .infos_facture p:first-child {
   width: 73.68421%;
   float: left;
   margin-right: 5.26316%;
   text-align: left;
 }
-/* line 128, ../sass/_viewclient.scss */
+/* line 129, ../sass/_viewclient.scss */
 .profile .infos_devis p:last-child, .profile .infos_facture p:last-child {
   width: 21.05263%;
   float: right;
@@ -467,7 +468,7 @@ td p {
   text-align: right;
   font-weight: bold;
 }
-/* line 137, ../sass/_viewclient.scss */
+/* line 138, ../sass/_viewclient.scss */
 .profile .fa {
   padding: 5px 15px 0 0;
   color: #6e1555;
@@ -479,7 +480,7 @@ td p {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .viewProfile:after {
   content: " ";
   display: block;
@@ -533,21 +534,21 @@ td p {
   box-sizing: border-box;
 }
 
-/* line 12, ../sass/style.scss */
+/* line 13, ../sass/style.scss */
 html {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 17, ../sass/style.scss */
+/* line 18, ../sass/style.scss */
 *, *:before, *:after {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  ┬á┬á-moz-box-sizing: border-box;
+  ┬á┬á-webkit-box-sizing: border-box;
+  ┬á┬ábox-sizing: border-box;
 }
 
-/* line 26, ../sass/style.scss */
+/* line 27, ../sass/style.scss */
 header {
   max-width: 100%;
   margin-left: auto;
@@ -555,27 +556,27 @@ header {
   height: 80px;
   border-bottom: solid 1px #6e1555;
 }
-/* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 header:after {
   content: " ";
   display: block;
   clear: both;
 }
 
-/* line 33, ../sass/style.scss */
+/* line 34, ../sass/style.scss */
 .innercontainer {
   max-width: 75em;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .innercontainer:after {
   content: " ";
   display: block;
   clear: both;
 }
 
-/* line 39, ../sass/style.scss */
+/* line 40, ../sass/style.scss */
 .logo {
   width: 49.15254%;
   float: left;
@@ -584,7 +585,7 @@ header:after {
   margin-top: 20px;
 }
 
-/* line 45, ../sass/style.scss */
+/* line 46, ../sass/style.scss */
 .welcome {
   width: 23.72881%;
   float: left;
@@ -593,7 +594,7 @@ header:after {
   text-align: right;
 }
 
-/* line 52, ../sass/style.scss */
+/* line 53, ../sass/style.scss */
 .id_account {
   width: 6.77966%;
   float: left;
@@ -601,7 +602,7 @@ header:after {
   margin-top: 10px;
 }
 
-/* line 57, ../sass/style.scss */
+/* line 58, ../sass/style.scss */
 .settings {
   width: 6.77966%;
   float: right;
@@ -609,12 +610,12 @@ header:after {
   margin-top: 30px;
 }
 
-/* line 63, ../sass/style.scss */
+/* line 64, ../sass/style.scss */
 .subnav {
   height: 30px;
 }
 
-/* line 67, ../sass/style.scss */
+/* line 68, ../sass/style.scss */
 .nav {
   display: inline-block;
   padding-right: 80px;
@@ -622,7 +623,7 @@ header:after {
   text-align: center;
 }
 
-/* line 74, ../sass/style.scss */
+/* line 75, ../sass/style.scss */
 a {
   text-decoration: none;
   list-style: none;
