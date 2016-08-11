@@ -1,7 +1,10 @@
+"use strict";
+
 var app = angular.module('carinaApp',[
 	'ngRoute',
-	'crmControllers'
-	
+	'ngResource',
+	'crmControllers',
+	'crmServices'	
 	]);
 
 app.config(['$routeProvider', function($routeProvider){
@@ -29,7 +32,7 @@ app.config(['$routeProvider', function($routeProvider){
 // Clients
 	when('/dashboard_Entreprise/clients/viewclient' , {
 		templateUrl : 'partials/dashboard_Entreprise/clients/viewclient.html',
-		controller : 'mainCtrl'
+		controller : 'listClients'
 	}).
 	when('/dashboard_Entreprise/clients/viewprofile' , {
 		templateUrl : 'partials/dashboard_Entreprise/clients/viewprofile.html',

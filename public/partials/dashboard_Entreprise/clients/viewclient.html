@@ -1,16 +1,17 @@
 <!-- <h2>View Client</h2>
 	<a href="#/dashboard_Entreprise/clients/createnewclient">Create a new client</a> -->
+
 	<section class="header_title">
-		<a class="clients_nbr">
+		<div class="clients_nbr">
 			<div class="icons">
 				<i class="fa fa-users fa-3x" aria-hidden="true"></i>
 			</div>
 
-			<p class="infos">1.025 Clients</p>
+			<p class="infos">{{clients.length}} Clients</p>
 
-		</a>
+		</div>
 
-		<a href="#/dashboard_Entreprise/clients/createnewclient" class="addClient">
+		<div class="addClient">
 
 			<div class="icons">
 				<i class="fa fa-plus-circle fa-3x" aria-hidden="true"></i>
@@ -18,146 +19,64 @@
 			</div>
 
 			<p class="subInfos">Ajouter un client</p>
-		</a>
+		</div>
 
-		<a href="#/dashboard_Entreprise/devis/viewdevis" class="devis_view">
+		<div class="devis_view">
 			<div class="icons">
 				<i class="fa fa-pencil-square-o fa-3x" aria-hidden="true"></i>
 			</div>
 
 			<p class="subInfos">Devis</p>
 
-		</a>
-		<a href="#/dashboard_Entreprise/factures/viewfactures" class="factures_view">
+		</div>
+		<div class="factures_view">
 			<div class="icons">
 				<i class="fa fa-file-text-o fa-3x" aria-hidden="true"></i>
 			</div>
 			<p class="subInfos">Factures</p>
-		</a>
+		</div>
 
 	</section>
-
 	<section class="searchMenu">
 		<div class="selectParticuliers">
 
-			<p class="subInfos">Particuliers (10)</p>
+			<p class="subInfos">Particuliers ({{nbrPrivateprs}})</p>
 
 		</div>
 		<div class="selectEntreprise">
 
-			<p class="subInfos">Entreprises (39)</p>
+			<p class="subInfos">Entreprises ({{nbrCompanies}})</p>
 		</div>
 
 		<div class="search">
 			<input type="text" placeholder="Faire une recherche">
 
 		</div>
-	</section>
 
-	<section class="gallery_profile">
+	</section>
+	<section class="gallery_profile" ng-repeat="client in clients">
 		<ul class="gallery">
 			<li class="profile">
 				<img src="img/id_account.svg" alt="id_pictures" height="105" width="105">
-				<p class="name_profile">Pierre Dupont</p>
+				<p class="name_profile">{{client.name}}</p>
 				<div class="infos_devis">
 					<p>Devis</p>
-					<p>5</p>
+					<p>{{client.quotations.length}}</p>
 				</div>
 				<div class="infos_facture">
 					<p>Facture</p>
-					<p>2</p>
+					<p>{{client.bills.length}}</p>
 				</div>
 				<a href="#"><i class="fa fa-times " aria-hidden="true"></i></a>
 				<a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 				<a href="#/dashboard_Entreprise/clients/viewprofile"><i class="fa fa-eye" aria-hidden="true"></i></a>
 
 			</li>
-			<li class="profile">
-				<img src="img/id_account.svg" alt="id_pictures" height="105" width="105">
-				<p class="name_profile">Jean neymare</p>
-				<div class="infos_devis">
-					<p>Devis</p>
-					<p>5</p>
-				</div>
-				<div class="infos_facture">
-					<p>Facture</p>
-					<p>2</p>
-				</div>
-				<a href="#"><i class="fa fa-times " aria-hidden="true"></i></a>
-				<a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-				<a href="#/dashboard_Entreprise/clients/viewprofile"><i class="fa fa-eye" aria-hidden="true"></i></a>
-			</li>
-			<li class="profile">
-				<img src="img/id_account.svg" alt="id_pictures" height="105" width="105">
-				<p class="name_profile">thierry hardisson</p>
-				<div class="infos_devis">
-					<p>Devis</p>
-					<p>5</p>
-				</div>
-				<div class="infos_facture">
-					<p>Facture</p>
-					<p>2</p>
-				</div>
-				<a href="#"><i class="fa fa-times " aria-hidden="true"></i></a>
-				<a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-				<a href="#/dashboard_Entreprise/clients/viewprofile"><i class="fa fa-eye" aria-hidden="true"></i></a>
-			</li>
-			<li class="profile">
-				<img src="img/id_account.svg" alt="id_pictures" height="105" width="105">
-				<p class="name_profile">Luc Parano</p>
-				<div class="infos_devis">
-					<p>Devis</p>
-					<p>5</p>
-				</div>
-				<div class="infos_facture">
-					<p>Facture</p>
-					<p>2</p>
-				</div>
-				<a href="#"><i class="fa fa-times " aria-hidden="true"></i></a>
-				<a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-				<a href="#/dashboard_Entreprise/clients/viewprofile"><i class="fa fa-eye" aria-hidden="true"></i></a>
-			</li>
-			<li class="profile">
-				<img src="img/id_account.svg" alt="id_pictures" height="105" width="105">
-				<p class="name_profile">Claude Ducont</p>
-				<div class="infos_devis">
-					<p>Devis</p>
-					<p>5</p>
-				</div>
-				<div class="infos_facture">
-					<p>Facture</p>
-					<p>2</p>
-				</div>
-				<a href="#"><i class="fa fa-times " aria-hidden="true"></i></a>
-				<a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-				<a href="#/dashboard_Entreprise/clients/viewprofile"><i class="fa fa-eye" aria-hidden="true"></i></a>
-			</li>
-			<li class="profile">
-
-
-				<img src="img/id_account.svg" alt="id_pictures" height="105" width="105">
-				<p class="name_profile">Arnold wilyer</p>
-				<div class="infos_devis">
-					<p>Devis</p>
-					<p>5</p>
-				</div>
-				<div class="infos_facture">
-					<p>Facture</p>
-					<p>2</p>
-				</div>
-				<a href="#"><i class="fa fa-times " aria-hidden="true"></i></a>
-				<a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-				<a href="#/dashboard_Entreprise/clients/viewprofile"><i class="fa fa-eye" aria-hidden="true"></i></a>
-
-
-			</li>
-
-
-
 
 		</ul>
 		
 	</section>
+
 
 
 
