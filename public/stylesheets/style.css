@@ -157,9 +157,10 @@ p {
 /* line 5, ../sass/_dash_entreprise.scss */
 section {
   padding-top: 25px;
+  overflow: auto;
 }
 
-/* line 9, ../sass/_dash_entreprise.scss */
+/* line 10, ../sass/_dash_entreprise.scss */
 .clients {
   width: 32.20339%;
   float: left;
@@ -173,7 +174,7 @@ section {
   color: white;
 }
 
-/* line 22, ../sass/_dash_entreprise.scss */
+/* line 21, ../sass/_dash_entreprise.scss */
 .devis {
   width: 32.20339%;
   float: left;
@@ -187,7 +188,7 @@ section {
   color: white;
 }
 
-/* line 33, ../sass/_dash_entreprise.scss */
+/* line 32, ../sass/_dash_entreprise.scss */
 .factures {
   width: 32.20339%;
   float: right;
@@ -201,13 +202,13 @@ section {
   color: white;
 }
 
-/* line 46, ../sass/_dash_entreprise.scss */
+/* line 43, ../sass/_dash_entreprise.scss */
 .icons {
   float: left;
   color: white;
 }
 
-/* line 53, ../sass/_dash_entreprise.scss */
+/* line 50, ../sass/_dash_entreprise.scss */
 .listClients {
   width: 32.20339%;
   float: left;
@@ -215,7 +216,7 @@ section {
   margin-top: 30px;
 }
 
-/* line 57, ../sass/_dash_entreprise.scss */
+/* line 54, ../sass/_dash_entreprise.scss */
 .listDevis {
   width: 32.20339%;
   float: left;
@@ -223,7 +224,7 @@ section {
   margin-top: 30px;
 }
 
-/* line 61, ../sass/_dash_entreprise.scss */
+/* line 58, ../sass/_dash_entreprise.scss */
 .listFactures {
   width: 32.20339%;
   float: right;
@@ -231,18 +232,18 @@ section {
   margin-top: 30px;
 }
 
-/* line 65, ../sass/_dash_entreprise.scss */
+/* line 62, ../sass/_dash_entreprise.scss */
 .material-icons {
   float: right;
   padding-right: 15px;
 }
 
-/* line 73, ../sass/_dash_entreprise.scss */
+/* line 70, ../sass/_dash_entreprise.scss */
 table {
   width: 100%;
 }
 
-/* line 76, ../sass/_dash_entreprise.scss */
+/* line 73, ../sass/_dash_entreprise.scss */
 .tdGreen {
   height: 18px;
   vertical-align: middle;
@@ -251,12 +252,12 @@ table {
   padding: 3px 5px 3px 10px;
 }
 
-/* line 84, ../sass/_dash_entreprise.scss */
+/* line 81, ../sass/_dash_entreprise.scss */
 td {
   padding-top: 5px;
   vertical-align: middle;
 }
-/* line 87, ../sass/_dash_entreprise.scss */
+/* line 84, ../sass/_dash_entreprise.scss */
 td p {
   font-size: 0.5em;
 }
@@ -312,19 +313,18 @@ td p {
 .searchMenu > div {
   box-sizing: border-box;
   padding: 10px;
-  margin-top: 15px;
   text-align: center;
   vertical-align: middle;
   font-size: 0.8em;
   display: inline-block;
 }
 
-/* line 52, ../sass/_viewclient.scss */
+/* line 50, ../sass/_viewclient.scss */
 .searchMenu > .search {
   padding: 0;
 }
 
-/* line 56, ../sass/_viewclient.scss */
+/* line 54, ../sass/_viewclient.scss */
 .selectParticuliers {
   width: 13.7931%;
   float: left;
@@ -333,7 +333,7 @@ td p {
   color: white;
 }
 
-/* line 64, ../sass/_viewclient.scss */
+/* line 60, ../sass/_viewclient.scss */
 .selectEntreprise {
   width: 13.7931%;
   float: left;
@@ -342,14 +342,14 @@ td p {
   color: white;
 }
 
-/* line 73, ../sass/_viewclient.scss */
+/* line 66, ../sass/_viewclient.scss */
 .search {
   width: 31.03448%;
   float: left;
   margin-right: 3.44828%;
   position: relative;
 }
-/* line 76, ../sass/_viewclient.scss */
+/* line 69, ../sass/_viewclient.scss */
 .search input {
   width: 100%;
   padding: 9px;
@@ -357,20 +357,7 @@ td p {
   box-sizing: border-box;
 }
 
-/* line 86, ../sass/_viewclient.scss */
-.gallery_profile {
-  max-width: 1140px;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
-.gallery_profile:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-
-/* line 92, ../sass/_viewclient.scss */
+/* line 83, ../sass/_viewclient.scss */
 .profile {
   width: 13.7931%;
   float: left;
@@ -417,36 +404,27 @@ td p {
   margin-right: -100%;
   clear: none;
 }
-/* line 101, ../sass/_viewclient.scss */
+/* line 92, ../sass/_viewclient.scss */
 .profile .name_profile {
   font-family: "Myriad pro", myriad, sans-serif;
   font-size: 1em;
   color: #4d4d4f;
 }
-/* line 107, ../sass/_viewclient.scss */
+/* line 98, ../sass/_viewclient.scss */
 .profile .infos_devis, .profile .infos_facture {
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
   font-family: "Myriad pro", myriad, sans-serif;
   font-size: 0.9em;
   color: #6e1555;
   padding: 15px 8px 5px 8px;
 }
-/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
-.profile .infos_devis:after, .profile .infos_facture:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-/* line 113, ../sass/_viewclient.scss */
+/* line 103, ../sass/_viewclient.scss */
 .profile .infos_devis p:first-child, .profile .infos_facture p:first-child {
   width: 73.68421%;
   float: left;
   margin-right: 5.26316%;
   text-align: left;
 }
-/* line 117, ../sass/_viewclient.scss */
+/* line 107, ../sass/_viewclient.scss */
 .profile .infos_devis p:last-child, .profile .infos_facture p:last-child {
   width: 21.05263%;
   float: right;
@@ -454,7 +432,7 @@ td p {
   text-align: right;
   font-weight: bold;
 }
-/* line 126, ../sass/_viewclient.scss */
+/* line 114, ../sass/_viewclient.scss */
 .profile .fa {
   padding: 5px 15px 0 0;
   color: #6e1555;
@@ -534,13 +512,19 @@ html {
   ┬á┬ábox-sizing: border-box;
 }
 
-/* line 26, ../sass/style.scss */
+/* line 24, ../sass/style.scss */
+body {
+  background-color: #eee;
+}
+
+/* line 30, ../sass/style.scss */
 header {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   height: 80px;
   border-bottom: solid 1px #6e1555;
+  background-color: #FFF;
 }
 /* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 header:after {
@@ -549,7 +533,7 @@ header:after {
   clear: both;
 }
 
-/* line 32, ../sass/style.scss */
+/* line 37, ../sass/style.scss */
 .container {
   max-width: 1140px;
   margin-left: auto;
@@ -563,7 +547,7 @@ header:after {
   clear: both;
 }
 
-/* line 37, ../sass/style.scss */
+/* line 42, ../sass/style.scss */
 .id_account {
   width: 6.77966%;
   float: left;
@@ -571,9 +555,9 @@ header:after {
   margin-top: 10px;
 }
 
-/* line 42, ../sass/style.scss */
+/* line 47, ../sass/style.scss */
 .innercontainer {
-  max-width: 75em;
+  max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -584,7 +568,7 @@ header:after {
   clear: both;
 }
 
-/* line 46, ../sass/style.scss */
+/* line 51, ../sass/style.scss */
 .logo {
   width: 49.15254%;
   float: left;
@@ -593,7 +577,7 @@ header:after {
   margin-top: 20px;
 }
 
-/* line 52, ../sass/style.scss */
+/* line 57, ../sass/style.scss */
 .settings {
   width: 6.77966%;
   float: right;
@@ -601,7 +585,7 @@ header:after {
   margin-top: 30px;
 }
 
-/* line 57, ../sass/style.scss */
+/* line 62, ../sass/style.scss */
 .welcome {
   width: 23.72881%;
   float: left;
@@ -610,15 +594,20 @@ header:after {
   text-align: right;
 }
 
-/* line 65, ../sass/style.scss */
-.nav {
+/* line 71, ../sass/style.scss */
+.nav li {
+  vertical-align: middle !important;
   display: inline-block;
   padding-right: 80px;
-  padding-top: 10px;
   text-align: center;
 }
+/* line 77, ../sass/style.scss */
+.nav :last-child {
+  padding-right: 0;
+}
 
-/* line 72, ../sass/style.scss */
+/* line 82, ../sass/style.scss */
 .subnav {
-  height: 30px;
+  background-color: #FFF;
+  padding: 7px;
 }

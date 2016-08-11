@@ -40,12 +40,10 @@
 	>div{
 		box-sizing: border-box;
 		padding: 10px;
-		margin-top: 15px;
 		text-align: center;
 		vertical-align: middle;
 		font-size: 0.8em;
 		display: inline-block;
-
 	}
 }
 
@@ -55,19 +53,14 @@
 
 .selectParticuliers{
 	@include span (1 of 6);
-	
 	background-color: #0297cc;
-	
-		color: white;
+	color: white;
 }
 
 .selectEntreprise{
 	@include span (1 of 6);
-	
 	background-color: #939598;
-	
-		color: white;
-
+	color: white;
 }
 
 .search{
@@ -84,8 +77,6 @@
 // Gallery //
 
 .gallery_profile{
-	@include container(1140px);
-
 
 }
 
@@ -105,7 +96,6 @@
 	}
 
 	.infos_devis, .infos_facture {
-		@include container;
 		font-family: $MyrRegular;
 		font-size: 0.9em;
 		color: $primary;
@@ -119,15 +109,11 @@
 			text-align: right;
 			font-weight: bold;
 		}
-
-		
 	}
 
 	.fa{
 			padding: 5px 15px 0 0;
 			color: $primary;
 		}
-
-
 }
 
