@@ -23,18 +23,24 @@ html {
 
 // --------DASHBOARD nav-------//
 
-
 header{
 	@include container;
 	height: 80px;
 	border-bottom: solid 1px $primary;
-
-
 }
+
+.container{
+	@include container(1140px);
+	margin: auto;
+}
+
+.id_account{
+	@include span(1 of 12);
+	margin-top: 10px;
+}
+
 .innercontainer{
 	@include container(75em);
-
-
 
 }
 .logo{
@@ -43,41 +49,26 @@ header{
 	margin-top: 20px;
 	
 }
-.welcome{
-	@include span(3 of 12 );
-	// background-color: blue;
-	margin-top: 30px;
-	text-align: right;
-
-}
-.id_account{
-	@include span(1 of 12);
-
-		margin-top: 10px;
-}
 .settings{
 	@include span(1 of 12 last);
 	margin-top: 30px;
 }
 
-// Navigation
-.subnav{
-	height: 30px;
+.welcome{
+	@include span(3 of 12);
+	// background-color: blue;
+	margin-top: 30px;
+	text-align: right;
 }
 
+// Navigation
 .nav{
 	display: inline-block;
 	padding-right: 80px;
 	padding-top: 10px;
 	text-align: center;
-
-}
-a{
-	text-decoration: none;
-	list-style: none;
 }
 
-
-
-
-
+.subnav{
+	height: 30px;
+}

@@ -30,7 +30,7 @@ $MyrRegular : "Myriad pro",myriad,sans-serif;
 // colors :
 $primary: #6e1555 ; //mauve
 $secondary: #84c900; //vert
-$grey: #595959;
+$grey: #595959; // texte
 
 
 // --------TYPOGRAPHY-------//
@@ -40,6 +40,17 @@ html{
 body{
     font-size: 14px;
 }
+
+a{
+    text-decoration: none;
+    list-style: none;
+    color: $primary;
+}
+
+a:hover{
+    color: lighten($primary, 20%);
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: $WsSemiBold;
     color: $primary;
@@ -50,6 +61,11 @@ h1{
 h2{
     font-size: 1.5em;
 }
+
+p{
+    color:$grey;
+}
+
 .subnav{
     font-family: $WsSemiBold;
     font-size: 1em;

@@ -2,54 +2,41 @@
 // ---liste des clients--- //
 
 .header_title {
-	@include container(1140px);
 	padding-top:25px;
-
-	> div{
+	color: white !important;
+	> a{
 		height: 85px;
 		box-sizing: border-box;
 		vertical-align: middle;
 		border-radius: 15px 0 15px 0;
 		padding:10px 10px 10px 15px;
 		text-align: right;
-		color: white;
 	} 
 
 }
 .clients_nbr{
 	@include span(2 of 6);
-	
 	background-image: url(../img/BtnClients.jpg);
-	
 }
 
 .addClient{
 	@include span(2 of 6);
 	background: url(../img/BtnAdd.jpg);
-
-
-	
-
 }
 
 .devis_view{
 	@include span(1 of 6);
 	background-image: url(../img/BtnDevis.jpg);
-	
-
 }
+
 .factures_view{
 	@include span(1 of 6 last);
 	background-image: url(../img/BtnFactures.jpg);
-	
 }
-
 
 // Sous-menu search //
 
 .searchMenu{
-	@include container(1140px);
-
 	>div{
 		box-sizing: border-box;
 		padding: 10px;
@@ -61,6 +48,7 @@
 
 	}
 }
+
 .searchMenu >.search{
 	padding: 0;
 }
@@ -72,6 +60,7 @@
 	
 		color: white;
 }
+
 .selectEntreprise{
 	@include span (1 of 6);
 	
@@ -80,21 +69,20 @@
 		color: white;
 
 }
+
 .search{
 	@include span (2 of 6);
 	position: relative;
-
 		input{
 			width: 100%;
 			padding: 9px;
 			vertical-align: middle;
 			box-sizing: border-box;
-		}
-		
+		}	
 }
 
-
 // Gallery //
+
 .gallery_profile{
 	@include container(1140px);
 
