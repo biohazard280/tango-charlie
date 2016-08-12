@@ -3,16 +3,19 @@ body {
 }
 
 .matable {
-	height: 2000px;
+	padding: 20px 0;
+	background-color: white;
 }
 
 table {
 	background-color: white;
 }
+
 tbody{
 	min-height: 600px;
 	margin: 15px 0;
 }
+
 th {
 	background-color: #84c900;
 	color: white;
@@ -20,7 +23,6 @@ th {
 }
 
 td:first-child {
-
 }
 
 td {
