@@ -1,0 +1,25 @@
+// --------DASHBOARD_entreprise-------//
+// ---ajout client--- //
+.addClientForm{
+	h2{
+		color:$secondary;
+		padding-bottom: 15px;
+	}
+	form{
+		@include container;
+	}
+	.col-left, .col-right{
+		@include span(3 of 6);
+	}
+
+	form>.col-left>div, form>.col-right>div{
+		@include container;
+		background-color: #FFF;
+		padding: 15px;
+		margin-bottom: 30px;
+		box-sizing: border-box;
+	}
+	.col-right{
+		@include last;
+	}
+}

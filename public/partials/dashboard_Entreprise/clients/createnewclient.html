@@ -1,6 +1,136 @@
-<section>
-	<h2>Create a new Client</h2>
-	<p>bliblablu</p>
-	<div class="container">Blabla</div>
-	mdr
+<section class="header_title">
+	<a class="addClient">
+
+		<div class="icons">
+			<i class="fa fa-plus-circle fa-3x" aria-hidden="true"></i>
+
+		</div>
+
+		<p class="subInfos">Ajouter un client</p>
+	</a>
+	<a href="#/dashboard_Entreprise/clients/viewclient" class="clients_nbr">
+		<div class="icons">
+			<i class="fa fa-users fa-3x" aria-hidden="true"></i>
+		</div>
+
+		<p class="infos">{{clients.length}} Clients</p>
+
+	</a>
+	<a href="#/dashboard_Entreprise/devis/viewdevis" class="devis_view">
+		<div class="icons">
+			<i class="fa fa-pencil-square-o fa-3x" aria-hidden="true"></i>
+		</div>
+
+		<p class="subInfos">Devis</p>
+
+	</a>
+	<a href="#/dashboard_Entreprise/factures/viewfactures" class="factures_view">
+		<div class="icons">
+			<i class="fa fa-file-text-o fa-3x" aria-hidden="true"></i>
+		</div>
+		<p class="subInfos">Factures</p>
+	</a>
+</section>
+
+<section class="searchMenu">
+	<div class="selectParticuliers">
+
+		<p class="subInfos">Particuliers ({{nbrPrivateprs}})</p>
+
+	</div>
+	<div class="selectEntreprise">
+
+		<p class="subInfos">Entreprises ({{nbrCompanies}})</p>
+	</div>
+
+</section>
+
+<section class="addClientForm">
+	<form name="addClientForm">
+		<div class="col-left">
+			<div>
+				<h2><label for="particulier">Particulier</label></h2>
+				<div>
+					<label for="reference">Nom de référence</label><br>
+					<input type="text" name="reference" id="reference" ng-model="">
+				</div>
+				<div>
+					<label for="avatar">Avatar</label><br>
+					<button>Parcourir</button>
+				</div>
+			</div>
+
+			<div>
+				<h2><label for="contact">Personne de contact</label></h2>
+				<p>form</p>
+			</div>
+
+			<div>
+				<h2><label for="memo">Mémo</label></h2>
+				<p>form</p>
+			</div>
+		</div>
+
+		<div class="col-right">
+			<div>
+				<h2><label for="facturation">Coordonnées de facturation</label></h2>
+				<div>
+					<label>Civilité</label>
+					<select ng-model="civilite">
+						<option value="basic">Monsieur</option>
+						<option value="pro">Madame</option>
+					</select>
+				</div>
+
+				<div>
+					<label for="nom">Nom</label><br>
+					<input type="text" name="nom" id="nom" ng-model="">
+
+					<label for="prenom">Prénom</label><br>
+					<input type="text" name="prenom" id="prenom" ng-model="">
+				</div>
+
+				<div>
+					<label for="rue">Rue</label><br>
+					<input type="text" name="rue" id="rue" ng-model="">
+				</div>
+
+				<label for="numero">Numéro</label><br>
+				<input type="text" name="numero" id="numero" ng-model="">
+
+				<label for="boite">Boite</label><br>
+				<input type="text" name="boite" id="boite" ng-model="">
+
+				<label for="cp">Code Postal</label><br>
+				<input type="text" name="cp" id="cp" ng-model="">
+
+				<label for="localite">Localité</label><br>
+				<input type="text" name="localite" id="localite" ng-model="">
+
+				<label>Civilité</label>
+				<select ng-model="civilite">
+					<option value="basic">Monsieur</option>
+					<option value="pro">Madame</option>
+				</select>
+
+				<label for="email">Email</label><br>
+				<input type="text" name="email" id="email" ng-model="">
+
+				<label for="telephone">Téléphone Principal</label><br>
+				<input type="text" name="telephone" id="telephone" ng-model="">
+
+				<label for="telephoneSecond">Téléphone secondaire</label><br>
+				<input type="text" name="telephoneSecond" id="telephoneSecond" ng-model="">
+
+				<label for="fax">Fax</label><br>
+				<input type="text" name="fax" id="fax" ng-model="">
+			</div>
+
+			<div>
+				<h2><label for="livraison">Coordonnées de livraison</label></h2>
+				<p>form</p>
+			</div>
+		</div>
+
+	</form>
 </section>

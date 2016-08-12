@@ -262,6 +262,51 @@ td p {
   font-size: 0.5em;
 }
 
+/* line 4, ../sass/_addclient.scss */
+.addClientForm h2 {
+  color: #84c900;
+  padding-bottom: 15px;
+}
+/* line 8, ../sass/_addclient.scss */
+.addClientForm form {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+.addClientForm form:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 11, ../sass/_addclient.scss */
+.addClientForm .col-left, .addClientForm .col-right {
+  width: 48.27586%;
+  float: left;
+  margin-right: 3.44828%;
+}
+/* line 15, ../sass/_addclient.scss */
+.addClientForm form > .col-left > div, .addClientForm form > .col-right > div {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFF;
+  padding: 15px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+}
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+.addClientForm form > .col-left > div:after, .addClientForm form > .col-right > div:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 22, ../sass/_addclient.scss */
+.addClientForm .col-right {
+  float: right;
+  margin-right: 0;
+}
+
 /* line 4, ../sass/_viewclient.scss */
 .header_title {
   padding-top: 25px;
@@ -498,26 +543,26 @@ td p {
   box-sizing: border-box;
 }
 
-/* line 13, ../sass/style.scss */
+/* line 14, ../sass/style.scss */
 html {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 18, ../sass/style.scss */
+/* line 19, ../sass/style.scss */
 *, *:before, *:after {
   ┬á┬á-moz-box-sizing: border-box;
   ┬á┬á-webkit-box-sizing: border-box;
   ┬á┬ábox-sizing: border-box;
 }
 
-/* line 24, ../sass/style.scss */
+/* line 25, ../sass/style.scss */
 body {
   background-color: #eee;
 }
 
-/* line 30, ../sass/style.scss */
+/* line 31, ../sass/style.scss */
 header {
   max-width: 100%;
   margin-left: auto;
@@ -533,7 +578,7 @@ header:after {
   clear: both;
 }
 
-/* line 37, ../sass/style.scss */
+/* line 38, ../sass/style.scss */
 .container {
   max-width: 1140px;
   margin-left: auto;
@@ -547,7 +592,7 @@ header:after {
   clear: both;
 }
 
-/* line 42, ../sass/style.scss */
+/* line 43, ../sass/style.scss */
 .id_account {
   width: 6.77966%;
   float: left;
@@ -555,7 +600,7 @@ header:after {
   margin-top: 10px;
 }
 
-/* line 47, ../sass/style.scss */
+/* line 48, ../sass/style.scss */
 .innercontainer {
   max-width: 1140px;
   margin-left: auto;
@@ -568,7 +613,7 @@ header:after {
   clear: both;
 }
 
-/* line 51, ../sass/style.scss */
+/* line 52, ../sass/style.scss */
 .logo {
   width: 49.15254%;
   float: left;
@@ -577,7 +622,7 @@ header:after {
   margin-top: 20px;
 }
 
-/* line 57, ../sass/style.scss */
+/* line 58, ../sass/style.scss */
 .settings {
   width: 6.77966%;
   float: right;
@@ -585,7 +630,7 @@ header:after {
   margin-top: 30px;
 }
 
-/* line 62, ../sass/style.scss */
+/* line 63, ../sass/style.scss */
 .welcome {
   width: 23.72881%;
   float: left;
@@ -594,19 +639,19 @@ header:after {
   text-align: right;
 }
 
-/* line 71, ../sass/style.scss */
+/* line 72, ../sass/style.scss */
 .nav li {
   vertical-align: middle !important;
   display: inline-block;
   padding-right: 80px;
   text-align: center;
 }
-/* line 77, ../sass/style.scss */
+/* line 78, ../sass/style.scss */
 .nav :last-child {
   padding-right: 0;
 }
 
-/* line 82, ../sass/style.scss */
+/* line 83, ../sass/style.scss */
 .subnav {
   background-color: #FFF;
   padding: 7px;
