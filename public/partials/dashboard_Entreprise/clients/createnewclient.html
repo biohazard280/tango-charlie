@@ -52,25 +52,68 @@
 
 		<div>
 			<div>
-				<h2><label for="particulier">Particulier</label></h2>
+				<h2>Particulier</h2>
 				<div>
-					<label for="reference">Nom de référence</label>
-					<input type="text" name="reference" id="reference">
-				</div>
-				<div>
-					<label for="avatar">Avatar</label>
-					<button>Parcourir</button>
+					<div>
+						<label for="reference">Nom de référence</label>
+						<input type="text" name="reference" id="reference">
+					</div>
+					<div>
+						<label for="avatar">Avatar</label>
+						<button>Parcourir</button>
+					</div>
 				</div>
 			</div>
 
 			<div>
-				<h2><label for="contact">Personne de contact</label></h2>
-				form
+				<h2>Personne de contact</h2>
+				<div>
+					<span>
+						<label>Civilité</label>
+						<select ng-model="civility">
+							<option value="monsieur">Monsieur</option>
+							<option value="madame">Madame</option>
+						</select>
+					</span>
+				</div>
+				<div>
+					<div>
+						<label for="lastname">Nom</label>
+						<input type="text" name="lastname" id="lastname">
+					</div>
+
+					<div>
+						<label for="firstname">Prénom</label>
+						<input type="text" name="firstname" id="firstname">
+					</div>
+				</div>
+
+
+				<div>
+					<div>
+						<label for="phoneMain">Téléphone Principal</label>
+						<input type="text" name="phoneMain" id="phoneMain">
+					</div>
+					<div>
+						<label for="phoneSec">Téléphone secondaire</label>
+						<input type="text" name="phoneSec" id="phoneSec">
+					</div>
+				</div>
+
+				<div>
+					<div>
+						<label for="mail">Email</label>
+						<input type="text" name="mail" id="mail">
+					</div>
+					<div></div>
+				</div>
 			</div>
 
 			<div>
-				<h2><label for="memo">Mémo</label></h2>
-				form
+				<h2>Mémo</h2>
+				<div>
+					 <textarea rows="5"></textarea> 
+				</div>
 			</div>
 		</div>
 
@@ -80,14 +123,13 @@
 			<div>
 				<h2>Coordonnées de facturation</h2>
 				<div>
-					<div>
+					<span>
 						<label>Civilité</label>
 						<select ng-model="civility">
 							<option value="monsieur">Monsieur</option>
 							<option value="madame">Madame</option>
 						</select>
-					</div>
-					<div></div>
+					</span>
 				</div>
 				<div>
 					<div>
@@ -102,8 +144,10 @@
 				</div>
 
 				<div>
-					<label for="street">Rue</label>
-					<input type="text" name="street" id="street">
+					<span>
+						<label for="street">Rue</label>
+						<input type="text" name="street" id="street">
+					</span>
 				</div>
 
 				<div>
@@ -166,17 +210,13 @@
 
 			<div>
 				<h2>Coordonnées de livraison</h2>
-				<div>
-					<div>
-						<p>Mêmes données que facturation</p>
-					</div>
-					<div>
+					<span> 
+						<label>Même coordonnées que la facturation</label>
 						<select ng-model="samecoord">
 							<option value="yes">Oui</option>
 							<option value="no">Non</option>
-						</select>	
-					</div>
-				</div>
+						</select>
+					</span>
 				<div>
 					<div>
 						<label>Civilité</label>

@@ -8,10 +8,15 @@
 
 	label{
 		color:$grey;
+		margin-bottom: 8px;
 	}
 
 	form{
 		@include container;
+		span{
+			clear: both;
+			display: block;
+		}
 		>div{
 			@include span(3 of 6);
 
@@ -45,9 +50,9 @@
 		height: 30px;
 	}
 
-	input{
+	input, textarea{
 		width: 100%;
-		background-color: #eee;
+		background-color: #f3f3f3;
 		border:none;
 		padding: 0 10px;
 		box-sizing: border-box;

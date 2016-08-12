@@ -270,8 +270,9 @@ td p {
 /* line 9, ../sass/_addclient.scss */
 .addClientForm label {
   color: #595959;
+  margin-bottom: 8px;
 }
-/* line 13, ../sass/_addclient.scss */
+/* line 14, ../sass/_addclient.scss */
 .addClientForm form {
   max-width: 100%;
   margin-left: auto;
@@ -283,18 +284,23 @@ td p {
   display: block;
   clear: both;
 }
-/* line 15, ../sass/_addclient.scss */
+/* line 16, ../sass/_addclient.scss */
+.addClientForm form span {
+  clear: both;
+  display: block;
+}
+/* line 20, ../sass/_addclient.scss */
 .addClientForm form > div {
   width: 48.27586%;
   float: left;
   margin-right: 3.44828%;
 }
-/* line 18, ../sass/_addclient.scss */
+/* line 23, ../sass/_addclient.scss */
 .addClientForm form > div:last-child {
   float: right;
   margin-right: 0;
 }
-/* line 22, ../sass/_addclient.scss */
+/* line 27, ../sass/_addclient.scss */
 .addClientForm form > div > div {
   max-width: 100%;
   margin-left: auto;
@@ -310,37 +316,37 @@ td p {
   display: block;
   clear: both;
 }
-/* line 28, ../sass/_addclient.scss */
+/* line 33, ../sass/_addclient.scss */
 .addClientForm form > div > div div > div {
   width: 48.27586%;
   float: left;
   margin-right: 3.44828%;
 }
-/* line 30, ../sass/_addclient.scss */
+/* line 35, ../sass/_addclient.scss */
 .addClientForm form > div > div div > div:last-child {
   float: right;
   margin-right: 0;
 }
-/* line 38, ../sass/_addclient.scss */
+/* line 43, ../sass/_addclient.scss */
 .addClientForm .col-right {
   float: right;
   margin-right: 0;
 }
-/* line 42, ../sass/_addclient.scss */
+/* line 47, ../sass/_addclient.scss */
 .addClientForm input, .addClientForm select, .addClientForm button {
   display: block;
   margin-bottom: 10px;
   height: 30px;
 }
-/* line 48, ../sass/_addclient.scss */
-.addClientForm input {
+/* line 53, ../sass/_addclient.scss */
+.addClientForm input, .addClientForm textarea {
   width: 100%;
-  background-color: #eee;
+  background-color: #f3f3f3;
   border: none;
   padding: 0 10px;
   box-sizing: border-box;
 }
-/* line 56, ../sass/_addclient.scss */
+/* line 61, ../sass/_addclient.scss */
 .addClientForm select {
   width: auto;
 }
