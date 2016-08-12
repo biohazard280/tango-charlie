@@ -267,7 +267,11 @@ td p {
   color: #84c900;
   padding-bottom: 15px;
 }
-/* line 8, ../sass/_addclient.scss */
+/* line 9, ../sass/_addclient.scss */
+.addClientForm label {
+  color: #595959;
+}
+/* line 13, ../sass/_addclient.scss */
 .addClientForm form {
   max-width: 100%;
   margin-left: auto;
@@ -279,14 +283,19 @@ td p {
   display: block;
   clear: both;
 }
-/* line 11, ../sass/_addclient.scss */
-.addClientForm .col-left, .addClientForm .col-right {
+/* line 15, ../sass/_addclient.scss */
+.addClientForm form > div {
   width: 48.27586%;
   float: left;
   margin-right: 3.44828%;
 }
-/* line 15, ../sass/_addclient.scss */
-.addClientForm form > .col-left > div, .addClientForm form > .col-right > div {
+/* line 18, ../sass/_addclient.scss */
+.addClientForm form > div:last-child {
+  float: right;
+  margin-right: 0;
+}
+/* line 22, ../sass/_addclient.scss */
+.addClientForm form > div > div {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -296,15 +305,44 @@ td p {
   box-sizing: border-box;
 }
 /* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
-.addClientForm form > .col-left > div:after, .addClientForm form > .col-right > div:after {
+.addClientForm form > div > div:after {
   content: " ";
   display: block;
   clear: both;
 }
-/* line 22, ../sass/_addclient.scss */
+/* line 28, ../sass/_addclient.scss */
+.addClientForm form > div > div div > div {
+  width: 48.27586%;
+  float: left;
+  margin-right: 3.44828%;
+}
+/* line 30, ../sass/_addclient.scss */
+.addClientForm form > div > div div > div:last-child {
+  float: right;
+  margin-right: 0;
+}
+/* line 38, ../sass/_addclient.scss */
 .addClientForm .col-right {
   float: right;
   margin-right: 0;
+}
+/* line 42, ../sass/_addclient.scss */
+.addClientForm input, .addClientForm select, .addClientForm button {
+  display: block;
+  margin-bottom: 10px;
+  height: 30px;
+}
+/* line 48, ../sass/_addclient.scss */
+.addClientForm input {
+  width: 100%;
+  background-color: #eee;
+  border: none;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+/* line 56, ../sass/_addclient.scss */
+.addClientForm select {
+  width: auto;
 }
 
 /* line 4, ../sass/_viewclient.scss */
@@ -543,26 +581,141 @@ td p {
   box-sizing: border-box;
 }
 
-/* line 14, ../sass/style.scss */
+/* line 1, ../sass/_viewdevis.scss */
+body {
+  font-family: "Myriad pro", myriad, sans-serif;
+}
+
+/* line 5, ../sass/_viewdevis.scss */
+.matable {
+  height: 2000px;
+}
+
+/* line 9, ../sass/_viewdevis.scss */
+table {
+  background-color: white;
+}
+
+/* line 12, ../sass/_viewdevis.scss */
+tbody {
+  min-height: 600px;
+  margin: 15px 0;
+}
+
+/* line 16, ../sass/_viewdevis.scss */
+th {
+  background-color: #84c900;
+  color: white;
+  padding: 5px;
+}
+
+/* line 26, ../sass/_viewdevis.scss */
+td {
+  text-align: center;
+  padding-top: 20px;
+  padding-left: 15px;
+}
+
+/* line 32, ../sass/_viewdevis.scss */
+.viewcolumn {
+  color: blue;
+}
+
+/* line 36, ../sass/_viewdevis.scss */
+.deletecolumn {
+  color: purple;
+}
+
+/* line 40, ../sass/_viewdevis.scss */
+.paid {
+  color: #84c900;
+}
+
+/* line 44, ../sass/_viewdevis.scss */
+.wait {
+  color: orange;
+}
+
+/* line 48, ../sass/_viewdevis.scss */
+.delete {
+  color: grey;
+}
+
+/* line 1, ../sass/_viewfactures.scss */
+body {
+  font-family: "Myriad pro", myriad, sans-serif;
+}
+
+/* line 9, ../sass/_viewfactures.scss */
+table {
+  background-color: white;
+}
+
+/* line 13, ../sass/_viewfactures.scss */
+tbody {
+  min-height: 600px;
+  margin: 15px 0;
+}
+
+/* line 18, ../sass/_viewfactures.scss */
+th {
+  background-color: #84c900;
+  color: white;
+  padding: 5px;
+}
+
+/* line 28, ../sass/_viewfactures.scss */
+td {
+  text-align: center;
+  padding-top: 20px;
+  padding-left: 15px;
+}
+
+/* line 34, ../sass/_viewfactures.scss */
+.viewcolumn {
+  color: blue;
+}
+
+/* line 38, ../sass/_viewfactures.scss */
+.deletecolumn {
+  color: purple;
+}
+
+/* line 42, ../sass/_viewfactures.scss */
+.paid {
+  color: #84c900;
+}
+
+/* line 46, ../sass/_viewfactures.scss */
+.wait {
+  color: orange;
+}
+
+/* line 50, ../sass/_viewfactures.scss */
+.delete {
+  color: grey;
+}
+
+/* line 16, ../sass/style.scss */
 html {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 19, ../sass/style.scss */
+/* line 21, ../sass/style.scss */
 *, *:before, *:after {
   ┬á┬á-moz-box-sizing: border-box;
   ┬á┬á-webkit-box-sizing: border-box;
   ┬á┬ábox-sizing: border-box;
 }
 
-/* line 25, ../sass/style.scss */
+/* line 27, ../sass/style.scss */
 body {
   background-color: #eee;
 }
 
-/* line 31, ../sass/style.scss */
+/* line 33, ../sass/style.scss */
 header {
   max-width: 100%;
   margin-left: auto;
@@ -578,7 +731,7 @@ header:after {
   clear: both;
 }
 
-/* line 38, ../sass/style.scss */
+/* line 40, ../sass/style.scss */
 .container {
   max-width: 1140px;
   margin-left: auto;
@@ -592,7 +745,7 @@ header:after {
   clear: both;
 }
 
-/* line 43, ../sass/style.scss */
+/* line 45, ../sass/style.scss */
 .id_account {
   width: 6.77966%;
   float: left;
@@ -600,7 +753,7 @@ header:after {
   margin-top: 10px;
 }
 
-/* line 48, ../sass/style.scss */
+/* line 50, ../sass/style.scss */
 .innercontainer {
   max-width: 1140px;
   margin-left: auto;
@@ -613,7 +766,7 @@ header:after {
   clear: both;
 }
 
-/* line 52, ../sass/style.scss */
+/* line 54, ../sass/style.scss */
 .logo {
   width: 49.15254%;
   float: left;
@@ -622,7 +775,7 @@ header:after {
   margin-top: 20px;
 }
 
-/* line 58, ../sass/style.scss */
+/* line 60, ../sass/style.scss */
 .settings {
   width: 6.77966%;
   float: right;
@@ -630,7 +783,7 @@ header:after {
   margin-top: 30px;
 }
 
-/* line 63, ../sass/style.scss */
+/* line 65, ../sass/style.scss */
 .welcome {
   width: 23.72881%;
   float: left;
@@ -639,19 +792,19 @@ header:after {
   text-align: right;
 }
 
-/* line 72, ../sass/style.scss */
+/* line 74, ../sass/style.scss */
 .nav li {
   vertical-align: middle !important;
   display: inline-block;
   padding-right: 80px;
   text-align: center;
 }
-/* line 78, ../sass/style.scss */
+/* line 80, ../sass/style.scss */
 .nav :last-child {
   padding-right: 0;
 }
 
-/* line 83, ../sass/style.scss */
+/* line 85, ../sass/style.scss */
 .subnav {
   background-color: #FFF;
   padding: 7px;
