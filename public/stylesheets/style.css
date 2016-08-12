@@ -558,26 +558,81 @@ td {
   color: grey;
 }
 
-/* line 14, ../sass/style.scss */
+/* line 1, ../sass/_viewfactures.scss */
+body {
+  font-family: "Myriad pro", myriad, sans-serif;
+}
+
+/* line 9, ../sass/_viewfactures.scss */
+table {
+  background-color: white;
+}
+
+/* line 13, ../sass/_viewfactures.scss */
+tbody {
+  min-height: 600px;
+  margin: 15px 0;
+}
+
+/* line 18, ../sass/_viewfactures.scss */
+th {
+  background-color: #84c900;
+  color: white;
+  padding: 5px;
+}
+
+/* line 28, ../sass/_viewfactures.scss */
+td {
+  text-align: center;
+  padding-top: 20px;
+  padding-left: 15px;
+}
+
+/* line 34, ../sass/_viewfactures.scss */
+.viewcolumn {
+  color: blue;
+}
+
+/* line 38, ../sass/_viewfactures.scss */
+.deletecolumn {
+  color: purple;
+}
+
+/* line 42, ../sass/_viewfactures.scss */
+.paid {
+  color: #84c900;
+}
+
+/* line 46, ../sass/_viewfactures.scss */
+.wait {
+  color: orange;
+}
+
+/* line 50, ../sass/_viewfactures.scss */
+.delete {
+  color: grey;
+}
+
+/* line 15, ../sass/style.scss */
 html {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 19, ../sass/style.scss */
+/* line 20, ../sass/style.scss */
 *, *:before, *:after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-/* line 25, ../sass/style.scss */
+/* line 26, ../sass/style.scss */
 body {
   background-color: #eee;
 }
 
-/* line 31, ../sass/style.scss */
+/* line 32, ../sass/style.scss */
 header {
   max-width: 100%;
   margin-left: auto;
@@ -593,7 +648,7 @@ header:after {
   clear: both;
 }
 
-/* line 38, ../sass/style.scss */
+/* line 39, ../sass/style.scss */
 .container {
   max-width: 1140px;
   margin-left: auto;
@@ -607,7 +662,7 @@ header:after {
   clear: both;
 }
 
-/* line 43, ../sass/style.scss */
+/* line 44, ../sass/style.scss */
 .id_account {
   width: 6.77966%;
   float: left;
@@ -615,7 +670,7 @@ header:after {
   margin-top: 10px;
 }
 
-/* line 48, ../sass/style.scss */
+/* line 49, ../sass/style.scss */
 .innercontainer {
   max-width: 1140px;
   margin-left: auto;
@@ -628,7 +683,7 @@ header:after {
   clear: both;
 }
 
-/* line 52, ../sass/style.scss */
+/* line 53, ../sass/style.scss */
 .logo {
   width: 49.15254%;
   float: left;
@@ -637,7 +692,7 @@ header:after {
   margin-top: 20px;
 }
 
-/* line 58, ../sass/style.scss */
+/* line 59, ../sass/style.scss */
 .settings {
   width: 6.77966%;
   float: right;
@@ -645,7 +700,7 @@ header:after {
   margin-top: 30px;
 }
 
-/* line 63, ../sass/style.scss */
+/* line 64, ../sass/style.scss */
 .welcome {
   width: 23.72881%;
   float: left;
@@ -654,19 +709,19 @@ header:after {
   text-align: right;
 }
 
-/* line 72, ../sass/style.scss */
+/* line 73, ../sass/style.scss */
 .nav li {
   vertical-align: middle !important;
   display: inline-block;
   padding-right: 80px;
   text-align: center;
 }
-/* line 78, ../sass/style.scss */
+/* line 79, ../sass/style.scss */
 .nav :last-child {
   padding-right: 0;
 }
 
-/* line 83, ../sass/style.scss */
+/* line 84, ../sass/style.scss */
 .subnav {
   background-color: #FFF;
   padding: 7px;
