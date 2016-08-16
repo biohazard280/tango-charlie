@@ -1,9 +1,45 @@
 "use strict";
 var crmControllers = angular.module('crmControllers', []);
 
-/*crmControllers.controller('mainCtrl', ['$scope', function($scope){
+crmControllers.controller('hoverHomeCtrl', ['$scope', function($scope){
 
-}]);*/
+	$scope.svgHover=function(circleTarget, reset){
+		console.log('in');
+
+		if (reset) {
+			if (circleTarget == "svgHover1") {
+				$scope.Hover1=false;
+			}
+			if (circleTarget == "svgHover2") {
+				$scope.Hover2=false;
+			}
+			if (circleTarget == "svgHover3") {
+				$scope.Hover3=false;
+			}
+			if (circleTarget == "svgHover4") {
+				$scope.Hover4=false;
+			}
+
+		}else{
+			if (circleTarget == "svgHover1") {
+				$scope.Hover1=true;
+			}
+			if (circleTarget == "svgHover2") {
+				$scope.Hover2=true;
+			}
+			if (circleTarget == "svgHover3") {
+				$scope.Hover3=true;
+			}
+			if (circleTarget == "svgHover4") {
+				$scope.Hover4=true;
+			}
+		}
+
+		
+
+	}
+
+}]);
 
 
 
@@ -37,29 +73,29 @@ crmControllers.controller('listClients', ['$scope', 'Rest', function($scope, Res
 			$scope.clientsToShow.push(tabCompanies);
 			console.log($scope.clientsToShow.length);*/
 
-		$scope.showParticuliers = function(clients){
-			console.log(clients);
-			for(var i = 0; i<clients.length; i++){
-				if(clients[i].isCompany == false){
-					clientsToShow.push(clients[i]);
+			$scope.showParticuliers = function(clients){
+				console.log(clients);
+				for(var i = 0; i<clients.length; i++){
+					if(clients[i].isCompany == false){
+						clientsToShow.push(clients[i]);
+					}
 				}
-			}
+				
+				$scope.clientsShow = clientsToShow;
+				clientsToShow = [];
+			};
+
+			$scope.showSociety = function(clients){
+				for(var i = 0; i<clients.length; i++){
+					if(clients[i].isCompany == true){
+						clientsToShow.push(clients[i]);
+					}
+				}
+				$scope.clientsShow = clientsToShow;
+				clientsToShow = [];
+			};
+
 			
-			$scope.clientsShow = clientsToShow;
-			clientsToShow = [];
-		};
-
-		$scope.showSociety = function(clients){
-			for(var i = 0; i<clients.length; i++){
-			if(clients[i].isCompany == true){
-					clientsToShow.push(clients[i]);
-				}
-			}
-			$scope.clientsShow = clientsToShow;
-			clientsToShow = [];
-		};
-
-		
 		});
 
 	}

@@ -3,19 +3,12 @@
 
 .landing {
 	@include container(100%);
-	
-	
-	
-
-	
+	margin: 0;
+	padding: 0;
 }
 .wrapper{
 	@include container(100%);
 	background-color:#6e1b56;
-
-	
-
-
 }
 
 .headerImg{
@@ -74,14 +67,15 @@
 	background: url(../img/bg_decoupe.png)no-repeat top;
 	background-size: 100% 100%;
 	margin-top: -10px;
-	height: 160px;
+	height: 100px;
 }
 // ------------//
 .constelation{
 	@include container;
 	// background-color: red;
 	text-align: center;
-	position: relative;
+	margin-top: -250px;
+	
 }
 // ------------//
 footer p{
@@ -94,23 +88,23 @@ footer p{
 
 //------Comments hover svg------ //
 .svgHover1 {
-        
-        width: 200px;
-        margin-top: -250px;
-        margin-left: 200px;
-        height: 50px;
-      	color: black;
-      	position: absolute;
-    }
 
- .svgHover2 {
- 		width: 200px;
-        margin-top: -250px;
-        margin-left: 250px;
-        height: 50px;
-      	color: black;
-      	position: absolute;
- }
+	width: 200px;
+	margin-top: -250px;
+	margin-left: 200px;
+	height: 50px;
+	color: black;
+	position: absolute;
+}
+
+.svgHover2 {
+	width: 200px;
+	margin-top: -250px;
+	margin-left: 250px;
+	height: 50px;
+	color: black;
+	position: absolute;
+}
 .st1:hover,.st2:hover{
 	stroke:green;
 }

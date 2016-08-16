@@ -9,6 +9,11 @@ var app = angular.module('carinaApp',[
 
 app.config(['$routeProvider', function($routeProvider){
 	$routeProvider.
+	when('/', {
+		templateUrl : 'partials/home.html',
+		controller : 'hoverHomeCtrl'
+	}).
+
 	when('/login', {
 		templateUrl : 'partials/login.html',
 		controller : 'mainCtrl'
