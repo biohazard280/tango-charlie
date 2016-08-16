@@ -39,10 +39,7 @@ header{
 	background-color: #FFF
 }
 
-.container{
-	@include container(100%);
-	margin: auto;
-}
+
 
 .id_account{
 	@include span(1 of 12);
