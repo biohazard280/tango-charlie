@@ -320,18 +320,37 @@ td p {
   float: right;
   margin-right: 0;
 }
-/* line 44, ../sass/_addclient.scss */
+/* line 45, ../sass/_addclient.scss */
+.addClientForm .tva div:first-child {
+  width: 15.25424%;
+  float: left;
+  margin-right: 1.69492%;
+}
+/* line 49, ../sass/_addclient.scss */
+.addClientForm .tva div:nth-child(2) {
+  width: 57.62712%;
+  float: left;
+  margin-right: 1.69492%;
+  margin-top: 14px;
+}
+/* line 53, ../sass/_addclient.scss */
+.addClientForm .tva div:last-child {
+  width: 23.72881%;
+  float: right;
+  margin-right: 0;
+}
+/* line 58, ../sass/_addclient.scss */
 .addClientForm .col-right {
   float: right;
   margin-right: 0;
 }
-/* line 48, ../sass/_addclient.scss */
+/* line 62, ../sass/_addclient.scss */
 .addClientForm input, .addClientForm select, .addClientForm button {
   display: block;
   margin-bottom: 10px;
   height: 30px;
 }
-/* line 54, ../sass/_addclient.scss */
+/* line 68, ../sass/_addclient.scss */
 .addClientForm input, .addClientForm textarea {
   width: 100%;
   background-color: #f3f3f3;
@@ -339,7 +358,7 @@ td p {
   padding: 0 10px;
   box-sizing: border-box;
 }
-/* line 62, ../sass/_addclient.scss */
+/* line 76, ../sass/_addclient.scss */
 .addClientForm select {
   width: auto;
 }
