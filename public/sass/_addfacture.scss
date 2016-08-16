@@ -1,6 +1,6 @@
 // --------DASHBOARD_entreprise-------//
-// ---ajout client--- //
-.addClientForm{
+// ---ajout facture--- //
+.addFactureForm{
 	h2{
 		color:$secondary;
 		padding-bottom: 15px;
@@ -17,7 +17,7 @@
 			clear: both;
 			display: block;
 		}
-		
+
 		>div{
 			@include span(3 of 6);
 

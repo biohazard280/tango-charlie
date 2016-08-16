@@ -11,26 +11,33 @@
 		border-radius: 15px 0 15px 0;
 		padding:10px 10px 10px 15px;
 		text-align: right;
-	} 
+		@include span(2 of 6);
+		&:nth-child(3){
+			@include span(1 of 6);
+		}
+		&:nth-child(4){
+			@include span(1 of 6 last);
+		}
+
+	}
+	p{
+		color: white !important;
+	}
 
 }
 .clients_nbr{
-	@include span(2 of 6);
 	background-image: url(../img/BtnClients.jpg);
 }
 
 .addClient{
-	@include span(2 of 6);
 	background: url(../img/BtnAdd.jpg);
 }
 
 .devis_view{
-	@include span(1 of 6);
 	background-image: url(../img/BtnDevis.jpg);
 }
 
 .factures_view{
-	@include span(1 of 6 last);
 	background-image: url(../img/BtnFactures.jpg);
 }
 
