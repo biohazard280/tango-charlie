@@ -209,41 +209,30 @@ section {
 }
 
 /* line 52, ../sass/_dash_entreprise.scss */
-.listClients {
+.list {
   width: 32.20339%;
   float: left;
   margin-right: 1.69492%;
   margin-top: 30px;
 }
-
-/* line 56, ../sass/_dash_entreprise.scss */
-.listDevis {
-  width: 32.20339%;
-  float: left;
-  margin-right: 1.69492%;
-  margin-top: 30px;
+/* line 55, ../sass/_dash_entreprise.scss */
+.list:last-child {
+  float: right;
+  margin-right: 0;
 }
 
 /* line 60, ../sass/_dash_entreprise.scss */
-.listFactures {
-  width: 32.20339%;
-  float: right;
-  margin-right: 0;
-  margin-top: 30px;
-}
-
-/* line 64, ../sass/_dash_entreprise.scss */
 .material-icons {
   float: right;
   padding-right: 15px;
 }
 
-/* line 72, ../sass/_dash_entreprise.scss */
+/* line 68, ../sass/_dash_entreprise.scss */
 table {
   width: 100%;
 }
 
-/* line 75, ../sass/_dash_entreprise.scss */
+/* line 71, ../sass/_dash_entreprise.scss */
 .tdGreen {
   height: 18px;
   vertical-align: middle;
@@ -252,12 +241,12 @@ table {
   padding: 3px 5px 3px 10px;
 }
 
-/* line 83, ../sass/_dash_entreprise.scss */
+/* line 79, ../sass/_dash_entreprise.scss */
 td {
   padding-top: 5px;
   vertical-align: middle;
 }
-/* line 86, ../sass/_dash_entreprise.scss */
+/* line 82, ../sass/_dash_entreprise.scss */
 td p {
   font-size: 0.5em;
 }
@@ -289,18 +278,18 @@ td p {
   clear: both;
   display: block;
 }
-/* line 20, ../sass/_addclient.scss */
+/* line 21, ../sass/_addclient.scss */
 .addClientForm form > div {
   width: 48.27586%;
   float: left;
   margin-right: 3.44828%;
 }
-/* line 23, ../sass/_addclient.scss */
-.addClientForm form > div:last-child {
+/* line 24, ../sass/_addclient.scss */
+.addClientForm form > div:nth-child(2) {
   float: right;
   margin-right: 0;
 }
-/* line 27, ../sass/_addclient.scss */
+/* line 28, ../sass/_addclient.scss */
 .addClientForm form > div > div {
   max-width: 100%;
   margin-left: auto;
@@ -316,29 +305,29 @@ td p {
   display: block;
   clear: both;
 }
-/* line 33, ../sass/_addclient.scss */
+/* line 34, ../sass/_addclient.scss */
 .addClientForm form > div > div div > div {
   width: 48.27586%;
   float: left;
   margin-right: 3.44828%;
 }
-/* line 35, ../sass/_addclient.scss */
-.addClientForm form > div > div div > div:last-child {
+/* line 36, ../sass/_addclient.scss */
+.addClientForm form > div > div div > div:nth-child(2) {
   float: right;
   margin-right: 0;
 }
-/* line 43, ../sass/_addclient.scss */
+/* line 44, ../sass/_addclient.scss */
 .addClientForm .col-right {
   float: right;
   margin-right: 0;
 }
-/* line 47, ../sass/_addclient.scss */
+/* line 48, ../sass/_addclient.scss */
 .addClientForm input, .addClientForm select, .addClientForm button {
   display: block;
   margin-bottom: 10px;
   height: 30px;
 }
-/* line 53, ../sass/_addclient.scss */
+/* line 54, ../sass/_addclient.scss */
 .addClientForm input, .addClientForm textarea {
   width: 100%;
   background-color: #f3f3f3;
@@ -346,8 +335,97 @@ td p {
   padding: 0 10px;
   box-sizing: border-box;
 }
-/* line 61, ../sass/_addclient.scss */
+/* line 62, ../sass/_addclient.scss */
 .addClientForm select {
+  width: auto;
+}
+
+/* line 4, ../sass/_addfacture.scss */
+.addFactureForm h2 {
+  color: #84c900;
+  padding-bottom: 15px;
+}
+/* line 9, ../sass/_addfacture.scss */
+.addFactureForm label {
+  color: #595959;
+  margin-bottom: 8px;
+}
+/* line 14, ../sass/_addfacture.scss */
+.addFactureForm form {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+.addFactureForm form:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 16, ../sass/_addfacture.scss */
+.addFactureForm form span {
+  clear: both;
+  display: block;
+}
+/* line 21, ../sass/_addfacture.scss */
+.addFactureForm form > div {
+  width: 48.27586%;
+  float: left;
+  margin-right: 3.44828%;
+}
+/* line 24, ../sass/_addfacture.scss */
+.addFactureForm form > div:nth-child(2) {
+  float: right;
+  margin-right: 0;
+}
+/* line 28, ../sass/_addfacture.scss */
+.addFactureForm form > div > div {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFF;
+  padding: 15px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+}
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+.addFactureForm form > div > div:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 34, ../sass/_addfacture.scss */
+.addFactureForm form > div > div div > div {
+  width: 48.27586%;
+  float: left;
+  margin-right: 3.44828%;
+}
+/* line 36, ../sass/_addfacture.scss */
+.addFactureForm form > div > div div > div:nth-child(2) {
+  float: right;
+  margin-right: 0;
+}
+/* line 44, ../sass/_addfacture.scss */
+.addFactureForm .col-right {
+  float: right;
+  margin-right: 0;
+}
+/* line 48, ../sass/_addfacture.scss */
+.addFactureForm input, .addFactureForm select, .addFactureForm button {
+  display: block;
+  margin-bottom: 10px;
+  height: 30px;
+}
+/* line 54, ../sass/_addfacture.scss */
+.addFactureForm input, .addFactureForm textarea {
+  width: 100%;
+  background-color: #f3f3f3;
+  border: none;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+/* line 62, ../sass/_addfacture.scss */
+.addFactureForm select {
   width: auto;
 }
 
@@ -364,41 +442,48 @@ td p {
   border-radius: 15px 0 15px 0;
   padding: 10px 10px 10px 15px;
   text-align: right;
-}
-
-/* line 17, ../sass/_viewclient.scss */
-.clients_nbr {
   width: 31.03448%;
   float: left;
   margin-right: 3.44828%;
-  background-image: url(../img/BtnClients.jpg);
 }
-
-/* line 22, ../sass/_viewclient.scss */
-.addClient {
-  width: 31.03448%;
-  float: left;
-  margin-right: 3.44828%;
-  background: url(../img/BtnAdd.jpg);
-}
-
-/* line 27, ../sass/_viewclient.scss */
-.devis_view {
+/* line 15, ../sass/_viewclient.scss */
+.header_title > a:nth-child(3) {
   width: 13.7931%;
   float: left;
   margin-right: 3.44828%;
-  background-image: url(../img/BtnDevis.jpg);
 }
-
-/* line 32, ../sass/_viewclient.scss */
-.factures_view {
+/* line 18, ../sass/_viewclient.scss */
+.header_title > a:nth-child(4) {
   width: 13.7931%;
   float: right;
   margin-right: 0;
-  background-image: url(../img/BtnFactures.jpg);
+}
+/* line 23, ../sass/_viewclient.scss */
+.header_title p {
+  color: white !important;
+}
+
+/* line 28, ../sass/_viewclient.scss */
+.clients_nbr {
+  background-image: url(../img/BtnClients.jpg);
+}
+
+/* line 32, ../sass/_viewclient.scss */
+.addClient {
+  background: url(../img/BtnAdd.jpg);
+}
+
+/* line 36, ../sass/_viewclient.scss */
+.devis_view {
+  background-image: url(../img/BtnDevis.jpg);
 }
 
 /* line 40, ../sass/_viewclient.scss */
+.factures_view {
+  background-image: url(../img/BtnFactures.jpg);
+}
+
+/* line 47, ../sass/_viewclient.scss */
 .searchMenu > div {
   box-sizing: border-box;
   padding: 10px;
@@ -408,12 +493,12 @@ td p {
   display: inline-block;
 }
 
-/* line 50, ../sass/_viewclient.scss */
+/* line 57, ../sass/_viewclient.scss */
 .searchMenu > .search {
   padding: 0;
 }
 
-/* line 54, ../sass/_viewclient.scss */
+/* line 61, ../sass/_viewclient.scss */
 .selectParticuliers {
   width: 13.7931%;
   float: left;
@@ -422,7 +507,7 @@ td p {
   color: white;
 }
 
-/* line 60, ../sass/_viewclient.scss */
+/* line 67, ../sass/_viewclient.scss */
 .selectEntreprise {
   width: 13.7931%;
   float: left;
@@ -431,14 +516,14 @@ td p {
   color: white;
 }
 
-/* line 66, ../sass/_viewclient.scss */
+/* line 73, ../sass/_viewclient.scss */
 .search {
   width: 31.03448%;
   float: left;
   margin-right: 3.44828%;
   position: relative;
 }
-/* line 69, ../sass/_viewclient.scss */
+/* line 76, ../sass/_viewclient.scss */
 .search input {
   width: 100%;
   padding: 9px;
@@ -446,7 +531,7 @@ td p {
   box-sizing: border-box;
 }
 
-/* line 83, ../sass/_viewclient.scss */
+/* line 90, ../sass/_viewclient.scss */
 .profile {
   width: 13.7931%;
   float: left;
@@ -493,27 +578,27 @@ td p {
   margin-right: -100%;
   clear: none;
 }
-/* line 92, ../sass/_viewclient.scss */
+/* line 99, ../sass/_viewclient.scss */
 .profile .name_profile {
   font-family: "Myriad pro", myriad, sans-serif;
   font-size: 1em;
   color: #4d4d4f;
 }
-/* line 98, ../sass/_viewclient.scss */
+/* line 105, ../sass/_viewclient.scss */
 .profile .infos_devis, .profile .infos_facture {
   font-family: "Myriad pro", myriad, sans-serif;
   font-size: 0.9em;
   color: #6e1555;
   padding: 15px 8px 5px 8px;
 }
-/* line 103, ../sass/_viewclient.scss */
+/* line 110, ../sass/_viewclient.scss */
 .profile .infos_devis p:first-child, .profile .infos_facture p:first-child {
   width: 73.68421%;
   float: left;
   margin-right: 5.26316%;
   text-align: left;
 }
-/* line 107, ../sass/_viewclient.scss */
+/* line 114, ../sass/_viewclient.scss */
 .profile .infos_devis p:last-child, .profile .infos_facture p:last-child {
   width: 21.05263%;
   float: right;
@@ -521,7 +606,7 @@ td p {
   text-align: right;
   font-weight: bold;
 }
-/* line 114, ../sass/_viewclient.scss */
+/* line 121, ../sass/_viewclient.scss */
 .profile .fa {
   padding: 5px 15px 0 0;
   color: #6e1555;
@@ -713,26 +798,26 @@ td {
   color: grey;
 }
 
-/* line 16, ../sass/style.scss */
+/* line 17, ../sass/style.scss */
 html {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 21, ../sass/style.scss */
+/* line 22, ../sass/style.scss */
 *, *:before, *:after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-/* line 27, ../sass/style.scss */
+/* line 28, ../sass/style.scss */
 body {
   background-color: #eee;
 }
 
-/* line 33, ../sass/style.scss */
+/* line 34, ../sass/style.scss */
 header {
   max-width: 100%;
   margin-left: auto;
@@ -748,7 +833,7 @@ header:after {
   clear: both;
 }
 
-/* line 40, ../sass/style.scss */
+/* line 41, ../sass/style.scss */
 .container {
   max-width: 1140px;
   margin-left: auto;
@@ -762,7 +847,7 @@ header:after {
   clear: both;
 }
 
-/* line 45, ../sass/style.scss */
+/* line 46, ../sass/style.scss */
 .id_account {
   width: 6.77966%;
   float: left;
@@ -770,7 +855,7 @@ header:after {
   margin-top: 10px;
 }
 
-/* line 50, ../sass/style.scss */
+/* line 51, ../sass/style.scss */
 .innercontainer {
   max-width: 1140px;
   margin-left: auto;
@@ -783,7 +868,7 @@ header:after {
   clear: both;
 }
 
-/* line 54, ../sass/style.scss */
+/* line 55, ../sass/style.scss */
 .logo {
   width: 49.15254%;
   float: left;
@@ -792,7 +877,7 @@ header:after {
   margin-top: 20px;
 }
 
-/* line 60, ../sass/style.scss */
+/* line 61, ../sass/style.scss */
 .settings {
   width: 6.77966%;
   float: right;
@@ -800,7 +885,7 @@ header:after {
   margin-top: 30px;
 }
 
-/* line 65, ../sass/style.scss */
+/* line 66, ../sass/style.scss */
 .welcome {
   width: 23.72881%;
   float: left;
@@ -809,19 +894,19 @@ header:after {
   text-align: right;
 }
 
-/* line 74, ../sass/style.scss */
+/* line 75, ../sass/style.scss */
 .nav li {
   vertical-align: middle !important;
   display: inline-block;
   padding-right: 80px;
   text-align: center;
 }
-/* line 80, ../sass/style.scss */
+/* line 81, ../sass/style.scss */
 .nav :last-child {
   padding-right: 0;
 }
 
-/* line 85, ../sass/style.scss */
+/* line 86, ../sass/style.scss */
 .subnav {
   background-color: #FFF;
   padding: 7px;

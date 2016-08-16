@@ -24,7 +24,7 @@ crmControllers.controller('listClients', ['$scope', 'Rest', function($scope, Res
 			/*console.log(result);*/
 
 			// to know how many companies or private persons are
-			for(var i = 0; i<$scope.clients.length; i++) {
+			/*for(var i = 0; i<$scope.clients.length; i++) {
 				if($scope.clients[i].isCompany == true){
 					$scope.nbrCompanies++;
 					tabCompanies.push($scope.clients[i]);
@@ -36,8 +36,11 @@ crmControllers.controller('listClients', ['$scope', 'Rest', function($scope, Res
 			}
 			console.log(tabCompanies[0]);
 			$scope.clientsToShow.push(tabCompanies);
-			console.log(tabPrivates.length);
+			console.log($scope.clientsToShow.length);*/
 
+		$scope.particuliers = function(){
+			
+		}
 
 
 		});
