@@ -40,12 +40,12 @@
 
 		<div class="selectParticuliers">
 
-			<a href="" class="subInfos" ng-init="tri = 'isCompany: false'">Particuliers ({{nbrPrivateprs}})</a>
-
+			<a class="subInfos" ng-click="showClients(false)">Particuliers ({{nbrPrivateprs}})</a>
+			
 		</div>
 		<div class="selectEntreprise">
 
-			<a href="" class="subInfos" >Entreprises ({{nbrCompanies}})</a>
+			<a class="subInfos" ng-click="showClients(true)">Entreprises ({{nbrCompanies}})</a>
 		</div>
 
 		<div class="search">
@@ -55,7 +55,7 @@
 
 	</section>
 	<section class="gallery_profile">
-		<ul class="gallery" ng-repeat="client in clients |  filter: tri">
+		<ul class="gallery" ng-repeat="client in clients |  filter: item">
 			<li class="profile">
 				<img src="img/id_account.svg" alt="id_pictures" height="105" width="105">
 				<p class="name_profile">{{client.name}}</p>
@@ -67,6 +67,7 @@
 					<p>Facture</p>
 					<p>{{client.bills.length}}</p>
 				</div>
+				
 				<a href="#"><i class="fa fa-times " aria-hidden="true"></i></a>
 				<a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 				<a href="#/dashboard_Entreprise/clients/viewprofile"><i class="fa fa-eye" aria-hidden="true"></i></a>
