@@ -40,7 +40,7 @@
 
 		<div class="selectParticuliers">
 
-			<a href="" class="subInfos" >Particuliers ({{nbrPrivateprs}})</a>
+			<a href="" class="subInfos" ng-init="tri = 'isCompany: false'">Particuliers ({{nbrPrivateprs}})</a>
 
 		</div>
 		<div class="selectEntreprise">
@@ -55,7 +55,7 @@
 
 	</section>
 	<section class="gallery_profile">
-		<ul class="gallery" ng-repeat="client in clients |  filter: { isCompany: false}">
+		<ul class="gallery" ng-repeat="client in clients |  filter: tri">
 			<li class="profile">
 				<img src="img/id_account.svg" alt="id_pictures" height="105" width="105">
 				<p class="name_profile">{{client.name}}</p>
