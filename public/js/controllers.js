@@ -14,9 +14,10 @@ crmControllers.controller('listClients', ['$scope', 'Rest', function($scope, Res
 	$scope.nbrPrivateprs = 0;
 	$scope.quotations = 0;
 	$scope.bills = 0;
+	$scope.clientsShow = [];
 	var tabCompanies = [];
 	var tabPrivates = [];
-	$scope.clientsToShow = [];
+	var clientsToShow = [];
 
 	function refresh() {
 		Rest.getList(function(result) {
@@ -24,25 +25,41 @@ crmControllers.controller('listClients', ['$scope', 'Rest', function($scope, Res
 			/*console.log(result);*/
 
 			// to know how many companies or private persons are
-			/*for(var i = 0; i<$scope.clients.length; i++) {
+			for(var i = 0; i<$scope.clients.length; i++) {
 				if($scope.clients[i].isCompany == true){
 					$scope.nbrCompanies++;
-					tabCompanies.push($scope.clients[i]);
 				}
 				else {
 					$scope.nbrPrivateprs++;
-					tabPrivates.push($scope.clients[i]);
 				}
 			}
-			console.log(tabCompanies[0]);
+			/*console.log(tabCompanies[0]);
 			$scope.clientsToShow.push(tabCompanies);
 			console.log($scope.clientsToShow.length);*/
 
-		$scope.particuliers = function(){
+		$scope.showParticuliers = function(clients){
+			console.log(clients);
+			for(var i = 0; i<clients.length; i++){
+				if(clients[i].isCompany == false){
+					clientsToShow.push(clients[i]);
+				}
+			}
 			
-		}
+			$scope.clientsShow = clientsToShow;
+			clientsToShow = [];
+		};
 
+		$scope.showSociety = function(clients){
+			for(var i = 0; i<clients.length; i++){
+			if(clients[i].isCompany == true){
+					clientsToShow.push(clients[i]);
+				}
+			}
+			$scope.clientsShow = clientsToShow;
+			clientsToShow = [];
+		};
 
+		
 		});
 
 	}
