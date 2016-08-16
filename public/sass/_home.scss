@@ -1,0 +1,120 @@
+// --------DASHBOARD Home-------//
+
+
+.landing {
+	@include container(100%);
+	
+	
+	
+
+	
+}
+.wrapper{
+	@include container(100%);
+	background-color:#6e1b56;
+
+	
+
+
+}
+
+.headerImg{
+	@include span(3 of 6);
+	position: absolute;
+	
+	img{
+		padding-top: 100px;
+		padding-left: 220px;
+		
+	}
+}
+
+.resumeInfo{
+	@include span(3 of 6 last);
+	
+	
+	padding-top: 100px;
+	.Title{
+
+		color:#85c44a;
+	}
+	p{	
+		padding-top: 20px;
+		color: white;
+		font-family: $MyrRegular;
+		width: 600px;
+		line-height: 15px;
+
+	}
+	.subscribe,.connection{
+		height: 30px;
+		width: 175px;
+		margin-top: 30px;
+		margin-right: 15px;
+		border-radius: 3px;
+		background-color: white;
+		display: inline-block;
+		text-align: center;
+		padding-top: 15px;
+		vertical-align: middle;
+		color: white;
+		font-family: $MyrRegular;
+
+		
+	}
+	.subscribe{
+		background-color: #84c34a;
+	}
+	.connection{
+		background-color: #29ace1;
+	}
+
+}
+.bg_bottom{
+	background: url(../img/bg_decoupe.png)no-repeat top;
+	background-size: 100% 100%;
+	margin-top: -10px;
+	height: 160px;
+}
+// ------------//
+.constelation{
+	@include container;
+	// background-color: red;
+	text-align: center;
+	position: relative;
+}
+// ------------//
+footer p{
+	// height: 100px;
+	font-family: $MyrRegular;
+	color: #6e1b56;
+	text-align: center;
+	margin: 50px 0 50px 0;
+}
+
+//------Comments hover svg------ //
+.svgHover1 {
+        
+        width: 200px;
+        margin-top: -250px;
+        margin-left: 200px;
+        height: 50px;
+      	color: black;
+      	position: absolute;
+    }
+
+ .svgHover2 {
+ 		width: 200px;
+        margin-top: -250px;
+        margin-left: 250px;
+        height: 50px;
+      	color: black;
+      	position: absolute;
+ }
+.st1:hover,.st2:hover{
+	stroke:green;
+}
+
+.lineAnim{
+	margin-left: 350px;
+}
