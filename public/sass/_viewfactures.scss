@@ -1,0 +1,54 @@
+body {
+	font-family: $MyrRegular;
+}
+
+.matable {
+	padding-top: 20px;
+	padding-bottom: 200px;
+	margin-bottom: 30px;
+	background-color: white;
+}
+
+table {
+	background-color: white;
+}
+
+tbody{
+	min-height: 600px;
+	margin: 15px 0;
+}
+
+th {
+	background-color: #84c900;
+	color: white;
+	padding: 5px;
+}
+
+td:first-child {
+}
+
+td {
+	text-align: center;
+	padding-top: 20px;
+	padding-left: 15px;
+}
+
+.viewcolumn {
+	color: blue;
+}
+
+.deletecolumn {
+	color: purple;
+}
+
+.paid {
+	color: #84c900;
+}
+
+.wait {
+	color: orange;
+}
+
+.delete {
+	color: grey;
+}
