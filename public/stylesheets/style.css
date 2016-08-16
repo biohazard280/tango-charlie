@@ -505,56 +505,58 @@ body {
 
 /* line 5, ../sass/_viewdevis.scss */
 .matable {
-  padding: 20px 0;
+  padding-top: 20px;
+  padding-bottom: 200px;
+  margin-bottom: 30px;
   background-color: white;
 }
 
-/* line 10, ../sass/_viewdevis.scss */
+/* line 12, ../sass/_viewdevis.scss */
 table {
   background-color: white;
 }
 
-/* line 14, ../sass/_viewdevis.scss */
+/* line 16, ../sass/_viewdevis.scss */
 tbody {
   min-height: 600px;
   margin: 15px 0;
 }
 
-/* line 19, ../sass/_viewdevis.scss */
+/* line 21, ../sass/_viewdevis.scss */
 th {
   background-color: #84c900;
   color: white;
   padding: 5px;
 }
 
-/* line 28, ../sass/_viewdevis.scss */
+/* line 30, ../sass/_viewdevis.scss */
 td {
   text-align: center;
   padding-top: 20px;
   padding-left: 15px;
 }
 
-/* line 34, ../sass/_viewdevis.scss */
+/* line 36, ../sass/_viewdevis.scss */
 .viewcolumn {
   color: blue;
 }
 
-/* line 38, ../sass/_viewdevis.scss */
+/* line 40, ../sass/_viewdevis.scss */
 .deletecolumn {
   color: purple;
 }
 
-/* line 42, ../sass/_viewdevis.scss */
+/* line 44, ../sass/_viewdevis.scss */
 .paid {
   color: #84c900;
 }
 
-/* line 46, ../sass/_viewdevis.scss */
+/* line 48, ../sass/_viewdevis.scss */
 .wait {
   color: orange;
 }
 
-/* line 50, ../sass/_viewdevis.scss */
+/* line 52, ../sass/_viewdevis.scss */
 .delete {
   color: grey;
 }
