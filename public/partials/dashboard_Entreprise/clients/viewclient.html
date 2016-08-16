@@ -35,15 +35,20 @@
 		</a>
 	</section>
 
+<<<<<<< HEAD
 	<section class="searchMenu">
+=======
+	<section class="searchMenu" >
+
+>>>>>>> c30f0193e62cfadca8c9caa3c5c7438e8cf2e2b8
 		<div class="selectParticuliers">
 
-			<p class="subInfos">Particuliers ({{nbrPrivateprs}})</p>
+			<a href="" class="subInfos">Particuliers ({{nbrPrivateprs}})</a>
 
 		</div>
 		<div class="selectEntreprise">
 
-			<p class="subInfos">Entreprises ({{nbrCompanies}})</p>
+			<a class="subInfos">Entreprises ({{nbrCompanies}})</a>
 		</div>
 
 		<div class="search">
@@ -52,8 +57,8 @@
 		</div>
 
 	</section>
-	<section class="gallery_profile" ng-repeat="client in clients">
-		<ul class="gallery">
+	<section class="gallery_profile">
+		<ul class="gallery" ng-repeat="client in clients">
 			<li class="profile">
 				<img src="img/id_account.svg" alt="id_pictures" height="105" width="105">
 				<p class="name_profile">{{client.name}}</p>
