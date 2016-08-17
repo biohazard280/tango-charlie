@@ -1,6 +1,6 @@
 <!-- <h2>View Client</h2>
 	<a href="#/dashboard_Entreprise/clients/createnewclient">Create a new client</a> -->
-
+<div class="innercontainer">
 	<section class="header_title">
 		<a class="clients_nbr">
 			<div class="icons">
@@ -40,22 +40,22 @@
 
 		<div class="selectParticuliers">
 
-			<a class="subInfos" ng-click="showClients(false)">Particuliers ({{nbrPrivateprs}})</a>
+			<a href="" class="subInfos" ng-click="showClients(false)">Particuliers ({{nbrPrivateprs}})</a>
 			
 		</div>
 		<div class="selectEntreprise">
 
-			<a class="subInfos" ng-click="showClients(true)">Entreprises ({{nbrCompanies}})</a>
+			<a href="" class="subInfos" ng-click="showClients(true)">Entreprises ({{nbrCompanies}})</a>
 		</div>
 
 		<div class="search">
-			<input type="text" placeholder="Faire une recherche">
+			<input type="text" placeholder="Faire une recherche" ng-model="entree"><button ng-click="recherche(entree)">search</button>
 
 		</div>
 
 	</section>
 	<section class="gallery_profile">
-		<ul class="gallery" ng-repeat="client in clients |  filter: item">
+		<ul class="gallery" ng-repeat="client in clients |  filter: search">
 			<li class="profile">
 				<img src="img/id_account.svg" alt="id_pictures" height="105" width="105">
 				<p class="name_profile">{{client.name}}</p>
@@ -77,7 +77,7 @@
 		</ul>
 		
 	</section>
-
+</div>
 
 
 
