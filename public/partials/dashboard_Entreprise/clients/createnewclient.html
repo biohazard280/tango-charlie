@@ -48,8 +48,10 @@
 
 	<section class="addClientForm">
 	<!-- PARTICULIER -->
+		<h2>PARTICULIER</h2>
+		<!-- faire switch boutons particulier/entreprise -->
+		<!-- faire switch bouton même cordonnees factu/livrai -->
 		<form name="addClientForm">
-
 			<!-- COL GAUCHE  -->
 
 			<div>
@@ -70,13 +72,13 @@
 				<div>
 					<h2>Personne de contact</h2>
 					<div>
-						<span>
+						<div>
 							<label>Civilité</label>
 							<select ng-model="civility">
 								<option value="monsieur">Monsieur</option>
 								<option value="madame">Madame</option>
 							</select>
-						</span>
+						</div>
 					</div>
 					<div>
 						<div>
@@ -124,13 +126,13 @@
 				<div>
 					<h2>Coordonnées de facturation</h2>
 					<div>
-						<span>
+						<div>
 							<label>Civilité</label>
 							<select ng-model="civility">
 								<option value="monsieur">Monsieur</option>
 								<option value="madame">Madame</option>
 							</select>
-						</span>
+						</div>
 					</div>
 					<div>
 						<div>
@@ -211,13 +213,13 @@
 
 				<div>
 					<h2>Coordonnées de livraison</h2>
-						<span> 
+						<div> 
 							<label>Même coordonnées que la facturation</label>
 							<select ng-model="samecoord">
 								<option value="yes">Oui</option>
 								<option value="no">Non</option>
 							</select>
-						</span>
+						</div>
 					<div>
 						<div>
 							<label>Civilité</label>
@@ -329,13 +331,13 @@
 					</div>
 
 					<div>
-						<span>
+						<div>
 							<label>Civilité</label>
 							<select ng-model="civility">
 								<option value="monsieur">Monsieur</option>
 								<option value="madame">Madame</option>
 							</select>
-						</span>
+						</div>
 					</div>
 					<div>
 						<div>
@@ -416,13 +418,13 @@
 				<div>
 					<h2>Personne de contact</h2>
 					<div>
-						<span>
+						<div>
 							<label>Civilité</label>
 							<select ng-model="civility">
 								<option value="monsieur">Monsieur</option>
 								<option value="madame">Madame</option>
 							</select>
-						</span>
+						</div>
 					</div>
 					<div>
 						<div>
@@ -470,13 +472,13 @@
 				<div>
 					<h2>Coordonnées de facturation</h2>
 					<div>
-						<span>
+						<div>
 							<label>Civilité</label>
 							<select ng-model="civility">
 								<option value="monsieur">Monsieur</option>
 								<option value="madame">Madame</option>
 							</select>
-						</span>
+						</div>
 					</div>
 					<div>
 						<div>
@@ -559,9 +561,9 @@
 					<h2>Coordonnées de livraison</h2>
 						<span> 
 							<label>Même coordonnées que la facturation</label>
-							<select ng-model="samecoord">
+							<select>
 								<option value="yes">Oui</option>
-								<option value="no">Non</option>
+								<option value="no" selected>Non</option>
 							</select>
 						</span>
 					<div>

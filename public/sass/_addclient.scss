@@ -65,15 +65,11 @@
 		height: 30px;
 	}
 
-	input, textarea{
+	input, textarea, select{
 		width: 100%;
 		background-color: #f3f3f3;
 		border:none;
 		padding: 0 10px;
 		box-sizing: border-box;
-	}
-
-	select{
-		width: auto;
 	}
 }
