@@ -37,11 +37,11 @@ app.config(['$routeProvider', function($routeProvider){
 // Clients
 	when('/dashboard_Entreprise/clients/viewclient' , {
 		templateUrl : 'partials/dashboard_Entreprise/clients/viewclient.html',
-		controller : 'listClients'
+		controller : 'listClientsCtrl'
 	}).
 	when('/dashboard_Entreprise/clients/viewprofile' , {
 		templateUrl : 'partials/dashboard_Entreprise/clients/viewprofile.html',
-		controller : 'mainCtrl'
+		controller : 'detailClientCtrl'
 	}).
 	when('/dashboard_Entreprise/clients/createnewclient' , {
 		templateUrl : 'partials/dashboard_Entreprise/clients/createnewclient.html',

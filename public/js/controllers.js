@@ -44,7 +44,7 @@ crmControllers.controller('hoverHomeCtrl', ['$scope', function($scope){
 
 
 
-crmControllers.controller('listClients', ['$scope', 'Rest', function($scope, Rest){
+crmControllers.controller('listClientsCtrl', ['$scope', 'Rest', function($scope, Rest){
 
 	$scope.nbrCompanies = 0;
 	$scope.nbrPrivateprs = 0;
@@ -70,43 +70,27 @@ crmControllers.controller('listClients', ['$scope', 'Rest', function($scope, Res
 				}
 			}
 
-			/*console.log(tabCompanies[0]);
-			$scope.clientsToShow.push(tabCompanies);
-			console.log($scope.clientsToShow.length);*/
-
-			$scope.showParticuliers = function(clients){
-				console.log(clients);
-				for(var i = 0; i<clients.length; i++){
-					if(clients[i].isCompany == false){
-						clientsToShow.push(clients[i]);
-					}
-				}
-				
-				$scope.clientsShow = clientsToShow;
-				clientsToShow = [];
-			};
-
-			$scope.showSociety = function(clients){
-				for(var i = 0; i<clients.length; i++){
-					if(clients[i].isCompany == true){
-						clientsToShow.push(clients[i]);
-					}
-				}
-				$scope.clientsShow = clientsToShow;
-				clientsToShow = [];
-			};
-
-
-			
 		});
 	}
 	refresh();
 
-	$scope.item = {};
+	$scope.search = {};
+
 
 	$scope.showClients = function(isCmp){
-		$scope.item.isCompany = isCmp;
+		$scope.search.isCompany = isCmp;
 	}
+
+	$scope.recherche = function(entree){
+		$scope.search = {};
+		$scope.search.name = entree;
+	}
+
+
+
+}]);
+
+crmControllers.controller('detailClientCtrl', ['$scope', 'Rest', function($scope, Rest){
 
 }]);
 
