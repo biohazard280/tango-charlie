@@ -41,24 +41,6 @@
 		}
 	}
 
-	.tva div{
-		&:first-child{
-			@include span(2 of 12);
-		}
-
-		&:nth-child(2){
-			@include span(7 of 12);
-			margin-top: 14px;
-		}
-		&:last-child{
-			@include span(3 of 12 last);
-		}
-	}
-
-	.col-right{
-		@include last;
-	}
-
 	input, select, button{
 		display: block;
 		margin-bottom: 10px;
@@ -72,4 +54,41 @@
 		padding: 0 10px;
 		box-sizing: border-box;
 	}
+
+	.col-right{
+		@include last;
+	}
+	
+	.tva div{
+		&:first-child{
+			@include span(2 of 12);
+		}
+		&:nth-child(2){
+			@include span(7 of 12);
+			margin-top: 14px;
+		}
+		&:last-child{
+			@include span(3 of 12 last);
+		}
+	}
+
+}
+
+//////// GENERAL
+
+
+.select{
+	@include span (1 of 6);
+	background-color: #939598;
+	color: white;
+	border:none;
+	padding: 5px;
+	&:hover{
+		background-color: #a3a5a8;
+		cursor: pointer;
+	}
+}
+
+.selectActive{
+	background-color: #0297cc !important;
 }

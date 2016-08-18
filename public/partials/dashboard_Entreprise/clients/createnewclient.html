@@ -34,24 +34,21 @@
 	</section>
 
 	<section class="searchMenu">
-		<div class="selectParticuliers">
+		<button class="select" ng-click="showParticulier()" ng-class="{selectActive: particulier}">
+			<p class="subInfos">Particulier</p>
+		</button>
 
-			<p class="subInfos">Particuliers ({{nbrPrivateprs}})</p>
-
-		</div>
-		<div class="selectEntreprise">
-
-			<p class="subInfos">Entreprises ({{nbrCompanies}})</p>
-		</div>
-
+		<button class="select" ng-click="showEntreprise()" ng-class="{selectActive: entreprise}">
+			<p class="subInfos">Entreprise</p>
+		</button>
 	</section>
+
+
 
 	<section class="addClientForm">
 	<!-- PARTICULIER -->
-		<h2>PARTICULIER</h2>
-		<!-- faire switch boutons particulier/entreprise -->
 		<!-- faire switch bouton même cordonnees factu/livrai -->
-		<form name="addClientForm">
+		<form name="addClientForm" ng-show="particulier">
 			<!-- COL GAUCHE  -->
 
 			<div>
@@ -213,81 +210,80 @@
 
 				<div>
 					<h2>Coordonnées de livraison</h2>
-						<div> 
-							<label>Même coordonnées que la facturation</label>
-							<select ng-model="samecoord">
-								<option value="yes">Oui</option>
-								<option value="no">Non</option>
-							</select>
-						</div>
-					<div>
-						<div>
-							<label>Civilité</label>
-							<select ng-model="civility">
-								<option value="monsieur">Monsieur</option>
-								<option value="madame">Madame</option>
-							</select>
-						</div>
-						<div>
-							<label for="company">Entreprise</label>
-							<input type="text" name="company" id="company">
-						</div>
-					</div>
-					<div>
-						<div>
-							<label for="lastname">Nom</label>
-							<input type="text" name="lastname" id="lastname">
-						</div>
-
-						<div>
-							<label for="firstname">Prénom</label>
-							<input type="text" name="firstname" id="firstname">
-						</div>
-					</div>
-
-					<div>
-						<label for="street">Rue</label>
-						<input type="text" name="street" id="street">
-					</div>
-
-					<div>
+					<label>Même coordonnées que la facturation</label>
+					<select ng-model="samecoord">
+						<option value="">Oui</option>
+						<option value="true">Non</option>
+					</select>
+					<div ng-show="samecoord">
 						<div>
 							<div>
-								<label for="number">Numéro</label>
-								<input type="text" name="number" id="number">
+								<label>Civilité</label>
+								<select ng-model="civility">
+									<option value="monsieur">Monsieur</option>
+									<option value="madame">Madame</option>
+								</select>
+							</div>
+							<div>
+								<label for="company">Entreprise</label>
+								<input type="text" name="company" id="company">
+							</div>
+						</div>
+						<div>
+							<div>
+								<label for="lastname">Nom</label>
+								<input type="text" name="lastname" id="lastname">
 							</div>
 
 							<div>
-
-								<label for="box">Boite</label>
-								<input type="text" name="box" id="box">
+								<label for="firstname">Prénom</label>
+								<input type="text" name="firstname" id="firstname">
 							</div>
 						</div>
 
 						<div>
-							<label for="zip">Code Postal</label>
-							<input type="text" name="zip" id="zip">
+							<label for="street">Rue</label>
+							<input type="text" name="street" id="street">
 						</div>
-					</div>
 
-					<div>
 						<div>
-							<label for="town">Ville</label>
-							<input type="text" name="town" id="town">
+							<div>
+								<div>
+									<label for="number">Numéro</label>
+									<input type="text" name="number" id="number">
+								</div>
+
+								<div>
+
+									<label for="box">Boite</label>
+									<input type="text" name="box" id="box">
+								</div>
+							</div>
+
+							<div>
+								<label for="zip">Code Postal</label>
+								<input type="text" name="zip" id="zip">
+							</div>
 						</div>
+
 						<div>
-							<label>Pays</label>
-							<select ng-model="country">
-								<option value="country">Country</option>
-							</select>
+							<div>
+								<label for="town">Ville</label>
+								<input type="text" name="town" id="town">
+							</div>
+							<div>
+								<label>Pays</label>
+								<select ng-model="country">
+									<option value="country">Country</option>
+								</select>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</form>
 	<!-- ENTREPRISE -->
-	<h2>ENTREPRISE</h2>
-		<form name="addClientForm">
+		<form name="addClientForm" ng-show="entreprise">
 
 			<!-- COL GAUCHE  -->
 
@@ -559,73 +555,73 @@
 
 				<div>
 					<h2>Coordonnées de livraison</h2>
-						<span> 
-							<label>Même coordonnées que la facturation</label>
-							<select>
-								<option value="yes">Oui</option>
-								<option value="no" selected>Non</option>
-							</select>
-						</span>
-					<div>
-						<div>
-							<label>Civilité</label>
-							<select ng-model="civility">
-								<option value="monsieur">Monsieur</option>
-								<option value="madame">Madame</option>
-							</select>
-						</div>
-						<div>
-							<label for="company">Entreprise</label>
-							<input type="text" name="company" id="company">
-						</div>
-					</div>
-					<div>
-						<div>
-							<label for="lastname">Nom</label>
-							<input type="text" name="lastname" id="lastname">
-						</div>
-
-						<div>
-							<label for="firstname">Prénom</label>
-							<input type="text" name="firstname" id="firstname">
-						</div>
-					</div>
-
-					<div>
-						<label for="street">Rue</label>
-						<input type="text" name="street" id="street">
-					</div>
-
-					<div>
+					<label>Même coordonnées que la facturation</label>
+					<select ng-model="samecoord">
+						<option value="">Oui</option>
+						<option value="true">Non</option>
+					</select>
+					<div ng-show="samecoord">
 						<div>
 							<div>
-								<label for="number">Numéro</label>
-								<input type="text" name="number" id="number">
+								<label>Civilité</label>
+								<select ng-model="civility">
+									<option value="monsieur">Monsieur</option>
+									<option value="madame">Madame</option>
+								</select>
+							</div>
+							<div>
+								<label for="company">Entreprise</label>
+								<input type="text" name="company" id="company">
+							</div>
+						</div>
+						<div>
+							<div>
+								<label for="lastname">Nom</label>
+								<input type="text" name="lastname" id="lastname">
 							</div>
 
 							<div>
-
-								<label for="box">Boite</label>
-								<input type="text" name="box" id="box">
+								<label for="firstname">Prénom</label>
+								<input type="text" name="firstname" id="firstname">
 							</div>
 						</div>
 
 						<div>
-							<label for="zip">Code Postal</label>
-							<input type="text" name="zip" id="zip">
+							<label for="street">Rue</label>
+							<input type="text" name="street" id="street">
 						</div>
-					</div>
 
-					<div>
 						<div>
-							<label for="town">Ville</label>
-							<input type="text" name="town" id="town">
+							<div>
+								<div>
+									<label for="number">Numéro</label>
+									<input type="text" name="number" id="number">
+								</div>
+
+								<div>
+
+									<label for="box">Boite</label>
+									<input type="text" name="box" id="box">
+								</div>
+							</div>
+
+							<div>
+								<label for="zip">Code Postal</label>
+								<input type="text" name="zip" id="zip">
+							</div>
 						</div>
+
 						<div>
-							<label>Pays</label>
-							<select ng-model="country">
-								<option value="country">Country</option>
-							</select>
+							<div>
+								<label for="town">Ville</label>
+								<input type="text" name="town" id="town">
+							</div>
+							<div>
+								<label>Pays</label>
+								<select ng-model="country">
+									<option value="country">Country</option>
+								</select>
+							</div>
 						</div>
 					</div>
 				</div>
