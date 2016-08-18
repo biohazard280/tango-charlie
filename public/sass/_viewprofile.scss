@@ -1,46 +1,99 @@
 .viewProfile{
-	@include container(1140px);
 
-	.general_infos{
-		@include span(2 of 6);
-		
-		// height: 500px;
-		box-sizing: border-box;
-		border-radius: 20px 0 20px 0;
-		background-image: url(../img/bgViewprofile_general_info.jpg);
-
-			
-			.informations{
-				@include span(2 of 6);
-
-			}
-			.name_informations{
-				@include span(4 of 6 last);
-				padding-top: 25px;
-				color: white;
-				font-size: 2em;
-				font-family: $MyrRegular;
-			}
-			.edit{
-				
-				width: 70px;
-				background-color: white;
-				margin-top: 8px;
-				font-size: 1rem;
-				color: $primary;
-				padding: 2px;
-				text-align: center;
-				p,i{
-					display: inline-block;
-				}
-			}
-
-	}
-
-	.activity{
-		@include span(4 of 6 last);
-		background-color: green;
-		// height: 500px;
-		box-sizing: border-box;
-	}
 }
+
+.profile {
+	@include span(2 of 6);
+	height: 645px;
+	box-sizing: border-box;
+	border-radius: 50px 0 50px 0;
+	background-image: url(../img/bgViewprofile_general_info.jpg);
+	padding: 20px;
+}
+
+.profile p {
+	color: white;
+	text-align: left;
+}
+
+.informations{
+	@include span(2 of 6);
+}
+
+.name_informations{
+	@include span(4 of 6 last);
+	padding-top: 25px;
+	color: white;
+	font-size: 2em;
+	font-family: $MyrRegular;
+}
+
+.edit{			
+	width: 70px;
+	height: 25px;
+	background-color: white;
+	margin-top: 8px;
+	font-size: 1rem;
+	color: $primary;
+	padding: 2px;
+	text-align: center;
+	p,i{
+		display: inline-block;
+		color: $primary;
+		background-color: green;
+		}
+}
+
+.ALL_informations {
+	margin-top: 130px;
+}
+
+h1{
+	color: #84c900;
+}
+
+h2{
+	text-align: left;
+	color: white;
+	text-decoration: none;
+	margin: 20px 0;
+}
+
+.title {
+	@include span(3 of 6);
+	background-color: red;
+	margin: 0;
+}
+
+
+
+.activities{
+	@include span(4 of 6 last);
+	background-color: green;
+	// height: 460px;
+	box-sizing: border-box;
+}
+
+.activities h2 {
+	color: grey;
+	margin-left: 20px;
+}
+
+td span{
+	margin-right: 10px;
+}
+
+.matable {
+	background-color: orange;
+}
+
+
+.notes {
+	background-color: white;
+	padding: 20px;
+}
+
+.notes p {
+	margin-top: 20px;
+}
+
