@@ -1,12 +1,12 @@
 // --------DASHBOARD Home-------//
 
 
-.landing {
+.container {
 	@include container(100%);
 	margin: 0;
 	padding: 0;
 }
-.wrapper{
+.landing{
 	@include container(100%);
 	background-color:#6e1b56;
 }
@@ -84,29 +84,49 @@ footer p{
 	color: #6e1b56;
 	text-align: center;
 	margin: 50px 0 50px 0;
+
 }
 
 //------Comments hover svg------ //
+.svgHover1, .svgHover2, .svgHover3, .svgHover4{
+	width: 200px;
+	font-family: $MyrRegular;
+	color: black;
+	font-size: 1.5rem;
+	position: absolute;
+}
+
 .svgHover1 {
 
-	width: 200px;
-	margin-top: -250px;
+	margin-top: -300px;
 	margin-left: 200px;
 	height: 50px;
-	color: black;
-	position: absolute;
+
 }
 
 .svgHover2 {
-	width: 200px;
-	margin-top: -250px;
+	
+	margin-top: -300px;
 	margin-left: 250px;
 	height: 50px;
-	color: black;
-	position: absolute;
+	
+}
+
+.svgHover3{
+	margin-top: -300px;
+	margin-left: 250px;
+	height: 50px;
+
+}
+
+.svgHover4{
+	margin-top: -300px;
+	margin-left: 450px;
+	height: 50px;
+
 }
 .st1:hover,.st2:hover{
-	stroke:green;
+	stroke:#92c133;
 }
 
 .lineAnim{

@@ -635,35 +635,30 @@ td p {
   color: #6e1555;
 }
 
-/* line 1, ../sass/_viewprofile.scss */
-.viewProfile {
-  max-width: 1140px;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* line 12, ../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
-.viewProfile:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-/* line 4, ../sass/_viewprofile.scss */
-.viewProfile .general_infos {
+/* line 3, ../sass/_viewprofile.scss */
+.viewProfile .profile {
   width: 31.03448%;
   float: left;
   margin-right: 3.44828%;
+  height: 645px;
   box-sizing: border-box;
-  border-radius: 20px 0 20px 0;
+  border-radius: 50px 0 50px 0;
   background-image: url(../img/bgViewprofile_general_info.jpg);
+  padding: 20px;
 }
-/* line 13, ../sass/_viewprofile.scss */
-.viewProfile .general_infos .informations {
-  width: 31.03448%;
-  float: left;
-  margin-right: 3.44828%;
+/* line 12, ../sass/_viewprofile.scss */
+.viewProfile .profile p {
+  color: white;
+  text-align: left;
 }
 /* line 17, ../sass/_viewprofile.scss */
-.viewProfile .general_infos .name_informations {
+.viewProfile .informations {
+  width: 31.03448%;
+  float: left;
+  margin-right: 3.44828%;
+}
+/* line 21, ../sass/_viewprofile.scss */
+.viewProfile .name_informations {
   width: 65.51724%;
   float: right;
   margin-right: 0;
@@ -672,9 +667,10 @@ td p {
   font-size: 2em;
   font-family: "Myriad pro", myriad, sans-serif;
 }
-/* line 24, ../sass/_viewprofile.scss */
-.viewProfile .general_infos .edit {
+/* line 29, ../sass/_viewprofile.scss */
+.viewProfile .edit {
   width: 70px;
+  height: 25px;
   background-color: white;
   margin-top: 8px;
   font-size: 1rem;
@@ -682,17 +678,64 @@ td p {
   padding: 2px;
   text-align: center;
 }
-/* line 33, ../sass/_viewprofile.scss */
-.viewProfile .general_infos .edit p, .viewProfile .general_infos .edit i {
+/* line 38, ../sass/_viewprofile.scss */
+.viewProfile .edit p, .viewProfile .edit i {
   display: inline-block;
+  color: #6e1555;
+  background-color: green;
 }
-/* line 40, ../sass/_viewprofile.scss */
-.viewProfile .activity {
+/* line 45, ../sass/_viewprofile.scss */
+.viewProfile .ALL_informations {
+  margin-top: 130px;
+}
+/* line 49, ../sass/_viewprofile.scss */
+.viewProfile h1 {
+  color: #84c900;
+}
+/* line 53, ../sass/_viewprofile.scss */
+.viewProfile h2 {
+  text-align: left;
+  color: white;
+  text-decoration: none;
+  margin: 20px 0;
+}
+/* line 60, ../sass/_viewprofile.scss */
+.viewProfile .title {
+  width: 48.27586%;
+  float: left;
+  margin-right: 3.44828%;
+  background-color: red;
+  margin: 0;
+}
+/* line 68, ../sass/_viewprofile.scss */
+.viewProfile .activities {
   width: 65.51724%;
   float: right;
   margin-right: 0;
   background-color: green;
   box-sizing: border-box;
+}
+/* line 75, ../sass/_viewprofile.scss */
+.viewProfile .activities h2 {
+  color: grey;
+  margin-left: 20px;
+}
+/* line 80, ../sass/_viewprofile.scss */
+.viewProfile td span {
+  margin-right: 10px;
+}
+/* line 84, ../sass/_viewprofile.scss */
+.viewProfile .matable {
+  background-color: orange;
+}
+/* line 89, ../sass/_viewprofile.scss */
+.viewProfile .notes {
+  background-color: white;
+  padding: 20px;
+}
+/* line 94, ../sass/_viewprofile.scss */
+.viewProfile .notes p {
+  margin-top: 20px;
 }
 
 /* line 1, ../sass/_viewdevis.scss */
@@ -822,7 +865,7 @@ td {
 }
 
 /* line 4, ../sass/_home.scss */
-.landing {
+.container {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -830,21 +873,21 @@ td {
   padding: 0;
 }
 /* line 12, ../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
-.landing:after {
+.container:after {
   content: " ";
   display: block;
   clear: both;
 }
 
 /* line 9, ../sass/_home.scss */
-.wrapper {
+.landing {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   background-color: #6e1b56;
 }
 /* line 12, ../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
-.wrapper:after {
+.landing:after {
   content: " ";
   display: block;
   clear: both;
@@ -937,32 +980,49 @@ footer p {
   margin: 50px 0 50px 0;
 }
 
-/* line 90, ../sass/_home.scss */
-.svgHover1 {
+/* line 91, ../sass/_home.scss */
+.svgHover1, .svgHover2, .svgHover3, .svgHover4 {
   width: 200px;
-  margin-top: -250px;
+  font-family: "Myriad pro", myriad, sans-serif;
+  color: black;
+  font-size: 1.5rem;
+  position: absolute;
+}
+
+/* line 99, ../sass/_home.scss */
+.svgHover1 {
+  margin-top: -300px;
   margin-left: 200px;
   height: 50px;
-  color: black;
-  position: absolute;
 }
 
-/* line 100, ../sass/_home.scss */
+/* line 107, ../sass/_home.scss */
 .svgHover2 {
-  width: 200px;
-  margin-top: -250px;
+  margin-top: -300px;
   margin-left: 250px;
   height: 50px;
-  color: black;
-  position: absolute;
 }
 
-/* line 108, ../sass/_home.scss */
+/* line 115, ../sass/_home.scss */
+.svgHover3 {
+  margin-top: -300px;
+  margin-left: 250px;
+  height: 50px;
+}
+
+/* line 122, ../sass/_home.scss */
+.svgHover4 {
+  margin-top: -300px;
+  margin-left: 450px;
+  height: 50px;
+}
+
+/* line 128, ../sass/_home.scss */
 .st1:hover, .st2:hover {
-  stroke: green;
+  stroke: #92c133;
 }
 
-/* line 112, ../sass/_home.scss */
+/* line 132, ../sass/_home.scss */
 .lineAnim {
   margin-left: 350px;
 }
