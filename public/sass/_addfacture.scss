@@ -1,5 +1,5 @@
 // --------DASHBOARD_entreprise-------//
-// ---ajout facture--- //
+// ---ajout favture--- //
 .addFactureForm{
 	h2{
 		color:$secondary;
@@ -17,7 +17,7 @@
 			clear: both;
 			display: block;
 		}
-
+		
 		>div{
 			@include span(3 of 6);
 
@@ -39,10 +39,47 @@
 				}
 			}
 		}
-	}
 
-	.col-right{
-		@include last;
+		.detailsfacture{
+			@include span(6 of 6);
+		}
+
+		.infosarticle{
+			clear: both;
+			li{
+				@include span(1 of 9);
+				display: inline-block;
+				margin-top: 7px;
+				&:last-child{
+					@include last;
+				}
+			}
+			.article{
+				@include span(3 of 9);
+				margin-top: 0;
+			}
+			.quantity{
+				margin-top: 0;
+			}
+		}
+
+		.infosfacture{
+			background-color: $secondary;
+			overflow: auto;
+			padding: 5px 0;
+			margin-bottom: 5px;
+			li{
+				@include span(1 of 9);
+				display: inline-block;
+				color: white;
+				&:last-child{
+					@include last;
+				}
+			}
+			.article{
+				@include span(3 of 9);
+			}
+		}
 	}
 
 	input, select, button{
@@ -51,7 +88,7 @@
 		height: 30px;
 	}
 
-	input, textarea{
+	input, textarea, select{
 		width: 100%;
 		background-color: #f3f3f3;
 		border:none;
@@ -59,7 +96,20 @@
 		box-sizing: border-box;
 	}
 
-	select{
-		width: auto;
+	.col-right{
+		@include last;
+	}
+	
+	.tva div{
+		&:first-child{
+			@include span(2 of 12);
+		}
+		&:nth-child(2){
+			@include span(7 of 12);
+			margin-top: 14px;
+		}
+		&:last-child{
+			@include span(3 of 12 last);
+		}
 	}
 }
