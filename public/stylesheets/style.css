@@ -800,7 +800,6 @@ td p {
 .viewProfile .edit p, .viewProfile .edit i {
   display: inline-block;
   color: #6e1555;
-  background-color: green;
 }
 /* line 45, ../sass/_viewprofile.scss */
 .viewProfile .ALL_informations {
@@ -822,15 +821,16 @@ td p {
   width: 48.27586%;
   float: left;
   margin-right: 3.44828%;
-  background-color: red;
   margin: 0;
 }
-/* line 68, ../sass/_viewprofile.scss */
+/* line 66, ../sass/_viewprofile.scss */
 .viewProfile .activities {
   width: 65.51724%;
   float: right;
   margin-right: 0;
-  background-color: green;
+  background-color: white;
+  height: 460px;
+  padding-bottom: 20px;
   box-sizing: border-box;
 }
 /* line 75, ../sass/_viewprofile.scss */
@@ -843,8 +843,8 @@ td p {
   margin-right: 10px;
 }
 /* line 84, ../sass/_viewprofile.scss */
-.viewProfile .matable {
-  background-color: orange;
+.viewProfile .matableprofile {
+  margin-bottom: 10px;
 }
 /* line 89, ../sass/_viewprofile.scss */
 .viewProfile .notes {
@@ -920,11 +920,6 @@ td {
 }
 
 /* line 1, ../sass/_viewfactures.scss */
-body {
-  font-family: "Myriad pro", myriad, sans-serif;
-}
-
-/* line 5, ../sass/_viewfactures.scss */
 .matable {
   padding-top: 20px;
   padding-bottom: 200px;
@@ -932,52 +927,52 @@ body {
   background-color: white;
 }
 
-/* line 12, ../sass/_viewfactures.scss */
+/* line 8, ../sass/_viewfactures.scss */
 table {
   background-color: white;
 }
 
-/* line 16, ../sass/_viewfactures.scss */
+/* line 12, ../sass/_viewfactures.scss */
 tbody {
   min-height: 600px;
   margin: 15px 0;
 }
 
-/* line 21, ../sass/_viewfactures.scss */
+/* line 17, ../sass/_viewfactures.scss */
 th {
   background-color: #84c900;
   color: white;
   padding: 5px;
 }
 
-/* line 30, ../sass/_viewfactures.scss */
+/* line 26, ../sass/_viewfactures.scss */
 td {
   text-align: center;
   padding-top: 20px;
   padding-left: 15px;
 }
 
-/* line 36, ../sass/_viewfactures.scss */
+/* line 32, ../sass/_viewfactures.scss */
 .viewcolumn {
   color: blue;
 }
 
-/* line 40, ../sass/_viewfactures.scss */
+/* line 36, ../sass/_viewfactures.scss */
 .deletecolumn {
   color: purple;
 }
 
-/* line 44, ../sass/_viewfactures.scss */
+/* line 40, ../sass/_viewfactures.scss */
 .paid {
   color: #84c900;
 }
 
-/* line 48, ../sass/_viewfactures.scss */
+/* line 44, ../sass/_viewfactures.scss */
 .wait {
   color: orange;
 }
 
-/* line 52, ../sass/_viewfactures.scss */
+/* line 48, ../sass/_viewfactures.scss */
 .delete {
   color: grey;
 }
@@ -990,7 +985,7 @@ td {
   margin: 0;
   padding: 0;
 }
-/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+
 .container:after {
   content: " ";
   display: block;
@@ -1004,7 +999,7 @@ td {
   margin-right: auto;
   background-color: #6e1b56;
 }
-/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+
 .landing:after {
   content: " ";
   display: block;
@@ -1099,43 +1094,76 @@ footer p {
 }
 
 /* line 89, ../sass/_home.scss */
-.svgHover1, .svgHover2, .svgHover3, .svgHover4 {
+.svgHover1, .svgHover2, .svgHover3, .svgHover4, .svgHover5, .svgHover6, .svgHover7, .svgHover8, .svgHover9, .svgHover10 {
   width: 200px;
   font-family: "Myriad pro", myriad, sans-serif;
   color: black;
   font-size: 1.5rem;
   position: absolute;
+  height: 50px;
 }
 
-/* line 97, ../sass/_home.scss */
+/* line 99, ../sass/_home.scss */
 .svgHover1 {
   margin-top: -200px;
   margin-left: 200px;
-  height: 50px;
 }
 
-/* line 106, ../sass/_home.scss */
+/* line 105, ../sass/_home.scss */
 .svgHover2 {
   margin-top: -200px;
   margin-left: 250px;
-  height: 50px;
 }
 
-/* line 114, ../sass/_home.scss */
+/* line 111, ../sass/_home.scss */
 .svgHover3 {
   margin-top: -200px;
   margin-left: 300px;
-  height: 50px;
 }
 
-/* line 121, ../sass/_home.scss */
+/* line 116, ../sass/_home.scss */
 .svgHover4 {
   margin-top: -200px;
   margin-left: 450px;
-  height: 50px;
 }
 
-/* line 127, ../sass/_home.scss */
+/* line 120, ../sass/_home.scss */
+.svgHover5 {
+  margin-top: -200px;
+  margin-left: 600px;
+}
+
+/* line 124, ../sass/_home.scss */
+.svgHover6 {
+  margin-top: -200px;
+  margin-left: 750px;
+}
+
+/* line 128, ../sass/_home.scss */
+.svgHover7 {
+  margin-top: -200px;
+  margin-left: 950px;
+}
+
+/* line 132, ../sass/_home.scss */
+.svgHover8 {
+  margin-top: -200px;
+  margin-left: 1000px;
+}
+
+/* line 136, ../sass/_home.scss */
+.svgHover9 {
+  margin-top: -200px;
+  margin-left: 950px;
+}
+
+/* line 140, ../sass/_home.scss */
+.svgHover10 {
+  margin-top: -200px;
+  margin-left: 800px;
+}
+
+/* line 145, ../sass/_home.scss */
 .circle:hover {
   stroke: #92c133;
   transition-duration: 0.5s;
