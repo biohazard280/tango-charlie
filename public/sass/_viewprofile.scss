@@ -1,8 +1,6 @@
 .viewProfile{
 
-}
-
-.profile {
+	.profile {
 	@include span(2 of 6);
 	height: 645px;
 	box-sizing: border-box;
@@ -95,5 +93,9 @@ td span{
 
 .notes p {
 	margin-top: 20px;
+}
+
+
+
 }
 
