@@ -635,8 +635,8 @@ td p {
   color: #6e1555;
 }
 
-/* line 5, ../sass/_viewprofile.scss */
-.profile {
+/* line 3, ../sass/_viewprofile.scss */
+.viewProfile .profile {
   width: 31.03448%;
   float: left;
   margin-right: 3.44828%;
@@ -646,22 +646,19 @@ td p {
   background-image: url(../img/bgViewprofile_general_info.jpg);
   padding: 20px;
 }
-
-/* line 14, ../sass/_viewprofile.scss */
-.profile p {
+/* line 12, ../sass/_viewprofile.scss */
+.viewProfile .profile p {
   color: white;
   text-align: left;
 }
-
-/* line 19, ../sass/_viewprofile.scss */
-.informations {
+/* line 17, ../sass/_viewprofile.scss */
+.viewProfile .informations {
   width: 31.03448%;
   float: left;
   margin-right: 3.44828%;
 }
-
-/* line 23, ../sass/_viewprofile.scss */
-.name_informations {
+/* line 21, ../sass/_viewprofile.scss */
+.viewProfile .name_informations {
   width: 65.51724%;
   float: right;
   margin-right: 0;
@@ -670,9 +667,8 @@ td p {
   font-size: 2em;
   font-family: "Myriad pro", myriad, sans-serif;
 }
-
-/* line 31, ../sass/_viewprofile.scss */
-.edit {
+/* line 29, ../sass/_viewprofile.scss */
+.viewProfile .edit {
   width: 70px;
   height: 25px;
   background-color: white;
@@ -682,73 +678,63 @@ td p {
   padding: 2px;
   text-align: center;
 }
-/* line 40, ../sass/_viewprofile.scss */
-.edit p, .edit i {
+/* line 38, ../sass/_viewprofile.scss */
+.viewProfile .edit p, .viewProfile .edit i {
   display: inline-block;
   color: #6e1555;
   background-color: green;
 }
-
-/* line 47, ../sass/_viewprofile.scss */
-.ALL_informations {
+/* line 45, ../sass/_viewprofile.scss */
+.viewProfile .ALL_informations {
   margin-top: 130px;
 }
-
-/* line 51, ../sass/_viewprofile.scss */
-h1 {
+/* line 49, ../sass/_viewprofile.scss */
+.viewProfile h1 {
   color: #84c900;
 }
-
-/* line 55, ../sass/_viewprofile.scss */
-h2 {
+/* line 53, ../sass/_viewprofile.scss */
+.viewProfile h2 {
   text-align: left;
   color: white;
   text-decoration: none;
   margin: 20px 0;
 }
-
-/* line 62, ../sass/_viewprofile.scss */
-.title {
+/* line 60, ../sass/_viewprofile.scss */
+.viewProfile .title {
   width: 48.27586%;
   float: left;
   margin-right: 3.44828%;
   background-color: red;
   margin: 0;
 }
-
-/* line 70, ../sass/_viewprofile.scss */
-.activities {
+/* line 68, ../sass/_viewprofile.scss */
+.viewProfile .activities {
   width: 65.51724%;
   float: right;
   margin-right: 0;
   background-color: green;
   box-sizing: border-box;
 }
-
-/* line 77, ../sass/_viewprofile.scss */
-.activities h2 {
+/* line 75, ../sass/_viewprofile.scss */
+.viewProfile .activities h2 {
   color: grey;
   margin-left: 20px;
 }
-
-/* line 82, ../sass/_viewprofile.scss */
-td span {
+/* line 80, ../sass/_viewprofile.scss */
+.viewProfile td span {
   margin-right: 10px;
 }
-
-/* line 86, ../sass/_viewprofile.scss */
-.matable {
+/* line 84, ../sass/_viewprofile.scss */
+.viewProfile .matable {
   background-color: orange;
 }
-
-/* line 91, ../sass/_viewprofile.scss */
-.notes {
+/* line 89, ../sass/_viewprofile.scss */
+.viewProfile .notes {
   background-color: white;
   padding: 20px;
 }
-
-/* line 96, ../sass/_viewprofile.scss */
-.notes p {
+/* line 94, ../sass/_viewprofile.scss */
+.viewProfile .notes p {
   margin-top: 20px;
 }
 
@@ -886,10 +872,8 @@ td {
   margin: 0;
   padding: 0;
 }
-
 /* line 12, ../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
-.landing:after {
-
+.container:after {
   content: " ";
   display: block;
   clear: both;
@@ -902,10 +886,8 @@ td {
   margin-right: auto;
   background-color: #6e1b56;
 }
-
 /* line 12, ../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
-.wrapper:after {
-
+.landing:after {
   content: " ";
   display: block;
   clear: both;
