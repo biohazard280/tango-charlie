@@ -682,7 +682,6 @@ td p {
 .viewProfile .edit p, .viewProfile .edit i {
   display: inline-block;
   color: #6e1555;
-  background-color: green;
 }
 /* line 45, ../sass/_viewprofile.scss */
 .viewProfile .ALL_informations {
@@ -704,15 +703,16 @@ td p {
   width: 48.27586%;
   float: left;
   margin-right: 3.44828%;
-  background-color: red;
   margin: 0;
 }
-/* line 68, ../sass/_viewprofile.scss */
+/* line 66, ../sass/_viewprofile.scss */
 .viewProfile .activities {
   width: 65.51724%;
   float: right;
   margin-right: 0;
-  background-color: green;
+  background-color: white;
+  height: 460px;
+  padding-bottom: 20px;
   box-sizing: border-box;
 }
 /* line 75, ../sass/_viewprofile.scss */
@@ -725,8 +725,8 @@ td p {
   margin-right: 10px;
 }
 /* line 84, ../sass/_viewprofile.scss */
-.viewProfile .matable {
-  background-color: orange;
+.viewProfile .matableprofile {
+  margin-bottom: 10px;
 }
 /* line 89, ../sass/_viewprofile.scss */
 .viewProfile .notes {
@@ -802,11 +802,6 @@ td {
 }
 
 /* line 1, ../sass/_viewfactures.scss */
-body {
-  font-family: "Myriad pro", myriad, sans-serif;
-}
-
-/* line 5, ../sass/_viewfactures.scss */
 .matable {
   padding-top: 20px;
   padding-bottom: 200px;
@@ -814,52 +809,52 @@ body {
   background-color: white;
 }
 
-/* line 12, ../sass/_viewfactures.scss */
+/* line 8, ../sass/_viewfactures.scss */
 table {
   background-color: white;
 }
 
-/* line 16, ../sass/_viewfactures.scss */
+/* line 12, ../sass/_viewfactures.scss */
 tbody {
   min-height: 600px;
   margin: 15px 0;
 }
 
-/* line 21, ../sass/_viewfactures.scss */
+/* line 17, ../sass/_viewfactures.scss */
 th {
   background-color: #84c900;
   color: white;
   padding: 5px;
 }
 
-/* line 30, ../sass/_viewfactures.scss */
+/* line 26, ../sass/_viewfactures.scss */
 td {
   text-align: center;
   padding-top: 20px;
   padding-left: 15px;
 }
 
-/* line 36, ../sass/_viewfactures.scss */
+/* line 32, ../sass/_viewfactures.scss */
 .viewcolumn {
   color: blue;
 }
 
-/* line 40, ../sass/_viewfactures.scss */
+/* line 36, ../sass/_viewfactures.scss */
 .deletecolumn {
   color: purple;
 }
 
-/* line 44, ../sass/_viewfactures.scss */
+/* line 40, ../sass/_viewfactures.scss */
 .paid {
   color: #84c900;
 }
 
-/* line 48, ../sass/_viewfactures.scss */
+/* line 44, ../sass/_viewfactures.scss */
 .wait {
   color: orange;
 }
 
-/* line 52, ../sass/_viewfactures.scss */
+/* line 48, ../sass/_viewfactures.scss */
 .delete {
   color: grey;
 }
