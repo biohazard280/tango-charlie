@@ -44,6 +44,10 @@
 			@include span(6 of 6);
 		}
 
+		.detailsfacture ul{
+			text-align: center;
+		}
+
 		.infosarticle{
 			overflow: auto;
 			li{
@@ -54,12 +58,18 @@
 					@include last;
 				}
 			}
+
 			.article{
 				@include span(3 of 9);
 				margin-top: 0;
 			}
+
 			.quantity{
 				margin-top: 0;
+			}
+
+			.symbole{
+				float: right;
 			}
 		}
 
@@ -77,9 +87,21 @@
 					@include last;
 				}
 			}
-			
+
 			.article{
 				@include span(3 of 9);
+			}
+		}
+
+		.total{
+			overflow: auto;
+			li{
+				@include span(1 of 9);
+				display: inline-block;
+				margin-top: 7px;
+				&:last-child{
+					@include last;
+				}
 			}
 		}
 	}

@@ -453,10 +453,14 @@ td p {
   margin-right: 0;
 }
 /* line 47, ../sass/_addfacture.scss */
+.addFactureForm form .detailsfacture ul {
+  text-align: center;
+}
+/* line 51, ../sass/_addfacture.scss */
 .addFactureForm form .infosarticle {
   overflow: auto;
 }
-/* line 49, ../sass/_addfacture.scss */
+/* line 53, ../sass/_addfacture.scss */
 .addFactureForm form .infosarticle li {
   width: 9.09091%;
   float: left;
@@ -464,30 +468,34 @@ td p {
   display: inline-block;
   margin-top: 7px;
 }
-/* line 53, ../sass/_addfacture.scss */
+/* line 57, ../sass/_addfacture.scss */
 .addFactureForm form .infosarticle li:last-child {
   float: right;
   margin-right: 0;
 }
-/* line 57, ../sass/_addfacture.scss */
+/* line 62, ../sass/_addfacture.scss */
 .addFactureForm form .infosarticle .article {
   width: 31.81818%;
   float: left;
   margin-right: 2.27273%;
   margin-top: 0;
 }
-/* line 61, ../sass/_addfacture.scss */
+/* line 67, ../sass/_addfacture.scss */
 .addFactureForm form .infosarticle .quantity {
   margin-top: 0;
 }
-/* line 66, ../sass/_addfacture.scss */
+/* line 71, ../sass/_addfacture.scss */
+.addFactureForm form .infosarticle .symbole {
+  float: right;
+}
+/* line 76, ../sass/_addfacture.scss */
 .addFactureForm form .infosfacture {
   background-color: #84c900;
   overflow: auto;
   padding: 5px 0;
   margin-bottom: 5px;
 }
-/* line 72, ../sass/_addfacture.scss */
+/* line 82, ../sass/_addfacture.scss */
 .addFactureForm form .infosfacture li {
   width: 9.09091%;
   float: left;
@@ -495,24 +503,41 @@ td p {
   display: inline-block;
   color: white;
 }
-/* line 76, ../sass/_addfacture.scss */
+/* line 86, ../sass/_addfacture.scss */
 .addFactureForm form .infosfacture li:last-child {
   float: right;
   margin-right: 0;
 }
-/* line 81, ../sass/_addfacture.scss */
+/* line 91, ../sass/_addfacture.scss */
 .addFactureForm form .infosfacture .article {
   width: 31.81818%;
   float: left;
   margin-right: 2.27273%;
 }
-/* line 87, ../sass/_addfacture.scss */
+/* line 96, ../sass/_addfacture.scss */
+.addFactureForm form .total {
+  overflow: auto;
+}
+/* line 98, ../sass/_addfacture.scss */
+.addFactureForm form .total li {
+  width: 9.09091%;
+  float: left;
+  margin-right: 2.27273%;
+  display: inline-block;
+  margin-top: 7px;
+}
+/* line 102, ../sass/_addfacture.scss */
+.addFactureForm form .total li:last-child {
+  float: right;
+  margin-right: 0;
+}
+/* line 109, ../sass/_addfacture.scss */
 .addFactureForm input, .addFactureForm select, .addFactureForm button {
   display: block;
   margin-bottom: 10px;
   height: 30px;
 }
-/* line 93, ../sass/_addfacture.scss */
+/* line 115, ../sass/_addfacture.scss */
 .addFactureForm input, .addFactureForm textarea, .addFactureForm select {
   width: 100%;
   background-color: #f3f3f3;
@@ -520,25 +545,25 @@ td p {
   padding: 0 10px;
   box-sizing: border-box;
 }
-/* line 101, ../sass/_addfacture.scss */
+/* line 123, ../sass/_addfacture.scss */
 .addFactureForm .col-right {
   float: right;
   margin-right: 0;
 }
-/* line 106, ../sass/_addfacture.scss */
+/* line 128, ../sass/_addfacture.scss */
 .addFactureForm .tva div:first-child {
   width: 15.25424%;
   float: left;
   margin-right: 1.69492%;
 }
-/* line 109, ../sass/_addfacture.scss */
+/* line 131, ../sass/_addfacture.scss */
 .addFactureForm .tva div:nth-child(2) {
   width: 57.62712%;
   float: left;
   margin-right: 1.69492%;
   margin-top: 14px;
 }
-/* line 113, ../sass/_addfacture.scss */
+/* line 135, ../sass/_addfacture.scss */
 .addFactureForm .tva div:last-child {
   width: 23.72881%;
   float: right;
