@@ -126,10 +126,27 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Rest', function($scope,
 
 }]);
 
+
 crmControllers.controller('detailClientCtrl', ['$scope', 'Rest', function($scope, Rest){
 
 }]);
 
+
 crmControllers.controller('mainCtrl', ['$scope', 'Rest', function($scope, Rest){
 
+}]);
+
+
+crmControllers.controller('createNewClientCtrl', ['$scope', function($scope){
+	$scope.particulier = true;
+	$scope.entreprise = false;
+
+	$scope.showParticulier = function() {
+		$scope.particulier = true;
+		$scope.entreprise = false;
+	}
+	$scope.showEntreprise = function() {
+		$scope.entreprise = true;
+		$scope.particulier = false;
+	}
 }]);

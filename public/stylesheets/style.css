@@ -271,7 +271,7 @@ td p {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .addClientForm form:after {
   content: " ";
   display: block;
@@ -303,7 +303,7 @@ td p {
   margin-bottom: 30px;
   box-sizing: border-box;
 }
-/* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .addClientForm form > div > div:after {
   content: " ";
   display: block;
@@ -320,47 +320,64 @@ td p {
   float: right;
   margin-right: 0;
 }
-/* line 45, ../sass/_addclient.scss */
-.addClientForm .tva div:first-child {
-  width: 15.25424%;
-  float: left;
-  margin-right: 1.69492%;
-}
-/* line 49, ../sass/_addclient.scss */
-.addClientForm .tva div:nth-child(2) {
-  width: 57.62712%;
-  float: left;
-  margin-right: 1.69492%;
-  margin-top: 14px;
-}
-/* line 53, ../sass/_addclient.scss */
-.addClientForm .tva div:last-child {
-  width: 23.72881%;
-  float: right;
-  margin-right: 0;
-}
-/* line 58, ../sass/_addclient.scss */
-.addClientForm .col-right {
-  float: right;
-  margin-right: 0;
-}
-/* line 62, ../sass/_addclient.scss */
+/* line 44, ../sass/_addclient.scss */
 .addClientForm input, .addClientForm select, .addClientForm button {
   display: block;
   margin-bottom: 10px;
   height: 30px;
 }
-/* line 68, ../sass/_addclient.scss */
-.addClientForm input, .addClientForm textarea {
+/* line 50, ../sass/_addclient.scss */
+.addClientForm input, .addClientForm textarea, .addClientForm select {
   width: 100%;
   background-color: #f3f3f3;
   border: none;
   padding: 0 10px;
   box-sizing: border-box;
 }
-/* line 76, ../sass/_addclient.scss */
-.addClientForm select {
-  width: auto;
+/* line 58, ../sass/_addclient.scss */
+.addClientForm .col-right {
+  float: right;
+  margin-right: 0;
+}
+/* line 63, ../sass/_addclient.scss */
+.addClientForm .tva div:first-child {
+  width: 15.25424%;
+  float: left;
+  margin-right: 1.69492%;
+}
+/* line 66, ../sass/_addclient.scss */
+.addClientForm .tva div:nth-child(2) {
+  width: 57.62712%;
+  float: left;
+  margin-right: 1.69492%;
+  margin-top: 14px;
+}
+/* line 70, ../sass/_addclient.scss */
+.addClientForm .tva div:last-child {
+  width: 23.72881%;
+  float: right;
+  margin-right: 0;
+}
+
+/* line 79, ../sass/_addclient.scss */
+.select {
+  width: 13.7931%;
+  float: left;
+  margin-right: 3.44828%;
+  background-color: #939598;
+  color: white;
+  border: none;
+  padding: 5px;
+}
+/* line 85, ../sass/_addclient.scss */
+.select:hover {
+  background-color: #a3a5a8;
+  cursor: pointer;
+}
+
+/* line 91, ../sass/_addclient.scss */
+.selectActive {
+  background-color: #0297cc !important;
 }
 
 /* line 4, ../sass/_addfacture.scss */
@@ -379,7 +396,7 @@ td p {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .addFactureForm form:after {
   content: " ";
   display: block;
@@ -411,7 +428,7 @@ td p {
   margin-bottom: 30px;
   box-sizing: border-box;
 }
-/* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .addFactureForm form > div > div:after {
   content: " ";
   display: block;
@@ -428,28 +445,104 @@ td p {
   float: right;
   margin-right: 0;
 }
-/* line 44, ../sass/_addfacture.scss */
-.addFactureForm .col-right {
+/* line 43, ../sass/_addfacture.scss */
+.addFactureForm form .detailsfacture {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+/* line 47, ../sass/_addfacture.scss */
+.addFactureForm form .infosarticle {
+  overflow: auto;
+}
+/* line 49, ../sass/_addfacture.scss */
+.addFactureForm form .infosarticle li {
+  width: 9.09091%;
+  float: left;
+  margin-right: 2.27273%;
+  display: inline-block;
+  margin-top: 7px;
+}
+/* line 53, ../sass/_addfacture.scss */
+.addFactureForm form .infosarticle li:last-child {
   float: right;
   margin-right: 0;
 }
-/* line 48, ../sass/_addfacture.scss */
+/* line 57, ../sass/_addfacture.scss */
+.addFactureForm form .infosarticle .article {
+  width: 31.81818%;
+  float: left;
+  margin-right: 2.27273%;
+  margin-top: 0;
+}
+/* line 61, ../sass/_addfacture.scss */
+.addFactureForm form .infosarticle .quantity {
+  margin-top: 0;
+}
+/* line 66, ../sass/_addfacture.scss */
+.addFactureForm form .infosfacture {
+  background-color: #84c900;
+  overflow: auto;
+  padding: 5px 0;
+  margin-bottom: 5px;
+}
+/* line 72, ../sass/_addfacture.scss */
+.addFactureForm form .infosfacture li {
+  width: 9.09091%;
+  float: left;
+  margin-right: 2.27273%;
+  display: inline-block;
+  color: white;
+}
+/* line 76, ../sass/_addfacture.scss */
+.addFactureForm form .infosfacture li:last-child {
+  float: right;
+  margin-right: 0;
+}
+/* line 81, ../sass/_addfacture.scss */
+.addFactureForm form .infosfacture .article {
+  width: 31.81818%;
+  float: left;
+  margin-right: 2.27273%;
+}
+/* line 87, ../sass/_addfacture.scss */
 .addFactureForm input, .addFactureForm select, .addFactureForm button {
   display: block;
   margin-bottom: 10px;
   height: 30px;
 }
-/* line 54, ../sass/_addfacture.scss */
-.addFactureForm input, .addFactureForm textarea {
+/* line 93, ../sass/_addfacture.scss */
+.addFactureForm input, .addFactureForm textarea, .addFactureForm select {
   width: 100%;
   background-color: #f3f3f3;
   border: none;
   padding: 0 10px;
   box-sizing: border-box;
 }
-/* line 62, ../sass/_addfacture.scss */
-.addFactureForm select {
-  width: auto;
+/* line 101, ../sass/_addfacture.scss */
+.addFactureForm .col-right {
+  float: right;
+  margin-right: 0;
+}
+/* line 106, ../sass/_addfacture.scss */
+.addFactureForm .tva div:first-child {
+  width: 15.25424%;
+  float: left;
+  margin-right: 1.69492%;
+}
+/* line 109, ../sass/_addfacture.scss */
+.addFactureForm .tva div:nth-child(2) {
+  width: 57.62712%;
+  float: left;
+  margin-right: 1.69492%;
+  margin-top: 14px;
+}
+/* line 113, ../sass/_addfacture.scss */
+.addFactureForm .tva div:last-child {
+  width: 23.72881%;
+  float: right;
+  margin-right: 0;
 }
 
 /* line 5, ../sass/_viewclient.scss */
@@ -539,14 +632,14 @@ td p {
   color: white;
 }
 
-/* line 74, ../sass/_viewclient.scss */
+/* line 78, ../sass/_viewclient.scss */
 .search {
   width: 31.03448%;
   float: left;
   margin-right: 3.44828%;
   position: relative;
 }
-/* line 77, ../sass/_viewclient.scss */
+/* line 81, ../sass/_viewclient.scss */
 .search input {
   width: 100%;
   padding: 9px;
@@ -554,7 +647,7 @@ td p {
   box-sizing: border-box;
 }
 
-/* line 91, ../sass/_viewclient.scss */
+/* line 95, ../sass/_viewclient.scss */
 .profile {
   width: 13.7931%;
   float: left;
@@ -564,64 +657,64 @@ td p {
   margin-bottom: 30px;
   text-align: center;
 }
-/* line 66, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
 .profile:nth-child(6n + 1) {
   margin-left: 0;
   margin-right: -100%;
   clear: both;
   margin-left: 0;
 }
-/* line 66, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
 .profile:nth-child(6n + 2) {
   margin-left: 17.24138%;
   margin-right: -100%;
   clear: none;
 }
-/* line 66, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
 .profile:nth-child(6n + 3) {
   margin-left: 34.48276%;
   margin-right: -100%;
   clear: none;
 }
-/* line 66, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
 .profile:nth-child(6n + 4) {
   margin-left: 51.72414%;
   margin-right: -100%;
   clear: none;
 }
-/* line 66, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
 .profile:nth-child(6n + 5) {
   margin-left: 68.96552%;
   margin-right: -100%;
   clear: none;
 }
-/* line 66, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
 .profile:nth-child(6n + 6) {
   margin-left: 86.2069%;
   margin-right: -100%;
   clear: none;
 }
-/* line 100, ../sass/_viewclient.scss */
+/* line 104, ../sass/_viewclient.scss */
 .profile .name_profile {
   font-family: "Myriad pro", myriad, sans-serif;
   font-size: 1em;
   color: #4d4d4f;
 }
-/* line 106, ../sass/_viewclient.scss */
+/* line 110, ../sass/_viewclient.scss */
 .profile .infos_devis, .profile .infos_facture {
   font-family: "Myriad pro", myriad, sans-serif;
   font-size: 0.9em;
   color: #6e1555;
   padding: 15px 8px 5px 8px;
 }
-/* line 111, ../sass/_viewclient.scss */
+/* line 115, ../sass/_viewclient.scss */
 .profile .infos_devis p:first-child, .profile .infos_facture p:first-child {
   width: 73.68421%;
   float: left;
   margin-right: 5.26316%;
   text-align: left;
 }
-/* line 115, ../sass/_viewclient.scss */
+/* line 119, ../sass/_viewclient.scss */
 .profile .infos_devis p:last-child, .profile .infos_facture p:last-child {
   width: 21.05263%;
   float: right;
@@ -629,7 +722,7 @@ td p {
   text-align: right;
   font-weight: bold;
 }
-/* line 122, ../sass/_viewclient.scss */
+/* line 126, ../sass/_viewclient.scss */
 .profile .fa {
   padding: 5px 15px 0 0;
   color: #6e1555;
@@ -682,7 +775,6 @@ td p {
 .viewProfile .edit p, .viewProfile .edit i {
   display: inline-block;
   color: #6e1555;
-  background-color: green;
 }
 /* line 45, ../sass/_viewprofile.scss */
 .viewProfile .ALL_informations {
@@ -704,15 +796,16 @@ td p {
   width: 48.27586%;
   float: left;
   margin-right: 3.44828%;
-  background-color: red;
   margin: 0;
 }
-/* line 68, ../sass/_viewprofile.scss */
+/* line 66, ../sass/_viewprofile.scss */
 .viewProfile .activities {
   width: 65.51724%;
   float: right;
   margin-right: 0;
-  background-color: green;
+  background-color: white;
+  height: 460px;
+  padding-bottom: 20px;
   box-sizing: border-box;
 }
 /* line 75, ../sass/_viewprofile.scss */
@@ -725,8 +818,8 @@ td p {
   margin-right: 10px;
 }
 /* line 84, ../sass/_viewprofile.scss */
-.viewProfile .matable {
-  background-color: orange;
+.viewProfile .matableprofile {
+  margin-bottom: 10px;
 }
 /* line 89, ../sass/_viewprofile.scss */
 .viewProfile .notes {
@@ -802,11 +895,6 @@ td {
 }
 
 /* line 1, ../sass/_viewfactures.scss */
-body {
-  font-family: "Myriad pro", myriad, sans-serif;
-}
-
-/* line 5, ../sass/_viewfactures.scss */
 .matable {
   padding-top: 20px;
   padding-bottom: 200px;
@@ -814,52 +902,52 @@ body {
   background-color: white;
 }
 
-/* line 12, ../sass/_viewfactures.scss */
+/* line 8, ../sass/_viewfactures.scss */
 table {
   background-color: white;
 }
 
-/* line 16, ../sass/_viewfactures.scss */
+/* line 12, ../sass/_viewfactures.scss */
 tbody {
   min-height: 600px;
   margin: 15px 0;
 }
 
-/* line 21, ../sass/_viewfactures.scss */
+/* line 17, ../sass/_viewfactures.scss */
 th {
   background-color: #84c900;
   color: white;
   padding: 5px;
 }
 
-/* line 30, ../sass/_viewfactures.scss */
+/* line 26, ../sass/_viewfactures.scss */
 td {
   text-align: center;
   padding-top: 20px;
   padding-left: 15px;
 }
 
-/* line 36, ../sass/_viewfactures.scss */
+/* line 32, ../sass/_viewfactures.scss */
 .viewcolumn {
   color: blue;
 }
 
-/* line 40, ../sass/_viewfactures.scss */
+/* line 36, ../sass/_viewfactures.scss */
 .deletecolumn {
   color: purple;
 }
 
-/* line 44, ../sass/_viewfactures.scss */
+/* line 40, ../sass/_viewfactures.scss */
 .paid {
   color: #84c900;
 }
 
-/* line 48, ../sass/_viewfactures.scss */
+/* line 44, ../sass/_viewfactures.scss */
 .wait {
   color: orange;
 }
 
-/* line 52, ../sass/_viewfactures.scss */
+/* line 48, ../sass/_viewfactures.scss */
 .delete {
   color: grey;
 }
@@ -872,7 +960,7 @@ td {
   margin: 0;
   padding: 0;
 }
-/* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+
 .container:after {
   content: " ";
   display: block;
@@ -886,7 +974,7 @@ td {
   margin-right: auto;
   background-color: #6e1b56;
 }
-/* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+
 .landing:after {
   content: " ";
   display: block;
@@ -965,7 +1053,7 @@ td {
   text-align: center;
   margin-top: -250px;
 }
-/* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .constelation:after {
   content: " ";
   display: block;
@@ -1065,9 +1153,9 @@ html {
 
 /* line 23, ../sass/style.scss */
 *, *:before, *:after {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  ┬á┬á-moz-box-sizing: border-box;
+  ┬á┬á-webkit-box-sizing: border-box;
+  ┬á┬ábox-sizing: border-box;
 }
 
 /* line 29, ../sass/style.scss */
@@ -1084,7 +1172,7 @@ header {
   border-bottom: solid 1px #6e1555;
   background-color: #FFF;
 }
-/* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 header:after {
   content: " ";
   display: block;
@@ -1105,7 +1193,7 @@ header:after {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .innercontainer:after {
   content: " ";
   display: block;

@@ -41,11 +41,28 @@
 		}
 	}
 
+	input, select, button{
+		display: block;
+		margin-bottom: 10px;
+		height: 30px;
+	}
+
+	input, textarea, select{
+		width: 100%;
+		background-color: #f3f3f3;
+		border:none;
+		padding: 0 10px;
+		box-sizing: border-box;
+	}
+
+	.col-right{
+		@include last;
+	}
+	
 	.tva div{
 		&:first-child{
 			@include span(2 of 12);
 		}
-
 		&:nth-child(2){
 			@include span(7 of 12);
 			margin-top: 14px;
@@ -54,26 +71,23 @@
 			@include span(3 of 12 last);
 		}
 	}
+}
 
-	.col-right{
-		@include last;
-	}
+//////// GENERAL
 
-	input, select, button{
-		display: block;
-		margin-bottom: 10px;
-		height: 30px;
-	}
 
-	input, textarea{
-		width: 100%;
-		background-color: #f3f3f3;
-		border:none;
-		padding: 0 10px;
-		box-sizing: border-box;
+.select{
+	@include span (1 of 6);
+	background-color: #939598;
+	color: white;
+	border:none;
+	padding: 5px;
+	&:hover{
+		background-color: #a3a5a8;
+		cursor: pointer;
 	}
+}
 
-	select{
-		width: auto;
-	}
+.selectActive{
+	background-color: #0297cc !important;
 }
