@@ -19,6 +19,24 @@ crmControllers.controller('hoverHomeCtrl', ['$scope', function($scope){
 			if (circleTarget == "svgHover4") {
 				$scope.Hover4=false;
 			}
+			if (circleTarget == "svgHover5") {
+				$scope.Hover5=false;
+			}
+			if (circleTarget == "svgHover6") {
+				$scope.Hover6=false;
+			}
+			if (circleTarget == "svgHover7") {
+				$scope.Hover7=false;
+			}
+			if (circleTarget == "svgHover8") {
+				$scope.Hover8=false;
+			}
+			if (circleTarget == "svgHover9") {
+				$scope.Hover9=false;
+			}
+			if (circleTarget == "svgHover10") {
+				$scope.Hover10=false;
+			}
 
 		}else{
 			if (circleTarget == "svgHover1") {
@@ -32,6 +50,24 @@ crmControllers.controller('hoverHomeCtrl', ['$scope', function($scope){
 			}
 			if (circleTarget == "svgHover4") {
 				$scope.Hover4=true;
+			}
+			if (circleTarget == "svgHover5") {
+				$scope.Hover5=true;
+			}
+			if (circleTarget == "svgHover6") {
+				$scope.Hover6=true;
+			}
+			if (circleTarget == "svgHover7") {
+				$scope.Hover7=true;
+			}
+			if (circleTarget == "svgHover8") {
+				$scope.Hover8=true;
+			}
+			if (circleTarget == "svgHover9") {
+				$scope.Hover9=true;
+			}
+			if (circleTarget == "svgHover10") {
+				$scope.Hover10=true;
 			}
 		}
 

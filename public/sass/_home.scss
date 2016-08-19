@@ -86,48 +86,68 @@ footer p{
 }
 
 //------Comments hover svg------ //
-.svgHover1, .svgHover2, .svgHover3, .svgHover4{
+.svgHover1, .svgHover2, .svgHover3, .svgHover4, .svgHover5, .svgHover6, .svgHover7, .svgHover8, .svgHover9, .svgHover10{
 	width: 200px;
 	font-family: $MyrRegular;
 	color: black;
 	font-size: 1.5rem;
 	position: absolute;
+	height: 50px;
+
 }
 
 .svgHover1 {
 
 	margin-top: -200px;
 	margin-left: 200px;
-	height: 50px;
-
-
 }
 
 .svgHover2 {
 	
 	margin-top: -200px;
 	margin-left: 250px;
-	height: 50px;
-	
 }
 
 .svgHover3{
 	margin-top: -200px;
 	margin-left: 300px;
-	height: 50px;
-
 }
 
 .svgHover4{
 	margin-top: -200px;
 	margin-left: 450px;
-	height: 50px;
-
 }
+.svgHover5{
+	margin-top: -200px;
+	margin-left: 600px;
+}
+.svgHover6{
+	margin-top: -200px;
+	margin-left: 750px;
+}
+.svgHover7{
+	margin-top: -200px;
+	margin-left: 950px;
+}
+.svgHover8{
+	margin-top: -200px;
+	margin-left: 1000px;
+}
+.svgHover9{
+	margin-top: -200px;
+	margin-left: 950px;
+}
+.svgHover10{
+	margin-top: -200px;
+	margin-left: 800px;
+}
+
 .circle:hover{
 	
    stroke: #92c133 ;
-        transition-duration: 0.5s;
+   transition-duration: 0.5s;
+
+   
 
 
  }
