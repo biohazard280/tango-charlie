@@ -45,7 +45,7 @@ app.config(['$routeProvider', function($routeProvider){
 	}).
 	when('/dashboard_Entreprise/clients/createnewclient' , {
 		templateUrl : 'partials/dashboard_Entreprise/clients/createnewclient.html',
-		controller : 'mainCtrl'
+		controller : 'createNewClientCtrl'
 	}).
 //devis
 	when('/dashboard_Entreprise/devis/viewdevis' , {
