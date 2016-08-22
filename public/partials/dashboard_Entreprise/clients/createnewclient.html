@@ -44,368 +44,58 @@
 
 
 	<section class="addClientForm">
-	<!-- PARTICULIER -->
-		<!-- faire switch bouton même cordonnees factu/livrai -->
-		<form name="addClientForm" ng-show="particulier">
+		<!-- faire switch bouton mêmes cordonnees factu/livrai -->
+		<form name="addClientForm">
 			<!-- COL GAUCHE  -->
-
 			<div>
 				<div>
 					<h2>Particulier</h2>
-					<div>
+					<div ng-show="particulier">
 						<div>
-							<label for="reference">Nom de référence</label>
-							<input type="text" name="reference" id="reference">
+							<label for="input-name">Nom de référence</label>
+							<input type="text" id="input-name" ng-model="newClient.name">
 						</div>
 						<div>
-							<label for="avatar">Avatar</label>
+							<label for="picture">Avatar</label>
+							<button>Parcourir</button>
+						</div>
+					</div>
+					<div ng-show="entreprise">
+						<div>
+						<label for="input-name">Entreprise</label>
+						<input type="text" id="input-name" ng-model="newClient.name">
+						</div>
+						<div>
+							<label for="picture">Image</label>
 							<button>Parcourir</button>
 						</div>
 					</div>
 				</div>
-
-				<div>
-					<h2>Personne de contact</h2>
-					<div>
-						<div>
-							<label>Civilité</label>
-							<select ng-model="civility">
-								<option value="monsieur">Monsieur</option>
-								<option value="madame">Madame</option>
-							</select>
-						</div>
-					</div>
-					<div>
-						<div>
-							<label for="lastname">Nom</label>
-							<input type="text" name="lastname" id="lastname">
-						</div>
-
-						<div>
-							<label for="firstname">Prénom</label>
-							<input type="text" name="firstname" id="firstname">
-						</div>
-					</div>
-
-
-					<div>
-						<div>
-							<label for="phoneMain">Téléphone Principal</label>
-							<input type="text" name="phoneMain" id="phoneMain">
-						</div>
-						<div>
-							<label for="phoneSec">Téléphone secondaire</label>
-							<input type="text" name="phoneSec" id="phoneSec">
-						</div>
-					</div>
-
-					<div>
-						<div>
-							<label for="mail">Email</label>
-							<input type="text" name="mail" id="mail">
-						</div>
-					</div>
-				</div>
-
-				<div>
-					<h2>Mémo</h2>
-					<div>
-						 <textarea rows="5"></textarea> 
-					</div>
-				</div>
-			</div>
-
-			<!-- COL DROITE  -->
-
-			<div>
-				<div>
-					<h2>Coordonnées de facturation</h2>
-					<div>
-						<div>
-							<label>Civilité</label>
-							<select ng-model="civility">
-								<option value="monsieur">Monsieur</option>
-								<option value="madame">Madame</option>
-							</select>
-						</div>
-					</div>
-					<div>
-						<div>
-							<label for="lastname">Nom</label>
-							<input type="text" name="lastname" id="lastname">
-						</div>
-
-						<div>
-							<label for="firstname">Prénom</label>
-							<input type="text" name="firstname" id="firstname">
-						</div>
-					</div>
-
-					<div>
-						<span>
-							<label for="street">Rue</label>
-							<input type="text" name="street" id="street">
-						</span>
-					</div>
-
-					<div>
-						<div>
-							<div>
-								<label for="number">Numéro</label>
-								<input type="text" name="number" id="number">
-							</div>
-
-							<div>
-
-								<label for="box">Boite</label>
-								<input type="text" name="box" id="box">
-							</div>
-						</div>
-
-						<div>
-							<label for="zip">Code Postal</label>
-							<input type="text" name="zip" id="zip">
-						</div>
-					</div>
-
-					<div>
-						<div>
-							<label for="town">Ville</label>
-							<input type="text" name="town" id="town">
-						</div>
-						<div>
-							<label>Pays</label>
-							<select ng-model="country">
-								<option value="country">Country</option>
-							</select>
-						</div>
-						
-					</div>
-
-					<div>
-						<div>
-							<label for="phoneMain">Téléphone Principal</label>
-							<input type="text" name="phoneMain" id="phoneMain">
-						</div>
-						<div>
-							<label for="phoneSec">Téléphone secondaire</label>
-							<input type="text" name="phoneSec" id="phoneSec">
-						</div>
-					</div>
-
-					<div>
-						<div>
-							<label for="mail">Email</label>
-							<input type="text" name="mail" id="mail">
-						</div>
-						<div>
-							<label for="fax">Fax</label>
-							<input type="text" name="fax" id="fax">
-						</div>
-					</div>
-				</div>
-
-
-				<div>
-					<h2>Coordonnées de livraison</h2>
-					<label>Même coordonnées que la facturation</label>
-					<select ng-model="samecoord">
-						<option value="">Oui</option>
-						<option value="true">Non</option>
-					</select>
-					<div ng-show="samecoord">
-						<div>
-							<div>
-								<label>Civilité</label>
-								<select ng-model="civility">
-									<option value="monsieur">Monsieur</option>
-									<option value="madame">Madame</option>
-								</select>
-							</div>
-							<div>
-								<label for="company">Entreprise</label>
-								<input type="text" name="company" id="company">
-							</div>
-						</div>
-						<div>
-							<div>
-								<label for="lastname">Nom</label>
-								<input type="text" name="lastname" id="lastname">
-							</div>
-
-							<div>
-								<label for="firstname">Prénom</label>
-								<input type="text" name="firstname" id="firstname">
-							</div>
-						</div>
-
-						<div>
-							<label for="street">Rue</label>
-							<input type="text" name="street" id="street">
-						</div>
-
-						<div>
-							<div>
-								<div>
-									<label for="number">Numéro</label>
-									<input type="text" name="number" id="number">
-								</div>
-
-								<div>
-
-									<label for="box">Boite</label>
-									<input type="text" name="box" id="box">
-								</div>
-							</div>
-
-							<div>
-								<label for="zip">Code Postal</label>
-								<input type="text" name="zip" id="zip">
-							</div>
-						</div>
-
-						<div>
-							<div>
-								<label for="town">Ville</label>
-								<input type="text" name="town" id="town">
-							</div>
-							<div>
-								<label>Pays</label>
-								<select ng-model="country">
-									<option value="country">Country</option>
-								</select>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</form>
-	<!-- ENTREPRISE -->
-		<form name="addClientForm" ng-show="entreprise">
-
-			<!-- COL GAUCHE  -->
-
-			<div>
-				<div>
-					<h2>Particulier</h2>
-					<div>
-						<div>
-							<label for="reference">Société</label>
-							<input type="text" name="reference" id="reference">
-						</div>
-						<div>
-							<label for="avatar">Image</label>
-							<button>Parcourir</button>
-						</div>
-					</div>
-				</div>
-
-				<div>
+				<div ng-show="entreprise">
 					<h2>TVA</h2>
 					<div class="tva">
 						<div>
-							<label>N° de TVA</label>
-							<select ng-model="tva">
+							<label for="input-tva">N° de TVA</label>
+							<select ng-model="numbertva1">
 								<option value="be">BE</option>
 							</select>
 						</div>
-						
 						<div>
-							<label for="numtva"></label>
-							<input type="text" name="numtva" id="numtva">
-						</div>
-
-						<div>
-							<label>Mode de TVA</label>
-							<select ng-model="modetva">
-								<option value="21">21%</option>
-							</select>
-						</div>
-
-					</div>
-
-					<div>
-						<div>
-							<label>Civilité</label>
-							<select ng-model="civility">
-								<option value="monsieur">Monsieur</option>
-								<option value="madame">Madame</option>
-							</select>
+							<label for="input-numtva"></label>
+							<input type="text" name="numtva" id="numtva" ng-model="numbertva2">
 						</div>
 					</div>
-					<div>
-						<div>
-							<label for="lastname">Nom</label>
-							<input type="text" name="lastname" id="lastname">
-						</div>
-
-						<div>
-							<label for="firstname">Prénom</label>
-							<input type="text" name="firstname" id="firstname">
-						</div>
-					</div>
-
 					<div>
 						<span>
-							<label for="street">Rue</label>
-							<input type="text" name="street" id="street">
+							<label for="input-numbersirentva">Numéro SIREN</label>
+							<input type="text" id="input-numbersirentva" ng-model="newClient.client.vat.siren">
 						</span>
 					</div>
-
 					<div>
-						<div>
-							<div>
-								<label for="number">Numéro</label>
-								<input type="text" name="number" id="number">
-							</div>
-
-							<div>
-
-								<label for="box">Boite</label>
-								<input type="text" name="box" id="box">
-							</div>
-						</div>
-
-						<div>
-							<label for="zip">Code Postal</label>
-							<input type="text" name="zip" id="zip">
-						</div>
-					</div>
-
-					<div>
-						<div>
-							<label for="town">Ville</label>
-							<input type="text" name="town" id="town">
-						</div>
-						<div>
-							<label>Pays</label>
-							<select ng-model="country">
-								<option value="country">Country</option>
-							</select>
-						</div>
-						
-					</div>
-
-					<div>
-						<div>
-							<label for="phoneMain">Téléphone Principal</label>
-							<input type="text" name="phoneMain" id="phoneMain">
-						</div>
-						<div>
-							<label for="phoneSec">Téléphone secondaire</label>
-							<input type="text" name="phoneSec" id="phoneSec">
-						</div>
-					</div>
-
-					<div>
-						<div>
-							<label for="mail">Email</label>
-							<input type="text" name="mail" id="mail">
-						</div>
-						<div>
-							<label for="fax">Fax</label>
-							<input type="text" name="fax" id="fax">
-						</div>
+						<span>
+							<label for="input-numberRCStva">Numéro RCS</label>
+							<input type="text" id="input-numberRCStva" ng-model="newClient.client.vat.rcs">
+						</span>
 					</div>
 				</div>
 
@@ -414,40 +104,44 @@
 					<div>
 						<div>
 							<label>Civilité</label>
-							<select ng-model="civility">
+							<select ng-model="newClient.contactPerson.civility">
 								<option value="monsieur">Monsieur</option>
 								<option value="madame">Madame</option>
 							</select>
 						</div>
+						<div ng-show="entreprise">
+							<label for="input-postcontactPerson">Fonction</label>
+							<input type="text" ng-model="newClient.contactPerson.post" id="post">
+						</div>
 					</div>
 					<div>
 						<div>
-							<label for="lastname">Nom</label>
-							<input type="text" name="lastname" id="lastname">
+							<label for="input-lastnamecontactPerson">Nom</label>
+							<input type="text" ng-model="newClient.contactPerson.lastname" id="lastname">
 						</div>
 
 						<div>
-							<label for="firstname">Prénom</label>
-							<input type="text" name="firstname" id="firstname">
+							<label for="input-firstnamecontactPerson">Prénom</label>
+							<input type="text" ng-model="newClient.contactPerson.firstname" id="firstname">
 						</div>
 					</div>
 
 
 					<div>
 						<div>
-							<label for="phoneMain">Téléphone Principal</label>
-							<input type="text" name="phoneMain" id="phoneMain">
+							<label for="input-phoneMaincontactPerson">Téléphone Principal</label>
+							<input type="text" ng-model="newClient.contactPerson.phoneMain" id="phoneMain">
 						</div>
 						<div>
-							<label for="phoneSec">Téléphone secondaire</label>
-							<input type="text" name="phoneSec" id="phoneSec">
+							<label for="input-phoneSeccontactPerson">Téléphone secondaire</label>
+							<input type="text" ng-model="newClient.contactPerson.phoneSec" id="phoneSec">
 						</div>
 					</div>
 
 					<div>
 						<div>
-							<label for="mail">Email</label>
-							<input type="text" name="mail" id="mail">
+							<label for="input-mailcontactPerson">Email</label>
+							<input type="text" ng-model="newClient.contactPerson.mail" id="mail">
 						</div>
 					</div>
 				</div>
@@ -468,7 +162,7 @@
 					<div>
 						<div>
 							<label>Civilité</label>
-							<select ng-model="civility">
+							<select ng-model="newClient.billingInfo.civility">
 								<option value="monsieur">Monsieur</option>
 								<option value="madame">Madame</option>
 							</select>
@@ -476,51 +170,51 @@
 					</div>
 					<div>
 						<div>
-							<label for="lastname">Nom</label>
-							<input type="text" name="lastname" id="lastname">
+							<label for="input-lastnamebillingInfo">Nom</label>
+							<input type="text" ng-model="newClient.billingInfo.lastname" id="input-lastnamebillingInfo">
 						</div>
 
 						<div>
-							<label for="firstname">Prénom</label>
-							<input type="text" name="firstname" id="firstname">
+							<label for="input-firstnamebillingInfo">Prénom</label>
+							<input type="text" ng-model="newClient.billingInfo.firstname" id="nput-firstnamebillingInfo">
 						</div>
 					</div>
 
 					<div>
 						<span>
-							<label for="street">Rue</label>
-							<input type="text" name="street" id="street">
+							<label for="input-streetbillingInfo">Rue</label>
+							<input type="text" ng-model="newClient.billingInfo.street" id="input-streetbillingInfo">
 						</span>
 					</div>
 
 					<div>
 						<div>
 							<div>
-								<label for="number">Numéro</label>
-								<input type="text" name="number" id="number">
+								<label for="input-numberbillingInfo">Numéro</label>
+								<input type="text" ng-model="newClient.billingInfo.number" id="input-numberbillingInfo">
 							</div>
 
 							<div>
 
-								<label for="box">Boite</label>
-								<input type="text" name="box" id="box">
+								<label for="input-boxbillingInfo">Boite</label>
+								<input type="text" ng-model="newClient.billingInfo.box" id="input-boxbillingInfo">
 							</div>
 						</div>
 
 						<div>
-							<label for="zip">Code Postal</label>
-							<input type="text" name="zip" id="zip">
+							<label for="input-zipbillingInfo">Code Postal</label>
+							<input type="text" ng-model="newClient.billingInfo.zip" id="input-zipbillingInfo">
 						</div>
 					</div>
 
 					<div>
 						<div>
-							<label for="town">Ville</label>
-							<input type="text" name="town" id="town">
+							<label for="input-townbillingInfo">Ville</label>
+							<input type="text" ng-model="newClient.billingInfo.town" id="input-townbillingInfo">
 						</div>
 						<div>
 							<label>Pays</label>
-							<select ng-model="country">
+							<select ng-model="newClient.billingInfo.country">
 								<option value="country">Country</option>
 							</select>
 						</div>
@@ -529,27 +223,26 @@
 
 					<div>
 						<div>
-							<label for="phoneMain">Téléphone Principal</label>
-							<input type="text" name="phoneMain" id="phoneMain">
+							<label for="input-phoneMainbillingInfo">Téléphone Principal</label>
+							<input type="text" ng-model="newClient.billingInfo.phoneMain" id="phoneMainbillingInfo">
 						</div>
 						<div>
-							<label for="phoneSec">Téléphone secondaire</label>
-							<input type="text" name="phoneSec" id="phoneSec">
+							<label for="input-phoneSecbillingInfo">Téléphone secondaire</label>
+							<input type="text" ng-model="newClient.billingInfo.phoneSec" id="phoneSecbillingInfo">
 						</div>
 					</div>
 
 					<div>
 						<div>
-							<label for="mail">Email</label>
-							<input type="text" name="mail" id="mail">
+							<label for="input-mailbillingInfo">Email</label>
+							<input type="text" ng-model="newClient.billingInfo.mail" id="input-mailbillingInfo">
 						</div>
 						<div>
-							<label for="fax">Fax</label>
-							<input type="text" name="fax" id="fax">
+							<label for="input-faxbillingInfo">Fax</label>
+							<input type="text" ng-model="newClient.billingInfo.fax" id="input-faxbillingInfo">
 						</div>
 					</div>
 				</div>
-
 
 				<div>
 					<h2>Coordonnées de livraison</h2>
@@ -558,70 +251,99 @@
 						<option value="">Oui</option>
 						<option value="true">Non</option>
 					</select>
-					<div ng-show="samecoord">
+					<span ng-show="samecoord">
 						<div>
 							<div>
-								<label>Civilité</label>
-								<select ng-model="civility">
+								<label for="input-civilitydeliveryInfo">Civilité</label>
+								<select ng-model="newClient.deliveryInfoInfo.civility">
 									<option value="monsieur">Monsieur</option>
 									<option value="madame">Madame</option>
 								</select>
 							</div>
-							<div>
-								<label for="company">Entreprise</label>
-								<input type="text" name="company" id="company">
-							</div>
 						</div>
 						<div>
 							<div>
-								<label for="lastname">Nom</label>
-								<input type="text" name="lastname" id="lastname">
+								<label for="input-lastnamedeliveryInfo">Nom</label>
+								<input type="text" id="input-namedeliveryInfo" ng-model="newClient.deliveryInfoInfo.lastname">
 							</div>
 
 							<div>
-								<label for="firstname">Prénom</label>
-								<input type="text" name="firstname" id="firstname">
+								<label for="input-firstnamedeliveryInfo">Prénom</label>
+								<input type="text" id="input-firstnamedeliveryInfo" ng-model="newClient.deliveryInfoInfo.firstname">
 							</div>
 						</div>
 
 						<div>
-							<label for="street">Rue</label>
-							<input type="text" name="street" id="street">
+							<span>
+								<label for="input-streetdeliveryInfo">Rue</label>
+								<input type="text" id="input-streetdeliveryInfo" ng-model="newClient.deliveryInfoInfo.street">
+							</span>
 						</div>
 
 						<div>
 							<div>
 								<div>
-									<label for="number">Numéro</label>
-									<input type="text" name="number" id="number">
+									<label for="input-numberdeliveryInfo">Numéro</label>
+									<input type="text" id="input-numberdeliveryInfo" ng-model="newClient.deliveryInfoInfo.street">
 								</div>
 
 								<div>
 
-									<label for="box">Boite</label>
-									<input type="text" name="box" id="box">
+									<label for="input-boxdeliveryInfo">Boite</label>
+									<input type="text" id="input-boxdeliveryInfo" ng-model="newClient.deliveryInfoInfo.box">
 								</div>
 							</div>
 
 							<div>
-								<label for="zip">Code Postal</label>
-								<input type="text" name="zip" id="zip">
+								<label for="input-zipdeliveryInfo">Code Postal</label>
+								<input type="text" id="input-zipdeliveryInfo" ng-model="newClient.deliveryInfoInfo.box">
 							</div>
 						</div>
 
 						<div>
 							<div>
-								<label for="town">Ville</label>
-								<input type="text" name="town" id="town">
+								<label for="input-towndeliveryInfo">Ville</label>
+								<input type="text" id="input-towndeliveryInfo" ng-model="newClient.deliveryInfoInfo.town">
 							</div>
 							<div>
-								<label>Pays</label>
-								<select ng-model="country">
+								<label for="input-countrydeliveryInfo">Pays</label>
+								<select ng-model="newClient.deliveryInfoInfo.country" id="input-country">
 									<option value="country">Country</option>
 								</select>
 							</div>
+							
 						</div>
-					</div>
+
+						<div>
+							<div>
+								<label for="input-phoneMaindeliveryInfo">Téléphone Principal</label>
+								<input type="text" ng-model="newClient.deliveryInfoInfo.phoneMain" id="input-phoneMaindeliveryInfo">
+							</div>
+							<div>
+								<label for="input-phoneSecdeliveryInfo">Téléphone secondaire</label>
+								<input type="text" ng-model="newClient.deliveryInfoInfo.phoneSec" id="input-phoneSecdeliveryInfo">
+							</div>
+						</div>
+
+						<div>
+							<div>
+								<label for="input-maildeliveryInfo">Email</label>
+								<input type="text" id="input-mail" ng-model="newClient.deliveryInfoInfo.maildeliveryInfo">
+							</div>
+							<div>
+								<label for="input-faxdeliveryInfo">Fax</label>
+								<input type="text" id="input-faxdeliveryInfo" ng-model="newClient.billingInfo.fax">
+							</div>
+						</div>
+					</span>
+				</div>
+
+				<div>
+					<h2>Validation</h2>
+					<span>
+							<input type="submit" ng-show="particulier"  class="validation" value="Enregistrer en tant que particulier">
+							<input type="submit" ng-show="entreprise"   class="validation" value="Enregistrer en tant que entreprise">
+					</span>
 				</div>
 			</div>
 		</form>

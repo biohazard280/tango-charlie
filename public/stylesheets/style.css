@@ -341,25 +341,31 @@ td p {
 }
 /* line 63, ../sass/_addclient.scss */
 .addClientForm .tva div:first-child {
-  width: 15.25424%;
+  width: 13.7931%;
   float: left;
-  margin-right: 1.69492%;
+  margin-right: 3.44828%;
 }
 /* line 66, ../sass/_addclient.scss */
-.addClientForm .tva div:nth-child(2) {
-  width: 57.62712%;
-  float: left;
-  margin-right: 1.69492%;
-  margin-top: 14px;
-}
-/* line 70, ../sass/_addclient.scss */
 .addClientForm .tva div:last-child {
-  width: 23.72881%;
+  width: 82.75862%;
   float: right;
   margin-right: 0;
+  margin-top: 14px;
+}
+/* line 72, ../sass/_addclient.scss */
+.addClientForm .validation {
+  background-color: #84c900;
+  border: none;
+  color: white;
+  font-weight: 800;
+}
+/* line 77, ../sass/_addclient.scss */
+.addClientForm .validation:hover {
+  background-color: #95e300;
+  cursor: pointer;
 }
 
-/* line 79, ../sass/_addclient.scss */
+/* line 87, ../sass/_addclient.scss */
 .select {
   width: 13.7931%;
   float: left;
@@ -369,13 +375,13 @@ td p {
   border: none;
   padding: 5px;
 }
-/* line 85, ../sass/_addclient.scss */
+/* line 93, ../sass/_addclient.scss */
 .select:hover {
   background-color: #a3a5a8;
   cursor: pointer;
 }
 
-/* line 91, ../sass/_addclient.scss */
+/* line 99, ../sass/_addclient.scss */
 .selectActive {
   background-color: #0297cc !important;
 }
@@ -985,7 +991,7 @@ td {
   margin: 0;
   padding: 0;
 }
-
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .container:after {
   content: " ";
   display: block;
@@ -999,7 +1005,7 @@ td {
   margin-right: auto;
   background-color: #6e1b56;
 }
-
+/* line 12, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .landing:after {
   content: " ";
   display: block;

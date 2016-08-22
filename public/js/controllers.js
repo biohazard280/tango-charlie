@@ -78,9 +78,7 @@ crmControllers.controller('hoverHomeCtrl', ['$scope', function($scope){
 }]);
 
 
-
-
-crmControllers.controller('listClientsCtrl', ['$scope', 'Rest', function($scope, Rest){
+crmControllers.controller('listClientsCtrl', ['$scope', 'Client', function($scope, Client){
 
 	$scope.nbrCompanies = 0;
 	$scope.nbrPrivateprs = 0;
@@ -92,7 +90,7 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Rest', function($scope,
 	var clientsToShow = [];
 
 	function refresh() {
-		Rest.getList(function(result) {
+		Client.getList(function(result) {
 			$scope.clients = result;
 			/*console.log(result);*/
 
@@ -127,26 +125,56 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Rest', function($scope,
 }]);
 
 
-crmControllers.controller('detailClientCtrl', ['$scope', 'Rest', function($scope, Rest){
+crmControllers.controller('detailClientCtrl', ['$scope', 'Client', function($scope, Client){
 
 }]);
 
 
-crmControllers.controller('mainCtrl', ['$scope', 'Rest', function($scope, Rest){
+crmControllers.controller('mainCtrl', ['$scope', 'Client', function($scope, Client){
 
 }]);
 
 
-crmControllers.controller('createNewClientCtrl', ['$scope', function($scope){
+crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($scope, Client){
+
+	function voidArrays(){
+		// prepare the object which will contain the new client
+		$scope.newClient = {};
+	}
+
+	// set the differents variables when we load the form
+	voidArrays()
+
+	$scope.createClient = function(isValid){
+		if(isValid){
+			Client.createClient($scope.newClient, function(result){
+				alert(result.message);
+				console.log(result);
+				// clean the temp Arrays after sending the form for the next one
+				voidArrays();
+			});
+			$scope.error = false;
+		} else {
+			console.log("Ca coince quelque part");
+			$scope.error = true;
+		}
+	}
+
+	//toggle particlulier/entreprise
+
 	$scope.particulier = true;
 	$scope.entreprise = false;
+	// isCopany = false
 
 	$scope.showParticulier = function() {
 		$scope.particulier = true;
 		$scope.entreprise = false;
+		// isCopany = false
 	}
 	$scope.showEntreprise = function() {
 		$scope.entreprise = true;
 		$scope.particulier = false;
+		// isCopany = true
 	}
+
 }]);
