@@ -5,6 +5,7 @@
   "main": "www",
   "dependencies": {
     "angular": "^1.5.8",
+    "angular-material": "^1.1.0",
     "angular-resource": "^1.5.8",
     "angular-route": "^1.5.8",
     "bcrypt": "^0.8.7",
@@ -18,6 +19,7 @@
     "mongoose": "^4.4.19",
     "mongoose-validator": "^1.2.5",
     "multer": "^1.1.0",
+    "ng-dialog": "^0.6.2",
     "phantomjs-prebuilt": "^2.1.10"
   },
   "devDependencies": {},
