@@ -7,18 +7,23 @@
     
   
     <div class="container">
+   <!--    <div class="error" ng-if="error && signinAdminForm.$invalid">
+     <div ng-if="signinAdminForm.mail.$invalid">Error in email : 
+       <ul>show the error message related to the title
+         <li ng-repeat="(type, error) in signinAdminForm.mail.$error">{{type}}</li>
+       </ul>
+     </div>
+       </div> -->
       <label><b>Username</b></label>
       <input type="email" placeholder="Enter your email" name="mail" ng-model="userAdmin.mail" required>
-      <div ng-messages="signinAdminForm.mail.$error" ng-messages-include="erreurs.html"></div>
       <label><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="pwd" ng-model="userAdmin.pwd" required>
-  	  <div ng-messages="signinAdminForm.pwd.$error" ng-messages-include="erreurs.html"></div>
-      <button type="submit">Login</button>
+  	  <button type="submit" class="ngdialog-button ngdialog-button-primary">Login</button>
       
     </div>
-    <div ng-if="signinAdminForm.mail.$invalid">
+    <!-- <div ng-if="signinAdminForm.mail.$invalid">
      
-    </div>
+    </div> -->
     
   </form>
 <!-- <h2>Hello</h2>
