@@ -44,12 +44,15 @@
 
 
 	<section class="addClientForm">
-		<!-- faire switch bouton mêmes cordonnees factu/livrai -->
-		<form name="addClientForm">
+		<!-- faire switch bouton mêmes cordonnees factu/livrai-->
+		<form name="addClientForm" ng-submit="createClient(addClientForm.$valid)">
 			<!-- COL GAUCHE  -->
 			<div>
 				<div>
-					<h2>Particulier</h2>
+					<h2>
+						<span ng-show="particulier">Particulier</span>
+						<span ng-show="entreprise">Entreprise</span>
+					</h2>
 					<div ng-show="particulier">
 						<div>
 							<label for="input-name">Nom de référence</label>
@@ -284,7 +287,7 @@
 							<div>
 								<div>
 									<label for="input-numberdeliveryInfo">Numéro</label>
-									<input type="text" id="input-numberdeliveryInfo" ng-model="newClient.deliveryInfoInfo.street">
+									<input type="text" id="input-numberdeliveryInfo" ng-model="newClient.deliveryInfoInfo.number">
 								</div>
 
 								<div>
@@ -296,7 +299,7 @@
 
 							<div>
 								<label for="input-zipdeliveryInfo">Code Postal</label>
-								<input type="text" id="input-zipdeliveryInfo" ng-model="newClient.deliveryInfoInfo.box">
+								<input type="text" id="input-zipdeliveryInfo" ng-model="newClient.deliveryInfoInfo.zip">
 							</div>
 						</div>
 
@@ -328,11 +331,11 @@
 						<div>
 							<div>
 								<label for="input-maildeliveryInfo">Email</label>
-								<input type="text" id="input-mail" ng-model="newClient.deliveryInfoInfo.maildeliveryInfo">
+								<input type="text" id="input-mail" ng-model="newClient.deliveryInfoInfo.mail">
 							</div>
 							<div>
 								<label for="input-faxdeliveryInfo">Fax</label>
-								<input type="text" id="input-faxdeliveryInfo" ng-model="newClient.billingInfo.fax">
+								<input type="text" id="input-faxdeliveryInfo" ng-model="newClient.deliveryInfo.fax">
 							</div>
 						</div>
 					</span>

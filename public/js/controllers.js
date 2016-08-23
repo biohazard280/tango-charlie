@@ -147,13 +147,14 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 
 	$scope.createClient = function(isValid){
 		if(isValid){
-			Client.createClient($scope.newClient, function(result){
-				alert(result.message);
-				console.log(result);
-				// clean the temp Arrays after sending the form for the next one
-				voidArrays();
-			});
-			$scope.error = false;
+			// Client.createClient($scope.newClient, function(result){
+			// 	alert(result.message);
+			// 	console.log(result);
+			// 	// clean the temp Arrays after sending the form for the next one
+			// 	voidArrays();
+			// });
+			// $scope.error = false;
+			console.log($scope.newClient);
 		} else {
 			console.log("Ca coince quelque part");
 			$scope.error = true;
