@@ -3,20 +3,24 @@
 var app = angular.module('carinaApp',[
 	'ngRoute',
 	'ngResource',
+	'ngDialog',
 	'crmControllers',
-	'crmServices'	
+	'crmServices'		
 	]);
+
+app.run(function($rootScope, $location){
+  $rootScope.$on('$routeChangeStart', function(event, next, current){
+    if ($location.path() == '/') {
+      $rootScope.hideit = true;
+    } else  $rootScope.hideit = false;
+  });
+});
 
 app.config(['$routeProvider', function($routeProvider){
 	$routeProvider.
 	when('/', {
 		templateUrl : 'partials/home.html',
-		controller : 'hoverHomeCtrl'
-	}).
-
-	when('/login', {
-		templateUrl : 'partials/login.html',
-		controller : 'mainCtrl'
+		controller : 'homeCtrl'
 	}).
 
 	when('/subscribe' , {

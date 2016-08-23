@@ -1,7 +1,7 @@
 "use strict";
 var crmControllers = angular.module('crmControllers', []);
 
-crmControllers.controller('hoverHomeCtrl', ['$scope', function($scope){
+crmControllers.controller('homeCtrl', ['$scope', 'Rest', '$location','ngDialog', function($scope, Rest, $location, ngDialog){
 
 	$scope.svgHover=function(circleTarget, reset){
 		console.log('in');
@@ -75,6 +75,15 @@ crmControllers.controller('hoverHomeCtrl', ['$scope', function($scope){
 
 	}
 
+	$scope.clickToOpen = function () {
+        ngDialog.open({ 
+        	template: '/partials/popupTmpl.html',
+        	className: 'ngdialog-theme-default',
+        	controller: 'loginCtrl'
+         	
+		});
+    };
+
 }]);
 
 
@@ -129,6 +138,49 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Rest', function($scope,
 
 crmControllers.controller('detailClientCtrl', ['$scope', 'Rest', function($scope, Rest){
 
+}]);
+
+crmControllers.controller('loginCtrl', ['$scope', 'Rest', '$location', function($scope, Rest, $location){
+	console.log('ctrl login');
+		//$scope.admin = [];
+		// use the Rest service created in services.js
+		Rest.getAdmin(function(result) {
+			$scope.admin = result;
+			let mailOk = false;
+
+
+			$scope.login = function(isValid){
+				
+				if(isValid){
+					if($scope.admin[0].contactPerson.mail == $scope.userAdmin.mail) {
+						mailOk = true;
+						Rest.loginAdmin($scope.admin[0].contactPerson.pwd, $scope.userAdmin.pwd, function(result){
+							//alert(result[0].data);
+							$scope.loginAdmin = result;
+							console.log("email ok");
+							if(mailOk == true && result[0].data == true){
+								console.log("loggin ok !!");
+								console.log($scope);
+								$location.path('/dashboard_Entreprise/clients/viewclient');
+							}
+							else if (mailOk == false){
+
+							}
+							console.log(result);
+							
+						});
+					};
+					$scope.error = false;
+				}	
+				else {
+					console.log("email incorrect");
+					$scope.userAdmin.mail = "";
+					$scope.error = true;
+					$location.path('/');
+				}
+			};
+
+		});
 }]);
 
 

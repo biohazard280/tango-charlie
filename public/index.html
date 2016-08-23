@@ -5,6 +5,9 @@
 	<title>Carina - Customers relationship management</title>
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+	<link rel="stylesheet" href="/ng-dialog/css/ngDialog-theme-default.css">
+    <link rel="stylesheet" href="/ng-dialog/css/ngDialog-theme-plain.css">
+    <link rel="stylesheet" href="/ng-dialog/css/ngDialog.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
       <link rel="stylesheet" href="font-awesome-4.6.3 2/css/font-awesome.min.css">
@@ -13,6 +16,7 @@
 	<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>-->
 	 <script type="text/javascript" src="/angular-route/angular-route.js"></script>
 	 <script type="text/javascript" src="/angular-resource/angular-resource.js"></script>
+	 <script type="text/javascript" src="ng-dialog/js/ngDialog.js"></script>
 	<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>-->
 </head>
 
@@ -40,7 +44,7 @@
 		</div>
 	</header>
 
-	<nav class="subnav">
+	<nav class="subnav" ng-hide="hideit">
 		<ul class="nav">
 			<li><a href="#/dashboard_Entreprise/clients/viewclient">Clients</a></li>
 			<li><a href="#/dashboard_Entreprise/devis/viewdevis">Devis</a></li>

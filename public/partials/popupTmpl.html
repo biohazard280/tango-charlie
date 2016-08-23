@@ -1,0 +1,27 @@
+<section>
+ <form name ="signinAdminForm" ng-submit="login(signinAdminForm.$valid)" novalidate="">
+    <div class="imgcontainer">
+     <img src="img/logotype.svg" alt="Avatar" class="avatar">
+    </div>
+  
+    
+  
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="email" placeholder="Enter your email" name="mail" ng-model="userAdmin.mail" required>
+      <div ng-messages="signinAdminForm.mail.$error" ng-messages-include="erreurs.html"></div>
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="pwd" ng-model="userAdmin.pwd" required>
+  	  <div ng-messages="signinAdminForm.pwd.$error" ng-messages-include="erreurs.html"></div>
+      <button type="submit">Login</button>
+      
+    </div>
+    <div ng-if="signinAdminForm.mail.$invalid">
+     
+    </div>
+    
+  </form>
+<!-- <h2>Hello</h2>
+
+<button on-click="redirect()">click</button> -->
+</section>
