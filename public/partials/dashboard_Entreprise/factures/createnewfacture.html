@@ -31,12 +31,10 @@
 
 		</a>
 	</section>
-
+	
 	<section class="addFactureForm">
 		<form name="addFactureForm">
-
-		<!-- COL GAUCHE  -->
-
+			<!-- COL GAUCHE  -->
 			<div>
 				<div>
 					<h2>Vos références</h2>
@@ -85,8 +83,7 @@
 				</div>
 			</div>
 
-	<!-- COL DROITE  -->
-
+			<!-- COL DROITE  -->
 			<div>
 				<div>
 					<h2>Information et règles de paiement</h2>
@@ -128,8 +125,7 @@
 				</div>
 			</div>
 
-		<!-- TABLEAU BAS  -->
-
+			<!-- TABLEAU BAS  -->
 			<div class="detailsfacture">
 				<div>
 					<h2>Objet</h2>
@@ -174,31 +170,31 @@
 						<li>
 							<ul class="infosarticle">
 								<li class="article">
-									<select ng-model="article1">
+									<select ng-model="article01">
 										<option>Pomme de pain</option>
 									</select>
 								</li>
-								<li class="quantity"><input ng-model="quantity" type="" name="" id=""></li>
-								<li>-- €</li>
-								<li>-- %</li>
+								<li class="quantity"><input ng-model="qtearticle01" type="" name="" id=""></li>
+								<li>1119.75 <span class="symbole">€</span></li>
+								<li>21 <span class="symbole">%</span></li>
 								<li>*</li>
 								<li>*</li>
-								<li>-- €</li>
+								<li>1349.45 <span class="symbole">€</span></li>
 							</ul>
 						</li>
 						<li>
 							<ul class="infosarticle">
 								<li class="article">
-									<select ng-model="article2">
+									<select ng-model="article02">
 										<option>Pomme d'api</option>
 									</select>
 								</li>
-								<li class="quantity"><input ng-model="quantity" type="" name="" id=""></li>
-								<li>-- €</li>
-								<li>-- %</li>
+								<li class="quantity"><input ng-model="qtearticle02" type="" name="" id=""></li>
+								<li>2.00 <span class="symbole">€</span></li>
+								<li>6 <span class="symbole">%</span></li>
 								<li>*</li>
 								<li>*</li>
-								<li>-- €</li>
+								<li>2.12 <span class="symbole">€</span></li>
 							</ul>
 						</li>
 						<li class="ajouter">
@@ -206,12 +202,33 @@
 						</li>
 						<li class="total">
 							<ul>
-								<li>*en cours*</li>
-								<li>2</li>
-								<li>3</li>
-								<li>4</li>
-								<li>5</li>
-								<li>6</li>
+								<li>
+									<ul>
+										<li>Total</li>
+										<li>2.12 <span class="symbole">€</span></li>
+									</ul>
+									<ul>
+										<li>Ristourne</li>
+										<li>
+											<input ng-model="ristourneval" type="" name="" id="">
+											<select ng-model="ristournepct">
+												<option>50</option>
+											</select>
+										</li>
+									</ul>
+									<ul>
+										<li>Sous-Total HT</li>
+										<li>2.12 <span class="symbole">€</span></li>
+									</ul>
+									<ul>
+										<li>Total TTC</li>
+										<li>2.12 <span class="symbole">€</span></li>
+									</ul>
+									<ul>
+										<li>Accompte</li>
+										<li>2.12 <span class="symbole">€</span></li>
+									</ul>
+								</li>
 							</ul>
 						</li>
 					</ul>

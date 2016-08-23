@@ -7,26 +7,26 @@
 	border-radius: 50px 0 50px 0;
 	background-image: url(../img/bgViewprofile_general_info.jpg);
 	padding: 20px;
-}
+	}
 
-.profile p {
+	.profile p {
 	color: white;
 	text-align: left;
-}
+	}
 
-.informations{
+	.informations{
 	@include span(2 of 6);
-}
+	}
 
-.name_informations{
+	.name_informations{
 	@include span(4 of 6 last);
 	padding-top: 25px;
 	color: white;
 	font-size: 2em;
 	font-family: $MyrRegular;
-}
+	}
 
-.edit{			
+	.edit{			
 	width: 70px;
 	height: 25px;
 	background-color: white;
@@ -38,64 +38,62 @@
 	p,i{
 		display: inline-block;
 		color: $primary;
-		background-color: green;
+		//background-color: green;
 		}
-}
+	}
 
-.ALL_informations {
+	.ALL_informations {
 	margin-top: 130px;
-}
+	}
 
-h1{
+	h1{
 	color: #84c900;
-}
+	}
 
-h2{
+	h2{
 	text-align: left;
 	color: white;
 	text-decoration: none;
 	margin: 20px 0;
-}
+	}
 
-.title {
+	.title {
 	@include span(3 of 6);
-	background-color: red;
+	//background-color: red;
 	margin: 0;
-}
+	}
 
-
-
-.activities{
+	.activities{
 	@include span(4 of 6 last);
-	background-color: green;
-	// height: 460px;
+	//background-color: green;
+	background-color: white;
+	height: 460px;
+	padding-bottom: 20px;
 	box-sizing: border-box;
-}
+	}
 
-.activities h2 {
+	.activities h2 {
 	color: grey;
 	margin-left: 20px;
-}
+	}
 
-td span{
+	td span{
 	margin-right: 10px;
-}
+	}
 
-.matable {
-	background-color: orange;
-}
+	.matableprofile {
+	//background-color: orange;
+	margin-bottom: 10px;
+	}
 
-
-.notes {
+	.notes {
 	background-color: white;
 	padding: 20px;
-}
+	}
 
-.notes p {
+	.notes p {
 	margin-top: 20px;
-}
-
-
+	}
 
 }
 
