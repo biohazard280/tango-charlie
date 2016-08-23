@@ -9,7 +9,7 @@ services.factory('Client', ['$resource', function($resource) {
 			getList : function(callback) {
 				resource.query(callback);
 			},
-			addCLient : function(newClient, callback){
+			addClient : function(newClient, callback){
 				let client = new resource();
 
 				//param[0].parametre
@@ -22,6 +22,7 @@ services.factory('Client', ['$resource', function($resource) {
 					"siren" : parseInt(newClient.vat.siren),
 					"rcs" : parseInt(newClient.vat.rcs)
 				};
+				
 				client.billingInfo = {
 					"civility" : newClient.billingInfo.civility,
 					"firstname" : newClient.billingInfo.firstname,
@@ -37,6 +38,7 @@ services.factory('Client', ['$resource', function($resource) {
 					"phoneSec" : newClient.billingInfo.phoneSec,
 					"fax" : newClient.billingInfo.fax
 				};
+
 				client.deliveryInfo = {
 					"civility" : newClient.deliveryInfo.civility,
 					"firstname" : newClient.deliveryInfo.firstname,
@@ -49,6 +51,7 @@ services.factory('Client', ['$resource', function($resource) {
 					"town" : newClient.deliveryInfo.town,
 					"country" : newClient.deliveryInfo.country
 				};
+
 				client.contactPerson = {
 					"civility" : newClient.contactPerson.civility,
 					"firstname" : newClient.contactPerson.firstname,
