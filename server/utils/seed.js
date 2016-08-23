@@ -1,3 +1,4 @@
+"use strict";
 let Company = require('../api/crm/model');
 
 let _ = require('lodash');

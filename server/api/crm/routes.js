@@ -1,3 +1,4 @@
+"use strict";
 let router = require('express').Router();
 let controller = require('./controllers/controller');
 let paramsController = require('./controllers/paramsController');

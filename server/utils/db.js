@@ -1,3 +1,4 @@
+"use strict";
 let mongoose = require('mongoose');
 let logger = require(`${process.cwd()}/server/utils/logger`);
 

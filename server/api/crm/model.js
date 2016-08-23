@@ -1,3 +1,4 @@
+"use strict";
 let mongoose = require('mongoose');
 let validate = require('mongoose-validator');
 let logger = require(`${process.cwd()}/server/utils/logger`);
