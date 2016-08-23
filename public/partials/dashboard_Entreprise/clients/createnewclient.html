@@ -53,23 +53,19 @@
 						<span ng-show="particulier">Particulier</span>
 						<span ng-show="entreprise">Entreprise</span>
 					</h2>
-					<div ng-show="particulier">
+					<div>
 						<div>
-							<label for="input-name">Nom de référence</label>
+							<label for="input-name">
+								<span ng-show="particulier">Nom de référence</span>
+								<span ng-show="entreprise">Nom de l'entreprise</span>
+							</label>
 							<input type="text" id="input-name" ng-model="newClient.name">
 						</div>
 						<div>
-							<label for="picture">Avatar</label>
-							<button>Parcourir</button>
-						</div>
-					</div>
-					<div ng-show="entreprise">
-						<div>
-						<label for="input-name">Entreprise</label>
-						<input type="text" id="input-name" ng-model="newClient.name">
-						</div>
-						<div>
-							<label for="picture">Image</label>
+							<label for="picture">
+								<span ng-show="particulier">Avatar</span>
+								<span ng-show="entreprise">Image</span>
+							</label>
 							<button>Parcourir</button>
 						</div>
 					</div>
@@ -85,7 +81,7 @@
 						</div>
 						<div>
 							<label for="input-numtva"></label>
-							<input type="text" name="numtva" id="numtva" ng-model="numbertva2">
+							<input type="text" id="numtva" ng-model="numbertva2">
 						</div>
 					</div>
 					<div>
@@ -238,7 +234,7 @@
 					<div>
 						<div>
 							<label for="input-mailbillingInfo">Email</label>
-							<input type="text" ng-model="newClient.billingInfo.mail" id="input-mailbillingInfo">
+							<input type="text" ng-model="newClient.billingInfo.mail" id="input-mailbillingInfo" ng-change="validationEmail()">
 						</div>
 						<div>
 							<label for="input-faxbillingInfo">Fax</label>
@@ -250,15 +246,12 @@
 				<div>
 					<h2>Coordonnées de livraison</h2>
 					<label>Même coordonnées que la facturation</label>
-					<select ng-model="samecoord">
-						<option value="">Oui</option>
-						<option value="true">Non</option>
-					</select>
-					<span ng-show="samecoord">
+					<input type="checkbox" ng-model="checkCoord" ng-checked="checkCoord" class="checkCoord" ng-changed="">
+					<span ng-hide="checkCoord">
 						<div>
 							<div>
 								<label for="input-civilitydeliveryInfo">Civilité</label>
-								<select ng-model="newClient.deliveryInfoInfo.civility">
+								<select ng-model="newClient.deliveryInfo.civility">
 									<option value="monsieur">Monsieur</option>
 									<option value="madame">Madame</option>
 								</select>
@@ -267,19 +260,19 @@
 						<div>
 							<div>
 								<label for="input-lastnamedeliveryInfo">Nom</label>
-								<input type="text" id="input-namedeliveryInfo" ng-model="newClient.deliveryInfoInfo.lastname">
+								<input type="text" id="input-lastnamedeliveryInfo" ng-model="newClient.deliveryInfo.lastname">
 							</div>
 
 							<div>
 								<label for="input-firstnamedeliveryInfo">Prénom</label>
-								<input type="text" id="input-firstnamedeliveryInfo" ng-model="newClient.deliveryInfoInfo.firstname">
+								<input type="text" id="input-firstnamedeliveryInfo" ng-model="newClient.deliveryInfo.firstname">
 							</div>
 						</div>
 
 						<div>
 							<span>
 								<label for="input-streetdeliveryInfo">Rue</label>
-								<input type="text" id="input-streetdeliveryInfo" ng-model="newClient.deliveryInfoInfo.street">
+								<input type="text" id="input-streetdeliveryInfo" ng-model="newClient.deliveryInfo.street">
 							</span>
 						</div>
 
@@ -287,56 +280,34 @@
 							<div>
 								<div>
 									<label for="input-numberdeliveryInfo">Numéro</label>
-									<input type="text" id="input-numberdeliveryInfo" ng-model="newClient.deliveryInfoInfo.number">
+									<input type="text" id="input-numberdeliveryInfo" ng-model="newClient.deliveryInfo.number">
 								</div>
 
 								<div>
 
 									<label for="input-boxdeliveryInfo">Boite</label>
-									<input type="text" id="input-boxdeliveryInfo" ng-model="newClient.deliveryInfoInfo.box">
+									<input type="text" id="input-boxdeliveryInfo" ng-model="newClient.deliveryInfo.box">
 								</div>
 							</div>
 
 							<div>
 								<label for="input-zipdeliveryInfo">Code Postal</label>
-								<input type="text" id="input-zipdeliveryInfo" ng-model="newClient.deliveryInfoInfo.zip">
+								<input type="text" id="input-zipdeliveryInfo" ng-model="newClient.deliveryInfo.zip">
 							</div>
 						</div>
 
 						<div>
 							<div>
 								<label for="input-towndeliveryInfo">Ville</label>
-								<input type="text" id="input-towndeliveryInfo" ng-model="newClient.deliveryInfoInfo.town">
+								<input type="text" id="input-towndeliveryInfo" ng-model="newClient.deliveryInfo.town">
 							</div>
 							<div>
 								<label for="input-countrydeliveryInfo">Pays</label>
-								<select ng-model="newClient.deliveryInfoInfo.country" id="input-country">
+								<select ng-model="newClient.deliveryInfo.country" id="input-country">
 									<option value="country">Country</option>
 								</select>
 							</div>
 							
-						</div>
-
-						<div>
-							<div>
-								<label for="input-phoneMaindeliveryInfo">Téléphone Principal</label>
-								<input type="text" ng-model="newClient.deliveryInfoInfo.phoneMain" id="input-phoneMaindeliveryInfo">
-							</div>
-							<div>
-								<label for="input-phoneSecdeliveryInfo">Téléphone secondaire</label>
-								<input type="text" ng-model="newClient.deliveryInfoInfo.phoneSec" id="input-phoneSecdeliveryInfo">
-							</div>
-						</div>
-
-						<div>
-							<div>
-								<label for="input-maildeliveryInfo">Email</label>
-								<input type="text" id="input-mail" ng-model="newClient.deliveryInfoInfo.mail">
-							</div>
-							<div>
-								<label for="input-faxdeliveryInfo">Fax</label>
-								<input type="text" id="input-faxdeliveryInfo" ng-model="newClient.deliveryInfo.fax">
-							</div>
 						</div>
 					</span>
 				</div>

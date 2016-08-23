@@ -364,8 +364,15 @@ td p {
   background-color: #95e300;
   cursor: pointer;
 }
+/* line 83, ../sass/_addclient.scss */
+.addClientForm .checkCoord {
+  float: left;
+  width: auto;
+  height: 0px;
+  margin: 0px 10px 10px 0px;
+}
 
-/* line 87, ../sass/_addclient.scss */
+/* line 94, ../sass/_addclient.scss */
 .select {
   width: 13.7931%;
   float: left;
@@ -375,13 +382,13 @@ td p {
   border: none;
   padding: 5px;
 }
-/* line 93, ../sass/_addclient.scss */
+/* line 100, ../sass/_addclient.scss */
 .select:hover {
   background-color: #a3a5a8;
   cursor: pointer;
 }
 
-/* line 99, ../sass/_addclient.scss */
+/* line 106, ../sass/_addclient.scss */
 .selectActive {
   background-color: #0297cc !important;
 }
