@@ -61,15 +61,30 @@
 	
 	.tva div{
 		&:first-child{
-			@include span(2 of 12);
-		}
-		&:nth-child(2){
-			@include span(7 of 12);
-			margin-top: 14px;
+			@include span(1 of 6);
 		}
 		&:last-child{
-			@include span(3 of 12 last);
+			@include span(5 of 6 last);
+			margin-top: 14px;
 		}
+	}
+
+	.validation{
+		background-color: $secondary;
+		border: none;
+		color: white;
+		font-weight: 800;
+		&:hover{
+			background-color: lighten($secondary, 5%);
+			cursor:pointer;
+		}
+	}
+
+	.checkCoord{
+		float: left;
+		width: auto;
+		height: 0px;
+		margin: 0px 10px 10px 0px;
 	}
 }
 

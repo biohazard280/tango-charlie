@@ -1,3 +1,4 @@
+"use strict";
 let logger = require(`${process.cwd()}/server/utils/logger`);
 
 let fs = require('fs');

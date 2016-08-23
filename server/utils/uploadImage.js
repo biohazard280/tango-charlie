@@ -1,3 +1,4 @@
+"use strict";
 let logger = require(`${process.cwd()}/server/utils/logger`);
 let multer = require('multer');
 const dest_folder = 'public/images/uploads/';
