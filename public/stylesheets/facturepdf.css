@@ -1,23 +1,23 @@
 /*
 Error: Undefined mixin 'span'.
-        on line 79 of /Users/Fanny/Desktop/Carina/public/sass/facturepdf.scss, in `span'
-        from line 79 of /Users/Fanny/Desktop/Carina/public/sass/facturepdf.scss
+        on line 91 of /Users/Fanny/Desktop/Carina/public/sass/facturepdf.scss, in `span'
+        from line 91 of /Users/Fanny/Desktop/Carina/public/sass/facturepdf.scss
 
-74: 	.firstcolumn {
-75: 		text-align: left;
-76: 	}
-77: 
-78: 	.title {
-79: 		@include span(3 of 6);
-80: 		margin-right: 20px;
-81: 	}
-82: 
-83: 	.netapayer {
-84: 		margin-top: 70px;
+86: 	.firstcolumn {
+87: 		text-align: left;
+88: 	}
+89: 
+90: 	.title {
+91: 		@include span(3 of 6);
+92: 		margin-right: 20px;
+93: 	}
+94: 
+95: 	.netapayer {
+96: 		margin-top: 70px;
 
 Backtrace:
-/Users/Fanny/Desktop/Carina/public/sass/facturepdf.scss:79:in `span'
-/Users/Fanny/Desktop/Carina/public/sass/facturepdf.scss:79
+/Users/Fanny/Desktop/Carina/public/sass/facturepdf.scss:91:in `span'
+/Users/Fanny/Desktop/Carina/public/sass/facturepdf.scss:91
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:351:in `block in visit_mixin'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:98:in `block in with_mixin'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
@@ -85,4 +85,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'span'.\A         on line 79 of /Users/Fanny/Desktop/Carina/public/sass/facturepdf.scss, in `span'\A         from line 79 of /Users/Fanny/Desktop/Carina/public/sass/facturepdf.scss\A \A 74: 	.firstcolumn {\A 75: 		text-align: left;\A 76: 	}\A 77: \A 78: 	.title {\A 79: 		@include span(3 of 6);\A 80: 		margin-right: 20px;\A 81: 	}\A 82: \A 83: 	.netapayer {\A 84: 		margin-top: 70px;"; }
+  content: "Error: Undefined mixin 'span'.\A         on line 91 of /Users/Fanny/Desktop/Carina/public/sass/facturepdf.scss, in `span'\A         from line 91 of /Users/Fanny/Desktop/Carina/public/sass/facturepdf.scss\A \A 86: 	.firstcolumn {\A 87: 		text-align: left;\A 88: 	}\A 89: \A 90: 	.title {\A 91: 		@include span(3 of 6);\A 92: 		margin-right: 20px;\A 93: 	}\A 94: \A 95: 	.netapayer {\A 96: 		margin-top: 70px;"; }
