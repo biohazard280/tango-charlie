@@ -35,9 +35,21 @@
 	.coordonnees {
 		margin: 30px 0;
 		font-size: 20px;
-		line-height: 1.5em;
 		color: black;
+	}
+
+	.entrepriseinfo {
+		display: inline-block;
+	}
+
+	.maincoordonnees {
 		font-weight: bold;
+		line-height: 1.5em;
+	}
+
+	.factureinfo {
+		display: inline-block;
+		float: right;
 	}
 
 	.title_facture {

@@ -1222,53 +1222,65 @@ footer p {
 .facturepdf .coordonnees {
   margin: 30px 0;
   font-size: 20px;
-  line-height: 1.5em;
   color: black;
-  font-weight: bold;
 }
-/* line 43, ../sass/facturepdf.scss */
+/* line 41, ../sass/facturepdf.scss */
+.facturepdf .entrepriseinfo {
+  display: inline-block;
+}
+/* line 45, ../sass/facturepdf.scss */
+.facturepdf .maincoordonnees {
+  font-weight: bold;
+  line-height: 1.5em;
+}
+/* line 50, ../sass/facturepdf.scss */
+.facturepdf .factureinfo {
+  display: inline-block;
+  float: right;
+}
+/* line 55, ../sass/facturepdf.scss */
 .facturepdf .title_facture {
   text-align: right;
   display: inline-block;
   float: right;
   font-size: 18px;
 }
-/* line 50, ../sass/facturepdf.scss */
+/* line 62, ../sass/facturepdf.scss */
 .facturepdf .titlefacture {
   color: #84c900;
   font-size: 50px;
   margin: 0 auto;
 }
-/* line 56, ../sass/facturepdf.scss */
+/* line 68, ../sass/facturepdf.scss */
 .facturepdf .tablefacture {
   padding-top: 20px;
   padding-bottom: 50px;
   margin-bottom: 30px;
 }
-/* line 62, ../sass/facturepdf.scss */
+/* line 74, ../sass/facturepdf.scss */
 .facturepdf th {
   background-color: #84c900;
   color: white;
   padding: 5px;
 }
-/* line 68, ../sass/facturepdf.scss */
+/* line 80, ../sass/facturepdf.scss */
 .facturepdf td {
   text-align: center;
   padding-top: 20px;
   padding-left: 15px;
 }
-/* line 74, ../sass/facturepdf.scss */
+/* line 86, ../sass/facturepdf.scss */
 .facturepdf .firstcolumn {
   text-align: left;
 }
-/* line 78, ../sass/facturepdf.scss */
+/* line 90, ../sass/facturepdf.scss */
 .facturepdf .title {
   width: 48.27586%;
   float: left;
   margin-right: 3.44828%;
   margin-right: 20px;
 }
-/* line 83, ../sass/facturepdf.scss */
+/* line 95, ../sass/facturepdf.scss */
 .facturepdf .netapayer {
   margin-top: 70px;
   font-size: 18px;
@@ -1278,30 +1290,30 @@ footer p {
   width: 350px;
   line-height: 2em;
 }
-/* line 93, ../sass/facturepdf.scss */
+/* line 105, ../sass/facturepdf.scss */
 .facturepdf .lastnetapayer {
   border-top: 3px solid #84c900;
   font-weight: bold;
   font-size: 20px;
 }
-/* line 99, ../sass/facturepdf.scss */
+/* line 111, ../sass/facturepdf.scss */
 .facturepdf .condition {
   font-size: 18px;
   text-align: left;
   margin-top: 60px;
   line-height: 1.5em;
 }
-/* line 106, ../sass/facturepdf.scss */
+/* line 118, ../sass/facturepdf.scss */
 .facturepdf .bold {
   font-weight: bold;
 }
-/* line 110, ../sass/facturepdf.scss */
+/* line 122, ../sass/facturepdf.scss */
 .facturepdf .footerfacture {
   font-size: 15px;
   margin-top: 50px;
   margin-bottom: 10px;
 }
-/* line 116, ../sass/facturepdf.scss */
+/* line 128, ../sass/facturepdf.scss */
 .facturepdf .purple {
   color: #6e1555;
 }
