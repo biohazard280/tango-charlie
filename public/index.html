@@ -17,6 +17,7 @@
 	 <script type="text/javascript" src="/angular-route/angular-route.js"></script>
 	 <script type="text/javascript" src="/angular-resource/angular-resource.js"></script>
 	 <script type="text/javascript" src="ng-dialog/js/ngDialog.js"></script>
+	 <script type="text/javascript" src="angular-cookies/angular-cookies.js"></script>
 	<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>-->
 </head>
 
@@ -29,9 +30,9 @@
 			<div class="option">
 				<div class="welcome">
 
-					<h2>Bienvenue Jean Valjean</h2>
+					<h2>Bienvenue <span ng-hide="hideName">{{userAdminName.firstname | uppercase}} {{userAdminName.lastname | uppercase}}</span></h2>
 
-					<a href="#"><p>Déconnexion</p></a>
+					<a href="#" onClick=""><p>Connexion</p></a>
 				</div>
 
 				<div class="id_account">

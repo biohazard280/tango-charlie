@@ -1,8 +1,28 @@
 "use strict";
 var crmControllers = angular.module('crmControllers', []);
 
-crmControllers.controller('homeCtrl', ['$scope', '$location','ngDialog', function($scope, $location, ngDialog){
 
+
+//function to hide de menu bar when admin has not login yet or when creating admin account
+app.run(function($rootScope, $location, $cookies){
+	console.log($rootScope);
+  $rootScope.$on('$routeChangeStart', function(event, next, current){
+    if ($location.path() == '/' || $location.path() == '/subscribe') {
+      $rootScope.hideit = true;
+    } else  $rootScope.hideit = false;
+    let cookieAdminObject = $cookies.getObject('infosAdminlog');
+    if (cookieAdminObject && ($location.path() == '/' || $location.path() == '/subscribe')) {
+    	$rootScope.hideName = true;
+    } else {
+    	$rootScope.userAdminName = cookieAdminObject;
+    	$rootScope.hideName = false;
+    }
+  });
+});
+
+
+crmControllers.controller('homeCtrl', ['$scope', '$location','ngDialog', '$cookies', function($scope, $location, ngDialog, $cookies){
+	/*let cookieAdObject = {};*/
 
 	$scope.svgHover=function(circleTarget, reset){
 		console.log('in');
@@ -76,6 +96,13 @@ crmControllers.controller('homeCtrl', ['$scope', '$location','ngDialog', functio
 
 	}
 
+/*	if($cookies.getObject('infosAdminlog')) {
+		cookieAdObject = $cookies.getObject('infosAdminlog');
+		$scope.adminName = cookieAdObject;
+		console.log($scope.adminName);
+	}
+	*/
+
 	$scope.clickToOpen = function () {
         ngDialog.open({ 
         	id: 'formLogin',
@@ -89,21 +116,26 @@ crmControllers.controller('homeCtrl', ['$scope', '$location','ngDialog', functio
 }]);
 
 
-crmControllers.controller('listClientsCtrl', ['$scope', 'Client', function($scope, Client){
+crmControllers.controller('listClientsCtrl', ['$scope', 'Client', '$cookies', function($scope, Client, $cookies){
 
 	$scope.nbrCompanies = 0;
 	$scope.nbrPrivateprs = 0;
 	$scope.quotations = 0;
 	$scope.bills = 0;
+	$scope.adminName = "";
 	$scope.clientsShow = [];
-	var tabCompanies = [];
-	var tabPrivates = [];
-	var clientsToShow = [];
+	let tabCompanies = [];
+	let tabPrivates = [];
+	let clientsToShow = [];
+	
+
+	
 
 	function refresh() {
 		Client.getList(function(result) {
 			$scope.clients = result;
-			/*console.log(result);*/
+			
+			
 
 			// to know how many companies or private persons are
 			for(var i = 0; i<$scope.clients.length; i++) {
@@ -140,7 +172,14 @@ crmControllers.controller('detailClientCtrl', ['$scope', 'Client', function($sco
 
 }]);
 
-crmControllers.controller('loginCtrl', ['$scope', 'Client', '$location', 'ngDialog', function($scope, Client, $location,  ngDialog){
+crmControllers.controller('loginCtrl', ['$scope', 'Client', '$location', 'ngDialog', '$cookies', function($scope, Client, $location, ngDialog, $cookies){
+/*let cookieAdObject = {};
+
+if($cookies.getObject('infosAdminlog')) {
+		cookieAdObject = $cookies.getObject('infosAdminlog');
+		$scope.adminName = cookieAdObject;
+		console.log($scope.adminName);
+	}*/
 
 
 		$scope.error= false;
@@ -160,6 +199,14 @@ crmControllers.controller('loginCtrl', ['$scope', 'Client', '$location', 'ngDial
 						// email ok and password ok
 						if(mailOk == true && result[0].data == true){
 							console.log("tout ok !!");
+							let adminName = { 
+									idAdmin : $scope.admin[0]._id,
+									firstname : $scope.admin[0].contactPerson.firstname,
+									lastname : $scope.admin[0].contactPerson.lastname
+							};
+							$cookies.putObject ('infosAdminlog', adminName);
+							/*let cookieAdObject = $cookies.getObject('infosAdminlog');
+							console.log(cookieAdObject);*/
 							ngDialog.close('formLogin');
 							$location.path('/dashboard_Entreprise/clients/viewclient');
 						}
@@ -283,4 +330,7 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 			console.log("NAN!");
 		}
 	}
+
+
 }]);
+

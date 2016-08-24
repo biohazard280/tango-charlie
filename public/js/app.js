@@ -4,17 +4,11 @@ var app = angular.module('carinaApp',[
 	'ngRoute',
 	'ngResource',
 	'ngDialog',
+	'ngCookies',
 	'crmControllers',
 	'crmServices'		
 	]);
 
-app.run(function($rootScope, $location){
-  $rootScope.$on('$routeChangeStart', function(event, next, current){
-    if ($location.path() == '/') {
-      $rootScope.hideit = true;
-    } else  $rootScope.hideit = false;
-  });
-});
 
 app.config(['$routeProvider', function($routeProvider){
 	$routeProvider.
