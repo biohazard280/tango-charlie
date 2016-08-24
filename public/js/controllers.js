@@ -1,7 +1,8 @@
 "use strict";
 var crmControllers = angular.module('crmControllers', []);
 
-crmControllers.controller('homeCtrl', ['$scope', 'Client', '$location','ngDialog', function($scope, Client, $location, ngDialog){
+crmControllers.controller('homeCtrl', ['$scope', '$location','ngDialog', function($scope, $location, ngDialog){
+
 
 	$scope.svgHover=function(circleTarget, reset){
 		console.log('in');
@@ -77,6 +78,7 @@ crmControllers.controller('homeCtrl', ['$scope', 'Client', '$location','ngDialog
 
 	$scope.clickToOpen = function () {
         ngDialog.open({ 
+        	id: 'formLogin',
         	template: '/partials/popupTmpl.html',
         	className: 'ngdialog-theme-default',
         	controller: 'loginCtrl'
@@ -138,41 +140,55 @@ crmControllers.controller('detailClientCtrl', ['$scope', 'Client', function($sco
 
 }]);
 
-crmControllers.controller('loginCtrl', ['$scope', 'Client', '$location', function($scope, Client, $location){
-	console.log('ctrl login');
-		//$scope.admin = [];
-		// use the Client service created in services.js
+crmControllers.controller('loginCtrl', ['$scope', 'Client', '$location', 'ngDialog', function($scope, Client, $location,  ngDialog){
+
+
+		$scope.error= false;
 		Client.getAdmin(function(result) {
 			$scope.admin = result;
-			let mailOk = false;
-
-
+			
 			$scope.login = function(isValid){
-				
 				if(isValid){
+					let mailOk = false;
 					if($scope.admin[0].contactPerson.mail == $scope.userAdmin.mail) {
 						mailOk = true;
-						Client.loginAdmin($scope.admin[0].contactPerson.pwd, $scope.userAdmin.pwd, function(result){
-							//alert(result[0].data);
-							$scope.loginAdmin = result;
-							console.log("email ok");
-							if(mailOk == true && result[0].data == true){
-								console.log("loggin ok !!");
-								console.log($scope);
-								$location.path('/dashboard_Entreprise/clients/viewclient');
-							}
-							else if (mailOk == false){
-
-							}
-							console.log(result);
-							
-						});
 					};
-					$scope.error = false;
+
+					Client.loginAdmin($scope.admin[0].contactPerson.pwd, $scope.userAdmin.pwd, function(result){
+						
+						$scope.resPwdAdmin = result;
+						// email ok and password ok
+						if(mailOk == true && result[0].data == true){
+							console.log("tout ok !!");
+							ngDialog.close('formLogin');
+							$location.path('/dashboard_Entreprise/clients/viewclient');
+						}
+						else if (mailOk == false && result[0].data == true){
+							console.log(mailOk+"mail pas bon et pass bon");
+							if ($scope.userAdmin) $scope.userAdmin.mail = "";
+							$scope.error = true;
+							$location.path('/');
+						}
+						else if (mailOk == true && result[0].data == false){
+							console.log("mail bon mais password pas bon");
+							if ($scope.userAdmin) $scope.userAdmin.pwd = "";
+							$scope.error = true;
+							$location.path('/');
+						}
+						else {
+							console.log("aucun n'est bon");
+							if ($scope.userAdmin) $scope.userAdmin.mail = "";
+							if ($scope.userAdmin) $scope.userAdmin.pwd = "";
+							$scope.error = true;
+							$location.path('/');
+						}
+						console.log(result);
+							
+					});
 				}	
 				else {
-					console.log("email incorrect");
-					$scope.userAdmin.mail = "";
+					if ($scope.userAdmin) $scope.userAdmin.mail = "";
+					if ($scope.userAdmin) $scope.userAdmin.pwd = "";
 					$scope.error = true;
 					$location.path('/');
 				}
