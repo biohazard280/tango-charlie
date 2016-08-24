@@ -1,7 +1,7 @@
 "use strict";
 var crmControllers = angular.module('crmControllers', []);
 
-crmControllers.controller('homeCtrl', ['$scope', 'Rest', '$location','ngDialog', function($scope, Rest, $location, ngDialog){
+crmControllers.controller('homeCtrl', ['$scope', 'Client', '$location','ngDialog', function($scope, Client, $location, ngDialog){
 
 	$scope.svgHover=function(circleTarget, reset){
 		console.log('in');
@@ -138,11 +138,11 @@ crmControllers.controller('detailClientCtrl', ['$scope', 'Client', function($sco
 
 }]);
 
-crmControllers.controller('loginCtrl', ['$scope', 'Rest', '$location', function($scope, Rest, $location){
+crmControllers.controller('loginCtrl', ['$scope', 'Client', '$location', function($scope, Client, $location){
 	console.log('ctrl login');
 		//$scope.admin = [];
-		// use the Rest service created in services.js
-		Rest.getAdmin(function(result) {
+		// use the Client service created in services.js
+		Client.getAdmin(function(result) {
 			$scope.admin = result;
 			let mailOk = false;
 
@@ -152,7 +152,7 @@ crmControllers.controller('loginCtrl', ['$scope', 'Rest', '$location', function(
 				if(isValid){
 					if($scope.admin[0].contactPerson.mail == $scope.userAdmin.mail) {
 						mailOk = true;
-						Rest.loginAdmin($scope.admin[0].contactPerson.pwd, $scope.userAdmin.pwd, function(result){
+						Client.loginAdmin($scope.admin[0].contactPerson.pwd, $scope.userAdmin.pwd, function(result){
 							//alert(result[0].data);
 							$scope.loginAdmin = result;
 							console.log("email ok");

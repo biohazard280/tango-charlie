@@ -18,8 +18,7 @@ services.factory('Client', ['$resource', function($resource) {
         	loginAdmin : function(hash, pwd, callback) {
         	let resource = $resource("/api/crm/login?hash="+hash+"&pwd="+pwd);
         	resource.query(callback);
-        	}
-
+        	},
 			addClient : function(newClient, callback){
 				let client = new resource();
 
