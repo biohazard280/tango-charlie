@@ -45,7 +45,7 @@
 
 	<section class="addClientForm">
 		<!-- faire switch bouton mêmes cordonnees factu/livrai-->
-		<form name="addClientForm" ng-submit="createClient(addClientForm.$valid)">
+		<form name="addClientForm" ng-submit="createClient(addClientForm.$valid)" novalidate>
 			<!-- COL GAUCHE  -->
 			<div>
 				<div>
@@ -140,7 +140,7 @@
 					<div>
 						<div>
 							<label for="input-mailcontactPerson">Email</label>
-							<input type="text" ng-model="newClient.contactPerson.mail" id="mail">
+							<input type="text" ng-model="newClient.contactPerson.mail" id="input-mailcontactPerson">
 						</div>
 					</div>
 				</div>
@@ -227,15 +227,17 @@
 						</div>
 						<div>
 							<label for="input-phoneSecbillingInfo">Téléphone secondaire</label>
-							<input type="text" ng-model="newClient.billingInfo.phoneSec" id="phoneSecbillingInfo">
+							<input type="text" ng-model="newClient.billingInfo.phoneSec" id="phoneSecbillingInfo" >
 						</div>
 					</div>
 
 					<div>
 						<div>
 							<label for="input-mailbillingInfo">Email</label>
-							<input type="text" ng-model="newClient.billingInfo.mail" id="input-mailbillingInfo" ng-change="validationEmail()">
+							<input type="email" ng-model="newClient.billingInfo.mail" id="input-mailbillingInfo">
 						</div>
+
+
 						<div>
 							<label for="input-faxbillingInfo">Fax</label>
 							<input type="text" ng-model="newClient.billingInfo.fax" id="input-faxbillingInfo">
@@ -315,8 +317,7 @@
 				<div>
 					<h2>Validation</h2>
 					<span>
-							<input type="submit" ng-show="particulier"  class="validation" value="Enregistrer en tant que particulier">
-							<input type="submit" ng-show="entreprise"   class="validation" value="Enregistrer en tant que entreprise">
+							<input type="submit" class="validation" value="Enregistrer les informations" ng-disabled="addClientForm.$invalid">
 					</span>
 				</div>
 			</div>

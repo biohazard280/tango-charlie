@@ -1,6 +1,7 @@
 // --------DASHBOARD_entreprise-------//
 // ---ajout client--- //
 .addClientForm{
+	box-sizing: border-box;
 	h2{
 		color:$secondary;
 		padding-bottom: 15px;
@@ -86,6 +87,16 @@
 		height: 0px;
 		margin: 0px 10px 10px 0px;
 	}
+
+	.error{
+		border: 1px solid red !important;
+	}
+
+	.valid{
+		border: 1px solid $secondary !important;
+	}
+
+
 }
 
 //////// GENERAL

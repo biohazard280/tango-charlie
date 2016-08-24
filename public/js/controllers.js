@@ -269,18 +269,24 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 	}
 
 	$scope.validationEmail = function(){
-		let email = $scope.newClient.billingInfo.mail;
-		let filtre =/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
-		if(filtre.test(email)){
-			// $('#email').removeClass('focus error').addClass('accepted')
-			// $('#champ_email .errormsg').empty();
-			// return true;
-			console.log("ok");
-		}
-		else{
-			// $('#email').removeClass('focus accepted').addClass('error')
-			// $('#champ_email .errormsg').html('Entre une adresse mail valide.').addClass('active');
-			console.log("NAN!");
-		}
+		let test = $scope.$watch(ngModel);
+		console.log(test);
+
+		// let email = $scope.newClient.billingInfo.mail;
+		// let filtre =/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
+		// if(filtre.test(email)){
+		// 	// $('#email').removeClass('focus error').addClass('accepted')
+		// 	// $('#champ_email .errormsg').empty();
+		// 	// return true;
+		// 	console.log("ok");
+
+		// }
+		// else{
+		// 	// $('#email').removeClass('focus accepted').addClass('error')
+		// 	// $('#champ_email .errormsg').html('Entre une adresse mail valide.').addClass('active');
+		// 	console.log("NAN!");
+
+
+		// }
 	}
 }]);
