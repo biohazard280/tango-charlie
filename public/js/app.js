@@ -6,7 +6,8 @@ var app = angular.module('carinaApp',[
 	'ngDialog',
 	'ngCookies',
 	'crmControllers',
-	'crmServices'		
+	'billsControllers',
+	'crmServices'
 	]);
 
 
@@ -57,7 +58,7 @@ app.config(['$routeProvider', function($routeProvider){
 // Factures
 	when('/dashboard_Entreprise/factures/viewfactures' , {
 		templateUrl : 'partials/dashboard_Entreprise/factures/viewfactures.html',
-		controller : 'mainCtrl'
+		controller : 'listBillsCtrl'
 	}).
 	when('/dashboard_Entreprise/factures/createnewfacture' , {
 		templateUrl : 'partials/dashboard_Entreprise/factures/createnewfacture.html',

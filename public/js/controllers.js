@@ -185,7 +185,7 @@ if($cookies.getObject('infosAdminlog')) {
 		$scope.error= false;
 		Client.getAdmin(function(result) {
 			$scope.admin = result;
-			
+			console.log(result);
 			$scope.login = function(isValid){
 				if(isValid){
 					let mailOk = false;
