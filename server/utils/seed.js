@@ -65,6 +65,23 @@ let companies = [{
             "bill" : 1,
             "quotation" : 1
         },
+        "articles" : [
+            {
+                "name" : "Pescadou",
+                "description" :"vin de table blanc sec, 75 cl",
+                "unitPrice" : 3
+            },
+            {
+                "name" : "Mangaroca",
+                "description" :"Batida de coco, 75 cl",
+                "unitPrice" : 9
+            },
+            {
+                "name" : "Disaronno",
+                "description" :"Amaretto original, 100 cl",
+                "unitPrice" : 15
+            }
+        ],
         "createdAt" : Date.now()
     }];
 
@@ -123,6 +140,13 @@ let customers = [
                 "createdAt" : "2016-06-29",
                 "deadline" : "2016-07-10",
                 "payedAt" : "2016-06-31"
+            },
+            {
+                "link" : "20160829-01500",
+                "state" : false,
+                "quotation_id" : 3,
+                "createdAt" : "2016-08-29",
+                "deadline" : "2016-09-30"
             }
         ], 
         "quotations" : [
@@ -194,7 +218,7 @@ let customers = [
                 "payedAt" : "2016-04-31"
             },{
                 "link" : "20160512-01002",
-                "state" : false,
+                "state" : true,
                 "quotation_id" : 1,
                 "createdAt" : "2016-05-12",
                 "deadline" : "2016-05-22"
@@ -235,7 +259,12 @@ let params = [{
         "Angleterre",
         "Etats-Unis"
     ],
-    "vatRate" : [21,0,6]
+    "vatRate" : [0,6,21],
+    "vatPrefix" : [
+        "BE",
+        "ES",
+        "FR"
+    ]
 }]
 
 

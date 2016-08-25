@@ -441,6 +441,11 @@ let companyModel = function() {
             type : Number,
             required : true,
             validate : numberValidator
+        }],
+        vatPrefix : [{
+            type : String,
+            required : true,
+            uppercase : true
         }]
     });
 

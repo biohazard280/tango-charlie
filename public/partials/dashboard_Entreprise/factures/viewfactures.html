@@ -9,7 +9,7 @@
 					<i class="fa fa-pencil-square-o fa-3x" aria-hidden="true"></i>
 				</div>
 
-				<p class="infos">7.432 Factures</p>
+				<p class="infos">{{nbrBills}} Factures</p>
 			</a>
 
 			<a href="#/dashboard_Entreprise/clients/createnewclient" class="addClient">
@@ -43,12 +43,12 @@
 		<section class="searchMenu">
 			<div class="selectParticuliers">
 
-				<p class="subInfos">En attente (1.220)</p>
+				<p class="subInfos">En attente ({{nbrUnpaidBills}})</p>
 
 			</div>
 			<div class="selectEntreprise">
 
-				<p class="subInfos">Payées (6.212)</p>
+				<p class="subInfos">Payées ({{nbrPaidBills}})</p>
 			</div>
 
 			<div class="search">
@@ -71,15 +71,19 @@
 						<th>Delete</th>
 						<th>View</th>
 					</tr>
-					<tr>
-						<td>21-03-2016</td>
+					<ul ng-repeat="client in clients">
+					<li>
+					 <tr>
+						<td><!-- 21-03-2016 --></td>
 						<td>Lorem Ipsum</td>
 						<td>facture_123456_loremipsum.pdf</td>
 						<td><span class="paid">Payé <i class="fa fa-check" aria-hidden="true"></i></span></td>
 						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
 						<td><a href="#"><span class="viewcolumn"><i class="fa fa-eye" aria-hidden="true"></i></span></a></td>
 					</tr>
-					<tr>
+					</li>
+					</ul>
+					<!--<tr>
 						<td>21-03-2016</td>
 						<td>Lorem Ipsum</td>
 						<td>facture_123456_loremipsum.pdf</td>
@@ -167,7 +171,7 @@
 						<td><span class="delete">Refusé <i class="fa fa-times" aria-hidden="true"></i></span></td>
 						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
 						<td><a href="#"><span class="viewcolumn"><i class="fa fa-eye" aria-hidden="true"></i></span></a></td>
-					</tr>
+					</tr> -->
 				</table>
 			</div>
 

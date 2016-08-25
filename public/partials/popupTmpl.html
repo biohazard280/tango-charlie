@@ -14,8 +14,9 @@
        </ul>
      </div>
        </div> -->
-      <label><b>Username</b></label>
+      <label><b>email</b></label>
       <input type="email" placeholder="Enter your email" name="mail" ng-model="userAdmin.mail" required>
+      <span ng-show="signinAdminForm.mail.$touched && signinAdminForm.mail.$invalid">Email is required.</span></br>
       <label><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="pwd" ng-model="userAdmin.pwd" required>
   	  <button type="submit" class="ngdialog-button ngdialog-button-primary">Login</button>
