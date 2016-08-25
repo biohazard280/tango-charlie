@@ -91,14 +91,6 @@
 		height: 0px;
 		margin: 0px 10px 10px 0px;
 	}
-
-	.ng-not-empty.ng-invalid{
-		border: 1px solid red !important;
-	}
-
-	.ng-not-empty.ng-valid{
-		border: 1px solid $secondary !important;
-	}
 }
 
 //////// GENERAL
@@ -118,4 +110,12 @@
 
 .selectActive{
 	background-color: #0297cc !important;
+}
+
+.ng-not-empty.ng-invalid{
+	border: 1px solid red !important;
+}
+
+.ng-not-empty.ng-valid{
+	border: 1px solid $secondary !important;
 }
