@@ -103,10 +103,20 @@ crmControllers.controller('homeCtrl', ['$scope', '$location','ngDialog', '$cooki
 	}
 	*/
 
-	$scope.clickToOpen = function () {
+	$scope.clickToOpenLogin = function () {
         ngDialog.open({ 
         	id: 'formLogin',
         	template: '/partials/popupTmpl.html',
+        	className: 'ngdialog-theme-default',
+        	controller: 'loginCtrl'
+         	
+		});
+    };
+
+    $scope.clickToOpenSubscribe = function () {
+        ngDialog.open({ 
+        	id: 'formLogin',
+        	template: '/partials/subscribe.html',
         	className: 'ngdialog-theme-default',
         	controller: 'loginCtrl'
          	

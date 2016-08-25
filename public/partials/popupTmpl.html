@@ -1,12 +1,13 @@
-<section>
+<section class="login_popup">
  <form name ="signinAdminForm" ng-submit="login(signinAdminForm.$valid)" novalidate="">
     <div class="imgcontainer">
-     <img src="img/logotype.svg" alt="Avatar" class="avatar">
+     <img src="img/logoCarina.svg" alt="Avatar" class="avatar" height="80">
     </div>
-  
+  <!-- <h2>Login</h2> -->
+
     
   
-    <div class="container">
+    <div class="container_popup">
    <!--    <div class="error" ng-if="error && signinAdminForm.$invalid">
      <div ng-if="signinAdminForm.mail.$invalid">Error in email : 
        <ul>show the error message related to the title
@@ -14,13 +15,17 @@
        </ul>
      </div>
        </div> -->
-      <label><b>email</b></label>
-      <input type="email" placeholder="Enter your email" name="mail" ng-model="userAdmin.mail" required>
-      <span ng-show="signinAdminForm.mail.$touched && signinAdminForm.mail.$invalid">Email is required.</span></br>
-      <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="pwd" ng-model="userAdmin.pwd" required>
-  	  <button type="submit" class="ngdialog-button ngdialog-button-primary">Login</button>
-      
+
+
+
+      <label class="email_login"><p>Email :</p></label>
+      <input class="input_login" type="email" placeholder="Enter your email" name="mail" ng-model="userAdmin.mail" required="required"></br>
+      <span class="errormsg" ng-show="signinAdminForm.mail.$touched && signinAdminForm.mail.$invalid">Email is required.</span></br>
+      <label class="email_login"><p>Password :</p></label>
+      <input class="input_login" type="password" placeholder="Enter Password" name="pwd" ng-model="userAdmin.pwd" required="required"></br>
+      <span class="errormsg"  ng-show="signinAdminForm.pwd.$touched && signinAdminForm.pwd.$invalid">Password is required.</span></br>
+  	  <button type="submit" class="ngdialog-button ngdialog-button-primary">Login</button><br/>
+           
     </div>
     <!-- <div ng-if="signinAdminForm.mail.$invalid">
      
