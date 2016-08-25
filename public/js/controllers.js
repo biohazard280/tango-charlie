@@ -242,9 +242,9 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 				console.log("hey c'est false");
 			}
 
-
 			console.log($scope.newClient);
 			console.log($scope.checkCoord);
+
 		} else {
 			console.log("Ca coince quelque part");
 			$scope.error = true;
@@ -268,10 +268,9 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 		// isCompany = true
 	}
 
-	$scope.validationEmail = function(){
-		let test = $scope.$watch(ngModel);
-		console.log(test);
 
+	$scope.validationEmail = function(test){
+		console.log(test);
 		// let email = $scope.newClient.billingInfo.mail;
 		// let filtre =/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
 		// if(filtre.test(email)){

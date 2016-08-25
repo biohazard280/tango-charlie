@@ -234,9 +234,8 @@
 					<div>
 						<div>
 							<label for="input-mailbillingInfo">Email</label>
-							<input type="email" ng-model="newClient.billingInfo.mail" id="input-mailbillingInfo">
+							<input type="text" ng-model="newClient.billingInfo.mail" id="input-mailbillingInfo" ng-change="validationEmail(this.ngModel">
 						</div>
-
 
 						<div>
 							<label for="input-faxbillingInfo">Fax</label>
