@@ -11,6 +11,7 @@ crmControllers.controller('listBillsCtrl', ['$scope', 'Client', '$location', '$c
 			$scope.nbrBills = 0;
 			$scope.nbrUnpaidBills = 0;
 			$scope.nbrPaidBills = 0;
+			$scope.billsList = [];
 
 
 			//to know how many bills there are and their status state = false "bill unpaid", state = true "bill paid"
@@ -24,6 +25,8 @@ crmControllers.controller('listBillsCtrl', ['$scope', 'Client', '$location', '$c
 					}
 				}
 			}
+
+			
             /*console.log($scope.nbrBills+" factures");
             console.log($scope.nbrUnpaidBills+" factures impayées");
             console.log($scope.nbrPaidBills+" factures payées")*/
