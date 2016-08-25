@@ -251,6 +251,7 @@ crmControllers.controller('mainCtrl', ['$scope', 'Client', function($scope, Clie
 
 
 crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($scope, Client){
+
 	function voidArrays(){
 		// prepare the object which will contain the new client
 		$scope.newClient = {};
@@ -275,6 +276,7 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 			// $scope.error = false;
 			if(checkCoord){
 				console.log("hey c'est true");
+
 				$scope.newClient.deliveryInfo.civility = $scope.newClient.billingInfo.civility;
 				$scope.newClient.deliveryInfo.lastname = $scope.newClient.billingInfo.lastname;
 				$scope.newClient.deliveryInfo.firstname = $scope.newClient.billingInfo.firstname;
@@ -289,48 +291,46 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 				console.log("hey c'est false");
 			}
 
-
 			console.log($scope.newClient);
 			console.log($scope.checkCoord);
+
 		} else {
 			console.log("Ca coince quelque part");
 			$scope.error = true;
 		}
 	}
 
+
+	///REGEX validation
+	$scope.onlyNumbers = /^[0-9,+-.]*$/;
+	$scope.onlyLetters = /^[a-zA-Z\s]*$/;
+	$scope.onlyMail = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
+
+
 	////toggle particlulier/entreprise
 	$scope.checkCoord = true;
-	$scope.particulier = true;
-	$scope.entreprise = false;
+	$scope.view1 = true;
+	$scope.view2 = false;
 	// isCompany = false
 
-	$scope.showParticulier = function() {
-		$scope.particulier = true;
-		$scope.entreprise = false;
+	$scope.showView1 = function() {
+		$scope.view1 = true;
+		$scope.view2 = false;
 		// isCompany = false
 	}
-	$scope.showEntreprise = function() {
-		$scope.entreprise = true;
-		$scope.particulier = false;
+	$scope.showView2 = function() {
+		$scope.view1 = false;
+		$scope.view2 = true;
 		// isCompany = true
 	}
 
-	$scope.validationEmail = function(){
-		let email = $scope.newClient.billingInfo.mail;
-		let filtre =/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
-		if(filtre.test(email)){
-			// $('#email').removeClass('focus error').addClass('accepted')
-			// $('#champ_email .errormsg').empty();
-			// return true;
-			console.log("ok");
-		}
-		else{
-			// $('#email').removeClass('focus accepted').addClass('error')
-			// $('#champ_email .errormsg').html('Entre une adresse mail valide.').addClass('active');
-			console.log("NAN!");
-		}
-	}
 
+	/// get params
+	Client.getParams(function(result) {
+		$scope.params = result;
+		$scope.listContries = $scope.params[0].countries;
+		$scope.listVatRate = $scope.params[0].vatRate;
+		$scope.listVatPrefix = $scope.params[0].vatPrefix;
+	});
 
 }]);
-

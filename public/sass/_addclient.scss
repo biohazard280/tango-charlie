@@ -1,6 +1,7 @@
 // --------DASHBOARD_entreprise-------//
 // ---ajout client--- //
 .addClientForm{
+	box-sizing: border-box;
 	h2{
 		color:$secondary;
 		padding-bottom: 15px;
@@ -69,15 +70,19 @@
 		}
 	}
 
-	.validation{
+	.valid{
 		background-color: $secondary;
 		border: none;
 		color: white;
 		font-weight: 800;
 		&:hover{
 			background-color: lighten($secondary, 5%);
-			cursor:pointer;
+			cursor:pointer !important;
 		}
+	}
+
+	.invalid:hover{
+		cursor: not-allowed;
 	}
 
 	.checkCoord{
@@ -85,6 +90,14 @@
 		width: auto;
 		height: 0px;
 		margin: 0px 10px 10px 0px;
+	}
+
+	.ng-not-empty.ng-invalid{
+		border: 1px solid red !important;
+	}
+
+	.ng-not-empty.ng-valid{
+		border: 1px solid $secondary !important;
 	}
 }
 
