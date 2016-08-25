@@ -300,9 +300,12 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 		}
 	}
 
+
+	///REGEX validation
 	$scope.onlyNumbers = /^[0-9,+-.]*$/;
 	$scope.onlyLetters = /^[a-zA-Z\s]*$/;
 	$scope.onlyMail = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
+
 
 	////toggle particlulier/entreprise
 	$scope.checkCoord = true;
@@ -322,26 +325,12 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 	}
 
 
-	// $scope.validationEmail = function(test){
-	// 	console.log(test);
-	// 	let email = $scope.newClient.billingInfo.mail;
-	// 	let filtre =/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
-	// 	if(filtre.test(email)){
-	// 		// $('#email').removeClass('focus error').addClass('accepted')
-	// 		// $('#champ_email .errormsg').empty();
-	// 		// return true;
-	// 		console.log("ok");
-
-	// 	}
-	// 	else{
-	// 		// $('#email').removeClass('focus accepted').addClass('error')
-	// 		// $('#champ_email .errormsg').html('Entre une adresse mail valide.').addClass('active');
-	// 		console.log("NAN!");
-
-
-	// 	}
-	// }
-
+	/// get params
+	Client.getParams(function(result) {
+		$scope.params = result;
+		$scope.listContries = $scope.params[0].countries;
+		$scope.listVatRate = $scope.params[0].vatRate;
+		$scope.listVatPrefix = $scope.params[0].vatPrefix;
+	});
 
 }]);
-

@@ -75,13 +75,11 @@
 					<div class="tva">
 						<div>
 							<label for="input-tva1">N° de TVA</label>
-							<select ng-required='entreprise' id="input-numtva1" ng-model="numtva1">
-								<option value="be">BE</option>
-							</select>
+							<select ng-model="numtva1" ng-options="tvaPrefix for tvaPrefix in listVatPrefix" ng-required='entreprise'></select>
 						</div>
 						<div>
 							<label for="input-numtva2"></label>
-							<input ng-required='entreprise' type="text" ng-pattern="onlyNumbers" ng-minlength="6" ng-maxlength="16" id="input-numtva2" ng-model="numtva2">
+							<select ng-model="numtva1" ng-options="tvaPrefix for tvaPrefix in listVatPrefix" ng-required='entreprise'></select>
 						</div>
 					</div>
 					<div>
@@ -161,7 +159,7 @@
 					<div>
 						<div>
 							<label>Civilité</label>
-							<select ng-model="newClient.billingInfo.civility">
+							<select ng-model="newClient.billingInfo.civility" required>
 								<option value="monsieur">Monsieur</option>
 								<option value="madame">Madame</option>
 							</select>
@@ -213,11 +211,8 @@
 						</div>
 						<div>
 							<label>Pays</label>
-							<select ng-model="newClient.billingInfo.country">
-								<option value="country">Country</option>
-							</select>
+							<select ng-model="newClient.billingInfo.country" ng-options="country for country in listContries" required></select>
 						</div>
-						
 					</div>
 
 					<div>
@@ -247,12 +242,12 @@
 				<div>
 					<h2>Coordonnées de livraison</h2>
 					<label>Même coordonnées que la facturation</label>
-					<input type="checkbox" ng-model="checkCoord" ng-checked="checkCoord" class="checkCoord" ng-changed="">
+					<input type="checkbox" ng-model="checkCoord" class="checkCoord">
 					<span ng-hide="checkCoord">
 						<div>
 							<div>
 								<label for="input-civilitydeliveryInfo">Civilité</label>
-								<select ng-model="newClient.deliveryInfo.civility">
+								<select ng-model="newClient.deliveryInfo.civility" ng-required="!checkCoord">
 									<option value="monsieur">Monsieur</option>
 									<option value="madame">Madame</option>
 								</select>
@@ -261,19 +256,19 @@
 						<div>
 							<div>
 								<label for="input-lastnamedeliveryInfo">Nom</label>
-								<input type="text" ng-pattern="onlyLetters" id="input-lastnamedeliveryInfo" ng-model="newClient.deliveryInfo.lastname">
+								<input type="text" ng-pattern="onlyLetters" id="input-lastnamedeliveryInfo" ng-model="newClient.deliveryInfo.lastname" ng-required="!checkCoord">
 							</div>
 
 							<div>
 								<label for="input-firstnamedeliveryInfo">Prénom</label>
-								<input type="text" ng-pattern="onlyLetters" id="input-firstnamedeliveryInfo" ng-model="newClient.deliveryInfo.firstname">
+								<input type="text" ng-pattern="onlyLetters" id="input-firstnamedeliveryInfo" ng-model="newClient.deliveryInfo.firstname" ng-required="!checkCoord">
 							</div>
 						</div>
 
 						<div>
 							<span>
 								<label for="input-streetdeliveryInfo">Rue</label>
-								<input type="text" ng-pattern="onlyLetters" id="input-streetdeliveryInfo" ng-model="newClient.deliveryInfo.street">
+								<input type="text" ng-pattern="onlyLetters" id="input-streetdeliveryInfo" ng-model="newClient.deliveryInfo.street" ng-required="!checkCoord">
 							</span>
 						</div>
 
@@ -281,32 +276,30 @@
 							<div>
 								<div>
 									<label for="input-numberdeliveryInfo">Numéro</label>
-									<input type="text" ng-pattern="onlyNumbers" ng-minlength="1" ng-maxlength="4" id="input-numberdeliveryInfo" ng-model="newClient.deliveryInfo.number">
+									<input type="text" ng-pattern="onlyNumbers" ng-minlength="1" ng-maxlength="4" id="input-numberdeliveryInfo" ng-model="newClient.deliveryInfo.number" ng-required="!checkCoord">
 								</div>
 
 								<div>
 
 									<label for="input-boxdeliveryInfo">Boite</label>
-									<input type="text" ng-pattern="onlyNumbers" ng-minlength="4" ng-maxlength="6" id="input-boxdeliveryInfo" ng-model="newClient.deliveryInfo.box">
+									<input type="text" ng-pattern="onlyNumbers" ng-minlength="4" ng-maxlength="6" id="input-boxdeliveryInfo" ng-model="newClient.deliveryInfo.box" ng-required="!checkCoord">
 								</div>
 							</div>
 
 							<div>
 								<label for="input-zipdeliveryInfo">Code Postal</label>
-								<input type="text" ng-pattern="onlyNumbers" ng-minlength="4" ng-maxlength="4" id="input-zipdeliveryInfo" ng-model="newClient.deliveryInfo.zip">
+								<input type="text" ng-pattern="onlyNumbers" ng-minlength="4" ng-maxlength="4" id="input-zipdeliveryInfo" ng-model="newClient.deliveryInfo.zip" ng-required="!checkCoord">
 							</div>
 						</div>
 
 						<div>
 							<div>
 								<label for="input-towndeliveryInfo">Ville</label>
-								<input type="text" ng-pattern="onlyLetters" id="input-towndeliveryInfo" ng-model="newClient.deliveryInfo.town">
+								<input type="text" ng-pattern="onlyLetters" id="input-towndeliveryInfo" ng-model="newClient.deliveryInfo.town" ng-required="!checkCoord">
 							</div>
 							<div>
 								<label for="input-countrydeliveryInfo">Pays</label>
-								<select ng-model="newClient.deliveryInfo.country" id="input-country">
-									<option value="country">Country</option>
-								</select>
+								<select ng-model="newClient.deliveryInfo.country" ng-options="country for country in listContries"></select ng-required="!checkCoord">
 							</div>
 							
 						</div>
@@ -316,7 +309,7 @@
 				<div>
 					<h2>Validation</h2>
 					<span>
-							<input id ="button-validation" type="submit" class="invalid" value="Enregistrer les informations" ng-disabled="addClientForm.$invalid" ng-class="{valid: addClientForm.$valid}">
+						<input id ="button-validation" type="submit" class="invalid" value="Enregistrer les informations" ng-disabled="addClientForm.$invalid" ng-class="{valid: addClientForm.$valid}">
 					</span>
 				</div>
 			</div>

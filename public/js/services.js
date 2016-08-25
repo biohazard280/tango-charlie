@@ -76,8 +76,12 @@ services.factory('Client', ['$resource', function($resource) {
 				client.createdAt = Date.now();
 
 				// client.$save(callback);
-			}
+			},
 
+			getParams : function(callback) {
+				let resource = $resource("/api/crm/params");
+				resource.query(callback);
+			},
 		}
 	return list;
 }]);
