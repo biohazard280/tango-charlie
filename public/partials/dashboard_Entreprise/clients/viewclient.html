@@ -17,7 +17,7 @@
 
 			</div>
 
-			<p class="subInfos">Ajouter un client</p>
+			<p class="infos">Ajouter un client</p>
 		</a>
 		<a href="#/dashboard_Entreprise/devis/viewdevis" class="devis_view">
 			<div class="icons">
@@ -35,7 +35,6 @@
 		</a>
 	</section>
 
-
 	<section class="searchMenu">
 
 		<div class="selectParticuliers">
@@ -52,8 +51,8 @@
 			<input type="text" placeholder="Faire une recherche" ng-model="entree"><button ng-click="recherche(entree)">search</button>
 
 		</div>
-
 	</section>
+
 	<section class="gallery_profile">
 		<ul class="gallery" ng-repeat="client in clients |  filter: search">
 			<li class="profile">

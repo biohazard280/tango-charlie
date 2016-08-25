@@ -309,18 +309,18 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 
 	////toggle particlulier/entreprise
 	$scope.checkCoord = true;
-	$scope.particulier = true;
-	$scope.entreprise = false;
+	$scope.view1 = true;
+	$scope.view2 = false;
 	// isCompany = false
 
-	$scope.showParticulier = function() {
-		$scope.particulier = true;
-		$scope.entreprise = false;
+	$scope.showView1 = function() {
+		$scope.view1 = true;
+		$scope.view2 = false;
 		// isCompany = false
 	}
-	$scope.showEntreprise = function() {
-		$scope.entreprise = true;
-		$scope.particulier = false;
+	$scope.showView2 = function() {
+		$scope.view1 = false;
+		$scope.view2 = true;
 		// isCompany = true
 	}
 

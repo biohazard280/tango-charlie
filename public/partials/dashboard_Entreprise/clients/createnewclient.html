@@ -4,7 +4,7 @@
 			<div class="icons">
 				<i class="fa fa-plus-circle fa-3x" aria-hidden="true"></i>
 			</div>
-			<p class="subInfos">Ajouter un client</p>
+			<p class="infos">Ajouter un client</p>
 		</a>
 
 		<a href="#/dashboard_Entreprise/clients/viewclient" class="clients_nbr">
@@ -32,11 +32,11 @@
 	</section>
 
 	<section class="searchMenu">
-		<button class="select" ng-click="showParticulier()" ng-class="{selectActive: particulier}">
+		<button class="select" ng-click="showView1()" ng-class="{selectActive: view1}">
 			<p class="subInfos">Particulier</p>
 		</button>
 
-		<button class="select" ng-click="showEntreprise()" ng-class="{selectActive: entreprise}">
+		<button class="select" ng-click="showView2()" ng-class="{selectActive: view2}">
 			<p class="subInfos">Entreprise</p>
 		</button>
 	</section>
@@ -50,27 +50,27 @@
 			<div>
 				<div>
 					<h2>
-						<span ng-show="particulier">Particulier</span>
-						<span ng-show="entreprise">Entreprise</span>
+						<span ng-show="view1">Particulier</span>
+						<span ng-show="view2">Entreprise</span>
 					</h2>
 					<div>
 						<div>
 							<label for="input-name">
-								<span ng-show="particulier">Nom de référence</span>
-								<span ng-show="entreprise">Nom de l'entreprise</span>
+								<span ng-show="view1">Nom de référence</span>
+								<span ng-show="view2">Nom de l'entreprise</span>
 							</label>
 							<input type="text" ng-pattern="onlyLetters" id="input-name" ng-model="newClient.name" required>
 						</div>
 						<div>
 							<label for="picture">
-								<span ng-show="particulier">Avatar</span>
-								<span ng-show="entreprise">Image</span>
+								<span ng-show="view1">Avatar</span>
+								<span ng-show="view2">Image</span>
 							</label>
 							<button>Parcourir</button>
 						</div>
 					</div>
 				</div>
-				<div ng-show="entreprise">
+				<div ng-show="view2">
 					<h2>TVA</h2>
 					<div class="tva">
 						<div>
@@ -106,7 +106,7 @@
 								<option value="madame">Madame</option>
 							</select>
 						</div>
-						<div ng-show="entreprise">
+						<div ng-show="view2">
 							<label for="input-postcontactPerson">Fonction</label>
 							<input ng-required='entreprise' type="text" ng-pattern="onlyLetters" ng-model="newClient.contactPerson.post" id="post">
 						</div>

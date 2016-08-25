@@ -1,58 +1,46 @@
 	<div class="innercontainer">
-
 		<section class="header_title">
-
-			<a class="clients_nbr">
+			<a class="devis_view">
 				<div class="icons">
 					<i class="fa fa-pencil-square-o fa-3x" aria-hidden="true"></i>
 				</div>
 
-				<p class="infos">1.121 Devis</p>
+				<p class="infos">{{devis.length}} Devis</p>
+
 			</a>
-
-			<a href="#/dashboard_Entreprise/clients/createnewclient" class="addClient">
-
+			<a class="addClient" href="#/dashboard_Entreprise/devis/createnewdevis" >
 				<div class="icons">
 					<i class="fa fa-plus-circle fa-3x" aria-hidden="true"></i>
-
 				</div>
-
-				<p class="subInfos">Ajouter un devis</p>
+				<p class="infos">Ajouter un devis</p>
 			</a>
 
-			<a href="#/dashboard_Entreprise/devis/viewdevis" class="devis_view">
+			<a href="#/dashboard_Entreprise/clients/viewclient" class="clients_nbr">
 				<div class="icons">
 					<i class="fa fa-users fa-3x" aria-hidden="true"></i>
 				</div>
 
 				<p class="subInfos">Clients</p>
+
 			</a>
-			
 			<a href="#/dashboard_Entreprise/factures/viewfactures" class="factures_view">
 				<div class="icons">
 					<i class="fa fa-file-text-o fa-3x" aria-hidden="true"></i>
 				</div>
 				<p class="subInfos">Factures</p>
 			</a>
-
 		</section>
-
 
 		<section class="searchMenu">
-			<div class="selectParticuliers">
+			<button class="select" ng-click="showView1()" ng-class="{selectActive: view1}">
+				<p class="subInfos">Acceptés</p>
+			</button>
 
-				<p class="subInfos">En attente (131)</p>
-
-			</div>
-			<div class="selectEntreprise">
-
-				<p class="subInfos">Acceptés (990)</p>
-			</div>
-
-			<div class="search">
-				<input type="text" placeholder="Faire une recherche">
-			</div>
+			<button class="select" ng-click="showView2()" ng-class="{selectActive: view2}">
+				<p class="subInfos">En cours</p>
+			</button>
 		</section>
+
 
 
 		<section>
