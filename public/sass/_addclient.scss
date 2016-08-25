@@ -70,15 +70,19 @@
 		}
 	}
 
-	.validation{
+	.valid{
 		background-color: $secondary;
 		border: none;
 		color: white;
 		font-weight: 800;
 		&:hover{
 			background-color: lighten($secondary, 5%);
-			cursor:pointer;
+			cursor:pointer !important;
 		}
+	}
+
+	.invalid:hover{
+		cursor: not-allowed;
 	}
 
 	.checkCoord{
@@ -88,15 +92,13 @@
 		margin: 0px 10px 10px 0px;
 	}
 
-	.error{
+	.ng-not-empty.ng-invalid{
 		border: 1px solid red !important;
 	}
 
-	.valid{
+	.ng-not-empty.ng-valid{
 		border: 1px solid $secondary !important;
 	}
-
-
 }
 
 //////// GENERAL

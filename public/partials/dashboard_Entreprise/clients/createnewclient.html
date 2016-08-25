@@ -59,7 +59,7 @@
 								<span ng-show="particulier">Nom de référence</span>
 								<span ng-show="entreprise">Nom de l'entreprise</span>
 							</label>
-							<input type="text" id="input-name" ng-model="newClient.name">
+							<input type="text" ng-pattern="onlyLetters" id="input-name" ng-model="newClient.name" required>
 						</div>
 						<div>
 							<label for="picture">
@@ -75,25 +75,25 @@
 					<div class="tva">
 						<div>
 							<label for="input-tva">N° de TVA</label>
-							<select ng-model="numbertva1">
+							<select ng-required='entreprise' ng-model="numbertva1">
 								<option value="be">BE</option>
 							</select>
 						</div>
 						<div>
 							<label for="input-numtva"></label>
-							<input type="text" id="numtva" ng-model="numbertva2">
+							<input ng-required='entreprise' type="text" ng-pattern="onlyLetters" id="numtva" ng-model="numbertva2">
 						</div>
 					</div>
 					<div>
 						<span>
 							<label for="input-numbersirentva">Numéro SIREN</label>
-							<input type="text" id="input-numbersirentva" ng-model="newClient.client.vat.siren">
+							<input ng-required='entreprise' type="text" ng-pattern="onlyLetters" id="input-numbersirentva" ng-model="newClient.client.vat.siren">
 						</span>
 					</div>
 					<div>
 						<span>
 							<label for="input-numberRCStva">Numéro RCS</label>
-							<input type="text" id="input-numberRCStva" ng-model="newClient.client.vat.rcs">
+							<input ng-required='entreprise' type="text" ng-pattern="onlyLetters" id="input-numberRCStva" ng-model="newClient.client.vat.rcs">
 						</span>
 					</div>
 				</div>
@@ -103,25 +103,25 @@
 					<div>
 						<div>
 							<label>Civilité</label>
-							<select ng-model="newClient.contactPerson.civility">
+							<select ng-model="newClient.contactPerson.civility" required>
 								<option value="monsieur">Monsieur</option>
 								<option value="madame">Madame</option>
 							</select>
 						</div>
 						<div ng-show="entreprise">
 							<label for="input-postcontactPerson">Fonction</label>
-							<input type="text" ng-model="newClient.contactPerson.post" id="post">
+							<input ng-required='entreprise' type="text" ng-pattern="onlyLetters" ng-model="newClient.contactPerson.post" id="post">
 						</div>
 					</div>
 					<div>
 						<div>
 							<label for="input-lastnamecontactPerson">Nom</label>
-							<input type="text" ng-model="newClient.contactPerson.lastname" id="lastname">
+							<input type="text" ng-pattern="onlyLetters" ng-model="newClient.contactPerson.lastname" id="lastname" required>
 						</div>
 
 						<div>
 							<label for="input-firstnamecontactPerson">Prénom</label>
-							<input type="text" ng-model="newClient.contactPerson.firstname" id="firstname">
+							<input type="text" ng-pattern="onlyLetters" ng-model="newClient.contactPerson.firstname" id="firstname" required>
 						</div>
 					</div>
 
@@ -129,18 +129,18 @@
 					<div>
 						<div>
 							<label for="input-phoneMaincontactPerson">Téléphone Principal</label>
-							<input type="text" ng-model="newClient.contactPerson.phoneMain" id="phoneMain">
+							<input type="text" ng-pattern="onlyNumbers" ng-minlength="1" ng-maxlength="10" ng-model="newClient.contactPerson.phoneMain" id="phoneMain" required>
 						</div>
 						<div>
 							<label for="input-phoneSeccontactPerson">Téléphone secondaire</label>
-							<input type="text" ng-model="newClient.contactPerson.phoneSec" id="phoneSec">
+							<input type="text" ng-pattern="onlyNumbers" ng-minlength="1" ng-maxlength="10" ng-model="newClient.contactPerson.phoneSec" id="phoneSec" required>
 						</div>
 					</div>
 
 					<div>
 						<div>
 							<label for="input-mailcontactPerson">Email</label>
-							<input type="text" ng-model="newClient.contactPerson.mail" id="input-mailcontactPerson">
+							<input type="email" ng-pattern="onlyMail" ng-model="newClient.contactPerson.mail" id="input-mailcontactPerson" required>
 						</div>
 					</div>
 				</div>
@@ -170,19 +170,19 @@
 					<div>
 						<div>
 							<label for="input-lastnamebillingInfo">Nom</label>
-							<input type="text" ng-model="newClient.billingInfo.lastname" id="input-lastnamebillingInfo">
+							<input type="text" ng-pattern="onlyLetters" ng-model="newClient.billingInfo.lastname" id="input-lastnamebillingInfo" required>
 						</div>
 
 						<div>
 							<label for="input-firstnamebillingInfo">Prénom</label>
-							<input type="text" ng-model="newClient.billingInfo.firstname" id="nput-firstnamebillingInfo">
+							<input type="text" ng-pattern="onlyLetters" ng-model="newClient.billingInfo.firstname" id="nput-firstnamebillingInfo" required>
 						</div>
 					</div>
 
 					<div>
 						<span>
 							<label for="input-streetbillingInfo">Rue</label>
-							<input type="text" ng-model="newClient.billingInfo.street" id="input-streetbillingInfo">
+							<input type="text" ng-pattern="onlyLetters" ng-model="newClient.billingInfo.street" id="input-streetbillingInfo" required>
 						</span>
 					</div>
 
@@ -190,26 +190,26 @@
 						<div>
 							<div>
 								<label for="input-numberbillingInfo">Numéro</label>
-								<input type="text" ng-model="newClient.billingInfo.number" id="input-numberbillingInfo">
+								<input type="text" ng-pattern="onlyNumbers" ng-minlength="1" ng-maxlength="4" ng-model="newClient.billingInfo.number" id="input-numberbillingInfo" required>
 							</div>
 
 							<div>
 
 								<label for="input-boxbillingInfo">Boite</label>
-								<input type="text" ng-model="newClient.billingInfo.box" id="input-boxbillingInfo">
+								<input type="text" ng-pattern="onlyNumbers" ng-minlength="4" ng-maxlength="6" ng-model="newClient.billingInfo.box" id="input-boxbillingInfo" required>
 							</div>
 						</div>
 
 						<div>
 							<label for="input-zipbillingInfo">Code Postal</label>
-							<input type="text" ng-model="newClient.billingInfo.zip" id="input-zipbillingInfo">
+							<input type="text" ng-pattern="onlyNumbers" ng-minlength="4" ng-maxlength="4" ng-model="newClient.billingInfo.zip" id="input-zipbillingInfo" required>
 						</div>
 					</div>
 
 					<div>
 						<div>
 							<label for="input-townbillingInfo">Ville</label>
-							<input type="text" ng-model="newClient.billingInfo.town" id="input-townbillingInfo">
+							<input type="text" ng-pattern="onlyLetters" ng-model="newClient.billingInfo.town" id="input-townbillingInfo" required>
 						</div>
 						<div>
 							<label>Pays</label>
@@ -223,23 +223,23 @@
 					<div>
 						<div>
 							<label for="input-phoneMainbillingInfo">Téléphone Principal</label>
-							<input type="text" ng-model="newClient.billingInfo.phoneMain" id="phoneMainbillingInfo">
+							<input type="text" ng-pattern="onlyNumbers" ng-minlength="6" ng-maxlength="16" ng-model="newClient.billingInfo.phoneMain" id="phoneMainbillingInfo" required>
 						</div>
 						<div>
 							<label for="input-phoneSecbillingInfo">Téléphone secondaire</label>
-							<input type="text" ng-model="newClient.billingInfo.phoneSec" id="phoneSecbillingInfo" >
+							<input type="text" ng-pattern="onlyNumbers" ng-minlength="6" ng-maxlength="16" ng-model="newClient.billingInfo.phoneSec" id="phoneSecbillingInfo" required>
 						</div>
 					</div>
 
 					<div>
 						<div>
 							<label for="input-mailbillingInfo">Email</label>
-							<input type="text" ng-model="newClient.billingInfo.mail" id="input-mailbillingInfo" ng-change="validationEmail(this.ngModel">
+							<input type="email" ng-pattern="onlyMail" ng-model="newClient.billingInfo.mail" id="input-mailbillingInfo" required>
 						</div>
 
 						<div>
 							<label for="input-faxbillingInfo">Fax</label>
-							<input type="text" ng-model="newClient.billingInfo.fax" id="input-faxbillingInfo">
+							<input type="text" ng-pattern="onlyNumbers" ng-minlength="6" ng-maxlength="16" ng-model="newClient.billingInfo.fax" id="input-faxbillingInfo" required>
 						</div>
 					</div>
 				</div>
@@ -261,19 +261,19 @@
 						<div>
 							<div>
 								<label for="input-lastnamedeliveryInfo">Nom</label>
-								<input type="text" id="input-lastnamedeliveryInfo" ng-model="newClient.deliveryInfo.lastname">
+								<input type="text" ng-pattern="onlyLetters" id="input-lastnamedeliveryInfo" ng-model="newClient.deliveryInfo.lastname">
 							</div>
 
 							<div>
 								<label for="input-firstnamedeliveryInfo">Prénom</label>
-								<input type="text" id="input-firstnamedeliveryInfo" ng-model="newClient.deliveryInfo.firstname">
+								<input type="text" ng-pattern="onlyLetters" id="input-firstnamedeliveryInfo" ng-model="newClient.deliveryInfo.firstname">
 							</div>
 						</div>
 
 						<div>
 							<span>
 								<label for="input-streetdeliveryInfo">Rue</label>
-								<input type="text" id="input-streetdeliveryInfo" ng-model="newClient.deliveryInfo.street">
+								<input type="text" ng-pattern="onlyLetters" id="input-streetdeliveryInfo" ng-model="newClient.deliveryInfo.street">
 							</span>
 						</div>
 
@@ -281,26 +281,26 @@
 							<div>
 								<div>
 									<label for="input-numberdeliveryInfo">Numéro</label>
-									<input type="text" id="input-numberdeliveryInfo" ng-model="newClient.deliveryInfo.number">
+									<input type="text" ng-pattern="onlyNumbers" ng-minlength="1" ng-maxlength="4" id="input-numberdeliveryInfo" ng-model="newClient.deliveryInfo.number">
 								</div>
 
 								<div>
 
 									<label for="input-boxdeliveryInfo">Boite</label>
-									<input type="text" id="input-boxdeliveryInfo" ng-model="newClient.deliveryInfo.box">
+									<input type="text" ng-pattern="onlyNumbers" ng-minlength="4" ng-maxlength="6" id="input-boxdeliveryInfo" ng-model="newClient.deliveryInfo.box">
 								</div>
 							</div>
 
 							<div>
 								<label for="input-zipdeliveryInfo">Code Postal</label>
-								<input type="text" id="input-zipdeliveryInfo" ng-model="newClient.deliveryInfo.zip">
+								<input type="text" ng-pattern="onlyNumbers" ng-minlength="4" ng-maxlength="4" id="input-zipdeliveryInfo" ng-model="newClient.deliveryInfo.zip">
 							</div>
 						</div>
 
 						<div>
 							<div>
 								<label for="input-towndeliveryInfo">Ville</label>
-								<input type="text" id="input-towndeliveryInfo" ng-model="newClient.deliveryInfo.town">
+								<input type="text" ng-pattern="onlyLetters" id="input-towndeliveryInfo" ng-model="newClient.deliveryInfo.town">
 							</div>
 							<div>
 								<label for="input-countrydeliveryInfo">Pays</label>
@@ -316,7 +316,7 @@
 				<div>
 					<h2>Validation</h2>
 					<span>
-							<input type="submit" class="validation" value="Enregistrer les informations" ng-disabled="addClientForm.$invalid">
+							<input id ="button-validation" type="submit" class="invalid" value="Enregistrer les informations" ng-disabled="addClientForm.$invalid" ng-class="{valid: addClientForm.$valid}">
 					</span>
 				</div>
 			</div>
