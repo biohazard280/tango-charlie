@@ -74,26 +74,26 @@
 					<h2>TVA</h2>
 					<div class="tva">
 						<div>
-							<label for="input-tva">N° de TVA</label>
-							<select ng-required='entreprise' ng-model="numbertva1">
+							<label for="input-tva1">N° de TVA</label>
+							<select ng-required='entreprise' id="input-numtva1" ng-model="numtva1">
 								<option value="be">BE</option>
 							</select>
 						</div>
 						<div>
-							<label for="input-numtva"></label>
-							<input ng-required='entreprise' type="text" ng-pattern="onlyLetters" id="numtva" ng-model="numbertva2">
+							<label for="input-numtva2"></label>
+							<input ng-required='entreprise' type="text" ng-pattern="onlyNumbers" ng-minlength="6" ng-maxlength="16" id="input-numtva2" ng-model="numtva2">
 						</div>
 					</div>
 					<div>
 						<span>
 							<label for="input-numbersirentva">Numéro SIREN</label>
-							<input ng-required='entreprise' type="text" ng-pattern="onlyLetters" id="input-numbersirentva" ng-model="newClient.client.vat.siren">
+							<input ng-required='entreprise' type="text" ng-pattern="onlyNumbers" ng-minlength="6" ng-maxlength="16" id="input-numbersirentva" ng-model="newClient.client.vat.siren">
 						</span>
 					</div>
 					<div>
 						<span>
 							<label for="input-numberRCStva">Numéro RCS</label>
-							<input ng-required='entreprise' type="text" ng-pattern="onlyLetters" id="input-numberRCStva" ng-model="newClient.client.vat.rcs">
+							<input ng-required='entreprise' type="text" ng-pattern="onlyNumbers" ng-minlength="6" ng-maxlength="16" id="input-numberRCStva" ng-model="newClient.client.vat.rcs">
 						</span>
 					</div>
 				</div>
