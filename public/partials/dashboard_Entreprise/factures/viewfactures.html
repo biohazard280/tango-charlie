@@ -55,8 +55,18 @@
 
 		<section>
 
+			<!-- <li><a ng-click="sortBy('')">Client</a><i class="fa fa-caret-down" aria-hidden="true"></i>
+				<ul ng-repeat="client in clients">
+					<li>
+						<ul ng-repeat="bill in client.bills">
+							<li>{{client.name}}</li>
+						</ul>
+					</li>
+				</ul>
+			</li> -->
+	
 			<div class="matable">
-			<!-- 	<table>
+				<!-- <table>
 				<tr>
 					<th><a ng-click="sortBy('')">Date</a> <i class="fa fa-caret-down" aria-hidden="true"></i></th>
 					<th>Client <i class="fa fa-caret-down" aria-hidden="true"></i></th>
@@ -82,10 +92,18 @@
 		</ul>
 	</li>
 </ul> -->
-					<table ng-repeat="client in clients">
-								 <tr ng-repeat="bill in client.bills" ng-model="bill.state">
-									<td>{{bill.createdAt | date : 'd/MM/yyyy'}}</td>
-									<td>{{client.name}}</td>
+					<table>
+						<tr>
+							<th><a>Date</a> <i class="fa fa-caret-down" aria-hidden="true"></i></th>
+							<th>Client <i class="fa fa-caret-down" aria-hidden="true"></i></th>
+							<th>File</th>
+							<th>Statut <i class="fa fa-caret-down" aria-hidden="true"></i></th>
+							<th>Delete</th>
+							<th>View</th>
+						</tr>
+								 <tr ng-repeat="data in datas" ng-model="bill.state">
+									<td>{{data.date | date : 'd/MM/yyyy'}}</td>
+									<td>{{data.name}}</td>
 									<td>facture_123456_loremipsum.pdf</td>
 									<td ng-switch="bill.state">
 										<span class="paid" ng-switch-when="true">Payée <i class="fa fa-check" aria-hidden="true"></i></span>
@@ -94,100 +112,9 @@
 									<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
 									<td><a href="#"><span class="viewcolumn"><i class="fa fa-eye" aria-hidden="true"></i></span></a></td>
 								</tr>
-					</table>
-					<!--<tr>
-						<td>21-03-2016</td>
-						<td>Lorem Ipsum</td>
-						<td>facture_123456_loremipsum.pdf</td>
-						<td><span class="wait">En attente <i class="fa fa-exclamation" aria-hidden="true"></i></span></td>
-						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
-						<td><a href="#"><span class="viewcolumn"><i class="fa fa-eye" aria-hidden="true"></i></span></a></td>
-					</tr>
-					<tr>
-						<td>21-03-2016</td>
-						<td>Lorem Ipsum</td>
-						<td>facture_123456_loremipsum.pdf</td>
-						<td><span class="delete">Refusé <i class="fa fa-times" aria-hidden="true"></i></span></td>
-						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
-						<td><a href="#"><span class="viewcolumn"><i class="fa fa-eye" aria-hidden="true"></i></span></a></td>
-					</tr>
-					<tr>
-						<td>21-03-2016</td>
-						<td>Lorem Ipsum</td>
-						<td>facture_123456_loremipsum.pdf</td>
-						<td><span class="wait">En attente <i class="fa fa-exclamation" aria-hidden="true"></i>
-						</span></td>
-						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
-						<td><a href="#"><span class="viewcolumn"><i class="fa fa-eye" aria-hidden="true"></i></span></a></td>
-					</tr>
-					<tr>
-						<td>21-03-2016</td>
-						<td>Lorem Ipsum</td>
-						<td>facture_123456_loremipsum.pdf</td>
-						<td><span class="paid">Payé <i class="fa fa-check" aria-hidden="true"></i></span></td>
-						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
-						<td><a href="#"><span class="viewcolumn"><i class="fa fa-eye" aria-hidden="true"></i></span></a></td>
-					</tr>
-					<tr>
-						<td>21-03-2016</td>
-						<td>Lorem Ipsum</td>
-						<td>facture_123456_loremipsum.pdf</td>
-						<td><span class="wait">En attente <i class="fa fa-exclamation" aria-hidden="true"></i></span></td>
-						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
-						<td><a href="#"><span class="viewcolumn"><i class="fa fa-eye" aria-hidden="true"></i></span></a></td>
-					</tr>
-					<tr>
-						<td>21-03-2016</td>
-						<td>Lorem Ipsum</td>
-						<td>facture_123456_loremipsum.pdf</td>
-						<td><span class="delete">Refusé <i class="fa fa-times" aria-hidden="true"></i></span></td>
-						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
-						<td><a href="#"><span class="viewcolumn"><i class="fa fa-eye" aria-hidden="true"></i></span></a></td>
-					</tr>
-					<tr>
-						<td>21-03-2016</td>
-						<td>Lorem Ipsum</td>
-						<td>facture_123456_loremipsum.pdf</td>
-						<td><span class="wait">En attente <i class="fa fa-exclamation" aria-hidden="true"></i></span></td>
-						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
-						<td><a href="#"><span class="viewcolumn"><i class="fa fa-eye" aria-hidden="true"></i></span></a></td>
-					</tr>
-					<tr>
-						<td>21-03-2016</td>
-						<td>Lorem Ipsum</td>
-						<td>facture_123456_loremipsum.pdf</td>
-						<td><span class="paid">Payé <i class="fa fa-check" aria-hidden="true"></i></span></td>
-						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
-						<td><a href="#"><span class="viewcolumn"><i class="fa fa-eye" aria-hidden="true"></i></span></a></td>
-					</tr>
-					<tr>
-						<td>21-03-2016</td>
-						<td>Lorem Ipsum</td>
-						<td>facture_123456_loremipsum.pdf</td>
-						<td><span class="delete">Refusé <i class="fa fa-times" aria-hidden="true"></i></span></td>
-						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
-						<td><a href="#"><span class="viewcolumn"><i class="fa fa-eye" aria-hidden="true"></i></span></a></td>
-					</tr>
-					<tr>
-						<td>21-03-2016</td>
-						<td>Lorem Ipsum</td>
-						<td>facture_123456_loremipsum.pdf</td>
-						<td><span class="paid">Payé <i class="fa fa-check" aria-hidden="true"></i></span></td>
-						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
-						<td><a href="#"><span class="viewcolumn"><i class="fa fa-eye" aria-hidden="true"></i></span></a></td>
-					</tr>
-					<tr>
-						<td>21-03-2016</td>
-						<td>Lorem Ipsum</td>
-						<td>facture_123456_loremipsum.pdf</td>
-						<td><span class="delete">Refusé <i class="fa fa-times" aria-hidden="true"></i></span></td>
-						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
-						<td><a href="#"><span class="viewcolumn"><i class="fa fa-eye" aria-hidden="true"></i></span></a></td>
-					</tr> -->
-				
-			</div>
-
-		</section>
+					</table> 
+								</div>
+							</section>
 
 	</div>
 
