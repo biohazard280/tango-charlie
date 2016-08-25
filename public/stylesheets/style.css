@@ -357,34 +357,38 @@ td p {
   margin-top: 14px;
 }
 /* line 73, ../sass/_addclient.scss */
-.addClientForm .validation {
+.addClientForm .valid {
   background-color: #84c900;
   border: none;
   color: white;
   font-weight: 800;
 }
 /* line 78, ../sass/_addclient.scss */
-.addClientForm .validation:hover {
+.addClientForm .valid:hover {
   background-color: #95e300;
-  cursor: pointer;
+  cursor: pointer !important;
 }
 /* line 84, ../sass/_addclient.scss */
+.addClientForm .invalid:hover {
+  cursor: not-allowed;
+}
+/* line 88, ../sass/_addclient.scss */
 .addClientForm .checkCoord {
   float: left;
   width: auto;
   height: 0px;
   margin: 0px 10px 10px 0px;
 }
-/* line 91, ../sass/_addclient.scss */
-.addClientForm .error {
+/* line 95, ../sass/_addclient.scss */
+.addClientForm .ng-not-empty.ng-invalid {
   border: 1px solid red !important;
 }
-/* line 95, ../sass/_addclient.scss */
-.addClientForm .valid {
+/* line 99, ../sass/_addclient.scss */
+.addClientForm .ng-not-empty.ng-valid {
   border: 1px solid #84c900 !important;
 }
 
-/* line 105, ../sass/_addclient.scss */
+/* line 107, ../sass/_addclient.scss */
 .select {
   width: 13.7931%;
   float: left;
@@ -394,13 +398,13 @@ td p {
   border: none;
   padding: 5px;
 }
-/* line 111, ../sass/_addclient.scss */
+/* line 113, ../sass/_addclient.scss */
 .select:hover {
   background-color: #a3a5a8;
   cursor: pointer;
 }
 
-/* line 117, ../sass/_addclient.scss */
+/* line 119, ../sass/_addclient.scss */
 .selectActive {
   background-color: #0297cc !important;
 }

@@ -4,53 +4,48 @@
 
 	<!--<a href="#/dashboard_Entreprise/factures/createnewfacture">Create a new facture</a>-->
 
-			<a class="clients_nbr">
+			<a class="factures_view">
 				<div class="icons">
-					<i class="fa fa-pencil-square-o fa-3x" aria-hidden="true"></i>
+					<i class="fa fa-file-text-o fa-3x" aria-hidden="true"></i>
 				</div>
-
-				<p class="infos">{{nbrBills}} Factures</p>
+				<p class="infos">{{factures.length}} Factures</p>
 			</a>
 
-			<a href="#/dashboard_Entreprise/clients/createnewclient" class="addClient">
-
+			<a class="addClient" href="#/dashboard_Entreprise/factures/createnewfacture">
 				<div class="icons">
 					<i class="fa fa-plus-circle fa-3x" aria-hidden="true"></i>
-
 				</div>
-
-				<p class="subInfos">Ajouter une facture</p>
+				<p class="infos">Ajouter une facture</p>
 			</a>
 
-			<a href="#/dashboard_Entreprise/devis/viewdevis" class="devis_view">
+
+			<a class="clients_nbr" href="#/dashboard_Entreprise/clients/viewclient">
 				<div class="icons">
 					<i class="fa fa-users fa-3x" aria-hidden="true"></i>
 				</div>
 
 				<p class="subInfos">Clients</p>
-			</a>
 
-			<a href="#/dashboard_Entreprise/factures/viewfactures" class="devis_view">
+			</a>
+			<a class="devis_view" href="#/dashboard_Entreprise/devis/viewdevis">
 				<div class="icons">
-					<i class="fa fa-file-text-o fa-3x" aria-hidden="true"></i>
+					<i class="fa fa-pencil-square-o fa-3x" aria-hidden="true"></i>
 				</div>
+
 				<p class="subInfos">Devis</p>
+
 			</a>
-
 		</section>
-
-
+		
 		<section class="searchMenu">
-			<div class="selectParticuliers">
-
+			<button class="select" ng-click="showAttente()" ng-class="{selectActive: particulier}">
 				<p class="subInfos">En attente ({{nbrUnpaidBills}})</p>
+			</button>
 
-			</div>
-			<div class="selectEntreprise">
-
+			<button class="select" ng-click="showPaid()" ng-class="{selectActive: entreprise}">
 				<p class="subInfos">Payées ({{nbrPaidBills}})</p>
-			</div>
-
+			</button>
+			
 			<div class="search">
 				<input type="text" placeholder="Faire une recherche"/>
 				<i class="fa fa-search" aria-hidden="true"></i>
@@ -58,31 +53,48 @@
 
 		</section>
 
-
 		<section>
 
 			<div class="matable">
-				<table>
-					<tr>
-						<th>Date <i class="fa fa-caret-down" aria-hidden="true"></i></th>
-						<th>Client <i class="fa fa-caret-down" aria-hidden="true"></i></th>
-						<th>File</th>
-						<th>Statut <i class="fa fa-caret-down" aria-hidden="true"></i></th>
-						<th>Delete</th>
-						<th>View</th>
-					</tr>
-					<ul ng-repeat="client in clients">
-					<li>
-					 <tr>
-						<td><!-- 21-03-2016 --></td>
-						<td>Lorem Ipsum</td>
-						<td>facture_123456_loremipsum.pdf</td>
-						<td><span class="paid">Payé <i class="fa fa-check" aria-hidden="true"></i></span></td>
-						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
-						<td><a href="#"><span class="viewcolumn"><i class="fa fa-eye" aria-hidden="true"></i></span></a></td>
-					</tr>
-					</li>
-					</ul>
+			<!-- 	<table>
+				<tr>
+					<th><a ng-click="sortBy('')">Date</a> <i class="fa fa-caret-down" aria-hidden="true"></i></th>
+					<th>Client <i class="fa fa-caret-down" aria-hidden="true"></i></th>
+					<th>File</th>
+					<th>Statut <i class="fa fa-caret-down" aria-hidden="true"></i></th>
+					<th>Delete</th>
+					<th>View</th>
+				</tr>
+				</table> -->
+					
+<!-- 					<ul ng-repeat="client in clients">
+	<li>
+		<ul ng-repeat="bill in client.bills">
+			<li>{{bill.createdAt | date : 'd/MM/yyyy'}}</li>
+			<td>Lorem Ipsum</td>
+			<td>facture_123456_loremipsum.pdf</td>
+			<td><span class="paid">Payé <i class="fa fa-check" aria-hidden="true"></i></span></td>
+			<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
+				<td><a href="#"><span class="viewcolumn"><i class="fa fa-eye" aria-hidden="true"></i></span></a></td>
+			
+
+				
+		</ul>
+	</li>
+</ul> -->
+					<table ng-repeat="client in clients">
+								 <tr ng-repeat="bill in client.bills" ng-model="bill.state">
+									<td>{{bill.createdAt | date : 'd/MM/yyyy'}}</td>
+									<td>{{client.name}}</td>
+									<td>facture_123456_loremipsum.pdf</td>
+									<td ng-switch="bill.state">
+										<span class="paid" ng-switch-when="true">Payée <i class="fa fa-check" aria-hidden="true"></i></span>
+										<span class="paid" ng-switch-when="false">En attente <i class="fa fa-exclamation" aria-hidden="true"></i></span>
+									</td>
+									<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
+									<td><a href="#"><span class="viewcolumn"><i class="fa fa-eye" aria-hidden="true"></i></span></a></td>
+								</tr>
+					</table>
 					<!--<tr>
 						<td>21-03-2016</td>
 						<td>Lorem Ipsum</td>
@@ -172,7 +184,7 @@
 						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
 						<td><a href="#"><span class="viewcolumn"><i class="fa fa-eye" aria-hidden="true"></i></span></a></td>
 					</tr> -->
-				</table>
+				
 			</div>
 
 		</section>
