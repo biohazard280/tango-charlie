@@ -132,15 +132,9 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Client', '$cookies', fu
 	$scope.nbrPrivateprs = 0;
 	let listClients = [];
 	let listPrivates = [];
-	let listcompanies = [];
-/*	
-	
-	$scope.companies = [];
-	$scope.privates = [];
-	$scope.allClients = [];*/
-	
+	let listCompanies = [];
+	$scope.datas = [];
 
-	
 
 	function refresh() {
 		Client.getList(function(result) {
@@ -157,35 +151,44 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Client', '$cookies', fu
 				});
 				if($scope.clients[i].isCompany == true){
 					$scope.nbrCompanies++;
+					listCompanies.push({'picture' : $scope.clients[i].picture,
+							  	  		'id' : $scope.clients[i]._id,
+							      		'name' : $scope.clients[i].name,
+							      		'isCompany' : $scope.clients[i].isCompany,
+							      		'nbrQuot' : $scope.clients[i].quotations.length,
+							      		'nbrBills' : $scope.clients[i].bills.length
+
+					});
 				}
 				else {
 					$scope.nbrPrivateprs++;
+					listPrivates.push({'picture' : $scope.clients[i].picture,
+							  	  	   'id' : $scope.clients[i]._id,
+							      	   'name' : $scope.clients[i].name,
+							      	   'isCompany' : $scope.clients[i].isCompany,
+							      	   'nbrQuot' : $scope.clients[i].quotations.length,
+							      	   'nbrBills' : $scope.clients[i].bills.length
+
+					});
 				}
 			}
-			$scope.data = [];
-			console.log(listClients);
-			$scope.data.push(listClients);console.log($scope.data);
+			
+			
+			$scope.datas = listClients;
 		});
 	}
-
+	
 	refresh();
 
-	
-	$scope.search = {};
 
-
-	$scope.showClients = function(isCmp){
-		$scope.search.isCompany = isCmp;
+	$scope.showCompanies = function(){
+		$scope.datas = listCompanies;
 	}
 
-	$scope.recherche = function(entree){
-		$scope.search = {};
-		$scope.search.name = entree;
+	$scope.showPrivates = function(){
+		$scope.datas = listPrivates;
 	}
 
-	$scope.getPrivates = function(list){
-		console.log(list);
-	}
 
 
 }]);
