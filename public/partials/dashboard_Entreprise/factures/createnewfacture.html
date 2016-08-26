@@ -41,11 +41,11 @@
 					<div>
 						<div>
 							<label for="">N° de facture</label>
-							<input ng-model="numbill" type="text" ng-pattern="onlyNumbers" required>
+							<input ng-model="numbill" type="text" ng-pattern="onlyNumbers">
 						</div>
 						<div>
 							<label for="">Date de facture</label>
-							<input ng-model="datebill" type="date" placeholder="2016-03-21" ng-pattern="onlyNumbers" required>
+							<input ng-model="datebill" type="text" placeholder="dd-mm-yyyy" ng-pattern="onlyNumbers">
 						</div>
 					</div>
 					<div>
@@ -69,7 +69,7 @@
 					<div>
 						<div>
 							<label for="">PO</label>
-							<input ng-model="po" type="text" id="" ng-pattern="onlyNumbers" required>
+							<input ng-model="po" type="text" id="" ng-pattern="onlyNumbers">
 						</div>
 
 						<div>
@@ -137,11 +137,11 @@
 						<div>
 							<div>
 								<label for="">Date du début *</label>
-								<input ng-model="dateBegin" type="date" placeholder="2016-03-21" ng-pattern="onlyNumbers" required>
+								<input ng-model="dateBegin" type="text" placeholder="dd-mm-yyyy" ng-pattern="onlyNumbers">
 							</div>
 							<div>
 								<label for="">Date de fin *</label>
-								<input ng-model="dateEnd" type="date" placeholder="2016-03-21" ng-pattern="onlyNumbers" required>
+								<input ng-model="dateEnd" type="text" placeholder="dd-mm-yyyy" ng-pattern="onlyNumbers">
 							</div>
 						</div>
 					</div>
@@ -170,7 +170,7 @@
 										<option>Pomme de pain</option>
 									</select>
 								</li>
-								<li class="quantity"><input ng-model="qtearticle01" type="" id=""></li>
+								<li class="quantity"><input ng-model="qtearticle01" type="number"></li>
 								<li>1119.75 <i class="symbole">€</i></li>
 								<li>21 <i class="symbole">%</i></li>
 								<li class="deletecolumn"><a href=""><i class="fa fa-times-circle" aria-hidden="true"></i></a></li>
@@ -185,7 +185,7 @@
 										<option>Pomme d'api</option>
 									</select>
 								</li>
-								<li class="quantity"><input ng-model="qtearticle02" type="" id=""></li>
+								<li class="quantity"><input ng-model="qtearticle02" type="number" id=""></li>
 								<li>2.00 <i class="symbole">€</i></li>
 								<li>6 <i class="symbole">%</i></li>
 								<li class="deletecolumn"><a href=""><i class="fa fa-times-circle" aria-hidden="true"></i></a></li>
@@ -193,9 +193,32 @@
 								<li>2.12 <i class="symbole">€</i></li>
 							</ul>
 						</li>
-						<li class="ajouter">
-							<button>Ajouter</button>
+
+						<!-- ajout article -->
+
+						<li ng-repeat="article in articles track by $index">
+							<ul class="infosarticle">
+								<li class="article">
+									<select ng-model="article">
+										<option>Article 1</option>
+										<option>Article 2</option>
+										<option>Article 3</option>
+										<option>Article 4</option>
+									</select>
+								</li>
+								<li class="quantity"><input type="number"></li>
+								<li>2.00 <i class="symbole">€</i></li>
+								<li>6 <i class="symbole">%</i></li>
+								<li class="deletecolumn"><a href=""><i class="fa fa-times-circle" aria-hidden="true"></i></a></li>
+								<li class="viewcolumn"><a href=""><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+								<li>2.12 <i class="symbole">€</i></li>
+							</ul>
 						</li>
+
+						<li class="ajouter">
+							<button id ="button-add" class="addArticle" ng-click="addArticle()"> Ajouter un article </button>
+						</li>
+
 						<li class="total">
 							<ul>
 								<li>Total</li>
