@@ -130,9 +130,11 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Client', '$cookies', fu
 
 	$scope.nbrCompanies = 0;
 	$scope.nbrPrivateprs = 0;
-/*	$scope.quotations = 0;
-	$scope.bills = 0;
-	$scope.adminName = "";
+	let listClients = [];
+	let listPrivates = [];
+	let listcompanies = [];
+/*	
+	
 	$scope.companies = [];
 	$scope.privates = [];
 	$scope.allClients = [];*/
@@ -146,7 +148,13 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Client', '$cookies', fu
 			
 			// to know how many companies or private persons are
 			for(var i = 0; i<$scope.clients.length; i++) {
-
+				listClients.push({'picture' : $scope.clients[i].picture,
+							  	  'id' : $scope.clients[i]._id,
+							      'name' : $scope.clients[i].name,
+							      'isCompany' : $scope.clients[i].isCompany,
+							      'nbrQuot' : $scope.clients[i].quotations.length,
+							      'nbrBills' : $scope.clients[i].bills.length
+				});
 				if($scope.clients[i].isCompany == true){
 					$scope.nbrCompanies++;
 				}
@@ -154,6 +162,9 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Client', '$cookies', fu
 					$scope.nbrPrivateprs++;
 				}
 			}
+			$scope.data = [];
+			console.log(listClients);
+			$scope.data.push(listClients);console.log($scope.data);
 		});
 	}
 
