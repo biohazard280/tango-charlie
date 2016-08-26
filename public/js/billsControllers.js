@@ -20,51 +20,37 @@ crmControllers.controller('listBillsCtrl', ['$scope', 'Client', '$location', '$c
 			for(var i = 0; i < $scope.clients.length; i++) {
 				$scope.nbrBills += $scope.clients[i].bills.length;
 				
-/*				$scope.clientData.push({"name" : $scope.clients[i].name});
-				$scope.Datas.push($scope.clientData[i]);*/
-				for(var j = 0; j < $scope.clients[i].bills.length; j++){
+			for(var j = 0; j < $scope.clients[i].bills.length; j++){
 					$scope.datas.push({'name' : $scope.clients[i].name, 
 									   'date' : $scope.clients[i].bills[j].createdAt,
 									   'billId' : $scope.clients[i].bills[j]._id,
 									   'state' : $scope.clients[i].bills[j].state
 				});
-					/*$scope.billData.push({"date" : $scope.clients[i].bills[j].createdAt});
-					$scope.billData.push({"billId" : $scope.clients[i].bills[j]._id});
-					$scope.billData.push({"state" : $scope.clients[i].bills[j].state});*/
-					if($scope.clients[i].bills[j].state == false){
+	
+				if($scope.clients[i].bills[j].state == false){
 						$scope.nbrUnpaidBills++;
 					} else {
 						$scope.nbrPaidBills++;
 					}
 				};
-				
-				/*$scope.Datas.push($scope.billData);*/
+
 			};
 
 			console.log($scope.datas);
-            /*console.log($scope.nbrBills+" factures");
-            console.log($scope.nbrUnpaidBills+" factures impayées");
-            console.log($scope.nbrPaidBills+" factures payées")*/
-			
-			// to know how many companies or private persons are
-			/*for(var i = 0; i<$scope.clients[0].bills.length; i++) {
-				if($scope.clients[i].isCompany == true){
-					$scope.nbrCompanies++;
-				}
-				else {
-					$scope.nbrPrivateprs++;
-				}
-			}*/
 
 		});
 	}
 	refresh();
 
-	  $scope.propertyName = 'date';
+	 $scope.propertyName = 'date';
  	 $scope.reverse = true;
-$scope.sortBy = function(propertyName) {
-    $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
-    $scope.propertyName = propertyName;
-  };
+	$scope.sortBy = function(property) {
+	    if ($scope.propertyName === property) {
+			$scope.reverse = !$scope.reverse;
+		} else {
+			$scope.propertyName = property;
+			$scope.reverse = true;
+		}
+	};
 
 }]);

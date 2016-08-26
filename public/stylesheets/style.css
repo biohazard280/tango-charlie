@@ -979,26 +979,44 @@ li, td {
 }
 
 /* line 32, ../sass/_viewfactures.scss */
+.search input {
+  width: 83.05085%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 36, ../sass/_viewfactures.scss */
+.searchicon {
+  width: 15.25424%;
+  float: right;
+  margin-right: 0;
+  height: 35px;
+  color: white;
+  background-color: #84c900;
+  border: none;
+}
+
+/* line 44, ../sass/_viewfactures.scss */
 .viewcolumn {
   color: blue;
 }
 
-/* line 36, ../sass/_viewfactures.scss */
+/* line 48, ../sass/_viewfactures.scss */
 .deletecolumn {
   color: purple;
 }
 
-/* line 40, ../sass/_viewfactures.scss */
+/* line 52, ../sass/_viewfactures.scss */
 .paid {
   color: #84c900;
 }
 
-/* line 44, ../sass/_viewfactures.scss */
+/* line 56, ../sass/_viewfactures.scss */
 .wait {
   color: orange;
 }
 
-/* line 48, ../sass/_viewfactures.scss */
+/* line 60, ../sass/_viewfactures.scss */
 .delete {
   color: grey;
 }
