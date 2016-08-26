@@ -1,6 +1,15 @@
 // --------DASHBOARD_entreprise-------//
 // ---ajout favture--- //
 .addFactureForm{
+	
+	.ng-not-empty.ng-invalid{
+		border: 1px solid red !important;
+	}
+
+	.ng-not-empty.ng-valid{
+		border: 1px solid $secondary !important;
+	}
+
 	h2{
 		color:$secondary;
 		padding-bottom: 15px;
