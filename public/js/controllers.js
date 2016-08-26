@@ -130,13 +130,12 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Client', '$cookies', fu
 
 	$scope.nbrCompanies = 0;
 	$scope.nbrPrivateprs = 0;
-	$scope.quotations = 0;
+/*	$scope.quotations = 0;
 	$scope.bills = 0;
 	$scope.adminName = "";
-	$scope.clientsShow = [];
-	let tabCompanies = [];
-	let tabPrivates = [];
-	let clientsToShow = [];
+	$scope.companies = [];
+	$scope.privates = [];
+	$scope.allClients = [];*/
 	
 
 	
@@ -145,10 +144,9 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Client', '$cookies', fu
 		Client.getList(function(result) {
 			$scope.clients = result;
 			
-			
-
 			// to know how many companies or private persons are
 			for(var i = 0; i<$scope.clients.length; i++) {
+
 				if($scope.clients[i].isCompany == true){
 					$scope.nbrCompanies++;
 				}
@@ -156,11 +154,12 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Client', '$cookies', fu
 					$scope.nbrPrivateprs++;
 				}
 			}
-
 		});
 	}
+
 	refresh();
 
+	
 	$scope.search = {};
 
 
@@ -173,10 +172,30 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Client', '$cookies', fu
 		$scope.search.name = entree;
 	}
 
+	$scope.getPrivates = function(list){
+		console.log(list);
+	}
 
 
 }]);
-
+/*
+crmControllers.filter('isCompany', [function($filter) {
+	return function(inputArray, searchCriteria, clType){         
+  		if(!angular.isDefined(searchCriteria) || searchCriteria == ''){
+   			return inputArray;
+  		}         
+  		var data=[];
+  		angular.forEach(inputArray, function(item){             
+   			if(item.clType == clType){
+	    		if(item.isCompany.indexOf(searchCriteria) != -1){
+	     			data.push(item);
+	    		}
+   			}
+  		});      
+  		return data;
+ 	};
+}]);
+*/
 
 crmControllers.controller('detailClientCtrl', ['$scope', 'Client', function($scope, Client){
 
