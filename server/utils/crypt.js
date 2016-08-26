@@ -1,4 +1,3 @@
-"use strict";
 let logger = require('./logger');
 let bcrypt = require('bcrypt');
 

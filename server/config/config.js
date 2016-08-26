@@ -1,4 +1,3 @@
-"use strict";
 let config = {
     logging : true,
     seed : true

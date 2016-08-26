@@ -28,9 +28,9 @@ services.factory('Client', ['$resource', function($resource) {
 				// client.picture = newClient.picture;
 				client.isCompany = newClient.isCompany;
 				client.vat = {
-					"num" : parseInt(newClient.vat.num),
-					"siren" : parseInt(newClient.vat.siren),
-					"rcs" : parseInt(newClient.vat.rcs)
+					"num" : newClient.vat.num,
+					"siren" : newClient.vat.siren,
+					"rcs" : newClient.vat.rcs
 				};
 				
 				client.billingInfo = {
@@ -75,7 +75,7 @@ services.factory('Client', ['$resource', function($resource) {
 				client.memo = newClient.memo;
 				client.createdAt = Date.now();
 
-				// client.$save(callback);
+				client.$save(callback);
 			},
 
 			getParams : function(callback) {

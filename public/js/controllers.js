@@ -267,6 +267,7 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 		$scope.newClient = {};
 		$scope.newClient.billingInfo = {};
 		$scope.newClient.deliveryInfo = {};
+		$scope.newClient.vat= {};
 	}
 
 	// set the differents variables when we load the form
@@ -274,16 +275,17 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 
 
 	$scope.createClient = function(isValid){
+	}
+
+	$scope.addClient = function(newClient, isValid){
 		let checkCoord = $scope.checkCoord;
 
-		if(isValid){
-			// Client.createClient($scope.newClient, function(result){
-			// 	alert(result.message);
-			// 	console.log(result);
-			// 	// clean the temp Arrays after sending the form for the next one
-			// 	voidArrays();
-			// });
-			// $scope.error = false;
+		if (isValid){
+			// initialize password for new client
+			$scope.newClient.contactPerson.pwd = 'pass456';
+			// combine prefixe and tva number
+			$scope.newClient.vat.num = $scope.newClientPrefix + $scope.newClient.vat.num;
+
 			if(checkCoord){
 				console.log("hey c'est true");
 
@@ -301,12 +303,21 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 				console.log("hey c'est false");
 			}
 
+			Client.addClient($scope.newClient, function(result){
+				// alert(result.message);
+				console.log(result);
+				// clean the temp Arrays after sending the form for the next one
+				voidArrays();
+			});
+
 			console.log($scope.newClient);
 			console.log($scope.checkCoord);
-
-		} else {
-			console.log("Ca coince quelque part");
-			$scope.error = true;
+			
+			$scope.error = false;
+		}
+		else{
+			console.log('Erreur! Non valide!');
+			$scope.erreur = true;
 		}
 	}
 
@@ -321,17 +332,17 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 	$scope.checkCoord = true;
 	$scope.view1 = true;
 	$scope.view2 = false;
-	// isCompany = false
+	$scope.newClient.isCompany = false
 
 	$scope.showView1 = function() {
 		$scope.view1 = true;
 		$scope.view2 = false;
-		// isCompany = false
+		$scope.newClient.isCompany = false
 	}
 	$scope.showView2 = function() {
 		$scope.view1 = false;
 		$scope.view2 = true;
-		// isCompany = true
+		$scope.newClient.isCompany = true
 	}
 
 

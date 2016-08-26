@@ -1,7 +1,16 @@
 // --------DASHBOARD_entreprise-------//
 // ---ajout client--- //
 .addClientForm{
+
 	box-sizing: border-box;
+	
+	.ng-not-empty.ng-invalid{
+		border: 1px solid red !important;
+	}
+
+	.ng-not-empty.ng-valid{
+		border: 1px solid $secondary !important;
+	}
 	h2{
 		color:$secondary;
 		padding-bottom: 15px;
@@ -110,12 +119,4 @@
 
 .selectActive{
 	background-color: #0297cc !important;
-}
-
-.ng-not-empty.ng-invalid{
-	border: 1px solid red !important;
-}
-
-.ng-not-empty.ng-valid{
-	border: 1px solid $secondary !important;
 }
