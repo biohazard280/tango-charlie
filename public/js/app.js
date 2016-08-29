@@ -7,6 +7,7 @@ var app = angular.module('carinaApp',[
 	'ngCookies',
 	'crmControllers',
 	'billsControllers',
+	'quotationsControllers',
 	'crmServices'
 	]);
 
@@ -49,7 +50,7 @@ app.config(['$routeProvider', function($routeProvider){
 //devis
 	when('/dashboard_Entreprise/devis/viewdevis' , {
 		templateUrl : 'partials/dashboard_Entreprise/devis/viewdevis.html',
-		controller : 'listDevisCtrl'
+		controller : 'listQuotCtrl'
 	}).
 	when('/dashboard_Entreprise/devis/createnewdevis' , {
 		templateUrl : 'partials/dashboard_Entreprise/devis/createnewdevis.html',
@@ -62,7 +63,7 @@ app.config(['$routeProvider', function($routeProvider){
 	}).
 	when('/dashboard_Entreprise/factures/createnewfacture' , {
 		templateUrl : 'partials/dashboard_Entreprise/factures/createnewfacture.html',
-		controller : 'createNewClientCtrl'
+		controller : 'createNewFactureCtrl'
 	}).
 	when('/dashboard_Entreprise/factures/facturepdf', {
 		templateUrl : 'partials/dashboard_Entreprise/factures/facturepdf.html',

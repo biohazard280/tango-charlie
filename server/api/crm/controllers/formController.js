@@ -4,7 +4,7 @@ let model = require('../model');
 let multer = require('multer');
 let fsPath = require('fs-path');
 
-const dest_folder = 'public/images/uploads/';
+const dest_folder = 'public/img/uploads/';
 
 // =============================================================
 // /!\ THE TEXT FIELDS MUST BE SEND BEFORE THE IMAGE FIELDS !!!!

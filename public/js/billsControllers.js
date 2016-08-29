@@ -17,17 +17,6 @@ crmControllers.controller('listBillsCtrl', ['$scope', 'Client', '$location', '$c
 			$scope.clients = result;
 			console.log(result);
 
-/*<<<<<<< HEAD
-			$scope.nbrBills = 0;
-			$scope.nbrUnpaidBills = 0;
-			$scope.nbrPaidBills = 0;
-			$scope.clientData = {};
-			$scope.billData = {};
-			$scope.order = "";
-			$scope.datas = [];
-=======
-			
->>>>>>> d4ccf6755b2b47ad8500f17e4848126a6fa7869c*/
 
 
 			//to know how many bills there are and their status state = false "bill unpaid", state = true "bill paid"
@@ -59,39 +48,16 @@ crmControllers.controller('listBillsCtrl', ['$scope', 'Client', '$location', '$c
 						});
 					}
 				};
-/*<<<<<<< HEAD*/
-				
-				/*$scope.Datas.push($scope.billData);*/
-			};
-			/*$scope.order = $scope.datas[0].name;
-			console.log($scope.order);*/
-            /*console.log($scope.nbrBills+" factures");
-            console.log($scope.nbrUnpaidBills+" factures impayées");
-            console.log($scope.nbrPaidBills+" factures payées")*/
-			
-			// to know how many companies or private persons are
-			/*for(var i = 0; i<$scope.clients[0].bills.length; i++) {
-				if($scope.clients[i].isCompany == true){
-					$scope.nbrCompanies++;
-				}
-				else {
-					$scope.nbrPrivateprs++;
-				}
-			}*/
-/*=======
 
-			};*/
+			};
+
 			$scope.datas = listBills;
 			console.log($scope.datas);
-/*>>>>>>> d4ccf6755b2b47ad8500f17e4848126a6fa7869c*/
 
 		});
 	}
 	refresh();
 
-/*<<<<<<< HEAD
-
-=======*/
 $scope.viewAll = true;
 $scope.viewPaid = false;
 $scope.viewUnpaid = false;
@@ -101,6 +67,7 @@ $scope.viewUnpaid = false;
 		$scope.viewPaid = false;
 		$scope.viewUnpaid = false;
 	}
+
 	$scope.showPayedBills = function(){
 		$scope.datas = listPayedBills;
 		$scope.viewAll = false;
@@ -125,6 +92,68 @@ $scope.viewUnpaid = false;
 			$scope.reverse = true;
 		}
 	};
-/*>>>>>>> d4ccf6755b2b47ad8500f17e4848126a6fa7869c*/
+
+}]);
+
+crmControllers.controller('createNewFactureCtrl', ['$scope', 'Client', function($scope, Client){
+
+		
+		$scope.listClients = [];
+		$scope.listQuotations = [];
+		$scope.newFacture = {};
+		
+		Client.getList(function(result) {
+			$scope.clients = result;
+			
+			for (var i = 0; i < $scope.clients.length ; i++){
+				$scope.listClients.push({'name' : $scope.clients[i].name,
+										'id' : $scope.clients[i]._id});
+				for (var j = 0; j < $scope.clients[i].quotations.length ; j++){
+					$scope.listQuotations.push({'idCl' : $scope.clients[i]._id,
+												'quotLink' : $scope.clients[i].quotations[j].link});
+				}
+			}
+
+		});
+
+			/// get params
+		Client.getParams(function(result) {
+			$scope.params = result;
+			$scope.listRules = $scope.params[0].rules;
+			$scope.listRefunds = $scope.params[0].refunds;
+			$scope.listVatRate = $scope.params[0].vatRate;
+		});
+
+		Client.getAdmin(function(result) {
+			$scope.listPayementInfo = [];
+			$scope.admin = result;
+			$scope.paymentInfo = $scope.admin[0].paymentInfo;
+			for (var i = 0 ; i < $scope.paymentInfo.bank.length ; i++) {
+				$scope.listPayementInfo.push($scope.paymentInfo.bank[i]);
+			}
+			for (var i = 0 ; i < $scope.paymentInfo.paypal.length ; i++) {
+				$scope.listPayementInfo.push($scope.paymentInfo.paypal[i]);
+			}
+
+			console.log($scope.listPayementInfo);
+		});
+
+	
+	
+
+
+	//console.log($scope.listQuotations);
+	console.log($scope.newFacture);
+	$scope.articles=[];
+
+	$scope.addNewArticle = function(){
+		$scope.articles.push();
+	}
+
+    /*$scope.setClient = function(id){
+		alert(id);
+	}*/
+
+
 
 }]);
