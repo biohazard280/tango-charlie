@@ -13,6 +13,7 @@ crmControllers.controller('listBillsCtrl', ['$scope', 'Client', '$location', '$c
 			$scope.nbrPaidBills = 0;
 			$scope.clientData = {};
 			$scope.billData = {};
+			$scope.order = "";
 			$scope.datas = [];
 
 
@@ -40,8 +41,8 @@ crmControllers.controller('listBillsCtrl', ['$scope', 'Client', '$location', '$c
 				
 				/*$scope.Datas.push($scope.billData);*/
 			};
-
-			console.log($scope.datas);
+			$scope.order = $scope.datas[0].name;
+			console.log($scope.order);
             /*console.log($scope.nbrBills+" factures");
             console.log($scope.nbrUnpaidBills+" factures impayées");
             console.log($scope.nbrPaidBills+" factures payées")*/
@@ -60,11 +61,6 @@ crmControllers.controller('listBillsCtrl', ['$scope', 'Client', '$location', '$c
 	}
 	refresh();
 
-	  $scope.propertyName = 'date';
- 	 $scope.reverse = true;
-$scope.sortBy = function(propertyName) {
-    $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
-    $scope.propertyName = propertyName;
-  };
+
 
 }]);
