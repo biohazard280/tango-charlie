@@ -40,12 +40,12 @@
 					<h2>Vos références</h2>
 					<div>
 						<div>
-							<label for="">N° de facture</label>
-							<input ng-model="numbill" type="text" ng-pattern="onlyNumbers">
+							<label>N° de facture  <i>*</i></label>
+							<input ng-model="numbill" type="text" ng-pattern="onlyNumbers" required>
 						</div>
 						<div>
-							<label for="">Date de facture</label>
-							<input ng-model="datebill" type="text" placeholder="dd-mm-yyyy" ng-pattern="onlyNumbers">
+							<label>Date de facture  <i>*</i></label>
+							<input ng-model="datebill" type="text" placeholder="dd-mm-yyyy" ng-pattern="onlyNumbers" required>
 						</div>
 					</div>
 					<div>
@@ -59,7 +59,7 @@
 					<h2>Références client</h2>
 					<div>
 						<span>
-							<label>Client</label>
+							<label>Client <i>*</i></label>
 							<select ng-model="nameclient" ng-pattern="onlyLetters" required>
 								<option>Monsieur Blabla</option>
 								<option>Madame Blublu</option>
@@ -68,12 +68,12 @@
 					</div>
 					<div>
 						<div>
-							<label for="">PO</label>
-							<input ng-model="po" type="text" id="" ng-pattern="onlyNumbers">
+							<label>PO <i>*</i></label>
+							<input ng-model="po" type="text" id="" ng-pattern="onlyNumbers" required>
 						</div>
 
 						<div>
-							<label>N° Devis</label>
+							<label>N° Devis <i>*</i></label>
 							<select ng-model="numdevis" ng-pattern="onlyNumbers" required>
 								<option>123-456-789</option>
 								<option>987-654-321</option>
@@ -86,10 +86,10 @@
 			<!-- COL DROITE  -->
 			<div>
 				<div>
-					<h2>Information et règles de paiement</h2>
+					<h2>Informations et règles de paiement</h2>
 					<div>
 						<span>
-							<label>Client</label>
+							<label>Client <i>*</i></label>
 							<select ng-model="nameclient" ng-pattern="onlyLetters" required>
 								<option>Monsieur Blabla</option>
 								<option>Madame Blublu</option>
@@ -98,7 +98,7 @@
 					</div>
 					<div>
 						<div>
-							<label for="">Mode de paiement</label>
+							<label>Mode de paiement <i>*</i></label>
 							<select ng-model="paybillmode" ng-pattern="onlyLetters" required>
 								<option selected>Compte Belfius</option>
 								<option>Compte Fortis</option>
@@ -106,7 +106,7 @@
 						</div>
 
 						<div>
-							<label for="">Mode de paiement secondaire</label>
+							<label>Mode de paiement secondaire <i>*</i></label>
 							<select ng-model="paybillmodesecond" ng-pattern="onlyLetters" required>
 								<option selected>Compte </option>
 								<option>Compte Fortis</option>
@@ -119,7 +119,7 @@
 						</span>
 					</div>
 					<div>
-						<label for="">Note</label>
+						<label>Note</label>
 						<textarea rows="5"></textarea> 
 					</div>
 				</div>
@@ -131,16 +131,16 @@
 					<h2>Objet</h2>
 					<div>
 						<div>
-							<label for="">Nom du projet</label>
-							<input ng-model="nameproject" type="" id="">
+							<label>Nom du projet  <i>*</i></label>
+							<input ng-model="nameproject" type="text" id="" required>
 						</div>
 						<div>
 							<div>
-								<label for="">Date du début *</label>
+								<label>Date du début  <i>*</i></label>
 								<input ng-model="dateBegin" type="text" placeholder="dd-mm-yyyy" ng-pattern="onlyNumbers">
 							</div>
 							<div>
-								<label for="">Date de fin *</label>
+								<label>Date de fin  <i>*</i></label>
 								<input ng-model="dateEnd" type="text" placeholder="dd-mm-yyyy" ng-pattern="onlyNumbers">
 							</div>
 						</div>
@@ -158,8 +158,8 @@
 								<li>Quantité</li>
 								<li>Prix/U</li>
 								<li>TVA</li>
-								<li>Description</li>
 								<li>Supprimer</li>
+								<li>Description</li>
 								<li>Prix HTVA</li>
 							</ul>
 						</li>
@@ -216,7 +216,7 @@
 						</li>
 
 						<li class="ajouter">
-							<button id ="button-add" class="addArticle" ng-click="addArticle()"> Ajouter un article </button>
+							<input id ="button-add" value="Ajouter un article" class="addArticle" ng-click="addArticle()"></input>
 						</li>
 
 						<li class="total">
@@ -224,12 +224,15 @@
 								<li>Total</li>
 								<li>2.12 <i class="symbole">€</i></li>
 							</ul>
-							<ul>
+							<ul class="ristourne">
 								<li>Ristourne</li>
 								<li>
-									<input ng-model="ristourneval" type="text" id="">
+									<input ng-model="ristourneval" type="text" ng-pattern="onlyNumbers">
 									<select ng-model="ristournepct">
-										<option>50</option>
+										<option>%</option>
+										<option>€</option>
+										<option>$</option>
+										<option>£</option>
 									</select>
 								</li>
 							</ul>
