@@ -26,17 +26,13 @@ th {
 	padding: 5px;
 } 
 
-.search input {
-	@include span(10 of 12);
-}
-
-.searchicon {
-	@include span(2 of 12 last);
-	height: 35px;
-	color: white;
-	background-color: #84c900;
-	border: none;
-}
+// .searchicon {
+// 	@include span(2 of 12 last);
+// 	height: 35px;
+// 	color: white;
+// 	background-color: #84c900;
+// 	border: none;
+// }
 
 .viewcolumn {
 	color: blue;

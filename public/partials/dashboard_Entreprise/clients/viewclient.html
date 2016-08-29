@@ -35,21 +35,25 @@
 		</a>
 	</section>
 
+
 	<section class="searchMenu">
+		<button class="select" ng-click="showAll()" ng-class="{selectActive: viewAll}">
+			<p class="subInfos">Tous</p>
+		</button>
 
-		<div class="selectParticuliers">
+		<button class="select" ng-click="showPrivates()" ng-class="{selectActive: viewPrivates}">
+			<p class="subInfos">Particuliers ({{nbrPrivateprs}})</p>
+		</button>
 
-			<a href="" class="subInfos" ng-click="showPrivates()">Particuliers ({{nbrPrivateprs}})</a>
-			
-		</div>
-		<div class="selectEntreprise">
-
-			<a href="" class="subInfos" ng-click="showCompanies()">Entreprises ({{nbrCompanies}})</a>
-		</div>
+		<button class="select" ng-click="showCompanies()" ng-class="{selectActive: viewCompanies}">
+			<p class="subInfos">Entreprises ({{nbrCompanies}})</p>
+		</button>
 
 		<div class="search">
-			<input type="text" placeholder="Faire une recherche" ng-model="search">
-
+			<input type="text" placeholder="Faire une recherche" ng-model="search"/>
+			<!-- <button class="searchicon">
+			<i class="fa fa-search" aria-hidden="true"></i>
+			</button> -->
 		</div>
 	</section>
 

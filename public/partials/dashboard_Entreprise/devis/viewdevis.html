@@ -32,13 +32,28 @@
 		</section>
 
 		<section class="searchMenu">
-			<button class="select" ng-click="showView1()" ng-class="{selectActive: view1}">
-				<p class="subInfos">Acceptés</p>
+			<button class="select" ng-click="showAll()" ng-class="{selectActive: viewAll}">
+				<p class="subInfos">Tous</p>
 			</button>
 
-			<button class="select" ng-click="showView2()" ng-class="{selectActive: view2}">
-				<p class="subInfos">En cours</p>
+			<button class="select" ng-click="showPayedDevis()" ng-class="{selectActive: viewPaid}">
+				<p class="subInfos">Payés ({{nbrPayedDevis}})</p>
 			</button>
+
+			<button class="select" ng-click="showWaitingDevis()" ng-class="{selectActive: viewWaiting}">
+				<p class="subInfos">En cours ({{nbrWaitingDevis}})</p>
+			</button>
+
+			<button class="select" ng-click="showRefusedDevis()" ng-class="{selectActive: viewRefused}">
+				<p class="subInfos">Refusé ({{nbrRefusedDevis}})</p>
+			</button>
+
+			<div class="search">
+				<input type="text" placeholder="Faire une recherche" ng-model="search"/>
+				<!-- <button class="searchicon">
+				<i class="fa fa-search" aria-hidden="true"></i>
+				</button> -->
+			</div>
 		</section>
 
 

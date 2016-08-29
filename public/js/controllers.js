@@ -123,6 +123,10 @@ crmControllers.controller('homeCtrl', ['$scope', '$location','ngDialog', '$cooki
 		});
     };
 
+    $scope.verifConnect = function (target) {
+    	console.log(target);
+    };
+
 }]);
 
 
@@ -173,23 +177,36 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Client', '$cookies', fu
 				}
 			}
 			
-			
 			$scope.datas = listClients;
 		});
 	}
 	
 	refresh();
 
+	$scope.viewAll = true;
+	$scope.viewPrivates = false;
+	$scope.viewCompanies= false;
 
 	$scope.showCompanies = function(){
 		$scope.datas = listCompanies;
+		$scope.viewAll = false;
+		$scope.viewPrivates = false;
+		$scope.viewCompanies= true;
 	}
 
 	$scope.showPrivates = function(){
 		$scope.datas = listPrivates;
+		$scope.viewAll = false;
+		$scope.viewPrivates = true;
+		$scope.viewCompanies= false;
 	}
 
-
+	$scope.showAll = function(){
+		$scope.datas = listClients;
+		$scope.viewAll = true;
+		$scope.viewPrivates = false;
+		$scope.viewCompanies= false;
+	}
 
 }]);
 
@@ -366,12 +383,12 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 		$scope.newClient.isCompany = true
 	}
 
-	$scope.articles=[];
+	/*$scope.articles=[];
 
 	$scope.addArticle = function(){
 		$scope.articles.push('');
 	}
-
+*/
 
 	/// get params
 	Client.getParams(function(result) {
@@ -380,5 +397,77 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 		$scope.listVatRate = $scope.params[0].vatRate;
 		$scope.listVatPrefix = $scope.params[0].vatPrefix;
 	});
+
+}]);
+
+crmControllers.controller('createNewFactureCtrl', ['$scope', 'Client', function($scope, Client){
+
+		$scope.listClients = [];
+		$scope.listQuotations = [];
+
+		function voidArray () {
+			$scope.articles=[];
+			$scope.newFacture = {};
+		}
+
+		voidArray();
+
+		Client.getList(function(result) {
+			$scope.clients = result;
+			
+			for (var i = 0; i < $scope.clients.length ; i++){
+				$scope.listClients.push({'name' : $scope.clients[i].name,
+										'id' : $scope.clients[i]._id});
+				for (var j = 0; j < $scope.clients[i].quotations.length ; j++){
+					$scope.listQuotations.push({'idCl' : $scope.clients[i]._id,
+												'quotLink' : $scope.clients[i].quotations[j].link});
+				}
+			}
+
+		});
+
+
+			/// get params
+		Client.getParams(function(result) {
+			$scope.params = result;
+			$scope.listRules = $scope.params[0].rules;
+			$scope.listRefunds = $scope.params[0].refunds;
+			$scope.listVatRate = $scope.params[0].vatRate;
+		});
+
+		Client.getAdmin(function(result) {
+			$scope.listPayementInfo = [];
+			$scope.admin = result;
+			$scope.paymentInfo = $scope.admin[0].paymentInfo;
+			$scope.articlesDb = $scope.admin[0].articles;
+			for (var i = 0 ; i < $scope.paymentInfo.bank.length ; i++) {
+				$scope.listPayementInfo.push($scope.paymentInfo.bank[i]);
+			}
+			for (var i = 0 ; i < $scope.paymentInfo.paypal.length ; i++) {
+				$scope.listPayementInfo.push($scope.paymentInfo.paypal[i]);
+			}
+
+			console.log($scope.articlesDb);
+		});
+
+
+	
+
+
+	//console.log($scope.listQuotations);
+	console.log($scope.newFacture);
+
+	$scope.articles=[];
+
+
+	$scope.addArticle = function(){
+		$scope.articles.push();
+	}
+
+    /*$scope.setClient = function(id){
+		alert(id);
+	}*/
+
+
 
 }]);

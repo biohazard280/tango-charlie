@@ -63,7 +63,7 @@ app.config(['$routeProvider', function($routeProvider){
 	}).
 	when('/dashboard_Entreprise/factures/createnewfacture' , {
 		templateUrl : 'partials/dashboard_Entreprise/factures/createnewfacture.html',
-		controller : 'createNewClientCtrl'
+		controller : 'createNewFactureCtrl'
 	}).
 	when('/dashboard_Entreprise/factures/facturepdf', {
 		templateUrl : 'partials/dashboard_Entreprise/factures/facturepdf.html',

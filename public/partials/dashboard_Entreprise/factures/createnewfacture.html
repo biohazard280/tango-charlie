@@ -60,23 +60,24 @@
 					<div>
 						<span>
 							<label>Client <i>*</i></label>
-							<select ng-model="nameclient" ng-pattern="onlyLetters" required>
-								<option>Monsieur Blabla</option>
-								<option>Madame Blublu</option>
+							<select ng-model="newFacture.idClient" ng-pattern="onlyLetters" required>
+								<option ng-repeat="client in listClients" value="{{client.id}}">{{client.name}}</option>
+								<!-- <option>Monsieur Blabla</option>
+								<option>Madame Blublu</option> -->
 							</select>
 						</span>
 					</div>
 					<div>
 						<div>
-							<label>PO <i>*</i></label>
+							<label>PO<i>*</i></label>
 							<input ng-model="po" type="text" id="" ng-pattern="onlyNumbers" required>
 						</div>
-
 						<div>
 							<label>N° Devis <i>*</i></label>
-							<select ng-model="numdevis" ng-pattern="onlyNumbers" required>
-								<option>123-456-789</option>
-								<option>987-654-321</option>
+							<!-- option.name for option in data.availableOptions track by option.id -->
+							<select ng-model="newFacture.quotId" ng-pattern="onlyNumbers" required>
+								<option ng-repeat="quot in listQuotations | filter: newFacture.idClient" value="{{quot.quotLink}}">{{quot.quotLink}}</option>
+								
 							</select>
 						</div>
 					</div>
@@ -89,27 +90,24 @@
 					<h2>Informations et règles de paiement</h2>
 					<div>
 						<span>
-							<label>Client <i>*</i></label>
-							<select ng-model="nameclient" ng-pattern="onlyLetters" required>
-								<option>Monsieur Blabla</option>
-								<option>Madame Blublu</option>
+							<label>Échéance <i>*</i></label>
+							<select ng-model="newFacture.echeance" ng-options="rule for rule in listRules" ng-pattern="onlyLetters" required>
 							</select>
 						</span>
 					</div>
 					<div>
 						<div>
 							<label>Mode de paiement <i>*</i></label>
-							<select ng-model="paybillmode" ng-pattern="onlyLetters" required>
-								<option selected>Compte Belfius</option>
-								<option>Compte Fortis</option>
+							<select ng-model="newFacture.payementInfo" ng-options="pmtInfo.name for pmtInfo in listPayementInfo" ng-pattern="	onlyLetters" required>
+								
+								
 							</select>
 						</div>
 
 						<div>
 							<label>Mode de paiement secondaire <i>*</i></label>
-							<select ng-model="paybillmodesecond" ng-pattern="onlyLetters" required>
-								<option selected>Compte </option>
-								<option>Compte Fortis</option>
+							<select ng-model="newFacture.payementInfoSecond" ng-options="pmtInfo.name for pmtInfo in listPayementInfo" ng-		pattern="onlyLetters" required>
+						
 							</select>
 						</div>
 					</div>
@@ -164,21 +162,21 @@
 							</ul>
 						</li>
 						<li>
-							<ul class="infosarticle">
+							<ul class="infosarticle" ng-repeat="article in articlesDb">
 								<li class="article">
-									<select ng-model="article01">
-										<option>Pomme de pain</option>
+									<select ng-model="newFacture.articles._id">
+									<option  value="{{article.name}}">{{article.name}}</option>
 									</select>
 								</li>
 								<li class="quantity"><input ng-model="qtearticle01" type="number"></li>
-								<li>1119.75 <i class="symbole">€</i></li>
+								<li>{{article.unitPrice}}<i class="symbole">€</i></li>
 								<li>21 <i class="symbole">%</i></li>
 								<li class="deletecolumn"><a href=""><i class="fa fa-times-circle" aria-hidden="true"></i></a></li>
 								<li class="viewcolumn"><a href=""><i class="fa fa-eye" aria-hidden="true"></i></a></li>
 								<li>1349.45 <i class="symbole">€</i></li>
 							</ul>
 						</li>
-						<li>
+						<!-- <li>
 							<ul class="infosarticle">
 								<li class="article">
 									<select ng-model="article02">
@@ -193,9 +191,9 @@
 								<li>2.12 <i class="symbole">€</i></li>
 							</ul>
 						</li>
-
-						<!-- ajout article -->
-
+						
+						ajout article
+						
 						<li ng-repeat="article in articles track by $index">
 							<ul class="infosarticle">
 								<li class="article">
@@ -213,10 +211,10 @@
 								<li class="viewcolumn"><a href=""><i class="fa fa-eye" aria-hidden="true"></i></a></li>
 								<li>2.12 <i class="symbole">€</i></li>
 							</ul>
-						</li>
+						</li> -->
 
 						<li class="ajouter">
-							<input id ="button-add" value="Ajouter un article" class="addArticle" ng-click="addArticle()"></input>
+							<a href="" id ="button-add" class="addArticle" ng-click="addArticle()">tesssst</a>
 						</li>
 
 						<li class="total">
