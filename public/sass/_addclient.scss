@@ -21,6 +21,10 @@
 		margin-bottom: 8px;
 	}
 
+	label i{
+		color:$secondary;
+	}
+
 	form{
 		@include container;
 		span{

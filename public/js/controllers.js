@@ -275,16 +275,6 @@ crmControllers.controller('mainCtrl', ['$scope', 'Client', function($scope, Clie
 
 }]);
 
-crmControllers.controller('createNewFactureCtrl', ['$scope', 'Article', function($scope, Article){
-
-	$scope.articles=[];
-
-	$scope.addNewArticle = function(){
-		$scope.articles.push();
-	}
-
-}]);
-
 
 crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($scope, Client){
 

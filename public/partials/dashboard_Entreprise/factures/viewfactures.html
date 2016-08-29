@@ -63,14 +63,23 @@
 
 					<table>
 						<tr>
+<!-- <<<<<<< HEAD
+							<th><a ng-model="order">Date</a><i class="fa fa-caret-down" aria-hidden="true"></i></th>
+							<th><a ng-model="order">Client</a><i class="fa fa-caret-down" aria-hidden="true"></i></th>
+======= -->
 							<th>Date<a ng-click="sortBy('date')"><i class="fa fa-caret-down" aria-hidden="true"></i></a></th>
 							<th>Client <a ng-click="sortBy('name')"><i class="fa fa-caret-down" aria-hidden="true"></i></a></th>
+<!-- >>>>>>> d4ccf6755b2b47ad8500f17e4848126a6fa7869c -->
 							<th>File</th>
 							<th>Statut <a ng-click="sortBy('state')"><i class="fa fa-caret-down" aria-hidden="true"></i></a></th>
 							<th>Delete</th>
 							<th>View</th>
 						</tr>
+<!-- <<<<<<< HEAD
+								 <tr ng-repeat="data in datas | orderBy : order" ng-model="bill.state">
+======= -->
 								 <tr ng-repeat="data in datas | orderBy:propertyName:reverse | filter : searchBill">
+<!-- >>>>>>> d4ccf6755b2b47ad8500f17e4848126a6fa7869c -->
 									<td>{{data.date | date : 'd/MM/yyyy'}}</td>
 									<td>{{data.name}}</td>
 									<td>facture_123456_loremipsum.pdf</td>

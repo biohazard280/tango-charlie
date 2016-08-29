@@ -17,7 +17,6 @@ crmControllers.controller('listBillsCtrl', ['$scope', 'Client', '$location', '$c
 			$scope.clients = result;
 			console.log(result);
 
-			
 
 
 			//to know how many bills there are and their status state = false "bill unpaid", state = true "bill paid"
@@ -51,6 +50,7 @@ crmControllers.controller('listBillsCtrl', ['$scope', 'Client', '$location', '$c
 				};
 
 			};
+
 			$scope.datas = listBills;
 			console.log($scope.datas);
 
@@ -76,5 +76,15 @@ crmControllers.controller('listBillsCtrl', ['$scope', 'Client', '$location', '$c
 			$scope.reverse = true;
 		}
 	};
+
+}]);
+
+crmControllers.controller('createNewFactureCtrl', ['$scope', 'Article', function($scope, Article){
+
+	$scope.articles=[];
+
+	$scope.addNewArticle = function(){
+		$scope.articles.push();
+	}
 
 }]);
