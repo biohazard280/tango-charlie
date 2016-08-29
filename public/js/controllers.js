@@ -192,24 +192,7 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Client', '$cookies', fu
 
 
 }]);
-/*
-crmControllers.filter('isCompany', [function($filter) {
-	return function(inputArray, searchCriteria, clType){         
-  		if(!angular.isDefined(searchCriteria) || searchCriteria == ''){
-   			return inputArray;
-  		}         
-  		var data=[];
-  		angular.forEach(inputArray, function(item){             
-   			if(item.clType == clType){
-	    		if(item.isCompany.indexOf(searchCriteria) != -1){
-	     			data.push(item);
-	    		}
-   			}
-  		});      
-  		return data;
- 	};
-}]);
-*/
+
 
 crmControllers.controller('detailClientCtrl', ['$scope', 'Client', function($scope, Client){
 
@@ -312,6 +295,10 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 
 	$scope.addClient = function(newClient, isValid){
 		let checkCoord = $scope.checkCoord;
+
+		$scope.uploadFile = function(file){
+			console.log(file);
+		};
 
 		if (isValid){
 			// initialize password for new client
