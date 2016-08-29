@@ -1,136 +1,129 @@
-<section>
+	<section class="innercontainer dashboard_entreprise">
 
-	<div class="clients">
+		<a href="#/dashboard_Entreprise/clients/viewclient" class="clients">
+			<div class="icons">
+				<i class="fa fa-users fa-4x" aria-hidden="true"></i>
+			</div>
+
+			<p class="infos">1.025 Clients</p>
+			<p class="subInfos">910 particuliers / 115 sociétés</p>
+		</a>
+
+	<a href="#/dashboard_Entreprise/devis/viewdevis" class="devis">
 		<div class="icons">
-			<i class="fa fa-users fa-4x" aria-hidden="true"></i>
+			<i class="fa fa-pencil-square-o fa-4x" aria-hidden="true"></i>
 		</div>
 
-		<p class="infos">1.025 Clients</p>
-		<p class="subInfos">910 particuliers / 115 sociétés</p>
-	</div>
+		<p class="infos">3.195 Devis</p>
+		<p class="subInfos">200 en cours / 2.996 signés</p>
+	</a>
+	<a href="#/dashboard_Entreprise/factures/viewfactures" class="factures">
+		<div class="icons">
+			<i class="fa fa-file-text-o fa-4x" aria-hidden="true"></i>
+		</div>
+		<p class="infos">7.431 Factures</p>
+		<p class="subInfos">1.220 en cours/ 6.211 payées</p>
+	</a>
 
-
-</div>
-<div class="devis">
-	<div class="icons">
-		<i class="fa fa-pencil-square-o fa-4x" aria-hidden="true"></i>
-	</div>
-
-	<p class="infos">3.195 Devis</p>
-	<p class="subInfos">200 en cours / 2.996 signés</p>
-</div>
-<div class="factures">
-	<div class="icons">
-		<i class="fa fa-file-text-o fa-4x" aria-hidden="true"></i>
-	</div>
-	<p class="infos">7.431 Factures</p>
-	<p class="subInfos">1.220 en cours/ 6.211 payées</p>
-</div>
-
-<div class="listClients list">
-	<p>Liste des clients
-	<i class="material-icons ">add_circle</i>
-	</p>
-<table>
-<tr>
-	<td class="tdGreen">Picture</td>
-	<td class="tdGreen">Name</td>
-	<td class="tdGreen">Edit</td>
-	<td class="tdGreen">Delete</td>
-</tr>
-<tr>
-	<td><img src="img/id_account.svg" alt="id_pictures" height="35" width="35"></td>
-	<td><p>Pierre Dupont</p></td>
-	<td><i class="material-icons create">create</i></td>
-	<td><i class="material-icons">cancel</i></td>
-</tr>
-
-<tr>
-	<td><img src="img/id_account.svg" alt="id_pictures" height="35" width="35"></td>
-	<td><p>Pierre Dupont</p></td>
-	<td><i class="material-icons create">create</i></td>
-	<td><i class="material-icons">cancel</i></td>
-</tr>
-
-<tr>
-	<td><img src="img/id_account.svg" alt="id_pictures" height="35" width="35"></td>
-	<td><p>Pierre Dupont</p></td>
-	<td><i class="material-icons create">create</i></td>
-	<td><i class="material-icons">cancel</i></td>
-</tr>
-
-	
-</table>
-
-
-</div>
-<div class="listDevis list">
-	<p>Liste des devis
-	<i class="material-icons ">add_circle</i>
-	</p>
-	
-	<table>
-<tr>
-	<td class="tdGreen">Référence</td>
-	<td class="tdGreen">Name</td>
-	<td class="tdGreen">Statut</td>
-	<td class="tdGreen">Delete</td>
-</tr>
-<tr>
-	<td><p>Ref-000001</p></td>
-	<td><p>devis_pierredupont_0000001.pdf</p></td>
-	<td><i class="material-icons create">create</i></td>
-	<td><i class="material-icons">cancel</i></td>
-</tr>
-<tr>
-	<td><p>Ref-000001</p></td>
-	<td><p>devis_pierredupont_0000001.pdf</p></td>
-	<td><i class="material-icons create">create</i></td>
-	<td><i class="material-icons">cancel</i></td>
-</tr>
-<tr>
-	<td><p>Ref-000001</p></td>
-	<td><p>devis_pierredupont_0000001.pdf</p></td>
-	<td><i class="material-icons create">create</i></td>
-	<td><i class="material-icons">cancel</i></td>
-</tr>
-
-	
-</table>
-</div>
-<div class="listFactures list">
-	<p>Liste des factures
-	<i class="material-icons ">add_circle</i>
-	</p>
+	<div class="matable divlist">
 		<table>
-<tr>
-	<td class="tdGreen">Référence</td>
-	<td class="tdGreen">Name</td>
-	<td class="tdGreen">Statut</td>
-	<td class="tdGreen">Delete</td>
-</tr>
-<tr>
-	<td><p>Ref-000001</p></td>
-	<td><p>facture_pierredupont_0000001.pdf</p></td>
-	<td><i class="material-icons create">create</i></td>
-	<td><i class="material-icons">cancel</i></td>
-</tr>
-<tr>
-	<td><p>Ref-000001</p></td>
-	<td><p>facture_pierredupont_0000001.pdf</p></td>
-	<td><i class="material-icons create">create</i></td>
-	<td><i class="material-icons">cancel</i></td>
-</tr>
-<tr>
-	<td><p>Ref-000001</p></td>
-	<td><p>facture_pierredupont_0000001.pdf</p></td>
-	<td><i class="material-icons create">create</i></td>
-	<td><i class="material-icons">cancel</i></td>
-</tr>
+			<h2>Liste des clients</h2>
+			<tr>
+				<th>Picture</th>
+				<th>Name</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+			<tr>
+				<td><img src="img/id_account.svg" alt="id_pictures" height="35" width="35"></td>
+				<td><p>Pierre Dupont</p></td>
+				<td><a href=""> <i class="fa fa-pencil" aria-hidden="true"></i>
+</a></td>
+				<td><a href=""><i class="fa fa-times-circle" aria-hidden="true"></a></td>
+			</tr>
+			<tr>
+				<td><img src="img/id_account.svg" alt="id_pictures" height="35" width="35"></td>
+				<td><p>Pierre Dupont</p></td>
+				<td><a href=""> <i class="fa fa-pencil" aria-hidden="true"></i>
+</a></td>
+				<td><a href=""><i class="fa fa-times-circle" aria-hidden="true"></a></td>
+			</tr>
+			<tr>
+				<td><img src="img/id_account.svg" alt="id_pictures" height="35" width="35"></td>
+				<td><p>Pierre Dupont</p></td>
+				<td><a href=""> <i class="fa fa-pencil" aria-hidden="true"></i>
+</a></td>
+				<td><a href=""><i class="fa fa-times-circle" aria-hidden="true"></a></td>
+			</tr>
+		</table>
+		<a href="#/dashboard_Entreprise/clients/createnewclient" class="button-add">Ajouter un client</a>
+	</div>
 
+	<div class="matable divlist">
+		<table>
+			<h2>Liste des devis</h2>
+			<tr>
+				<th>Référence</th>
+				<th>Name</th>
+				<th>Statut</th>
+				<th>Delete</th>
+			</tr>
+			<tr>
+				<td><p>Ref-000001</p></td>
+				<td><p>devis_pierredupont_0000001.pdf</p></td>
+				<td><a href=""> <i class="fa fa-pencil" aria-hidden="true"></i>
+</a></td>
+				<td><a href=""><i class="fa fa-times-circle" aria-hidden="true"></a></td>
+			</tr>
+			<tr>
+				<td><p>Ref-000001</p></td>
+				<td><p>devis_pierredupont_0000001.pdf</p></td>
+				<td><a href=""> <i class="fa fa-pencil" aria-hidden="true"></i>
+</a></td>
+				<td><a href=""><i class="fa fa-times-circle" aria-hidden="true"></a></td>
+			</tr>
+			<tr>
+				<td><p>Ref-000001</p></td>
+				<td><p>devis_pierredupont_0000001.pdf</p></td>
+				<td><a href=""> <i class="fa fa-pencil" aria-hidden="true"></i>
+</a></td>
+				<td><a href=""><i class="fa fa-times-circle" aria-hidden="true"></a></td>
+			</tr>
+		</table>
+		<a href="#/dashboard_Entreprise/devis/createnewdevis" class="button-add">Ajouter un devis</a>
+	</div>
 
-	
-</table>
-	
-</div>
+	<div class="matable divlist">
+		<table>
+			<h2>Liste des factures</h2>
+			<tr>
+				<th>Référence</th>
+				<th>Name</th>
+				<th>Statut</th>
+				<th>Delete</th>
+			</tr>
+			<tr>
+				<td><p>Ref-000001</p></td>
+				<td><p>facture_pierredupont_0000001.pdf</p></td>
+				<td><a href=""> <i class="fa fa-pencil" aria-hidden="true"></i>
+</a></td>
+				<td><a href=""><i class="fa fa-times-circle" aria-hidden="true"></a></td>
+			</tr>
+			<tr>
+				<td><p>Ref-000001</p></td>
+				<td><p>facture_pierredupont_0000001.pdf</p></td>
+				<td><a href=""> <i class="fa fa-pencil" aria-hidden="true"></i>
+</a></td>
+				<td><a href=""><i class="fa fa-times-circle" aria-hidden="true"></a></td>
+			</tr>
+			<tr>
+				<td><p>Ref-000001</p></td>
+				<td><p>facture_pierredupont_0000001.pdf</p></td>
+				<td><a href=""> <i class="fa fa-pencil" aria-hidden="true"></i>
+</a></td>
+				<td><a href=""><i class="fa fa-times-circle" aria-hidden="true"></a></td>
+			</tr>
+		</table>
+		<a href="#/dashboard_Entreprise/factures/createnewfacture" class="button-add">Ajouter un client</a>
+	</div>
 </section>

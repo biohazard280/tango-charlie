@@ -177,23 +177,36 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Client', '$cookies', fu
 				}
 			}
 			
-			
 			$scope.datas = listClients;
 		});
 	}
 	
 	refresh();
 
+	$scope.viewAll = true;
+	$scope.viewPrivates = false;
+	$scope.viewCompanies= false;
 
 	$scope.showCompanies = function(){
 		$scope.datas = listCompanies;
+		$scope.viewAll = false;
+		$scope.viewPrivates = false;
+		$scope.viewCompanies= true;
 	}
 
 	$scope.showPrivates = function(){
 		$scope.datas = listPrivates;
+		$scope.viewAll = false;
+		$scope.viewPrivates = true;
+		$scope.viewCompanies= false;
 	}
 
-
+	$scope.showAll = function(){
+		$scope.datas = listClients;
+		$scope.viewAll = true;
+		$scope.viewPrivates = false;
+		$scope.viewCompanies= false;
+	}
 
 }]);
 
@@ -413,6 +426,7 @@ crmControllers.controller('createNewFactureCtrl', ['$scope', 'Client', function(
 
 		});
 
+
 			/// get params
 		Client.getParams(function(result) {
 			$scope.params = result;
@@ -442,7 +456,9 @@ crmControllers.controller('createNewFactureCtrl', ['$scope', 'Client', function(
 
 	//console.log($scope.listQuotations);
 	console.log($scope.newFacture);
-	
+
+	$scope.articles=[];
+
 
 	$scope.addArticle = function(){
 		$scope.articles.push();

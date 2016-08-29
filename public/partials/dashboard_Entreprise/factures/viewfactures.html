@@ -38,29 +38,28 @@
 		</section>
 		
 		<section class="searchMenu">
-			<button class="select" ng-click="showUnpayedBills()">
+			<button class="select" ng-click="showAll()" ng-class="{selectActive: viewAll}">
+				<p class="subInfos">Toutes</p>
+			</button>
+
+			<button class="select" ng-click="showUnpayedBills()" ng-class="{selectActive: viewUnpaid}">
 				<p class="subInfos">En attente ({{nbrUnpaidBills}})</p>
 			</button>
 
-			<button class="select" ng-click="showPayedBills()">
-				<p class="subInfos">Payées ({{nbrPaidBills}})</p>
+			<button class="select" ng-click="showPayedBills()" ng-class="{selectActive: viewPaid}">
+				<p class="subInfos">Payées({{nbrPaidBills}})</p>
 			</button>
-			
+
 			<div class="search">
 				<input type="text" placeholder="Faire une recherche" ng-model="searchBill"/>
 				<!-- <button class="searchicon">
 				<i class="fa fa-search" aria-hidden="true"></i>
 				</button> -->
-				
 			</div>
-
 		</section>
-
+		
 		<section>
-
-	
 			<div class="matable">
-
 					<table>
 						<tr>
 <!-- <<<<<<< HEAD
