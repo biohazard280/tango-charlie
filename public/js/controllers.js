@@ -130,53 +130,86 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Client', '$cookies', fu
 
 	$scope.nbrCompanies = 0;
 	$scope.nbrPrivateprs = 0;
-	$scope.quotations = 0;
-	$scope.bills = 0;
-	$scope.adminName = "";
-	$scope.clientsShow = [];
-	let tabCompanies = [];
-	let tabPrivates = [];
-	let clientsToShow = [];
-	
+	let listClients = [];
+	let listPrivates = [];
+	let listCompanies = [];
+	$scope.datas = [];
 
-	
 
 	function refresh() {
 		Client.getList(function(result) {
 			$scope.clients = result;
 			
-			
-
 			// to know how many companies or private persons are
 			for(var i = 0; i<$scope.clients.length; i++) {
+				listClients.push({'picture' : $scope.clients[i].picture,
+							  	  'id' : $scope.clients[i]._id,
+							      'name' : $scope.clients[i].name,
+							      'isCompany' : $scope.clients[i].isCompany,
+							      'nbrQuot' : $scope.clients[i].quotations.length,
+							      'nbrBills' : $scope.clients[i].bills.length
+				});
 				if($scope.clients[i].isCompany == true){
 					$scope.nbrCompanies++;
+					listCompanies.push({'picture' : $scope.clients[i].picture,
+							  	  		'id' : $scope.clients[i]._id,
+							      		'name' : $scope.clients[i].name,
+							      		'isCompany' : $scope.clients[i].isCompany,
+							      		'nbrQuot' : $scope.clients[i].quotations.length,
+							      		'nbrBills' : $scope.clients[i].bills.length
+
+					});
 				}
 				else {
 					$scope.nbrPrivateprs++;
+					listPrivates.push({'picture' : $scope.clients[i].picture,
+							  	  	   'id' : $scope.clients[i]._id,
+							      	   'name' : $scope.clients[i].name,
+							      	   'isCompany' : $scope.clients[i].isCompany,
+							      	   'nbrQuot' : $scope.clients[i].quotations.length,
+							      	   'nbrBills' : $scope.clients[i].bills.length
+
+					});
 				}
 			}
-
+			
+			
+			$scope.datas = listClients;
 		});
 	}
+	
 	refresh();
 
-	$scope.search = {};
 
-
-	$scope.showClients = function(isCmp){
-		$scope.search.isCompany = isCmp;
+	$scope.showCompanies = function(){
+		$scope.datas = listCompanies;
 	}
 
-	$scope.recherche = function(entree){
-		$scope.search = {};
-		$scope.search.name = entree;
+	$scope.showPrivates = function(){
+		$scope.datas = listPrivates;
 	}
 
 
 
 }]);
-
+/*
+crmControllers.filter('isCompany', [function($filter) {
+	return function(inputArray, searchCriteria, clType){         
+  		if(!angular.isDefined(searchCriteria) || searchCriteria == ''){
+   			return inputArray;
+  		}         
+  		var data=[];
+  		angular.forEach(inputArray, function(item){             
+   			if(item.clType == clType){
+	    		if(item.isCompany.indexOf(searchCriteria) != -1){
+	     			data.push(item);
+	    		}
+   			}
+  		});      
+  		return data;
+ 	};
+}]);
+*/
 
 crmControllers.controller('detailClientCtrl', ['$scope', 'Client', function($scope, Client){
 
@@ -259,6 +292,16 @@ crmControllers.controller('mainCtrl', ['$scope', 'Client', function($scope, Clie
 
 }]);
 
+crmControllers.controller('createNewFactureCtrl', ['$scope', 'Article', function($scope, Article){
+
+	$scope.articles=[];
+
+	$scope.addNewArticle = function(){
+		$scope.articles.push();
+	}
+
+}]);
+
 
 crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($scope, Client){
 
@@ -267,6 +310,7 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 		$scope.newClient = {};
 		$scope.newClient.billingInfo = {};
 		$scope.newClient.deliveryInfo = {};
+		$scope.newClient.vat= {};
 	}
 
 	// set the differents variables when we load the form
@@ -274,16 +318,17 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 
 
 	$scope.createClient = function(isValid){
+	}
+
+	$scope.addClient = function(newClient, isValid){
 		let checkCoord = $scope.checkCoord;
 
-		if(isValid){
-			// Client.createClient($scope.newClient, function(result){
-			// 	alert(result.message);
-			// 	console.log(result);
-			// 	// clean the temp Arrays after sending the form for the next one
-			// 	voidArrays();
-			// });
-			// $scope.error = false;
+		if (isValid){
+			// initialize password for new client
+			$scope.newClient.contactPerson.pwd = 'pass456';
+			// combine prefixe and tva number
+			$scope.newClient.vat.num = $scope.newClientPrefix + $scope.newClient.vat.num;
+
 			if(checkCoord){
 				console.log("hey c'est true");
 
@@ -301,19 +346,29 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 				console.log("hey c'est false");
 			}
 
+			Client.addClient($scope.newClient, function(result){
+				// alert(result.message);
+				console.log(result);
+				alert('Données sauvegardées!')
+				// clean the temp Arrays after sending the form for the next one
+				voidArrays();
+			});
+
 			console.log($scope.newClient);
 			console.log($scope.checkCoord);
-
-		} else {
-			console.log("Ca coince quelque part");
-			$scope.error = true;
+			
+			$scope.error = false;
+		}
+		else{
+			console.log('Erreur! Non valide!');
+			$scope.erreur = true;
 		}
 	}
 
 
 	///REGEX validation
 	$scope.onlyNumbers = /^[0-9,+-.]*$/;
-	$scope.onlyLetters = /^[a-zA-Z\s]*$/;
+	$scope.onlyLetters = /^[a-zA-ZÀ-ÿ]{1}(?!.*([\s\’-])\1)[a-zA-ZÀ-ÿ\s\’-]{0,28}[a-zA-ZÀ-ÿ]{1}$/;
 	$scope.onlyMail = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
 
 
@@ -321,17 +376,23 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 	$scope.checkCoord = true;
 	$scope.view1 = true;
 	$scope.view2 = false;
-	// isCompany = false
+	$scope.newClient.isCompany = false
 
 	$scope.showView1 = function() {
 		$scope.view1 = true;
 		$scope.view2 = false;
-		// isCompany = false
+		$scope.newClient.isCompany = false
 	}
 	$scope.showView2 = function() {
 		$scope.view1 = false;
 		$scope.view2 = true;
-		// isCompany = true
+		$scope.newClient.isCompany = true
+	}
+
+	$scope.articles=[];
+
+	$scope.addArticle = function(){
+		$scope.articles.push('');
 	}
 
 

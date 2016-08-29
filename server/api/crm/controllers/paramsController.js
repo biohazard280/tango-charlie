@@ -1,4 +1,3 @@
-"use strict";
 let logger = require(`${process.cwd()}/server/utils/logger`);
 // get an instance of the model of our db
 let model = require('../model');

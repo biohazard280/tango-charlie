@@ -1,4 +1,3 @@
-"use strict";
 let Company = require('../api/crm/model');
 
 let _ = require('lodash');
@@ -11,8 +10,9 @@ const saltRounds = 10;
 logger.log('--- SEED : Seeding the Database');
 
 let companies = [{
+        "_id" : "57bdaa671a4baba8264473bc",
         "name" : "Ma société",
-        "logo" : "logo.png",
+        "logo" : "logo",
         "vat" : {
             "num" : "BE 0214.563.254",
             "siren" : "",
@@ -65,28 +65,27 @@ let companies = [{
             "bill" : 1,
             "quotation" : 1
         },
-        "articles" : [
-            {
-                "name" : "Pescadou",
-                "description" :"vin de table blanc sec, 75 cl",
-                "unitPrice" : 3
+        "createdAt" : Date.now(),
+        "articles" : [{
+                "name" : "lunettes solaire",
+                "description" :"lunettes de soleil",
+                "unitPrice" : 120
             },
             {
-                "name" : "Mangaroca",
-                "description" :"Batida de coco, 75 cl",
-                "unitPrice" : 9
-            },
-            {
-                "name" : "Disaronno",
-                "description" :"Amaretto original, 100 cl",
-                "unitPrice" : 15
+                "name" :"lunettes classiques" ,
+                "description" : "lunettes de vue de loin",
+                "unitPrice" : 245
+            },{
+                "name" : "lentilles",
+                "description" : "lentilles de contact pour myope",
+                "unitPrice" : 25
             }
-        ],
-        "createdAt" : Date.now()
+            ],
     }];
 
 let customers = [
     {
+        "_id": "57bd92938ccf68f02aa3a543",
         "name" : "Sébastien Jacques",
         "picture" : "",
         "isCompany" : false, 
@@ -137,16 +136,9 @@ let customers = [
                 "link" : "20160629-01001",
                 "state" : true,
                 "quotation_id" : 0,
-                "createdAt" : "2016-06-29",
+                "createdAt" : "2016-04-26",
                 "deadline" : "2016-07-10",
                 "payedAt" : "2016-06-31"
-            },
-            {
-                "link" : "20160829-01500",
-                "state" : false,
-                "quotation_id" : 3,
-                "createdAt" : "2016-08-29",
-                "deadline" : "2016-09-30"
             }
         ], 
         "quotations" : [
@@ -163,6 +155,7 @@ let customers = [
         "memo" : "Le premier client",
         "createdAt" : Date.now()
     },{
+        "_id": "57bd92938ccf68f02aa3a547",
         "name" : "Blizzard",
         "picture" : "",
         "isCompany" : true, 
@@ -218,7 +211,7 @@ let customers = [
                 "payedAt" : "2016-04-31"
             },{
                 "link" : "20160512-01002",
-                "state" : true,
+                "state" : false,
                 "quotation_id" : 1,
                 "createdAt" : "2016-05-12",
                 "deadline" : "2016-05-22"
@@ -237,7 +230,91 @@ let customers = [
         ], 
         "memo" : "Très gros client",
         "createdAt" : Date.now()
+    },{
+          "name" : "Dubois et fils SPRL",
+          "picture" : "",
+          "isCompany" : true, 
+          "vat" : {
+              "num" : "BE 0859.664.518",
+              "siren" : "",
+              "rcs" : ""
+          },
+          "billingInfo" : {
+              "civility" : "",
+              "firstname" : "",
+              "lastname" : "",
+              "street" : "Chaussée de Tournai",
+              "number" : 11,
+              "box" : "A",
+              "zip" : "7500",
+              "town" : "Tournai",
+              "country" : "Belgique",
+              "mail" : "infos@duboisetfils.com",
+              "phoneMain" : "+32 68 558 955",
+              "phoneSec" : "",
+              "fax" : ""
+          },
+          "deliveryInfo" : {
+              "civility" : "",
+              "firstname" : "",
+              "lastname" : "",
+              "company" : "",
+              "street" : "Chaussée de Tournai",
+              "number" : 11,
+              "box" : "A",
+              "zip" : "7500",
+              "town" : "Tournai",
+              "country" : "Belgique"
+          },
+          "contactPerson" : {
+              "civility" : "Monsieur",
+              "firstname" : "Eric",
+              "lastname" : "Parent",
+              "post" : "Management",
+              "mail" : "parenteric@duboisetfils.com",
+              "phoneMain" : "+32 68 558 955",
+              "phoneSec" : "",
+              "pwd" : "pass888"
+          },
+          "bills" : [
+              {
+                  "link" : "20160605-01020",
+                  "state" : true,
+                  "quotation_id" : 0,
+                  "createdAt" : "2016-06-05",
+                  "deadline" : "2016-07-05",
+                  "payedAt" : "2016-04-31"
+              },
+              {
+                  "link" : "20160701-01100",
+                  "state" : true,
+                  "quotation_id" : 1,
+                  "createdAt" : "2016-07-01",
+                  "deadline" : "2016-08-02"
+              },
+              {
+                  "link" : "20160803-01250",
+                  "state" : false,
+                  "quotation_id" : 1,
+                  "createdAt" : "2016-08-03",
+                  "deadline" : "2016-09-03"
+              }
+          ], 
+          "quotations" : [
+              {
+                 "link" : "20160505-02022",
+                 "state" : true,
+                 "createdAt" : "2016-05-05"
+             },{
+                 "link" : "20160615-01512",
+                 "state" : true,
+                 "createdAt" : "2016-06-15"
+             }
+        ], 
+         "memo" : "Client important",
+         "createdAt" : Date.now()
     }
+
 ];
 let params = [{
     "rules" : [
@@ -246,24 +323,49 @@ let params = [{
     ],
     "refunds" : [
         "%",
-        "€",
-        "$",
-        "£"
+        "€"
     ],
     "countries" : [
         "Belgique",
         "Pays-Bas",
         "Luxembourg",
         "France",
-        "Allemange",
-        "Angleterre",
-        "Etats-Unis"
+        "Allemange"
+
     ],
-    "vatRate" : [0,6,21],
+    "vatRate" : [
+        "0%",
+        "6%",
+        "21%"
+    ],
     "vatPrefix" : [
+        "AT",
         "BE",
+        "BG",
+        "CY",
+        "CZ",
+        "DE",
+        "DK",
+        "EE",
+        "EL",
         "ES",
-        "FR"
+        "FI",
+        "FR",
+        "HR",
+        "HU",
+        "IE",
+        "IT",
+        "LT",
+        "LU",
+        "LV",
+        "MT",
+        "NL",
+        "PL",
+        "PT",
+        "RO",
+        "SE",
+        "SI",
+        "SK"
     ]
 }]
 

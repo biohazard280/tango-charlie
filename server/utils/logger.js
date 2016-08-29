@@ -1,4 +1,3 @@
-"use strict";
 require('colors');
 const config = require('../config/config');
 const _ = require('lodash');
@@ -16,7 +15,12 @@ let logger = {
                     let str = JSON.stringify(arg);
                     return `${tag} ${str.cyan}`;
                 } else {
-                    return `${tag} ${arg.cyan}`;
+                    if(arg === undefined){
+                        let str = 'undefined';
+                        return `${tag} ${str.cyan}`;
+                    } else{
+                        return `${tag} ${arg.cyan}`;
+                    }
                 }
             });
             consoleLog.apply(console, args);
@@ -29,7 +33,12 @@ let logger = {
                     let str = JSON.stringify(arg);
                     return `${tag} ${str.cyan}`;
                 } else {
-                    return `${tag} ${arg.cyan}`;
+                    if(arg === undefined){
+                        let str = 'undefined';
+                        return `${tag} ${str.cyan}`;
+                    } else{
+                        return `${tag} ${arg.cyan}`;
+                    }
                 }
             });
             consoleLog.apply(console, args);

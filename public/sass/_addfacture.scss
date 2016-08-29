@@ -1,6 +1,15 @@
 // --------DASHBOARD_entreprise-------//
 // ---ajout favture--- //
 .addFactureForm{
+	
+	.ng-not-empty.ng-invalid{
+		border: 1px solid red !important;
+	}
+
+	.ng-not-empty.ng-valid{
+		border: 1px solid $secondary !important;
+	}
+
 	h2{
 		color:$secondary;
 		padding-bottom: 15px;
@@ -45,15 +54,14 @@
 		}
 
 		.detailsfacture ul{
-			text-align: center;
+			text-align: center !important;
 		}
 
-		.infosarticle{
+		.infosarticle, .infosfacture{
 			overflow: auto;
 			li{
 				@include span(1 of 9);
 				display: inline-block;
-				margin-top: 7px;
 				&:last-child{
 					@include last;
 				}
@@ -62,41 +70,32 @@
 			.article{
 				@include span(3 of 9);
 				margin-top: 0;
-			}
-
-			.quantity{
-				margin-top: 0;
-			}
-
-			.symbole{
-				float: right;
 			}
 		}
 
 		.infosfacture{
 			background-color: $secondary;
-			overflow: auto;
-			padding: 5px 0;
-			margin-bottom: 5px;
-
+			padding: 5px 0 !important;
+			margin-bottom: 10px;
 			li{
-				@include span(1 of 9);
-				display: inline-block;
+				margin-top: 0;
 				color: white;
-				&:last-child{
-					@include last;
-				}
-			}
-
-			.article{
-				@include span(3 of 9);
 			}
 		}
 
+		.symbole{
+			float: right;
+		}
+
 		.total{
-			overflow: auto;
+			float: right;
+			@include span(2 of 9 last);
+
+			ul{
+				clear:both;
+			}
 			li{
-				@include span(1 of 9);
+				@include span(6 of 12);
 				display: inline-block;
 				margin-top: 7px;
 				&:last-child{
@@ -122,6 +121,17 @@
 
 	.col-right{
 		@include last;
+	}
+
+	.addArticle{
+		background-color: $secondary;
+		border: none;
+		color: white;
+		font-weight: 800;
+		&:hover{
+			background-color: lighten($secondary, 5%);
+			cursor:pointer !important;
+		}
 	}
 	
 	.tva div{

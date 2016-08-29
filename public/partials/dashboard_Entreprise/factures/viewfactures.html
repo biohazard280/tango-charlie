@@ -8,7 +8,7 @@
 				<div class="icons">
 					<i class="fa fa-file-text-o fa-3x" aria-hidden="true"></i>
 				</div>
-				<p class="infos">{{factures.length}} Factures</p>
+				<p class="infos">{{nbrBills}} Factures</p>
 			</a>
 
 			<a class="addClient" href="#/dashboard_Entreprise/factures/createnewfacture">
@@ -38,74 +38,52 @@
 		</section>
 		
 		<section class="searchMenu">
-			<button class="select" ng-click="showAttente()" ng-class="{selectActive: particulier}">
+			<button class="select" ng-click="showUnpayedBills()">
 				<p class="subInfos">En attente ({{nbrUnpaidBills}})</p>
 			</button>
 
-			<button class="select" ng-click="showPaid()" ng-class="{selectActive: entreprise}">
+			<button class="select" ng-click="showPayedBills()">
 				<p class="subInfos">Payées ({{nbrPaidBills}})</p>
 			</button>
 			
 			<div class="search">
-				<input type="text" placeholder="Faire une recherche"/>
+				<input type="text" placeholder="Faire une recherche" ng-model="searchBill"/>
+				<!-- <button class="searchicon">
 				<i class="fa fa-search" aria-hidden="true"></i>
+				</button> -->
+				
 			</div>
 
 		</section>
 
 		<section>
 
-			<!-- <li><a ng-click="sortBy('')">Client</a><i class="fa fa-caret-down" aria-hidden="true"></i>
-				<ul ng-repeat="client in clients">
-					<li>
-						<ul ng-repeat="bill in client.bills">
-							<li>{{client.name}}</li>
-						</ul>
-					</li>
-				</ul>
-			</li> -->
 	
 			<div class="matable">
-				<!-- <table>
-				<tr>
-					<th><a ng-click="sortBy('')">Date</a> <i class="fa fa-caret-down" aria-hidden="true"></i></th>
-					<th>Client <i class="fa fa-caret-down" aria-hidden="true"></i></th>
-					<th>File</th>
-					<th>Statut <i class="fa fa-caret-down" aria-hidden="true"></i></th>
-					<th>Delete</th>
-					<th>View</th>
-				</tr>
-				</table> -->
-					
-<!-- 					<ul ng-repeat="client in clients">
-	<li>
-		<ul ng-repeat="bill in client.bills">
-			<li>{{bill.createdAt | date : 'd/MM/yyyy'}}</li>
-			<td>Lorem Ipsum</td>
-			<td>facture_123456_loremipsum.pdf</td>
-			<td><span class="paid">Payé <i class="fa fa-check" aria-hidden="true"></i></span></td>
-			<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
-				<td><a href="#"><span class="viewcolumn"><i class="fa fa-eye" aria-hidden="true"></i></span></a></td>
-			
 
-				
-		</ul>
-	</li>
-</ul> -->
 					<table>
 						<tr>
+<!-- <<<<<<< HEAD
 							<th><a ng-model="order">Date</a><i class="fa fa-caret-down" aria-hidden="true"></i></th>
 							<th><a ng-model="order">Client</a><i class="fa fa-caret-down" aria-hidden="true"></i></th>
+======= -->
+							<th>Date<a ng-click="sortBy('date')"><i class="fa fa-caret-down" aria-hidden="true"></i></a></th>
+							<th>Client <a ng-click="sortBy('name')"><i class="fa fa-caret-down" aria-hidden="true"></i></a></th>
+<!-- >>>>>>> d4ccf6755b2b47ad8500f17e4848126a6fa7869c -->
 							<th>File</th>
-							<th>Statut <i class="fa fa-caret-down" aria-hidden="true"></i></th>
+							<th>Statut <a ng-click="sortBy('state')"><i class="fa fa-caret-down" aria-hidden="true"></i></a></th>
 							<th>Delete</th>
 							<th>View</th>
 						</tr>
+<!-- <<<<<<< HEAD
 								 <tr ng-repeat="data in datas | orderBy : order" ng-model="bill.state">
+======= -->
+								 <tr ng-repeat="data in datas | orderBy:propertyName:reverse | filter : searchBill">
+<!-- >>>>>>> d4ccf6755b2b47ad8500f17e4848126a6fa7869c -->
 									<td>{{data.date | date : 'd/MM/yyyy'}}</td>
 									<td>{{data.name}}</td>
 									<td>facture_123456_loremipsum.pdf</td>
-									<td ng-switch="bill.state">
+									<td ng-switch="data.state">
 										<span class="paid" ng-switch-when="true">Payée <i class="fa fa-check" aria-hidden="true"></i></span>
 										<span class="paid" ng-switch-when="false">En attente <i class="fa fa-exclamation" aria-hidden="true"></i></span>
 									</td>

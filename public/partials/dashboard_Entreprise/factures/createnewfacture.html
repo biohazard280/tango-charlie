@@ -41,11 +41,11 @@
 					<div>
 						<div>
 							<label for="">N° de facture</label>
-							<input ng-model="numbill" type="" name="" id="">
+							<input ng-model="numbill" type="text" ng-pattern="onlyNumbers">
 						</div>
 						<div>
 							<label for="">Date de facture</label>
-							<input ng-model="datebill" type="" name="" id="">
+							<input ng-model="datebill" type="text" placeholder="dd-mm-yyyy" ng-pattern="onlyNumbers">
 						</div>
 					</div>
 					<div>
@@ -60,7 +60,7 @@
 					<div>
 						<span>
 							<label>Client</label>
-							<select ng-model="nameclient">
+							<select ng-model="nameclient" ng-pattern="onlyLetters" required>
 								<option>Monsieur Blabla</option>
 								<option>Madame Blublu</option>
 							</select>
@@ -69,12 +69,12 @@
 					<div>
 						<div>
 							<label for="">PO</label>
-							<input ng-model="po" type="text" name="" id="">
+							<input ng-model="po" type="text" id="" ng-pattern="onlyNumbers">
 						</div>
 
 						<div>
 							<label>N° Devis</label>
-							<select ng-model="numdevis">
+							<select ng-model="numdevis" ng-pattern="onlyNumbers" required>
 								<option>123-456-789</option>
 								<option>987-654-321</option>
 							</select>
@@ -90,7 +90,7 @@
 					<div>
 						<span>
 							<label>Client</label>
-							<select ng-model="nameclient">
+							<select ng-model="nameclient" ng-pattern="onlyLetters" required>
 								<option>Monsieur Blabla</option>
 								<option>Madame Blublu</option>
 							</select>
@@ -99,7 +99,7 @@
 					<div>
 						<div>
 							<label for="">Mode de paiement</label>
-							<select ng-model="paybillmode">
+							<select ng-model="paybillmode" ng-pattern="onlyLetters" required>
 								<option selected>Compte Belfius</option>
 								<option>Compte Fortis</option>
 							</select>
@@ -107,7 +107,7 @@
 
 						<div>
 							<label for="">Mode de paiement secondaire</label>
-							<select ng-model="paybillmodesecond">
+							<select ng-model="paybillmodesecond" ng-pattern="onlyLetters" required>
 								<option selected>Compte </option>
 								<option>Compte Fortis</option>
 							</select>
@@ -132,20 +132,16 @@
 					<div>
 						<div>
 							<label for="">Nom du projet</label>
-							<input ng-model="nameproject" type="" name="" id="">
+							<input ng-model="nameproject" type="" id="">
 						</div>
 						<div>
 							<div>
 								<label for="">Date du début *</label>
-								<select ng-model="begindate">
-									<option>21-03-21</option>
-								</select>
+								<input ng-model="dateBegin" type="text" placeholder="dd-mm-yyyy" ng-pattern="onlyNumbers">
 							</div>
 							<div>
 								<label for="">Date de fin *</label>
-								<select ng-model="enddate">
-									<option>21-03-2016</option>
-								</select>
+								<input ng-model="dateEnd" type="text" placeholder="dd-mm-yyyy" ng-pattern="onlyNumbers">
 							</div>
 						</div>
 					</div>
@@ -174,12 +170,12 @@
 										<option>Pomme de pain</option>
 									</select>
 								</li>
-								<li class="quantity"><input ng-model="qtearticle01" type="" name="" id=""></li>
-								<li>1119.75 <span class="symbole">€</span></li>
-								<li>21 <span class="symbole">%</span></li>
-								<li>*</li>
-								<li>*</li>
-								<li>1349.45 <span class="symbole">€</span></li>
+								<li class="quantity"><input ng-model="qtearticle01" type="number"></li>
+								<li>1119.75 <i class="symbole">€</i></li>
+								<li>21 <i class="symbole">%</i></li>
+								<li class="deletecolumn"><a href=""><i class="fa fa-times-circle" aria-hidden="true"></i></a></li>
+								<li class="viewcolumn"><a href=""><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+								<li>1349.45 <i class="symbole">€</i></li>
 							</ul>
 						</li>
 						<li>
@@ -189,46 +185,65 @@
 										<option>Pomme d'api</option>
 									</select>
 								</li>
-								<li class="quantity"><input ng-model="qtearticle02" type="" name="" id=""></li>
-								<li>2.00 <span class="symbole">€</span></li>
-								<li>6 <span class="symbole">%</span></li>
-								<li>*</li>
-								<li>*</li>
-								<li>2.12 <span class="symbole">€</span></li>
+								<li class="quantity"><input ng-model="qtearticle02" type="number" id=""></li>
+								<li>2.00 <i class="symbole">€</i></li>
+								<li>6 <i class="symbole">%</i></li>
+								<li class="deletecolumn"><a href=""><i class="fa fa-times-circle" aria-hidden="true"></i></a></li>
+								<li class="viewcolumn"><a href=""><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+								<li>2.12 <i class="symbole">€</i></li>
 							</ul>
 						</li>
-						<li class="ajouter">
-							<button>Ajouter</button>
+
+						<!-- ajout article -->
+
+						<li ng-repeat="article in articles track by $index">
+							<ul class="infosarticle">
+								<li class="article">
+									<select ng-model="article">
+										<option>Article 1</option>
+										<option>Article 2</option>
+										<option>Article 3</option>
+										<option>Article 4</option>
+									</select>
+								</li>
+								<li class="quantity"><input type="number"></li>
+								<li>2.00 <i class="symbole">€</i></li>
+								<li>6 <i class="symbole">%</i></li>
+								<li class="deletecolumn"><a href=""><i class="fa fa-times-circle" aria-hidden="true"></i></a></li>
+								<li class="viewcolumn"><a href=""><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+								<li>2.12 <i class="symbole">€</i></li>
+							</ul>
 						</li>
+
+						<li class="ajouter">
+							<button id ="button-add" class="addArticle" ng-click="addArticle()"> Ajouter un article </button>
+						</li>
+
 						<li class="total">
 							<ul>
+								<li>Total</li>
+								<li>2.12 <i class="symbole">€</i></li>
+							</ul>
+							<ul>
+								<li>Ristourne</li>
 								<li>
-									<ul>
-										<li>Total</li>
-										<li>2.12 <span class="symbole">€</span></li>
-									</ul>
-									<ul>
-										<li>Ristourne</li>
-										<li>
-											<input ng-model="ristourneval" type="" name="" id="">
-											<select ng-model="ristournepct">
-												<option>50</option>
-											</select>
-										</li>
-									</ul>
-									<ul>
-										<li>Sous-Total HT</li>
-										<li>2.12 <span class="symbole">€</span></li>
-									</ul>
-									<ul>
-										<li>Total TTC</li>
-										<li>2.12 <span class="symbole">€</span></li>
-									</ul>
-									<ul>
-										<li>Accompte</li>
-										<li>2.12 <span class="symbole">€</span></li>
-									</ul>
+									<input ng-model="ristourneval" type="text" id="">
+									<select ng-model="ristournepct">
+										<option>50</option>
+									</select>
 								</li>
+							</ul>
+							<ul>
+								<li>Sous-Total HT</li>
+								<li>2.12 <i class="symbole">€</i></li>
+							</ul>
+							<ul>
+								<li>Total TTC</li>
+								<li>2.12 <i class="symbole">€</i></li>
+							</ul>
+							<ul>
+								<li>Accompte</li>
+								<li>2.12 <i class="symbole">€</i></li>
 							</ul>
 						</li>
 					</ul>

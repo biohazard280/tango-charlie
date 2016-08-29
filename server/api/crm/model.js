@@ -1,4 +1,3 @@
-"use strict";
 let mongoose = require('mongoose');
 let validate = require('mongoose-validator');
 let logger = require(`${process.cwd()}/server/utils/logger`);
@@ -197,20 +196,17 @@ let companyModel = function() {
             },
             bills : [{
                 link : {
-                    type : String,
-                    required : true
+                    type : String
                 },
                 state : {
-                    type : Boolean,
-                    required : true
+                    type : Boolean
                 },
                 quotation_id : {
-                    type : Number,
+                    type : String,
                     validate : numberValidator
                 },
                 createdAt : {
                     type : Date,
-                    required : true,
                     validate : dateValidator
                 },
                 deadLine : {
@@ -224,16 +220,13 @@ let companyModel = function() {
             }],
             quotations : [{
                 link : {
-                    type : String,
-                    required : true
+                    type : String
                 },
                 state : {
-                    type : Boolean,
-                    required : true
+                    type : Boolean
                 },
                 createdAt : {
-                    type : Date, 
-                    required : true,
+                    type : Date,
                     validate : dateValidator
                 }
             }],
@@ -438,9 +431,8 @@ let companyModel = function() {
             required : true
         }],
         vatRate : [{
-            type : Number,
-            required : true,
-            validate : numberValidator
+            type : String,
+            required : true
         }],
         vatPrefix : [{
             type : String,
