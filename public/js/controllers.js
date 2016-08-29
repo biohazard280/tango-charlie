@@ -395,3 +395,25 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 	});
 
 }]);
+
+crmControllers.controller('createNewFactureCtrl', ['$scope', 'Client', function($scope, Client){
+
+		function refresh() {
+		Client.getList(function(result) {
+			$scope.clients = result;
+			console.log(result);
+			
+
+		});
+	}
+
+
+
+	console.log("ctrl bills");
+	$scope.articles=[];
+
+	$scope.addNewArticle = function(){
+		$scope.articles.push();
+	}
+
+}]);

@@ -60,23 +60,24 @@
 					<div>
 						<span>
 							<label>Client <i>*</i></label>
-							<select ng-model="nameclient" ng-pattern="onlyLetters" required>
-								<option>Monsieur Blabla</option>
-								<option>Madame Blublu</option>
+							<select ng-model="newFacture.idClient" ng-pattern="onlyLetters" required>
+								<option ng-repeat="client in listClients" value="{{client.id}}">{{client.name}}</option>
+								<!-- <option>Monsieur Blabla</option>
+								<option>Madame Blublu</option> -->
 							</select>
 						</span>
 					</div>
 					<div>
 						<div>
-							<label>PO <i>*</i></label>
+							<label>PO<i>*</i></label>
 							<input ng-model="po" type="text" id="" ng-pattern="onlyNumbers" required>
 						</div>
-
 						<div>
 							<label>N° Devis <i>*</i></label>
-							<select ng-model="numdevis" ng-pattern="onlyNumbers" required>
-								<option>123-456-789</option>
-								<option>987-654-321</option>
+							<!-- option.name for option in data.availableOptions track by option.id -->
+							<select ng-model="newFacture.quotId" ng-pattern="onlyNumbers" required>
+								<option ng-repeat="quot in listQuotations | filter: newFacture.idClient" value="{{quot.quotLink}}">{{quot.quotLink}}</option>
+								
 							</select>
 						</div>
 					</div>
@@ -89,27 +90,24 @@
 					<h2>Informations et règles de paiement</h2>
 					<div>
 						<span>
-							<label>Client <i>*</i></label>
-							<select ng-model="nameclient" ng-pattern="onlyLetters" required>
-								<option>Monsieur Blabla</option>
-								<option>Madame Blublu</option>
+							<label>Échéance <i>*</i></label>
+							<select ng-model="newFacture.echeance" ng-options="rule for rule in listRules" ng-pattern="onlyLetters" required>
 							</select>
 						</span>
 					</div>
 					<div>
 						<div>
 							<label>Mode de paiement <i>*</i></label>
-							<select ng-model="paybillmode" ng-pattern="onlyLetters" required>
-								<option selected>Compte Belfius</option>
-								<option>Compte Fortis</option>
+							<select ng-model="newFacture.payementInfo" ng-options="pmtInfo.name for pmtInfo in listPayementInfo" ng-pattern="	onlyLetters" required>
+								
+								
 							</select>
 						</div>
 
 						<div>
 							<label>Mode de paiement secondaire <i>*</i></label>
-							<select ng-model="paybillmodesecond" ng-pattern="onlyLetters" required>
-								<option selected>Compte </option>
-								<option>Compte Fortis</option>
+							<select ng-model="newFacture.payementInfoSecond" ng-options="pmtInfo.name for pmtInfo in listPayementInfo" ng-		pattern="onlyLetters" required>
+						
 							</select>
 						</div>
 					</div>
