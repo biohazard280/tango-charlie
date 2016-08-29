@@ -49,7 +49,7 @@ app.config(['$routeProvider', function($routeProvider){
 //devis
 	when('/dashboard_Entreprise/devis/viewdevis' , {
 		templateUrl : 'partials/dashboard_Entreprise/devis/viewdevis.html',
-		controller : 'mainCtrl'
+		controller : 'listDevisCtrl'
 	}).
 	when('/dashboard_Entreprise/devis/createnewdevis' , {
 		templateUrl : 'partials/dashboard_Entreprise/devis/createnewdevis.html',

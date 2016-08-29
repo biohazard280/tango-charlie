@@ -76,7 +76,7 @@
 // }
 
 .search{
-	@include span (2 of 6);
+	@include span (2 of 6 last);
 	position: relative;
 		input{
 			width: 100%;

@@ -92,13 +92,28 @@ crmControllers.controller('listBillsCtrl', ['$scope', 'Client', '$location', '$c
 /*<<<<<<< HEAD
 
 =======*/
+$scope.viewAll = true;
+$scope.viewPaid = false;
+$scope.viewUnpaid = false;
+	$scope.showAll = function(){
+		$scope.datas = listBills;
+		$scope.viewAll = true;
+		$scope.viewPaid = false;
+		$scope.viewUnpaid = false;
+	}
 	$scope.showPayedBills = function(){
 		$scope.datas = listPayedBills;
+		$scope.viewAll = false;
+		$scope.viewPaid = true;
+		$scope.viewUnpaid = false;
 	}
-
 	$scope.showUnpayedBills = function(){
 		$scope.datas = listUnpayedBills;
+		$scope.viewAll = false;
+		$scope.viewPaid = false;
+		$scope.viewUnpaid = true;
 	}
+
 
 	 $scope.propertyName = 'date';
  	 $scope.reverse = true;

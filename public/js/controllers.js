@@ -173,23 +173,36 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Client', '$cookies', fu
 				}
 			}
 			
-			
 			$scope.datas = listClients;
 		});
 	}
 	
 	refresh();
 
+	$scope.viewAll = true;
+	$scope.viewPrivates = false;
+	$scope.viewCompanies= false;
 
 	$scope.showCompanies = function(){
 		$scope.datas = listCompanies;
+		$scope.viewAll = false;
+		$scope.viewPrivates = false;
+		$scope.viewCompanies= true;
 	}
 
 	$scope.showPrivates = function(){
 		$scope.datas = listPrivates;
+		$scope.viewAll = false;
+		$scope.viewPrivates = true;
+		$scope.viewCompanies= false;
 	}
 
-
+	$scope.showAll = function(){
+		$scope.datas = listClients;
+		$scope.viewAll = true;
+		$scope.viewPrivates = false;
+		$scope.viewCompanies= false;
+	}
 
 }]);
 /*
@@ -404,4 +417,40 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 		$scope.listVatPrefix = $scope.params[0].vatPrefix;
 	});
 
+}]);
+
+
+crmControllers.controller('listDevisCtrl', ['$scope', function($scope){
+	$scope.viewAll = true;
+	$scope.viewPaid = false;
+	$scope.viewRefused = false;
+	$scope.viewWaiting = false;
+		$scope.showAll = function(){
+			// $scope.datas = listDevis;
+			$scope.viewAll = true;
+			$scope.viewPaid = false;
+			$scope.viewRefused = false;
+			$scope.viewWaiting = false;
+		}
+		$scope.showPayedDevis = function(){
+			// $scope.datas = listPayedDevis;
+			$scope.viewAll = false;
+			$scope.viewPaid = true;
+			$scope.viewRefused = false;
+			$scope.viewWaiting = false;
+		}
+		$scope.showRefusedDevis = function(){
+			// $scope.datas = listUnpayedDevis;
+			$scope.viewAll = false;
+			$scope.viewPaid = false;
+			$scope.viewRefused = true;
+			$scope.viewWaiting = false;
+		}
+		$scope.showWaitingDevis = function(){
+			// $scope.datas = listWaitingDevis;
+			$scope.viewAll = false;
+			$scope.viewPaid = false;
+			$scope.viewRefused = false;
+			$scope.viewWaiting = true;
+		}
 }]);
