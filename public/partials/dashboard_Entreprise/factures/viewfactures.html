@@ -38,19 +38,19 @@
 		</section>
 		
 		<section class="searchMenu">
-			<button class="select" ng-click="showAttente()" ng-class="{selectActive: particulier}">
+			<button class="select" ng-click="showUnpayedBills()">
 				<p class="subInfos">En attente ({{nbrUnpaidBills}})</p>
 			</button>
 
-			<button class="select" ng-click="showPaid()" ng-class="{selectActive: entreprise}">
+			<button class="select" ng-click="showPayedBills()">
 				<p class="subInfos">Payées ({{nbrPaidBills}})</p>
 			</button>
 			
 			<div class="search">
-				<input type="text" placeholder="Faire une recherche"/>
-				<button class="searchicon">
+				<input type="text" placeholder="Faire une recherche" ng-model="searchBill"/>
+				<!-- <button class="searchicon">
 				<i class="fa fa-search" aria-hidden="true"></i>
-				</button>
+				</button> -->
 				
 			</div>
 
@@ -70,7 +70,7 @@
 							<th>Delete</th>
 							<th>View</th>
 						</tr>
-								 <tr ng-repeat="data in datas | orderBy:propertyName:reverse">
+								 <tr ng-repeat="data in datas | orderBy:propertyName:reverse | filter : searchBill">
 									<td>{{data.date | date : 'd/MM/yyyy'}}</td>
 									<td>{{data.name}}</td>
 									<td>facture_123456_loremipsum.pdf</td>

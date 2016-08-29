@@ -130,15 +130,11 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Client', '$cookies', fu
 
 	$scope.nbrCompanies = 0;
 	$scope.nbrPrivateprs = 0;
-/*	$scope.quotations = 0;
-	$scope.bills = 0;
-	$scope.adminName = "";
-	$scope.companies = [];
-	$scope.privates = [];
-	$scope.allClients = [];*/
-	
+	let listClients = [];
+	let listPrivates = [];
+	let listCompanies = [];
+	$scope.datas = [];
 
-	
 
 	function refresh() {
 		Client.getList(function(result) {
@@ -146,35 +142,53 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Client', '$cookies', fu
 			
 			// to know how many companies or private persons are
 			for(var i = 0; i<$scope.clients.length; i++) {
-
+				listClients.push({'picture' : $scope.clients[i].picture,
+							  	  'id' : $scope.clients[i]._id,
+							      'name' : $scope.clients[i].name,
+							      'isCompany' : $scope.clients[i].isCompany,
+							      'nbrQuot' : $scope.clients[i].quotations.length,
+							      'nbrBills' : $scope.clients[i].bills.length
+				});
 				if($scope.clients[i].isCompany == true){
 					$scope.nbrCompanies++;
+					listCompanies.push({'picture' : $scope.clients[i].picture,
+							  	  		'id' : $scope.clients[i]._id,
+							      		'name' : $scope.clients[i].name,
+							      		'isCompany' : $scope.clients[i].isCompany,
+							      		'nbrQuot' : $scope.clients[i].quotations.length,
+							      		'nbrBills' : $scope.clients[i].bills.length
+
+					});
 				}
 				else {
 					$scope.nbrPrivateprs++;
+					listPrivates.push({'picture' : $scope.clients[i].picture,
+							  	  	   'id' : $scope.clients[i]._id,
+							      	   'name' : $scope.clients[i].name,
+							      	   'isCompany' : $scope.clients[i].isCompany,
+							      	   'nbrQuot' : $scope.clients[i].quotations.length,
+							      	   'nbrBills' : $scope.clients[i].bills.length
+
+					});
 				}
 			}
+			
+			
+			$scope.datas = listClients;
 		});
 	}
-
+	
 	refresh();
 
-	
-	$scope.search = {};
 
-
-	$scope.showClients = function(isCmp){
-		$scope.search.isCompany = isCmp;
+	$scope.showCompanies = function(){
+		$scope.datas = listCompanies;
 	}
 
-	$scope.recherche = function(entree){
-		$scope.search = {};
-		$scope.search.name = entree;
+	$scope.showPrivates = function(){
+		$scope.datas = listPrivates;
 	}
 
-	$scope.getPrivates = function(list){
-		console.log(list);
-	}
 
 
 }]);
