@@ -20,6 +20,10 @@
 		margin-bottom: 8px;
 	}
 
+	label i{
+		color:$secondary;
+	}
+
 	form{
 		@include container;
 		span{
@@ -49,15 +53,21 @@
 			}
 		}
 
+		.ajouter{
+			@include span(3 of 9);
+			overflow: auto;
+			float: none;
+		}
+
 		.detailsfacture{
 			@include span(6 of 6);
 		}
 
 		.detailsfacture ul{
-			text-align: center;
+			text-align: center !important;
 		}
 
-		.infosarticle, .infosfacture{
+		.infosarticle, .infosfacture,{
 			overflow: auto;
 			li{
 				@include span(1 of 9);
@@ -75,7 +85,7 @@
 
 		.infosfacture{
 			background-color: $secondary;
-			padding: 5px 0;
+			padding: 5px 0 !important;
 			margin-bottom: 10px;
 			li{
 				margin-top: 0;
@@ -121,6 +131,29 @@
 
 	.col-right{
 		@include last;
+	}
+
+	.addArticle{
+		text-align: center;
+		background-color: $secondary;
+		border: none;
+		color: white;
+		font-weight: 800;
+		&:hover{
+			background-color: lighten($secondary, 5%);
+			cursor:pointer !important;
+		}
+	}
+
+	.ristourne{
+		input, select{
+			width: auto;
+			max-width: 50%;
+			float: left;
+		}
+		li:first-child{
+			margin-top: 5px;
+		}
 	}
 	
 	.tva div{

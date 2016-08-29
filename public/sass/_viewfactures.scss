@@ -3,6 +3,12 @@
 	padding-bottom: 200px;
 	margin-bottom: 30px;
 	background-color: white;
+
+	li, td {
+		text-align: center;
+		padding-top: 20px;
+		padding-left: 15px;
+	}
 }
 
 table {
@@ -18,16 +24,7 @@ th {
 	background-color: #84c900;
 	color: white;
 	padding: 5px;
-}
-
-li, td:first-child {
-}
-
-li, td {
-	text-align: center;
-	padding-top: 20px;
-	padding-left: 15px;
-}
+} 
 
 .search input {
 	@include span(10 of 12);

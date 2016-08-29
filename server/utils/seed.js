@@ -230,7 +230,91 @@ let customers = [
         ], 
         "memo" : "Très gros client",
         "createdAt" : Date.now()
+    },{
+          "name" : "Dubois et fils SPRL",
+          "picture" : "",
+          "isCompany" : true, 
+          "vat" : {
+              "num" : "BE 0859.664.518",
+              "siren" : "",
+              "rcs" : ""
+          },
+          "billingInfo" : {
+              "civility" : "",
+              "firstname" : "",
+              "lastname" : "",
+              "street" : "Chaussée de Tournai",
+              "number" : 11,
+              "box" : "A",
+              "zip" : "7500",
+              "town" : "Tournai",
+              "country" : "Belgique",
+              "mail" : "infos@duboisetfils.com",
+              "phoneMain" : "+32 68 558 955",
+              "phoneSec" : "",
+              "fax" : ""
+          },
+          "deliveryInfo" : {
+              "civility" : "",
+              "firstname" : "",
+              "lastname" : "",
+              "company" : "",
+              "street" : "Chaussée de Tournai",
+              "number" : 11,
+              "box" : "A",
+              "zip" : "7500",
+              "town" : "Tournai",
+              "country" : "Belgique"
+          },
+          "contactPerson" : {
+              "civility" : "Monsieur",
+              "firstname" : "Eric",
+              "lastname" : "Parent",
+              "post" : "Management",
+              "mail" : "parenteric@duboisetfils.com",
+              "phoneMain" : "+32 68 558 955",
+              "phoneSec" : "",
+              "pwd" : "pass888"
+          },
+          "bills" : [
+              {
+                  "link" : "20160605-01020",
+                  "state" : true,
+                  "quotation_id" : 0,
+                  "createdAt" : "2016-06-05",
+                  "deadline" : "2016-07-05",
+                  "payedAt" : "2016-04-31"
+              },
+              {
+                  "link" : "20160701-01100",
+                  "state" : true,
+                  "quotation_id" : 1,
+                  "createdAt" : "2016-07-01",
+                  "deadline" : "2016-08-02"
+              },
+              {
+                  "link" : "20160803-01250",
+                  "state" : false,
+                  "quotation_id" : 1,
+                  "createdAt" : "2016-08-03",
+                  "deadline" : "2016-09-03"
+              }
+          ], 
+          "quotations" : [
+              {
+                 "link" : "20160505-02022",
+                 "state" : true,
+                 "createdAt" : "2016-05-05"
+             },{
+                 "link" : "20160615-01512",
+                 "state" : true,
+                 "createdAt" : "2016-06-15"
+             }
+        ], 
+         "memo" : "Client important",
+         "createdAt" : Date.now()
     }
+
 ];
 let params = [{
     "rules" : [

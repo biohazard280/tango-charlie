@@ -39,35 +39,35 @@
 
 		<div class="selectParticuliers">
 
-			<a href="" class="subInfos" ng-click="showClients(false)">Particuliers ({{nbrPrivateprs}})</a>
+			<a href="" class="subInfos" ng-click="showPrivates()">Particuliers ({{nbrPrivateprs}})</a>
 			
 		</div>
 		<div class="selectEntreprise">
 
-			<a href="" class="subInfos" ng-click="showClients(true)">Entreprises ({{nbrCompanies}})</a>
+			<a href="" class="subInfos" ng-click="showCompanies()">Entreprises ({{nbrCompanies}})</a>
 		</div>
 
 		<div class="search">
-			<input type="text" placeholder="Faire une recherche" ng-model="entree"><button ng-click="recherche(entree)">search</button>
+			<input type="text" placeholder="Faire une recherche" ng-model="search">
 
 		</div>
 	</section>
 
 	<section class="gallery_profile">
-		<ul class="gallery" ng-repeat="client in clients |  filter: search">
-			<li class="profile">
+		<ul class="gallery profile" ng-repeat="dataCl in datas |  filter : search">
+			<li>
 				<img src="img/id_account.svg" alt="id_pictures" height="105" width="105">
-				<p class="name_profile">{{client.name}}</p>
+				<p class="name_profile">{{dataCl.name}}</p>
 				<div class="infos_devis">
 					<p>Devis</p>
-					<p>{{client.quotations.length}}</p>
+					<p>{{dataCl.nbrQuot}}</p>
 				</div>
 				<div class="infos_facture">
 					<p>Facture</p>
-					<p>{{client.bills.length}}</p>
+					<p>{{dataCl.nbrBills}}</p>
 				</div>
 				
-				<a href="#"><i class="fa fa-times " aria-hidden="true"></i>{{adminName}}</a>
+				<a href="#"><i class="fa fa-times " aria-hidden="true"></i></a>
 				<a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 				<a href="#/dashboard_Entreprise/clients/viewprofile"><i class="fa fa-eye" aria-hidden="true"></i></a>
 
