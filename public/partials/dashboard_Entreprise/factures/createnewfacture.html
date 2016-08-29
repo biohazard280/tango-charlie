@@ -162,21 +162,21 @@
 							</ul>
 						</li>
 						<li>
-							<ul class="infosarticle">
+							<ul class="infosarticle" ng-repeat="article in articlesDb">
 								<li class="article">
-									<select ng-model="article01">
-										<option>Pomme de pain</option>
+									<select ng-model="newFacture.articles._id">
+									<option  value="{{article.name}}">{{article.name}}</option>
 									</select>
 								</li>
 								<li class="quantity"><input ng-model="qtearticle01" type="number"></li>
-								<li>1119.75 <i class="symbole">€</i></li>
+								<li>{{article.unitPrice}}<i class="symbole">€</i></li>
 								<li>21 <i class="symbole">%</i></li>
 								<li class="deletecolumn"><a href=""><i class="fa fa-times-circle" aria-hidden="true"></i></a></li>
 								<li class="viewcolumn"><a href=""><i class="fa fa-eye" aria-hidden="true"></i></a></li>
 								<li>1349.45 <i class="symbole">€</i></li>
 							</ul>
 						</li>
-						<li>
+						<!-- <li>
 							<ul class="infosarticle">
 								<li class="article">
 									<select ng-model="article02">
@@ -191,9 +191,9 @@
 								<li>2.12 <i class="symbole">€</i></li>
 							</ul>
 						</li>
-
-						<!-- ajout article -->
-
+						
+						ajout article
+						
 						<li ng-repeat="article in articles track by $index">
 							<ul class="infosarticle">
 								<li class="article">
@@ -211,10 +211,10 @@
 								<li class="viewcolumn"><a href=""><i class="fa fa-eye" aria-hidden="true"></i></a></li>
 								<li>2.12 <i class="symbole">€</i></li>
 							</ul>
-						</li>
+						</li> -->
 
 						<li class="ajouter">
-							<input id ="button-add" value="Ajouter un article" class="addArticle" ng-click="addArticle()"></input>
+							<a href="" id ="button-add" class="addArticle" ng-click="addArticle()">tesssst</a>
 						</li>
 
 						<li class="total">

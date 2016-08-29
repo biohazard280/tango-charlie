@@ -79,7 +79,7 @@ crmControllers.controller('listBillsCtrl', ['$scope', 'Client', '$location', '$c
 
 }]);
 
-crmControllers.controller('createNewFactureCtrl', ['$scope', 'Client', function($scope, Client){
+/*crmControllers.controller('createNewFactureCtrl', ['$scope', 'Client', function($scope, Client){
 
 		
 		$scope.listClients = [];
@@ -123,10 +123,6 @@ crmControllers.controller('createNewFactureCtrl', ['$scope', 'Client', function(
 		});
 
 	
-	
-
-
-	//console.log($scope.listQuotations);
 	console.log($scope.newFacture);
 	$scope.articles=[];
 
@@ -134,10 +130,6 @@ crmControllers.controller('createNewFactureCtrl', ['$scope', 'Client', function(
 		$scope.articles.push();
 	}
 
-    /*$scope.setClient = function(id){
-		alert(id);
-	}*/
 
 
-
-}]);
+}]);*/
