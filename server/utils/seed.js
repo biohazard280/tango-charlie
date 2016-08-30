@@ -150,6 +150,11 @@ let customers = [
                 "link" : "20160408-01001",
                 "state" : false,
                 "createdAt" : "2016-04-08"
+            },
+            {
+                "link" : "20160620-01001",
+                "state" : null,
+                "createdAt" : "2016-06-20"
             }
         ], 
         "memo" : "Le premier client",

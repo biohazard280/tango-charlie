@@ -39,7 +39,7 @@ app.config(['$routeProvider', function($routeProvider){
 		templateUrl : 'partials/dashboard_Entreprise/clients/viewclient.html',
 		controller : 'listClientsCtrl'
 	}).
-	when('/dashboard_Entreprise/clients/viewprofile' , {
+	when('/dashboard_Entreprise/clients/viewprofile/:itemId' , {
 		templateUrl : 'partials/dashboard_Entreprise/clients/viewprofile.html',
 		controller : 'detailClientCtrl'
 	}).

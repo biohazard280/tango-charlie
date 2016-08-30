@@ -6,18 +6,24 @@ var crmControllers = angular.module('crmControllers', []);
 //function to hide de menu bar when admin has not login yet or when creating admin account
 app.run(function($rootScope, $location, $cookies){
 	console.log($rootScope);
-  $rootScope.$on('$routeChangeStart', function(event, next, current){
+  	$rootScope.$on('$routeChangeStart', function(event, next, current){
     if ($location.path() == '/' || $location.path() == '/subscribe') {
       $rootScope.hideit = true;
-    } else  $rootScope.hideit = false;
+      $rootScope.hideDisconnect = true;
+    } else {
+    	$rootScope.hideit = false;
+    	$rootScope.hideDisconnect = false;
+    }
     let cookieAdminObject = $cookies.getObject('infosAdminlog');
     if (cookieAdminObject && ($location.path() == '/' || $location.path() == '/subscribe')) {
     	$rootScope.hideName = true;
+    	$rootScope.hideDisconnect = true;
     } else {
     	$rootScope.userAdminName = cookieAdminObject;
     	$rootScope.hideName = false;
     }
   });
+
 });
 
 
@@ -123,9 +129,19 @@ crmControllers.controller('homeCtrl', ['$scope', '$location','ngDialog', '$cooki
 		});
     };
 
-    $scope.verifConnect = function (target) {
-    	console.log(target);
+    $scope.disconnect = function () {
+    	let cookieAdminObject = $cookies.getObject('infosAdminlog');
+    	if (cookieAdminObject) {
+    		console.log($cookies.getObject('infosAdminlog'));
+    		$cookies.remove('infosAdminlog');
+    		//console.log($cookies.getObject('infosAdminlog'));
+    	}
+    	
     };
+
+  
+
+
 
 }]);
 
@@ -211,7 +227,25 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Client', '$cookies', fu
 }]);
 
 
-crmControllers.controller('detailClientCtrl', ['$scope', 'Client', function($scope, Client){
+crmControllers.controller('detailClientCtrl', ['$scope', '$routeParams', 'Client', function($scope, $routeParams, Client){
+
+	Client.getList(function(result){
+		$scope.datas = result;
+		// get the item that we want details thx to the id sent in the route
+		
+		$scope.whichItem = $routeParams.itemId;
+		$scope.clId = $scope.datas[$scope.whichItem]._id;
+		console.log($scope.datas.length);
+		for (var i = 0 ; i < $scope.datas.length ; i++) {
+			if($scope.clId == $scope.datas[i]._id) {
+				$scope.detailsClient = $scope.datas[i];
+			};
+		};
+
+		console.log($scope.detailsClient);
+
+			
+	});
 
 }]);
 
@@ -288,7 +322,22 @@ if($cookies.getObject('infosAdminlog')) {
 }]);
 
 
-crmControllers.controller('mainCtrl', ['$scope', 'Client', function($scope, Client){
+crmControllers.controller('mainCtrl', ['$scope', 'Client', '$cookies', '$location', function($scope, Client, $cookies, $location){
+
+    $scope.disconnect = function () {
+    	let cookieAdminObject = $cookies.getObject('infosAdminlog');
+    	if (cookieAdminObject) {
+    		console.log($cookies.getObject('infosAdminlog'));
+    		$cookies.remove('infosAdminlog');
+    		//console.log($cookies.getObject('infosAdminlog'));
+    	}
+    	
+    };
+    let cookieAdminObject = $cookies.getObject('infosAdminlog');
+    if(!cookieAdminObject){
+    	$location.path('/home');
+    }
+
 
 }]);
 

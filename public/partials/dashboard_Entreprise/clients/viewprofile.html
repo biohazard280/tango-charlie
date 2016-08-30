@@ -12,7 +12,7 @@
 				</div>
 
 				<div class="name_informations">
-					<p>Pierre Dupont</p>
+					<p>{{detailsClient.name}}</p>
 
 					<div class="edit">
 						<a href="#"><i class="fa fa-pencil" aria-hidden="true"></i>
@@ -28,16 +28,16 @@
 				<div class="primary_information">
 
 						<p class="title">Statut</p>
-						<p>Monsieur</p>
+						<p>{{detailsClient.contactPerson.civility}}&nbsp;</p>
 
 						<p class="title">Phone</p>
-						<p>+32(0)71129494</p>
+						<p>{{detailsClient.contactPerson.phoneMain}}&nbsp;</p>
 		
 						<p class="title">Mail</p>
-						<p>Pierre.dupont@gmail.com</p>
+						<p>{{detailsClient.contactPerson.mail}}&nbsp;</p>
 
 						<p class="title">Optional Phone</p>
-						<p>+32 (0)498398475</p>
+						<p>{{detailsClient.contactPerson.phoneSec}}&nbsp;</p>
 
 				</div>
 
@@ -45,38 +45,38 @@
 
 					<h2>Contact billings</h2>
 			
-						<p class="title">Name</p>
-						<p>Lorem</p>
-		
 						<p class="title">Firstname</p>
-						<p>Ipsum</p>
+						<p>{{detailsClient.billingInfo.firstname}}&nbsp;</p>
+		
+						<p class="title">Lastname</p>
+						<p>{{detailsClient.billingInfo.lastname}}&nbsp;</p>
 		
 						<p class="title">Street, n°</p>
-						<p>Azerty street, 17</p>
-
-						<p class="title">Zip</p>
-						<p>/</p>
+						<p>{{detailsClient.billingInfo.street}}, {{detailsClient.billingInfo.number}}&nbsp;</p>
 
 						<p class="title">BP</p>
-						<p>1234</p>
+						<p>{{detailsClient.billingInfo.box}}&nbsp;</p>
+
+						<p class="title">Zip</p>
+						<p>{{detailsClient.billingInfo.zip}}&nbsp;</p>
 		
 						<p class="title">City</p>
-						<p>Qwerty</p>
+						<p>{{detailsClient.billingInfo.town}}&nbsp;</p>
 
 						<p class="title">Country</p>
-						<p>Belgium</p>
+						<p>{{detailsClient.billingInfo.country}}&nbsp;</p>
 
 						<p class="title">Phone</p>
-						<p>+ 32 (0) 499 87 65 43</p>
+						<p>{{detailsClient.billingInfo.phoneMain}}&nbsp;</p>
 				
 						<p class="title">Mail</p>
-						<p>loremimpsum@lorem.com</p>
+						<p>{{detailsClient.billingInfo.mail}}&nbsp;</p>
 		
-						<p class="title">Optional Phone</p>
-						<p>+ 32 (0) 499 87 65 43</p>
+						<p class="title">Optional Phone&nbsp;</p>
+						<p>{{detailsClient.billingInfo.phoneSec}}&nbsp;</p>
 			
 						<p class="title">Fax</p>
-						<p>+ 32 (0) 499 87 65 43</p>
+						<p>{{detailsClient.billingInfo.fax}}&nbsp;</p>
 		
 				</div>
 
@@ -84,32 +84,32 @@
 
 					<h2>Contact delivery</h2>
 
-						<p class="title">Same as billings datas</p>
-						<p>Yes/No</p>
+				<!-- 		<p class="title">Same as billings datas</p>
+				<p>Yes/No</p> -->
 					
-						<p class="title">Name</p>
-						<p>Lorem</p>
-
 						<p class="title">Firstname</p>
-						<p>Ipsum</p>
+						<p>{{detailsClient.deliveryInfo.firstname}}&nbsp;</p>
+
+						<p class="title">Lastname</p>
+						<p>{{detailsClient.deliveryInfo.lastname}}&nbsp;</p>
 
 						<p class="title">Company</p>
-						<p>Kiwi Studio</p>
+						<p>{{detailsClient.deliveryInfo.company}}&nbsp;</p>
 
 						<p class="title">Street, n°</p>
-						<p>Azerty street, 17</p>
+						<p>{{detailsClient.deliveryInfo.street}}, {{detailsClient.deliveryInfo.number}}&nbsp;</p>
 				
 						<p class="title">Zip</p>
-						<p>/</p>
+						<p>{{detailsClient.deliveryInfo.zip}}&nbsp;</p>
 					
 						<p class="title">BP</p>
-						<p>1234</p>
+						<p>{{detailsClient.deliveryInfo.box}}&nbsp;</p>
 
 						<p class="title">City</p>
-						<p>Kiwicity</p>
+						<p>{{detailsClient.deliveryInfo.town}}&nbsp;</p>
 					
 						<p class="title">Country</p>
-						<p>Belgium</p>
+						<p>{{detailsClient.deliveryInfo.country}}&nbsp;</p>
 					
 				</div>
 			</div>
@@ -134,35 +134,17 @@
 						<th>Statut</th>
 						<th>Delete</th>
 					</tr>
-					<tr>
-						<td><span>21-03-2016</span>
-						12:12</td>
+					<tr ng-repeat="bill in detailsClient.bills">
+						<td ><span>{{bill.createdAt | date : 'd/MM/yyyy'}}</span></td>
 						<td>facture_123456_loremipsum.pdf</td>
-						<td><span class="paid">Payé <i class="fa fa-check" aria-hidden="true"></i></span></td>
+						<!-- <td><span class="paid">Payé <i class="fa fa-check" aria-hidden="true"></i></span></td> -->
+						<td ng-switch="bill.state">
+							<span class="paid" ng-switch-when="true">Payée <i class="fa fa-check" aria-hidden="true"></i></span>
+							<span class="wait" ng-switch-when="false">En attente <i class="fa fa-exclamation" aria-hidden="true"></i></span>
+						</td>
 						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
 					</tr>
-					<tr>
-						<td><span>21-03-2016</span>
-						12:12</td>
-						<td>facture_123456_loremipsum.pdf</td>
-						<td><span class="wait">En attente <i class="fa fa-exclamation" aria-hidden="true"></i></span></td>
-						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
-					</tr>
-					<tr>
-						<td><span>21-03-2016</span>
-						12:12</td>
-						<td>facture_123456_loremipsum.pdf</td>
-						<td><span class="delete">Refusé <i class="fa fa-times" aria-hidden="true"></i></span></td>
-						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
-					</tr>
-					<tr>
-						<td><span>21-03-2016</span>
-						12:12</td>
-						<td>facture_123456_loremipsum.pdf</td>
-						<td><span class="wait">En attente <i class="fa fa-exclamation" aria-hidden="true"></i>
-						</span></td>
-						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
-					</tr>
+	
 				</table>
 
 				<h2>Devis</h2>
@@ -174,35 +156,16 @@
 						<th>Statut</th>
 						<th>Delete</th>
 					</tr>
-					<tr>
-						<td><span>21-03-2016</span>
-						12:12</td>
+					<tr ng-repeat="quot in detailsClient.quotations">
+						<td><span>{{quot.createdAt | date : 'd/MM/yyyy'}}</span></td>
 						<td>facture_123456_loremipsum.pdf</td>
-						<td><span class="paid">Payé <i class="fa fa-check" aria-hidden="true"></i></span></td>
+						<td ng-switch="quot.state">
+							<span class="paid" ng-switch-when="true">Accepté <i class="fa fa-check" aria-hidden="true"></i></span>
+							<span class="wait" ng-switch-when="false">En attente <i class="fa fa-exclamation" aria-hidden="true"></i></span>
+							<span class="delete" ng-switch-when="null">Refusé <i class="fa fa-exclamation" aria-hidden="true"></i></span>
+						</td>
 						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
-					</tr>
-					<tr>
-						<td><span>21-03-2016</span>
-						12:12</td>
-						<td>facture_123456_loremipsum.pdf</td>
-						<td><span class="wait">En attente <i class="fa fa-exclamation" aria-hidden="true"></i></span></td>
-						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
-					</tr>
-					<tr>
-						<td><span>21-03-2016</span>
-						12:12</td>
-						<td>facture_123456_loremipsum.pdf</td>
-						<td><span class="delete">Refusé <i class="fa fa-times" aria-hidden="true"></i></span></td>
-						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
-					</tr>
-					<tr>
-						<td><span>21-03-2016</span>
-						12:12</td>
-						<td>facture_123456_loremipsum.pdf</td>
-						<td><span class="wait">En attente <i class="fa fa-exclamation" aria-hidden="true"></i>
-						</span></td>
-						<td><a href="#"><span class="deletecolumn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a></td>
-					</tr>
+					
 				</table>
 			</div>
 
@@ -214,12 +177,7 @@
 				<h1>Notes</h1>
 
 				<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				{{detailsClient.memo}}
 				</p>
 
 			</section>

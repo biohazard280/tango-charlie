@@ -34,7 +34,7 @@
 
 					<h2>Bienvenue <span ng-hide="hideName">{{userAdminName.firstname | uppercase}} {{userAdminName.lastname | uppercase}}</span></h2>
 
-					<a href="#" ng-click="verifConnect($target)"><p>Connexion</p></a>
+					<a href="#" ng-hide="hideDisconnect" ng-click="disconnect()" ng-controller="mainCtrl"><p>Déconnexion</p></a>
 				</div>
 
 				<div class="id_account">
