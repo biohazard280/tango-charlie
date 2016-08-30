@@ -449,13 +449,6 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 		$scope.newClient.isCompany = true
 	}
 
-	/*$scope.articles=[];
-
-	$scope.addArticle = function(){
-		$scope.articles.push('');
-	}
-*/
-
 	/// get params
 	Client.getParams(function(result) {
 		$scope.params = result;
@@ -471,11 +464,12 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 
 crmControllers.controller('createNewFactureCtrl', ['$scope', 'Client', function($scope, Client){
 
+
 		$scope.listClients = [];
 		$scope.listQuotations = [];
 
 		function voidArray () {
-			$scope.articles=[];
+			$scope.articlesDb=[];
 			$scope.newFacture = {};
 		}
 
@@ -519,18 +513,13 @@ crmControllers.controller('createNewFactureCtrl', ['$scope', 'Client', function(
 			console.log($scope.articlesDb);
 		});
 
-
-	
-
-
 	//console.log($scope.listQuotations);
 	console.log($scope.newFacture);
-
-	$scope.articles=[];
-
+	let i= 0;
 
 	$scope.addArticle = function(){
-		$scope.articles.push();
+		$scope.articlesDb.push(i);
+		i++;
 	}
 
     /*$scope.setClient = function(id){

@@ -95,16 +95,16 @@
 .profile{
 	@include gallery(1 of 6);
 	// background-color: red;
-	border: 1px solid #818181;
 	height: 220px;
 	box-sizing: border-box;
 	margin-bottom: 30px;
 	text-align: center;
+	background-color: white;
 
 	.name_profile{
 		font-family: $MyrRegular;
 		font-size: 1em;
-		color: #4d4d4f;
+		color: $secondary;
 	}
 
 	.infos_devis, .infos_facture {
