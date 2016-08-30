@@ -82,6 +82,12 @@ services.factory('Client', ['$resource', function($resource) {
 				let resource = $resource("/api/crm/params");
 				resource.query(callback);
 			},
+        	
+        	removeClient : function(id, callback){
+            let resource = $resource("/api/crm/"+id);
+            // callback is not required but it's better to get the different messages [error, validation,...] 
+            resource.remove(callback);
+        	}
 		}
 	return list;
 }]);

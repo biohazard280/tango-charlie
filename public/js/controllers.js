@@ -224,6 +224,23 @@ crmControllers.controller('listClientsCtrl', ['$scope', 'Client', '$cookies', fu
 		$scope.viewCompanies= false;
 	}
 
+	$scope.removingClient = function(id){
+		Client.getList(function(result) {
+			$scope.clientsList = result;
+			for (var i = 0 ; i < $scope.clientsList.length ; i++){
+				if($scope.clientsList[i]._id === id) {
+					$scope.clientRemove = $scope.clientsList[i];
+					//console.log($scope.clientRemove);
+				};
+			};
+			//console.log("remove");
+			if(confirm("Delete this client ?")){
+				Client.removeClient($scope.clientRemove);
+				// use the custom function created before
+				refresh();
+			}
+		});
+	};
 }]);
 
 
@@ -448,6 +465,9 @@ crmControllers.controller('createNewClientCtrl', ['$scope', 'Client', function($
 	});
 
 }]);
+
+
+
 
 crmControllers.controller('createNewFactureCtrl', ['$scope', 'Client', function($scope, Client){
 
