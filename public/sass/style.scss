@@ -22,6 +22,7 @@ html {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
+	height: 100%;
 }
 *, *:before, *:after {
   -moz-box-sizing: border-box;
@@ -31,6 +32,7 @@ html {
 
 body{
 	background-color: #eee;
+	height: 100%;
 }
 
 // --------DASHBOARD nav-------//
@@ -42,7 +44,14 @@ header{
 	background-color: #FFF
 }
 
-
+.background{
+	background: url("../img/background.png") no-repeat center bottom;
+	height: 510px;
+	position: fixed;
+	width: 100%;
+	z-index: -1;
+	top: 200px;
+}
 
 .id_account{
 	@include span(1 of 12);
@@ -51,8 +60,8 @@ header{
 
 .innercontainer{
 	@include container(1140px);
-
 }
+
 .logo{
 	@include span(6 of 12);
 	margin-left: 75px;
